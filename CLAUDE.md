@@ -133,7 +133,7 @@ For each level, apply enhanced validation:
 
 - `ASDD/Philosophy.md` - Complete v1.0 development philosophy with integrated patches
 - `ASDD/claude-command-template/phase-template.md` - Comprehensive template for creating ASDD commands
-- `archive/v0-failure.md` - Systematic failure analysis that drove v0.1 improvements
+- `ASDD/revision-rationale/v0-failure.md` - Systematic failure analysis that drove v0.1 improvements
 - `.claude/commands/phase-0-prototype.md` - Prototype validation command
 - `.claude/commands/level-0-vision.md` - Vision clarity command
 - `.claude/commands/level-1-approach.md` - Approach viability command
