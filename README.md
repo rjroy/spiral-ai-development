@@ -23,11 +23,44 @@ A meta-template for establishing effective AI-human collaboration patterns in so
 - **OVERVIEW.md**: A short description for the project. The elevator pitch.
 - **HIGH-LEVEL-DESIGN.md**: A description of all the key core principles and requirements that are necessary to consider the project successful. This is not a detailed design, but should be defined enough for reasonable repeatability.
 
+### First Steps
+
+1. Create a GitHub repo using `rjroy/claude-code-template` as a template
+2. Clone the repo
+3. add `OVERVIEW.md` and `HIGH-LEVEL-DESIGN.md` to `docs/design`
+4. move this `README.md` to the `ASDD` directory.
+5. move `ASDD` into `docs`.
+6. copy `docs/design/OVERVIEW.md` to `README.md`.
+7. open `claude`
+8. run `/init`
+9. you may need to run the following prompt:
+```
+This is no longer a template project.
+update CLAUDE.md to reflect the fact that this project is now an instantiation.
+```
+
+This will result in a structure close to this:
+
+```
+repo-name/
+├── docs/                        # Documentation
+│   ├── design/                  # Core design documents
+│   |   ├── OVERVIEW.md          # Project specific overview
+│   |   └── HIGH-LEVEL-DESIGN.md # Project specific design
+│   └── ASDD/                    # ASDD philosophy documentation
+│       ├── README.md            # This document
+│       └── ...                  # Remaining ASDD documentation
+├── .claude/                     # Claude Code integration
+|   └── commands/                # ASDD Development commands
+├── CLAUDE.md                    # Claude base instructions
+└── README.md                    # Project specific overview
+```
+
 ## Available Commands
 
 Complete ASDD v1.0 command set:
 - `/phase-0-prototype` - Risk validation through proof-of-concept
-- `/level-0-vision` - Problem clarity and core purpose  
+- `/level-0-vision` - Problem clarity and core purpose
 - `/level-1-approach` - Technical approach validation
 - `/level-2-structure` - System boundaries and components
 - `/level-3-specifics` - Detailed implementation specifications
