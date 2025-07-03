@@ -32,13 +32,17 @@ A meta-template for establishing effective AI-human collaboration patterns in so
 5. Move this `README.md` to the `ASDD` directory
 6. Move `ASDD` into `docs`
 7. Copy `docs/design/OVERVIEW.md` to `README.md`
-8. Open `claude`
-9. Run `/init`
-10. You may need to run the following prompt:
+8. Make any changes to the `README.md` to center it as git project README and not just a design overview.
+9. Open `claude`
+10. Run `/init`
+11. You may need to run the following prompt:
 ```
 This is no longer a template project.
-Update CLAUDE.md to reflect the fact that this project is now an instantiation.
+The template has moved to docs/ASDD/
+The instantiation can be identifed by README.md and docs/design/
+Update CLAUDE.md to reflect this fact.
 ```
+12. Setup initial context: `/asdd-context-sync init context/project-context.yml`
 
 This will result in a structure close to this:
 
