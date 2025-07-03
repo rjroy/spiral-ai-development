@@ -31,18 +31,21 @@
 - "Which architectural patterns are most appropriate?"
 - "What are the 2-3 viable approaches to consider?"
 - "Which approach best fits the constraints from Level 0?"
+- **COLLABORATION CHECKPOINT**: Present approach options with pros/cons to user for selection input
 
 **2. Key Technology Selection**
 - Identify core technology stack components
 - Validate technology choices against constraints
 - Assess team expertise with chosen technologies
 - Consider long-term maintenance implications
+- **COLLABORATION CHECKPOINT**: Present technology choices with rationale and discuss alternatives with user
 
 **3. Integration Point Identification**
 - "What external systems must we integrate with?"
 - "What data flows between components?"
 - "Where are the highest-risk integration points?"
 - "What APIs or protocols are required?"
+- **COLLABORATION CHECKPOINT**: Present integration assumptions and confirm accuracy with user
 
 **4. Architectural Risk Assessment**
 - Performance bottlenecks and scalability concerns
@@ -76,6 +79,7 @@ mini_spike:
 - Critical integration points
 - Performance characteristics
 - Security model validation
+- **COLLABORATION CHECKPOINT**: Discuss spike scope and focus areas before implementation
 
 ### Context Manifest Updates
 
@@ -198,11 +202,15 @@ Your mission: Validate that the proposed technical approach can actually solve t
 **Process:**
 1. Analyze Level 0 context to understand constraints and requirements
 2. Define 2-3 viable technical approaches
-3. Select most appropriate approach based on team/constraints
-4. Identify key technologies and integration points
-5. Conduct mini-spike to validate approach
-6. Assess and document risks
-7. Update context manifest with decisions
+3. **APPROACH OPTIONS**: Present approaches with pros/cons and ask for user input on selection
+4. **TECHNOLOGY DISCUSSION**: Present technology choices with rationale, discuss alternatives with user
+5. **INTEGRATION VALIDATION**: Present integration assumptions and confirm accuracy with user
+6. **SPIKE PLANNING**: Discuss spike scope and focus areas before implementation
+7. Select most appropriate approach (based on user input)
+8. Identify key technologies and integration points (based on user input)
+9. Conduct mini-spike to validate approach
+10. Assess and document risks
+11. Update context manifest with decisions
 
 **Constraints:**
 - Must conduct working mini-spike (4-8 hours max)

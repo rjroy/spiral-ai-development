@@ -37,24 +37,28 @@
 - Request/response schemas with examples
 - Error codes and error handling
 - Authentication and authorization details
+- **COLLABORATION CHECKPOINT**: Present API specifications and discuss design choices with user
 
 **3. Database Design**
 - Schema design with relationships
 - Indexing strategy for performance
 - Migration and versioning approach
 - Data validation and constraints
+- **COLLABORATION CHECKPOINT**: Present data models with rationale, get user feedback
 
 **4. Business Logic Implementation**
 - Core algorithms and calculations
 - Workflow and state machine design
 - Validation rules and business constraints
 - Integration with external business rules
+- **COLLABORATION CHECKPOINT**: Present business logic specifications, confirm accuracy with user
 
 **5. Non-Functional Requirements**
 - Performance requirements per endpoint
 - Security implementation approach
 - Monitoring and logging strategy
 - Testing approach and coverage goals
+- **COLLABORATION CHECKPOINT**: Present testing/monitoring approach, discuss alternatives with user
 
 ### Component Validation Spike
 
@@ -77,6 +81,7 @@ component_spike:
 - Includes typical business logic complexity
 - Requires database integration
 - Has clear external interfaces
+- **COLLABORATION CHECKPOINT**: Discuss which component to implement for validation
 
 ### Detailed Specifications Template
 
@@ -279,12 +284,17 @@ Your mission: Create detailed, buildable specifications that enable the team to 
 **Process:**
 1. Analyze Level 2 structure to understand component requirements
 2. Design detailed API specifications for each component
-3. Define data models and business logic
-4. Specify error handling and edge cases
-5. Plan testing and operational requirements
-6. Implement one complete component as validation spike
-7. Refine specifications based on implementation learnings
-8. Update context manifest with detailed decisions
+3. **API DESIGN VALIDATION**: Present API specifications and discuss design choices with user
+4. **DATA MODEL DISCUSSION**: Present data models with rationale, get user feedback
+5. **BUSINESS LOGIC VALIDATION**: Present business logic specifications, confirm accuracy with user
+6. **OPERATIONAL REQUIREMENTS**: Present testing/monitoring approach, discuss alternatives with user
+7. **SPIKE COMPONENT SELECTION**: Discuss which component to implement for validation
+8. Define data models and business logic (based on user input)
+9. Specify error handling and edge cases (based on user input)
+10. Plan testing and operational requirements (based on user input)
+11. Implement one complete component as validation spike
+12. Refine specifications based on implementation learnings
+13. Update context manifest with detailed decisions
 
 **Constraints:**
 - Must implement one component end-to-end as validation

@@ -31,30 +31,35 @@
 - Prioritize critical path and dependencies
 - Plan integration points and testing approach
 - Establish code quality and review standards
+- **COLLABORATION CHECKPOINT**: Present implementation tasks and discuss priorities with user
 
 **2. Code Implementation**
 - Follow established coding standards and patterns
 - Implement comprehensive error handling
 - Add proper logging and monitoring
 - Write self-documenting code with clear interfaces
+- **COLLABORATION CHECKPOINT**: Present coding approaches and patterns, get user input
 
 **3. Testing Strategy**
 - Unit tests for all business logic
 - Integration tests for component interactions
 - End-to-end tests for critical user workflows
 - Performance tests for key scenarios
+- **COLLABORATION CHECKPOINT**: Present testing strategy, confirm coverage expectations with user
 
 **4. Security Implementation**
 - Input validation and sanitization
 - Authentication and authorization
 - Data protection and encryption
 - Security logging and monitoring
+- **COLLABORATION CHECKPOINT**: Present security approach, validate requirements with user
 
 **5. Operational Readiness**
 - Deployment scripts and configuration
 - Monitoring and alerting setup
 - Documentation for operations team
 - Rollback and recovery procedures
+- **COLLABORATION CHECKPOINT**: Present deployment strategy, discuss operational concerns with user
 
 ### Implementation Task Breakdown
 
@@ -283,13 +288,18 @@ Your mission: Transform Level 3 specifications into production-ready code that d
 
 **Process:**
 1. Break Level 3 specifications into implementable tasks
-2. Prioritize implementation order (critical path first)
-3. Implement components with comprehensive testing
-4. Integrate components and validate end-to-end workflows
-5. Ensure security and operational requirements are met
-6. Document deployment and maintenance procedures
-7. Validate system meets Level 0 success metrics
-8. Complete context manifest with implementation results
+2. **TASK BREAKDOWN VALIDATION**: Present implementation tasks and discuss priorities with user
+3. **IMPLEMENTATION STRATEGY**: Present coding approaches and patterns, get user input
+4. **TESTING APPROACH CONFIRMATION**: Present testing strategy, confirm coverage expectations with user
+5. **SECURITY IMPLEMENTATION**: Present security approach, validate requirements with user
+6. **DEPLOYMENT PLANNING**: Present deployment strategy, discuss operational concerns with user
+7. Prioritize implementation order (critical path first, based on user input)
+8. Implement components with comprehensive testing (based on user input)
+9. Integrate components and validate end-to-end workflows
+10. Ensure security and operational requirements are met (based on user input)
+11. Document deployment and maintenance procedures (based on user input)
+12. Validate system meets Level 0 success metrics
+13. Complete context manifest with implementation results
 
 **Constraints:**
 - Working software is the primary measure of progress

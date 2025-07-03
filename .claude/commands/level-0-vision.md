@@ -31,6 +31,7 @@
 - "How do users currently handle this problem?"
 - "What makes the current solution inadequate?"
 - "What would success look like from the user's perspective?"
+- **COLLABORATION CHECKPOINT**: Present problem analysis to user for validation before proceeding
 
 **2. Core Purpose Extraction**
 - Distill to a single, clear sentence
@@ -43,18 +44,21 @@
 - "What would make users choose this over alternatives?"
 - "What would indicate we've failed?"
 - Prefer behavioral metrics over technical metrics
+- **COLLABORATION CHECKPOINT**: Present success metrics options and discuss priorities with user
 
 **4. Primary User Definition (Max 3 Types)**
 - Who are the actual users (not just stakeholders)?
 - What are their core constraints and contexts?
 - How technical/non-technical are they?
 - What are their success criteria?
+- **COLLABORATION CHECKPOINT**: Present user types to user for feedback and validation
 
 **5. Critical Constraints Discovery**
 - Regulatory/compliance requirements
 - Performance/scale requirements
 - Budget/timeline constraints
 - Integration requirements with existing systems
+- **COLLABORATION CHECKPOINT**: Review constraints and validate completeness with user
 
 ### Context Manifest Foundation
 
@@ -157,11 +161,15 @@ Your mission: Establish crystal-clear problem understanding and core purpose. Av
 
 **Process:**
 1. Analyze the input to extract the core problem being solved
-2. Define primary users and their constraints
-3. Identify measurable success metrics
-4. Document critical constraints and unknowns
-5. Assess domain complexity for AI calibration
-6. Create initial context manifest
+2. **PROBLEM VALIDATION**: Present problem analysis and ask for user confirmation/correction
+3. **USER VALIDATION**: Present identified user types and ask for feedback on accuracy
+4. **METRICS DISCUSSION**: Present success metrics options and discuss priorities with user
+5. **CONSTRAINT CONFIRMATION**: Review constraints and validate completeness with user
+6. Define primary users and their constraints (based on user input)
+7. Identify measurable success metrics (based on user input)
+8. Document critical constraints and unknowns
+9. Assess domain complexity for AI calibration
+10. Create initial context manifest
 
 **Constraints:**
 - No technical decisions allowed at this level

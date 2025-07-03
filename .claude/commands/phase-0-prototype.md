@@ -32,6 +32,8 @@
 - "Where might performance requirements be impossible to meet?"
 
 **2. Prototype Scoping (Maximum 2 Days)**
+- **BEFORE CODING**: Present multiple technical approaches and discuss trade-offs
+- **VALIDATE ASSUMPTIONS**: Confirm user's constraints, preferences, and requirements
 - Build ONLY what's needed to validate specific risks
 - No UI polish, no error handling, no production concerns
 - Throwaway code is expected and encouraged
@@ -123,9 +125,12 @@ Your mission: Build the minimal prototype needed to validate the highest-risk te
 
 **Process:**
 1. Analyze the specification to identify the 3 highest technical risks
-2. Design a minimal prototype that tests these risks specifically
-3. Build working code that demonstrates feasibility (or reveals problems)
-4. Document validation results and provide Go/No-Go recommendation
+2. **COLLABORATION CHECKPOINT**: Present risk assessment and ask for user validation/prioritization
+3. **TECHNICAL APPROACH DISCUSSION**: For the selected risk, present 2-3 different approaches with pros/cons
+4. **IMPLEMENTATION PLANNING**: Discuss specific technical decisions and get user input on constraints
+5. Design a minimal prototype that tests these risks specifically
+6. Build working code that demonstrates feasibility (or reveals problems)
+7. Document validation results and provide Go/No-Go recommendation
 
 **Constraints:**
 - Maximum 2 days of development time
