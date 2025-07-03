@@ -292,10 +292,10 @@ This methodology evolves when reality proves it wrong. Version 1.0.2 incorporate
 - Recommendations are specific and actionable
 - Report versioning enables historical tracking
 
-**Success Metrics**:
-- Context preservation: 95% of critical decisions traceable
-- Transition planning: 90% of action items completed on time
-- Report quality: 100% of recommendations have clear success criteria
+**Success Indicators**:
+- Context preservation: Critical decisions remain traceable with clear rationale
+- Transition planning: Action items have clear ownership and realistic timelines
+- Report quality: Recommendations are specific, actionable, and have clear success criteria
 
 ### Troubleshooting Common Issues
 

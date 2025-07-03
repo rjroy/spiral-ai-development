@@ -115,9 +115,9 @@ Context management and workflow support:
 - **Comprehensive Reporting**: Executive and technical reports with artifact discovery
 
 ### **Quality Assurance Built-In**
-- **Validation Criteria**: 95% of critical decisions traceable, 90% of action items completed on time
+- **Validation Criteria**: Critical decisions remain traceable with clear rationale, action items have clear ownership and realistic timelines
 - **Conflict Resolution**: Systematic approaches for handling conflicting requirements or constraints
-- **Success Metrics**: Clear indicators for each phase and utility command
+- **Success Indicators**: Clear qualitative measures for each phase and utility command
 - **Troubleshooting Guide**: Common issues and resolution strategies
 
 ## What Makes This Different
