@@ -250,7 +250,11 @@ Iterative collaboration with AI to break large specs into implementable tasks th
 
 #### Phase 4: Component Review
 
+<<<<<<< HEAD
 **Input**: Detailed Component Designs, Architecture Designs
+=======
+**Input**: Detailed Component Designs, Architecture Designs
+>>>>>>> efca71e (Initial details after some review with AI, before Claude Code.)
 **Output**: Issue Designs
 
 **Failure Mode**: Issues don't map to realistic implementation units **Response**: Feasibility check—can a single developer implement this in 1-2 days?
