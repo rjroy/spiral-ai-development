@@ -36,7 +36,7 @@ A meta-template for establishing effective AI-human collaboration patterns in so
 9. you may need to run the following prompt:
 ```
 This is no longer a template project.
-update CLAUDE.md to reflect the fact that this project is now an instantiation.
+Update CLAUDE.md to reflect the fact that this project is now an instantiation.
 ```
 
 This will result in a structure close to this:
@@ -58,7 +58,7 @@ repo-name/
 
 ## Available Commands
 
-Complete ASDD v1.0 command set:
+Complete ASDD v1.0.2 command set:
 - `/phase-0-prototype` - Risk validation through proof-of-concept
 - `/level-0-vision` - Problem clarity and core purpose
 - `/level-1-approach` - Technical approach validation
@@ -68,6 +68,6 @@ Complete ASDD v1.0 command set:
 
 ## What Makes This Different
 
-This template has been pressure-tested against systematic failure analysis and incorporates real-world learnings from project breakdowns. Version 1.0 addresses timeline pressure, context degradation, domain complexity mismatches, and collaboration boundary drift - the common failure modes that break clean development processes.
+This template has been pressure-tested against systematic failure analysis and incorporates real-world learnings from project breakdowns. Version 1.0.2 addresses timeline pressure, context degradation, domain complexity mismatches, and collaboration boundary drift - the common failure modes that break clean development processes.
 
 **Philosophy**: Trust through verification, not verification through trust. This template provides the structure for AI-human collaboration that bends under pressure rather than breaking.

@@ -37,18 +37,21 @@
 - Each component should have single, clear responsibility
 - Components should have minimal knowledge of each other's internals
 - Consider team ownership boundaries
+- **COLLABORATION CHECKPOINT**: Present component boundaries and responsibilities, get user feedback
 
 **3. Interface Design**
 - Define how components communicate
 - Specify data contracts between components
 - Design for bounded replaceability (realistic assessment)
 - Plan for component evolution over time
+- **COLLABORATION CHECKPOINT**: Present interface design options with trade-offs, discuss with user
 
 **4. Integration Pattern Selection**
 - Synchronous vs. asynchronous communication
 - Data consistency requirements
 - Error handling and retry patterns
 - Monitoring and observability hooks
+- **COLLABORATION CHECKPOINT**: Present integration patterns and discuss alternatives with user
 
 **5. Data Flow Architecture**
 - Where does data originate and how does it flow?
@@ -76,6 +79,7 @@ integration_spike:
 - Interface contract validation
 - Error propagation and handling
 - Performance of integration points
+- **COLLABORATION CHECKPOINT**: Discuss integration spike scope and focus areas before implementation
 
 ### Bounded Replaceability Assessment
 
@@ -223,12 +227,16 @@ Your mission: Define clear system boundaries and component interfaces that suppo
 **Process:**
 1. Analyze Level 1 approach to understand architectural constraints
 2. Identify major functional components (3-7 components)
-3. Define component responsibilities and boundaries
-4. Design interfaces and integration patterns
-5. Conduct integration spike to validate structure
-6. Assess realistic replaceability for each component
-7. Document data flows and architectural constraints
-8. Update context manifest with structural decisions
+3. **COMPONENT VALIDATION**: Present component boundaries and responsibilities, get user feedback
+4. **INTERFACE DISCUSSION**: Present interface design options with trade-offs, discuss with user
+5. **INTEGRATION PATTERNS**: Present integration patterns and discuss alternatives with user
+6. **SPIKE PLANNING**: Discuss integration spike scope and focus areas before implementation
+7. Define component responsibilities and boundaries (based on user input)
+8. Design interfaces and integration patterns (based on user input)
+9. Conduct integration spike to validate structure
+10. Assess realistic replaceability for each component
+11. Document data flows and architectural constraints
+12. Update context manifest with structural decisions
 
 **Constraints:**
 - Must conduct integration spike to validate boundaries

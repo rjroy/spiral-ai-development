@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a **meta-template repository** for establishing AI-human collaboration patterns in software development. It contains no implementation code but provides philosophical and procedural frameworks for future projects that have been pressure-tested against systematic failure analysis.
 
-## Core Philosophy v1.0
+## Core Philosophy v1.0.2
 
 The development philosophy is documented in [ASDD/Philosophy.md](ASDD/Philosophy.md). Key principles include:
 
@@ -30,7 +30,7 @@ Design components with stable interfaces and documented behavioral contracts tha
 - **Complex Domains**: AI assists implementation, human leads architecture
 - **Extreme Domains**: AI provides boilerplate only, human owns all decisions
 
-## AI Spec-Driven Development (ASDD) v1.0 - Spiral Model
+## AI Spec-Driven Development (ASDD) v1.0.2 - Spiral Model
 
 This template establishes a spiral development approach with progressive detail levels:
 
@@ -76,7 +76,7 @@ When starting a new project with this template:
 
 ### Available Commands
 
-The template includes complete ASDD v1.0 commands:
+The template includes complete ASDD v1.0.2 commands:
 
 ```
 /phase-0-prototype   - Risk validation through proof-of-concept
@@ -89,7 +89,7 @@ The template includes complete ASDD v1.0 commands:
 
 Each command includes domain calibration, context preservation, and pressure adaptation.
 
-## Collaboration Patterns v1.0
+## Collaboration Patterns v1.0.2
 
 ### Context Preservation Requirements
 
@@ -129,9 +129,9 @@ For each level, apply enhanced validation:
 - High Pressure: Skip to Level 3 with templates, plan cleanup
 - Extreme Pressure: Emergency mode with damage control
 
-## Key Files v1.0
+## Key Files v1.0.2
 
-- `ASDD/Philosophy.md` - Complete v1.0 development philosophy with integrated patches
+- `ASDD/Philosophy.md` - Complete v1.0.2 development philosophy with integrated patches
 - `ASDD/claude-command-template/phase-template.md` - Comprehensive template for creating ASDD commands
 - `ASDD/revision-rationale/v0-failure.md` - Systematic failure analysis that drove v0.1 improvements
 - `.claude/commands/phase-0-prototype.md` - Prototype validation command
@@ -142,17 +142,17 @@ For each level, apply enhanced validation:
 - `.claude/commands/level-4-implementation.md` - Working implementation command
 - `.claude/settings.local.json` - Claude Code permissions configuration (not shared)
 
-## Important Notes v1.0
+## Important Notes v1.0.2
 
 - This template contains no implementation code but provides pressure-tested methodology
-- **Version 1.0** addresses systematic failure modes through integrated patches
+- **Version 1.0.2** addresses systematic failure modes through integrated patches
 - All principles designed to bend under pressure rather than break
 - Methodology includes explicit escape valves and recovery mechanisms
 - Focus on reality-tested collaboration patterns that work under constraints
 
 ### Philosophy Evolution
 
-This methodology evolves when reality proves it wrong. Version 1.0 incorporates:
+This methodology evolves when reality proves it wrong. Version 1.0.2 incorporates:
 - Systematic failure analysis and pressure-testing results
 - Integration testing across all patches
 - Real-world constraint handling
