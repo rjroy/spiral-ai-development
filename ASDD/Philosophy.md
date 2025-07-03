@@ -259,7 +259,7 @@ context_manifest:
 ### Philosophy Evolution
 
 This document must change when reality proves it wrong.
-**Version 2.0 incorporates systematic failure analysis and pressure-testing results.**
+Version 1.0 incorporates systematic failure analysis and pressure-testing results.
 
 Changes require:
 1. Documentation of what broke and why
@@ -300,17 +300,18 @@ This philosophy provides:
 
 ## 🔥 Philosophy Under Fire
 
-**When everything breaks:** Revert to core principles—safety, clarity, ownership boundaries, context preservation
-**When timelines collapse:** Activate pressure protocols—maintain non-negotiable gates, plan recovery
-**When AI fails:** Domain calibration provides fallback boundaries and human expertise requirements
-**When context degrades:** Preservation checkpoints enable rapid restoration
-**When decisions fail:** Accountability matrix ensures learning without blame
+- **When everything breaks:** Revert to core principles—safety, clarity, ownership boundaries, context preservation
+- **When timelines collapse:** Activate pressure protocols—maintain non-negotiable gates, plan recovery
+- **When AI fails:** Domain calibration provides fallback boundaries and human expertise requirements
+- **When context degrades:** Preservation checkpoints enable rapid restoration
+- **When decisions fail:** Accountability matrix ensures learning without blame
 
-This philosophy exists for the moments when clean process hits messy reality. **Version 2.0 has been designed to bend without breaking, adapting to pressure while preserving essential benefits.**
+This philosophy exists for the moments when clean process hits messy reality.
+Version 1.0 has been designed to bend without breaking, adapting to pressure while preserving essential benefits.
 
 ---
 
-_Philosophy version: 2.0_
+_Philosophy version: 1.0_
 _Last pressure-tested: 2025-07-03_
 _Failure analysis integrated: ASDD-failure.md_
-_Next philosophical review: After 10 projects using v2.0 methodology_
+_Next philosophical review: After 10 projects using v1.0 methodology_
