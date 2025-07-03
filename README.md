@@ -4,7 +4,7 @@ A meta-template for establishing effective AI-human collaboration patterns in so
 
 ## Core Framework
 
-**AI Spec-Driven Development (ASDD) v1.0.2** - Spiral development approach with progressive detail levels (Vision → Approach → Structure → Specifics → Implementation) that handles changing requirements, timeline pressure, and context preservation.
+**AI Spec-Driven Development (ASDD) v1.0.3** - Spiral development approach with progressive detail levels (Vision → Approach → Structure → Specifics → Implementation) that handles changing requirements, timeline pressure, and context preservation, now with integrated git workflow support.
 
 **Philosophy** - A comprehensive collaboration framework that has been forged through pressure and refined by reality. This philosophy addresses the collaboration paradox where AI can offer answers that look complete but may miss critical domain complexities. It establishes clear ownership boundaries: human judgment handles strategy and architecture, AI handles implementation and pattern recognition, with explicit accountability for every significant choice. The framework includes domain-aware collaboration patterns that scale AI involvement inversely with domain complexity, pressure-adaptive protocols that maintain quality under stress, and bounded replaceability principles that design components with stable interfaces enabling informed replacement decisions.
 
@@ -43,6 +43,13 @@ The instantiation can be identifed by README.md and docs/design/
 Update CLAUDE.md to reflect this fact.
 ```
 12. Setup initial context: `/asdd-context-sync init context/project-context.yml`
+13. Configure git workflow: `/asdd-git-setup`
+14. Setup branch protection (requires GitHub CLI):
+```bash
+gh api repos/:owner/:repo/branches/main/protection \
+  --method PUT \
+  --field required_pull_request_reviews='{"required_approving_reviews":1,"dismiss_stale_reviews":true}'
+```
 
 This will result in a structure close to this:
 
@@ -55,12 +62,16 @@ repo-name/
 │   ├── reports/                 # Phase reports and analysis
 │   └── ASDD/                    # ASDD philosophy documentation
 │       ├── README.md            # This document
+│       ├── git-workflow-integration.md # Git workflow guidance
 │       └── ...                  # Remaining ASDD documentation
 ├── context/                     # Context preservation
 │   ├── project-context.yml      # Main context manifest
 │   └── archive/                 # Historical context versions
 ├── .claude/                     # Claude Code integration
 |   └── commands/                # ASDD Development commands
+├── .github/                     # GitHub integration
+│   ├── PULL_REQUEST_TEMPLATE.md # ASDD-aligned PR template
+│   └── workflows/               # Automated validation
 ├── CLAUDE.md                    # Claude base instructions
 └── README.md                    # Project specific overview
 ```
@@ -68,7 +79,7 @@ repo-name/
 ## Available Commands
 
 ### Core Phase Commands
-Complete ASDD v1.0.2 command set:
+Complete ASDD v1.0.3 command set:
 - `/phase-0-prototype` - Risk validation through proof-of-concept
 - `/level-0-vision` - Problem clarity and core purpose
 - `/level-1-approach` - Technical approach validation
@@ -82,6 +93,12 @@ Context management and workflow support:
 - `/generate-next-steps` - Create detailed transition plans with resource estimates
 - `/generate-phase-report` - Generate comprehensive reports from phase artifacts
 
+### Git Workflow Commands
+Branch management and collaboration support:
+- `/asdd-git-setup` - Configure repository with ASDD-aligned git workflows
+- `/asdd-branch-transition` - Manage branch creation/merging for phase transitions
+- `/asdd-pr-template` - Generate PR templates aligned with ASDD validation
+
 ### Common Workflow Patterns
 
 **Phase Completion Workflow**:
@@ -89,13 +106,6 @@ Context management and workflow support:
 /asdd-context-sync level-0-vision
 /generate-next-steps level-0-vision
 /generate-phase-report level-0-vision
-```
-
-**Phase Transition Workflow**:
-```bash
-/generate-phase-report phase-0-prototype
-/generate-next-steps phase-0-prototype
-/asdd-context-sync level-1-approach
 ```
 
 **Context Recovery** (when context is lost):
@@ -126,7 +136,9 @@ Context management and workflow support:
 
 ## What Makes This Different
 
-This template has been pressure-tested against systematic failure analysis and incorporates real-world learnings from project breakdowns. Version 1.0.2 addresses timeline pressure, context degradation, domain complexity mismatches, and collaboration boundary drift - the common failure modes that break clean development processes.
+This template has been pressure-tested against systematic failure analysis and incorporates real-world learnings from project breakdowns. Version 1.0.3 addresses timeline pressure, context degradation, domain complexity mismatches, and collaboration boundary drift - the common failure modes that break clean development processes.
+
+**New in v1.0.3**: Integrated git workflow support with branch protection and phase-aligned branching that reinforces collaboration boundaries and validation gates. See [Git Workflow Integration](docs/ASDD/git-workflow-integration.md) for detailed guidance.
 
 **Philosophy**: Trust through verification, not verification through trust. This template provides the structure for AI-human collaboration that bends under pressure rather than breaking.
 

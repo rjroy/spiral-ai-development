@@ -102,6 +102,104 @@ AI can offer answers that look complete. **That's the structural trap.** This ph
 
 ---
 
+## 🔄 Version Control Collaboration
+
+### Git Workflow Integration with ASDD
+
+**Core Principle**: Version control workflows should reinforce collaboration boundaries and validation gates, not bypass them.
+
+**Branch Protection as Validation Enforcement**:
+- Protected main branch prevents unvalidated code integration
+- Pull requests serve as collaboration checkpoints
+- Code review enforces domain-calibrated expertise requirements
+- Automated checks validate technical standards before human review
+
+### Branch-Per-Phase Strategy
+
+**Phase-Aligned Branching**:
+- Each ASDD level gets its own feature branch
+- Branch naming: `level-{n}-{phase-name}` (e.g., `level-1-approach-validation`)
+- Prototype branches: `prototype-{risk-name}` for Phase 0 validation
+- Context branches: `context-sync-{phase}` for major context updates
+
+**Branch Lifecycle**:
+```
+main (protected)
+├── level-0-vision
+├── level-1-approach (from level-0-vision)
+├── level-2-structure (from level-1-approach)
+├── level-3-specifics (from level-2-structure)
+└── level-4-implementation (from level-3-specifics)
+```
+
+**Spiral Navigation Support**:
+- Backward navigation: Create new branch from earlier level
+- Forward progression: Merge through pull requests with validation
+- Context preservation: Git history maintains decision audit trail
+
+### Domain-Calibrated Code Review
+
+**Simple Domains**:
+- AI-generated code can be merged with basic review
+- Focus on integration and style consistency
+- Automated testing provides primary validation
+
+**Complex Domains**:
+- Require human architectural review before merge
+- AI changes limited to implementation details
+- Domain expert approval required for design decisions
+
+**Extreme Domains**:
+- All AI-generated code requires expert review
+- Human must approve every significant change
+- Pair programming/review for critical components
+
+### Integration with Bounded Replaceability
+
+**Branch Design Principles**:
+- Each branch should contain one replaceable component
+- Clear interfaces defined before implementation begins
+- Dependencies documented in branch description
+- Replacement cost assessed in pull request template
+
+**Merge Strategies**:
+- Squash merge for clean history on bounded components
+- Merge commit for cross-component integration
+- Rebase for maintaining linear history within components
+
+### Collaboration Workflow Enforcement
+
+**Pull Request Templates**:
+- ASDD level validation checklist
+- Domain complexity assessment
+- Bounded replaceability confirmation
+- Context preservation verification
+
+**Review Assignment**:
+- Auto-assign based on domain complexity
+- Require domain expert approval for complex/extreme domains
+- AI-readable PR descriptions for automated analysis
+
+**Merge Gates**:
+- All tests pass
+- Context integrity validated
+- Domain-appropriate review completed
+- Documentation updated for interface changes
+
+### Pressure-Adaptive Git Workflows
+
+**Timeline Pressure Response**:
+- Moderate: Allow hotfix branches with post-merge cleanup
+- High: Emergency merge with required cleanup tracking
+- Extreme: Direct commits with immediate review requirement
+
+**Quality Maintenance Under Pressure**:
+- Never bypass: Security reviews, integration tests
+- Defer if needed: Documentation updates, comprehensive testing
+- Fast-track: Use proven patterns, implement cleanup tracking
+
+---
+
 ## 💻 Code Philosophy
 
 ### Technical Principles
@@ -311,7 +409,8 @@ Version 1.0 has been designed to bend without breaking, adapting to pressure whi
 
 ---
 
-_Philosophy version: 1.0_
+_Philosophy version: 1.0.3_
 _Last pressure-tested: 2025-07-03_
 _Failure analysis integrated: ASDD/revision-rationale/v0.1-analysis.md_
-_Next philosophical review: After 10 projects using v1.0 methodology_
+_Git workflow integration: v1.0.3 (branch protection + phase-aligned branching)_
+_Next philosophical review: After 10 projects using v1.0.3 methodology_

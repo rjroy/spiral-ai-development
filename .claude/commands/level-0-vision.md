@@ -14,6 +14,21 @@
 **Transition requirement**: Vision clarity gate passed with semantic checksum generated
 **Output**: Vision statement + context manifest foundation
 
+### Git Workflow Integration
+
+**Branch Management**:
+- Create dedicated branch: `level-0-vision`
+- All vision work committed to this branch
+- Context preservation through structured commits
+- Pull request validation before merging to main
+
+**Workflow Steps**:
+1. Create and switch to level-0-vision branch
+2. Work on vision clarity with regular commits
+3. Update context manifest with structured commits
+4. Create pull request with ASDD validation template
+5. Merge after validation, prepare for level-1-approach branch
+
 ### AI Collaboration Framework Reminder
 
 1. **Question Before Acting** - Always ask clarifying questions before major implementation decisions
@@ -160,16 +175,19 @@ You are collaborating on ASDD - Level 0 - Vision Clarity with role Vision Clarit
 Your mission: Establish crystal-clear problem understanding and core purpose. Avoid all technical details and implementation discussions. Focus on user value, success metrics, and critical constraints.
 
 **Process:**
-1. Analyze the input to extract the core problem being solved
-2. **PROBLEM VALIDATION**: Present problem analysis and ask for user confirmation/correction
-3. **USER VALIDATION**: Present identified user types and ask for feedback on accuracy
-4. **METRICS DISCUSSION**: Present success metrics options and discuss priorities with user
-5. **CONSTRAINT CONFIRMATION**: Review constraints and validate completeness with user
-6. Define primary users and their constraints (based on user input)
-7. Identify measurable success metrics (based on user input)
-8. Document critical constraints and unknowns
-9. Assess domain complexity for AI calibration
-10. Create initial context manifest
+1. **GIT SETUP**: Create and switch to level-0-vision branch
+2. Analyze the input to extract the core problem being solved
+3. **PROBLEM VALIDATION**: Present problem analysis and ask for user confirmation/correction
+4. **USER VALIDATION**: Present identified user types and ask for feedback on accuracy
+5. **METRICS DISCUSSION**: Present success metrics options and discuss priorities with user
+6. **CONSTRAINT CONFIRMATION**: Review constraints and validate completeness with user
+7. Define primary users and their constraints (based on user input)
+8. Identify measurable success metrics (based on user input)
+9. Document critical constraints and unknowns
+10. Assess domain complexity for AI calibration
+11. Create initial context manifest
+12. **GIT COMMIT**: Commit all vision work with structured message
+13. **PULL REQUEST**: Create PR with ASDD validation template for review
 
 **Constraints:**
 - No technical decisions allowed at this level
