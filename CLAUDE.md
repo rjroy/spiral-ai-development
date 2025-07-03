@@ -153,12 +153,12 @@ context_manifest:
     primary_users: "Primary user groups"
     success_metrics: "How success is measured"
     fundamental_constraints: "Non-negotiable limitations"
-    
+
   phase_progression:
     current_phase: "phase-0-prototype"
     completed_phases: ["level-0-vision"]
     next_phase: "level-1-approach"
-    
+
   key_decisions:
     - decision_id: "D001"
       decision: "What was decided"
@@ -167,14 +167,14 @@ context_manifest:
       phase_decided: "level-0-vision"
       impact_scope: "What this affects"
       confidence_level: 0.8
-      
+
   technical_constraints:
     - constraint_id: "C001"
       constraint: "Technical limitation"
       source: "Where this originated"
       impact: "How this affects design"
       mitigation_strategy: "How to handle this"
-      
+
   validation_results:
     - validation_id: "V001"
       validation_target: "What was tested"
@@ -182,7 +182,7 @@ context_manifest:
       result: "VALIDATED | INVALIDATED | PARTIAL"
       evidence: "Supporting data/artifacts"
       confidence: 0.9
-      
+
   risk_assessments:
     - risk_id: "R001"
       risk_description: "What could go wrong"
@@ -313,5 +313,7 @@ This methodology evolves when reality proves it wrong. Version 1.0.2 incorporate
 - **Missing Artifacts**: Use artifact discovery methodology
 - **Inconsistent Quality**: Apply quality assurance checklist
 - **Version Control**: Follow report versioning strategy
+
+---
 
 When using this template for a new project, replace this generic CLAUDE.md with project-specific guidance including actual build commands, testing strategies, and architectural patterns once they're established.

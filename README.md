@@ -37,7 +37,9 @@ A meta-template for establishing effective AI-human collaboration patterns in so
 10. You may need to run the following prompt:
 ```
 This is no longer a template project.
-Update CLAUDE.md to reflect the fact that this project is now an instantiation.
+The template has moved to docs/ASDD/
+The instantiation can be identifed by README.md and docs/design/
+Update CLAUDE.md to reflect this fact.
 ```
 
 This will result in a structure close to this:
