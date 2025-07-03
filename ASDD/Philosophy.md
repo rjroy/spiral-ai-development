@@ -313,5 +313,5 @@ Version 1.0 has been designed to bend without breaking, adapting to pressure whi
 
 _Philosophy version: 1.0_
 _Last pressure-tested: 2025-07-03_
-_Failure analysis integrated: ASDD-failure.md_
+_Failure analysis integrated: ASDD/revision-rationale/v0.1-analysis.md_
 _Next philosophical review: After 10 projects using v1.0 methodology_
