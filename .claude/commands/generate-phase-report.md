@@ -40,6 +40,7 @@
 - Structure technical details by domain/component
 - Include actionable recommendations and next steps
 - Add cross-references to relevant artifacts
+- Apply versioning and archiving strategy
 
 ### Report Structure Templates
 
@@ -66,6 +67,45 @@ risk_validation:
     result: "VALIDATED" | "INVALIDATED" | "PARTIALLY_VALIDATED"
     evidence: "Supporting data or code"
     impact: "Effect on project direction"
+```
+
+### Report Versioning and Archiving
+
+**Report File Structure**:
+```
+docs/reports/
+├── current/
+│   ├── phase-0-prototype-report.md
+│   ├── level-0-vision-report.md
+│   └── executive-summary.md
+├── archive/
+│   ├── v1.0/
+│   │   ├── phase-0-prototype-report-v1.0.md
+│   │   └── level-0-vision-report-v1.0.md
+│   └── v1.1/
+└── templates/
+    ├── phase-report-template.md
+    └── executive-summary-template.md
+```
+
+**Version Control Strategy**:
+```yaml
+report_versioning:
+  version_format: "v{major}.{minor}"
+  major_increment: "Phase completion or major findings change"
+  minor_increment: "Updates to existing findings or format improvements"
+  
+  archive_triggers:
+    - major_milestone_completion
+    - significant_findings_change
+    - stakeholder_review_cycles
+    
+  report_metadata:
+    version: "v1.0"
+    generated_date: "2024-01-15"
+    phase_completed: "phase-0-prototype"
+    stakeholder_review: "pending"
+    approval_status: "draft | reviewed | approved"
 ```
 
 ### Quality Assurance

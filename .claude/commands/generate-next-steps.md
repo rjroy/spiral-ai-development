@@ -51,12 +51,48 @@ immediate_actions:
     owner: "Responsible person/role"
     timeline: "When this should be done"
     prerequisites: ["What must be done first"]
+    resource_estimate:
+      effort_hours: "Estimated time investment"
+      skill_level: "JUNIOR" | "INTERMEDIATE" | "SENIOR" | "EXPERT"
+      required_skills: ["List of required competencies"]
+      tools_needed: ["Required tools/infrastructure"]
     
 transition_assessment:
   current_phase: "Phase name"
   completion_status: "COMPLETE" | "PARTIALLY_COMPLETE" | "BLOCKED"
   recommended_next_phase: "Next phase/level"
   confidence_level: 0.1 to 1.0
+  readiness_score: 0.1 to 1.0
+```
+
+**Resource Estimation Templates**:
+```yaml
+resource_planning:
+  team_capacity:
+    available_hours_per_week: 40
+    skill_distribution:
+      junior: 2
+      intermediate: 3
+      senior: 1
+      expert: 0
+  
+  effort_estimates:
+    - task_category: "Research and analysis"
+      base_hours: 8
+      complexity_multiplier: 1.5
+      skill_requirement: "INTERMEDIATE"
+    - task_category: "Implementation"
+      base_hours: 16
+      complexity_multiplier: 2.0
+      skill_requirement: "SENIOR"
+      
+  resource_constraints:
+    - constraint: "Limited senior developer time"
+      impact: "HIGH"
+      mitigation: "Pair junior with senior for complex tasks"
+    - constraint: "Tool licensing costs"
+      impact: "MEDIUM"
+      mitigation: "Evaluate open-source alternatives"
 ```
 
 **Risk Considerations**:

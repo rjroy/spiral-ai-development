@@ -37,9 +37,38 @@
 
 **3. Context Integration**
 - Merge new context with existing manifest
-- Resolve conflicts and inconsistencies
+- Resolve conflicts and inconsistencies using resolution strategies
 - Organize for accessibility and searchability
 - Update semantic checksums for validation
+
+### Conflict Resolution Guidelines
+
+**Decision Conflicts**:
+- **Newer Decision Wins**: Recent decisions override older ones with rationale
+- **Scope-Based**: Domain-specific decisions take precedence in their area
+- **Confidence-Based**: Higher confidence decisions override lower confidence ones
+- **Evidence-Based**: Decisions with stronger validation evidence preferred
+
+**Constraint Conflicts**:
+- **Most Restrictive**: When constraints conflict, use the most restrictive
+- **Source Authority**: Regulatory/compliance constraints override business preferences
+- **Impact Priority**: Constraints affecting critical path take precedence
+- **Explicit Override**: Document when less restrictive constraint is chosen
+
+**Context Merge Strategy**:
+```yaml
+merge_strategy:
+  decisions:
+    - rule: "newer_wins"
+      condition: "same_decision_scope"
+    - rule: "confidence_based"
+      condition: "conflicting_approaches"
+  constraints:
+    - rule: "most_restrictive"
+      condition: "overlapping_scope"
+    - rule: "source_authority"
+      condition: "regulatory_vs_business"
+```
 
 ### Context Structure Templates
 
