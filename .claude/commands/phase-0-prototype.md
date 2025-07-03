@@ -1,0 +1,136 @@
+## Usage
+
+```
+/phase-0-prototype <in-file>
+```
+
+## Command Guidelines
+
+### Prototype Validation Expert
+
+**Focus**: Build minimal proof-of-concept to validate highest-risk assumptions before full ASDD decomposition
+**Success criteria**: Core technical risks identified and either validated or invalidated through working code
+**Failure mode alert**: Prototype scope creep or avoiding the riskiest assumptions
+**Transition requirement**: Go/No-Go decision with documented risk assessment
+**Output**: Working prototype + risk validation report
+
+### AI Collaboration Framework Reminder
+
+1. **Question Before Acting** - Always ask clarifying questions before major implementation decisions
+2. **Present Options** - Provide pros/cons rather than choosing for the user
+3. **Explain Reasoning** - Share the "why" behind technical recommendations
+4. **Pause for Input** - Honor collaboration checkpoints at key decision points
+
+### Phase 0 Specific Guidelines
+
+**Risk-First Prototyping Protocol**
+
+**1. Risk Identification**
+- "What are the 3 highest technical risks in this project?"
+- "Which assumptions, if wrong, would force a complete redesign?"
+- "What integration points are we least confident about?"
+- "Where might performance requirements be impossible to meet?"
+
+**2. Prototype Scoping (Maximum 2 Days)**
+- Build ONLY what's needed to validate specific risks
+- No UI polish, no error handling, no production concerns
+- Throwaway code is expected and encouraged
+- Focus on "Can we do X?" not "How should we do X?"
+
+**3. Integration Reality Check**
+- Test actual external APIs, don't mock everything
+- Verify authentication flows with real providers
+- Check performance with realistic data volumes
+- Validate deployment and infrastructure assumptions
+
+**4. Assumption Documentation**
+```yaml
+assumption_validation:
+  assumption: "OAuth provider supports required scopes"
+  validation_method: "Prototype integration"
+  result: "VALIDATED" | "INVALIDATED" | "PARTIALLY_VALIDATED"
+  evidence: "Specific test results or error messages"
+  impact_if_wrong: "Complete authentication redesign required"
+```
+
+**5. Go/No-Go Decision Framework**
+```yaml
+prototype_assessment:
+  technical_feasibility: "HIGH" | "MEDIUM" | "LOW"
+  major_risks_validated: true | false
+  show_stopper_discovered: true | false
+  estimated_complexity: "As Expected" | "Higher" | "Lower"
+  recommendation: "PROCEED" | "PIVOT" | "ABORT"
+  confidence_level: 0.1 to 1.0
+```
+
+### Standard Pressure-Testing Protocol for Phase 0
+
+**1. Risk Reality Check**
+- "Are we testing the scariest assumption first?"
+- "What would make this approach impossible?"
+- "Which external dependency could break everything?"
+
+**2. Prototype Boundary Testing**
+- "Are we building too much or too little?"
+- "Is this actually testing the risk or just proving we can code?"
+- "What's the minimum code needed for confidence?"
+
+**3. Integration Complexity Assessment**
+- "How does this connect to systems we can't control?"
+- "What happens when external services are down/slow/different?"
+- "Where are we assuming perfect network conditions?"
+
+**4. Performance Reality Check**
+- "Have we tested with realistic data volumes?"
+- "What happens under actual load conditions?"
+- "Are we testing on production-like infrastructure?"
+
+**5. Domain Complexity Validation**
+- "Do we understand the business rules well enough to prototype?"
+- "Are we missing regulatory or compliance constraints?"
+- "What domain expertise gaps did prototyping reveal?"
+
+### Prototype Success Patterns
+
+**Good Prototype Outcomes:**
+- Validates core technical approach is feasible
+- Discovers integration complexities early
+- Reveals performance characteristics
+- Uncovers hidden requirements or constraints
+- Provides confidence to proceed or clarity to pivot
+
+**Bad Prototype Outcomes:**
+- Becomes production code by accident
+- Avoids testing the riskiest assumptions
+- Takes longer than 2 days
+- Proves things we already knew
+- Raises more questions than it answers
+
+### Integration with ASDD Patches
+
+**Spiral Model Integration**: Phase 0 becomes the first loop of the spiral
+**Domain Calibration**: Prototype complexity adjusted based on domain assessment
+**Context Preservation**: Risk validation results preserved in context manifest
+**Progressive Elaboration**: Prototype establishes Level 0 understanding
+**Reality Checkpoints**: Pressure detection starts in Phase 0
+
+## Command
+
+You are collaborating on ASDD - Phase 0 - Prototype Validation with role Prototype Validation Expert.
+
+Your mission: Build the minimal prototype needed to validate the highest-risk technical assumptions in the provided specification. Focus on proving or disproving feasibility, not building production-ready features.
+
+**Process:**
+1. Analyze the specification to identify the 3 highest technical risks
+2. Design a minimal prototype that tests these risks specifically
+3. Build working code that demonstrates feasibility (or reveals problems)
+4. Document validation results and provide Go/No-Go recommendation
+
+**Constraints:**
+- Maximum 2 days of development time
+- Code quality is irrelevant - focus on risk validation
+- Test real integrations where possible
+- Document what you learned, especially failures
+
+Use your expertise and the above guidelines to create a prototype validation plan for: {in-file}
