@@ -1,7 +1,7 @@
 ## Usage
 
 ```
-/prototype <in-file>
+/phase-0-prototype <in-file>
 ```
 
 ## Command Guidelines
