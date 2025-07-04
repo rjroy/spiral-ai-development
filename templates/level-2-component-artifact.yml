@@ -1,0 +1,183 @@
+# Level 2 Component Artifact Template
+# This template structures component specifications from Level 2 Structure Definition
+# External artifacts (APIs, data models, interfaces) are referenced, not embedded
+
+artifact_metadata:
+  artifact_type: "level-2-component"
+  component_name: "ComponentName"
+  created_date: "YYYY-MM-DD"
+  asdd_level: 2
+  source_phase: "level-2-structure"
+  version: "1.0"
+
+component_definition:
+  # Core component identity
+  name: "ComponentName"
+  purpose: "Single sentence describing what this component does"
+  responsibility: "Primary responsibility of this component"
+  boundaries: "What this component does NOT do"
+  
+  # Component scope and context
+  business_domain: "Business area this component serves"
+  team_ownership: "Which team owns this component"
+  replaceability_assessment: "LOW/MEDIUM/HIGH - realistic assessment of replacement difficulty"
+
+# Component interfaces and contracts
+interfaces:
+  # Public interfaces this component exposes
+  exposed_interfaces:
+    - interface_name: "InterfaceName"
+      interface_type: "REST_API/GRAPHQL/MESSAGE_QUEUE/DATABASE/FILE_SYSTEM"
+      specification_file: "path/to/api-spec.yml"  # External reference
+      description: "What this interface provides"
+      consumers: ["List of components that use this interface"]
+      
+  # External interfaces this component depends on
+  consumed_interfaces:
+    - interface_name: "ExternalInterfaceName"
+      provider_component: "ComponentThatProvidesThis"
+      interface_type: "REST_API/GRAPHQL/MESSAGE_QUEUE/DATABASE/FILE_SYSTEM"
+      specification_file: "path/to/external-api-spec.yml"  # External reference
+      description: "What this component needs from external interface"
+      critical_dependency: true  # true if component cannot function without this
+
+# Data management
+data_management:
+  # Data this component owns/manages
+  owned_data:
+    - data_entity: "EntityName"
+      data_model_file: "path/to/data-model.yml"  # External reference
+      description: "What this data represents"
+      persistence_type: "DATABASE/FILE/CACHE/MEMORY"
+      access_patterns: ["READ_HEAVY/WRITE_HEAVY/MIXED"]
+      
+  # Data this component accesses but doesn't own
+  accessed_data:
+    - data_entity: "ExternalEntityName"
+      owner_component: "ComponentThatOwnsThis"
+      access_type: "READ_ONLY/READ_WRITE"
+      description: "How this component uses external data"
+
+# Component boundaries and integration
+integration_patterns:
+  # How this component communicates with others
+  communication_patterns:
+    - pattern_type: "SYNCHRONOUS/ASYNCHRONOUS"
+      protocol: "HTTP/GRPC/MESSAGE_QUEUE/DATABASE"
+      usage: "When this pattern is used"
+      error_handling: "How errors are handled"
+      
+  # Data consistency requirements
+  consistency_requirements:
+    - requirement: "Description of consistency need"
+      scope: "Which data/operations this applies to"
+      consistency_level: "STRONG/EVENTUAL/WEAK"
+      
+  # Performance characteristics
+  performance_characteristics:
+    - characteristic: "Response time/Throughput/etc"
+      target_value: "Specific measurement target"
+      measurement_method: "How this will be measured"
+
+# Component constraints and assumptions
+constraints:
+  # Technical constraints
+  technical_constraints:
+    - constraint: "Specific technical limitation"
+      source: "Where this constraint comes from"
+      impact: "How this affects the component"
+      mitigation: "How to work within this constraint"
+      
+  # Business constraints
+  business_constraints:
+    - constraint: "Business rule or limitation"
+      source: "Business requirement or regulation"
+      impact: "How this affects component design"
+      
+  # Scaling constraints
+  scaling_constraints:
+    - constraint: "Scaling limitation"
+      bottleneck: "What limits scaling"
+      mitigation_strategy: "How to handle scale"
+
+# Validation and testing approach
+component_validation:
+  # Integration points that need validation
+  integration_validations:
+    - validation_target: "What integration point to test"
+      validation_method: "How to validate this works"
+      success_criteria: "What indicates success"
+      
+  # Component boundaries that need validation
+  boundary_validations:
+    - boundary: "Which boundary to test"
+      validation_approach: "How to validate boundary is correct"
+      
+  # Performance validations
+  performance_validations:
+    - performance_aspect: "What performance characteristic to test"
+      measurement_approach: "How to measure performance"
+      acceptance_criteria: "What performance is acceptable"
+
+# Risk assessment
+risk_assessment:
+  # Component-specific risks
+  component_risks:
+    - risk_id: "R-COMP-001"
+      risk_description: "What could go wrong"
+      probability: "HIGH/MEDIUM/LOW"
+      impact: "HIGH/MEDIUM/LOW"
+      mitigation_strategy: "How to prevent/respond"
+      
+  # Integration risks
+  integration_risks:
+    - risk_id: "R-INT-001"
+      risk_description: "Integration failure scenario"
+      affected_components: ["List of components affected"]
+      mitigation_strategy: "How to handle integration failure"
+
+# Traceability back to previous levels
+traceability:
+  level_1_approach: "Which Level 1 approach this component supports"
+  level_0_vision: "How this component contributes to Level 0 vision"
+  architectural_decisions: ["Key architectural decisions this component implements"]
+
+# References to external artifacts
+external_artifacts:
+  # API specifications
+  api_specifications:
+    - artifact_name: "API Specification Name"
+      file_path: "path/to/api-spec.yml"
+      format: "OpenAPI/GraphQL/Proto/etc"
+      description: "What this specification covers"
+      
+  # Data models
+  data_models:
+    - artifact_name: "Data Model Name"
+      file_path: "path/to/data-model.yml"
+      format: "JSON_Schema/Proto/SQL/etc"
+      description: "What data this model represents"
+      
+  # Interface definitions
+  interface_definitions:
+    - artifact_name: "Interface Definition Name"
+      file_path: "path/to/interface.yml"
+      format: "YAML/JSON/Proto/etc"
+      description: "What interface this defines"
+
+# Next steps and decomposition readiness
+decomposition_readiness:
+  # Readiness for Level 3 feature decomposition
+  ready_for_level_3: true  # true when this component can be decomposed into features
+  
+  # Suggested feature decomposition approach
+  suggested_decomposition:
+    - feature_area: "Area of functionality"
+      rationale: "Why this should be a separate feature"
+      complexity_estimate: "LOW/MEDIUM/HIGH"
+      
+  # Dependencies that need resolution before Level 3
+  blocking_dependencies:
+    - dependency: "What needs to be resolved"
+      impact: "How this blocks Level 3 decomposition"
+      resolution_approach: "How to resolve this dependency"

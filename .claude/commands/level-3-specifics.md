@@ -1,8 +1,11 @@
 ## Usage
 
 ```
-/level-3-specifics <in-file>
+/level-3-specifics <component-artifact-file>
 ```
+
+**Input**: Level 2 component YAML artifact (e.g., `level-2-similarity.yml`)
+**Output**: Feature YAML artifacts for the component (e.g., `level-3-similarity-feature1.yml`)
 
 ## Command Guidelines
 
@@ -12,7 +15,7 @@
 **Success criteria**: Each component has detailed implementation plan, APIs fully specified, buildable by team
 **Failure mode alert**: Over-specifying implementation details or creating specifications that assume perfect conditions
 **Transition requirement**: One complete component implemented end-to-end as validation
-**Output**: Detailed component specifications + implementation roadmap
+**Output**: Detailed feature specifications + feature YAML artifacts + implementation roadmap
 
 ### AI Collaboration Framework Reminder
 
@@ -59,6 +62,63 @@
 - Monitoring and logging strategy
 - Testing approach and coverage goals
 - **COLLABORATION CHECKPOINT**: Present testing/monitoring approach, discuss alternatives with user
+
+### Feature Decomposition and Artifact Generation
+
+**Component-to-Feature Decomposition**:
+Level 3 processes ONE component at a time, decomposing it into implementable features.
+
+**Input Processing**:
+1. **Component Artifact Analysis**: Parse Level 2 component YAML artifact
+2. **Component Understanding**: Extract component responsibilities, interfaces, and constraints
+3. **Feature Identification**: Identify distinct features within the component
+4. **Feature Validation**: Ensure features align with component boundaries and purpose
+
+**Feature YAML Artifacts (Required)**:
+For each identified feature, create a structured YAML artifact using the template:
+
+```yaml
+# Use template: templates/level-3-feature-artifact.yml
+# Generate one artifact per feature: level-3-{component-name}-{feature-name}.yml
+
+artifact_requirements:
+  - One YAML file per feature
+  - Use consistent naming: level-3-{component-name}-{feature-name}.yml
+  - Reference external API specs, data models, business logic specs
+  - Include traceability to parent component and Level 0 vision
+  - Document feature dependencies and integration points
+  - Specify detailed validation and testing requirements
+```
+
+**Feature Decomposition Process**:
+1. **Component Analysis**: Analyze input component artifact for decomposition opportunities
+2. **Feature Identification**: Identify 3-5 distinct features per component
+3. **FEATURE VALIDATION**: Present feature boundaries and responsibilities, get user feedback
+4. **Feature Specification**: Create detailed specifications for each feature
+5. **ARTIFACT GENERATION**: Generate feature YAML artifacts for each feature
+6. **ARTIFACT REVIEW**: Review generated artifacts with user for completeness
+7. **Feature Integration**: Ensure features integrate properly within component
+
+**Feature Classification**:
+- **Core Business Logic**: Business rules, calculations, workflows
+- **User Interface**: User interactions, data presentation
+- **Integration**: External system communication, data synchronization
+- **Data Processing**: Data transformation, validation, storage
+- **Infrastructure**: Monitoring, logging, security, configuration
+
+**External Artifact References**:
+- API specifications: Create separate OpenAPI/GraphQL/Proto files per feature
+- Data models: Create separate JSON Schema/SQL/Proto files per feature
+- Business logic specs: Create separate YAML/JSON specifications per feature
+- Workflow specs: Create separate BPMN/YAML workflow definitions per feature
+- Feature YAML artifacts reference these external files
+
+**Feature Validation Requirements**:
+- Each feature has clear business value and user story
+- Feature boundaries don't overlap with other features
+- Feature dependencies are minimal and well-defined
+- Feature specifications are buildable by the team
+- Traceability to parent component is maintained
 
 ### Component Validation Spike
 
@@ -247,7 +307,8 @@ level_3_context:
 
 **Can proceed to Level 4 when:**
 - Component spike validates specifications are buildable
-- All major components have detailed specifications
+- All component features have detailed specifications
+- Feature YAML artifacts generated and validated for each feature
 - APIs are complete and consistent
 - Business logic is clearly defined and testable
 - Database design supports all use cases
@@ -282,24 +343,29 @@ You are collaborating on ASDD - Level 3 - Implementation Specifics with role Imp
 Your mission: Create detailed, buildable specifications that enable the team to implement the Level 2 structure successfully. Focus on clarity and completeness while avoiding over-specification.
 
 **Process:**
-1. Analyze Level 2 structure to understand component requirements
-2. Design detailed API specifications for each component
-3. **API DESIGN VALIDATION**: Present API specifications and discuss design choices with user
-4. **DATA MODEL DISCUSSION**: Present data models with rationale, get user feedback
-5. **BUSINESS LOGIC VALIDATION**: Present business logic specifications, confirm accuracy with user
-6. **OPERATIONAL REQUIREMENTS**: Present testing/monitoring approach, discuss alternatives with user
-7. **SPIKE COMPONENT SELECTION**: Discuss which component to implement for validation
-8. Define data models and business logic (based on user input)
-9. Specify error handling and edge cases (based on user input)
-10. Plan testing and operational requirements (based on user input)
-11. Implement one complete component as validation spike
-12. Refine specifications based on implementation learnings
-13. Update context manifest with detailed decisions
+1. **COMPONENT ARTIFACT ANALYSIS**: Parse and analyze Level 2 component YAML artifact
+2. **COMPONENT UNDERSTANDING**: Extract component responsibilities, interfaces, and constraints
+3. **FEATURE IDENTIFICATION**: Identify distinct features within the component (3-5 features)
+4. **FEATURE VALIDATION**: Present feature boundaries and responsibilities, get user feedback
+5. **API DESIGN VALIDATION**: Present API specifications and discuss design choices with user
+6. **DATA MODEL DISCUSSION**: Present data models with rationale, get user feedback
+7. **BUSINESS LOGIC VALIDATION**: Present business logic specifications, confirm accuracy with user
+8. **OPERATIONAL REQUIREMENTS**: Present testing/monitoring approach, discuss alternatives with user
+9. **ARTIFACT GENERATION**: Generate feature YAML artifacts for each feature
+10. **ARTIFACT REVIEW**: Review generated artifacts with user for completeness
+11. **SPIKE COMPONENT SELECTION**: Discuss which component to implement for validation
+12. Define data models and business logic (based on user input)
+13. Specify error handling and edge cases (based on user input)
+14. Plan testing and operational requirements (based on user input)
+15. Implement one complete component as validation spike
+16. Refine specifications based on implementation learnings
+17. Update context manifest with detailed decisions
 
 **Constraints:**
+- Must process one component at a time from Level 2 artifact
 - Must implement one component end-to-end as validation
 - Specifications must be buildable by team
 - Focus on clarity over theoretical perfection
 - Document decision rationale for non-obvious choices
 
-Use your expertise and the above guidelines to create detailed specifications for: {in-file}
+Use your expertise and the above guidelines to create detailed feature specifications for component: {component-artifact-file}
