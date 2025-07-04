@@ -1,4 +1,4 @@
-# Git Workflow Integration with ASDD v1.0.3
+# Git Workflow Integration with ASDD
 
 _Flexible guidance and suggestions for integrating git workflows with AI collaboration patterns_
 
@@ -6,7 +6,7 @@ _Flexible guidance and suggestions for integrating git workflows with AI collabo
 
 ## 🎯 Overview
 
-This document provides flexible guidance for integrating git workflows with the AI Spec-Driven Development (ASDD) methodology. These are suggestions and best practices that teams can adapt to their specific needs, not rigid requirements. The focus is on supporting collaboration and quality through thoughtful workflow design.
+This document provides flexible guidance for integrating git workflows with the AI Spec-Driven Development (ASDD) methodology. These are suggestions and best practices that teams can adapt, modify, or ignore based on their specific context and constraints. The goal is to support ASDD thinking, not enforce particular tools or processes.
 
 ## 🔧 Repository Setup Suggestions
 
@@ -38,10 +38,10 @@ Consistent naming helps team coordination. Here's a suggested pattern aligned wi
 
 ```
 main
-├── feature/{descriptive-name}     # Standard GitHub Flow
-├── level-{n}-{description}        # ASDD phase-aligned (optional)
-├── prototype-{risk-name}          # For throwaway experiments
-└── hotfix-{issue-description}     # For urgent fixes
+├── feature/{descriptive-name}     # Standard GitHub Flow (recommended)
+├── level-{n}/{description}        # ASDD phase-aligned (recommended)
+├── prototype/{experiment}         # For throwaway experiments
+├── hotfix/{issue-description}     # For urgent fixes
 ```
 
 **Naming Guidelines**:
@@ -52,14 +52,15 @@ main
 
 **3. Suggested Repository Structure**
 
+Focus on the essentials that support ASDD thinking:
+
 ```
 project/
-├── .github/
-│   ├── PULL_REQUEST_TEMPLATE.md    # Optional: PR checklist template
-│   └── workflows/                  # Optional: CI/CD workflows
-├── context/                        # ASDD context preservation
+├── context/                       # ASDD context management (core requirement)
 ├── docs/                          # Project documentation
-└── .claude/                       # Claude command customizations
+├── .claude/                       # Claude commands (if using Claude Code)
+├── .github/workflows              # GitHub CI/CD integration (if using GitHub)
+└── [your existing project structure]
 ```
 
 **Note**: Adapt this structure to your project's needs. Not all elements are necessary for every project.
@@ -79,7 +80,7 @@ We recommend using GitHub Flow - a simple, flexible branching model where you:
 
 ```bash
 # For prototyping high-risk features
-git checkout -b prototype-auth-integration
+git checkout -b prototype/auth-integration
 # Experiment freely - this branch may be throwaway
 git add . && git commit -m "prototype: test OAuth integration approach"
 gh pr create --draft --title "[Prototype] OAuth Integration Test"
@@ -91,9 +92,9 @@ git add . && git commit -m "feat: add JWT token validation"
 gh pr create --title "Add user authentication system"
 
 # For documenting project vision (if using ASDD levels)
-git checkout -b docs/level-0-vision
-git add . && git commit -m "docs: define project vision and success metrics"
-gh pr create --title "Document project vision and goals"
+git checkout -b level-0/user-analysis
+git add . && git commit -m "Level 0: record results of user analysis"
+gh pr create --title "Follow on level 0 task to analysis user edge cases"
 ```
 
 **Commit Message Suggestions**:
@@ -136,233 +137,6 @@ git log --grep="authentication" --oneline
 git log --follow context/project-context.yml
 ```
 
-## 🤝 Thoughtful Code Review Practices
-
-### Domain Complexity Considerations
-
-Consider matching review requirements to code complexity:
-
-**Simple Domains** (utilities, UI components):
-- Any team member can review
-- Focus on code style and basic functionality
-- Quick turnaround expected
-
-**Complex Domains** (auth, data processing):
-- Consider involving domain experts
-- Review architecture and security implications
-- Allow time for thorough review
-
-**Extreme Domains** (payments, healthcare, trading):
-- Multiple expert reviews recommended
-- Consider compliance requirements
-- Document review decisions
-
-**Optional: Using CODEOWNERS**
-If your team finds it helpful, GitHub's CODEOWNERS file can suggest reviewers:
-
-```yaml
-# .github/CODEOWNERS (example)
-# This is optional - adapt to your team's structure
-*.js        @frontend-team
-*.py        @backend-team
-/docs/      @documentation-team
-
-# Sensitive areas might need specific reviewers
-/src/auth/  @security-team
-/src/payment/ @payment-team @security-team
-```
-
-### Pull Request Templates
-
-**Suggested PR Checklist Template**
-
-Consider using a PR template to encourage thoughtful review. Here's an example that teams can adapt:
-
-`.github/PULL_REQUEST_TEMPLATE.md`:
-
-```markdown
-## Description
-Brief description of changes and why they're needed.
-
-## Type of Change
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Documentation update
-- [ ] Refactoring
-- [ ] Other: [specify]
-
-## Review Checklist
-
-**Consider these review points:**
-- [ ] Tests added/updated as needed
-- [ ] Documentation updated if interfaces changed
-- [ ] Major decisions documented (consider adding to context/)
-- [ ] Security implications considered
-- [ ] Performance impact assessed for large-scale changes
-
-## Domain Complexity
-Is this change in a complex domain that needs special review?
-- [ ] No - standard review is fine
-- [ ] Yes - please suggest appropriate reviewers
-
-## Additional Notes
-Any context that would help reviewers?
-
----
-*Tip: Adapt this template to your team's needs. Remove items that don't apply.*
-```
-
-**Why Use Checklists?**
-- Encourage thoughtful review without being prescriptive
-- Remind developers of important considerations
-- Can be adapted per project needs
-- Not meant to be blindly checked - each item should prompt thinking
-
-## 🔄 Quality Assurance Approaches
-
-### Manual Review Checklists Over Automation
-
-We recommend thoughtful manual review over rigid automated enforcement. Here's why:
-
-1. **Flexibility**: Every project has unique needs
-2. **Thoughtfulness**: Checklists prompt thinking, not blind compliance
-3. **Adaptability**: Teams can adjust practices as they learn
-4. **Trust**: Developers are trusted to make good decisions
-
-### Suggested Review Checklist for PRs
-
-**Before Merging, Consider:**
-
-```markdown
-## Pre-Merge Checklist
-
-### Code Quality
-- [ ] Code follows team style guidelines
-- [ ] No obvious bugs or security issues
-- [ ] Performance implications considered
-- [ ] Error handling is appropriate
-
-### Testing
-- [ ] New functionality has tests
-- [ ] Existing tests still pass
-- [ ] Edge cases considered
-- [ ] Manual testing completed where needed
-
-### Documentation
-- [ ] Code is self-documenting or has comments where needed
-- [ ] API changes are documented
-- [ ] Complex decisions are explained
-- [ ] README updated if needed
-
-### Context Preservation (for significant changes)
-- [ ] Major decisions added to context files
-- [ ] Trade-offs documented
-- [ ] Future maintainers will understand why
-```
-
-### Optional: Automated Checks
-
-If your team wants some automation, focus on objective checks:
-
-```yaml
-# .github/workflows/ci.yml (example)
-name: CI
-on: [pull_request]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Run tests
-      run: npm test
-    - name: Check lint
-      run: npm run lint
-```
-
-**Note**: Keep automation focused on objective quality (tests, lint) not process compliance.
-
-## 📊 Workflow Examples
-
-### Standard Feature Development
-
-**Example: Implementing User Authentication**
-
-```bash
-# 1. Create feature branch
-git checkout main && git pull
-git checkout -b feature/user-authentication
-
-# 2. Develop feature with clear commits
-git add src/auth
-git commit -m "feat: add JWT token generation"
-
-git add tests/
-git commit -m "test: add auth service unit tests"
-
-# 3. Document important decisions
-echo "Chose JWT for stateless auth..." >> context/decisions/auth.md
-git add context/
-git commit -m "docs: document authentication approach decision"
-
-# 4. Create PR for review
-gh pr create --title "Add user authentication" \
-  --body "Implements JWT-based authentication as discussed in #42"
-
-# 5. Address feedback and merge
-git add . && git commit -m "fix: address PR feedback on token expiry"
-gh pr merge --squash
-```
-
-### Handling Design Changes
-
-**Example: Updating Approach Based on New Information**
-
-```bash
-# 1. Create branch for updates
-git checkout -b refactor/update-database-approach
-
-# 2. Make changes and document why
-git add . && git commit -m "refactor: switch to PostgreSQL for better JSON support
-
-After testing MongoDB, we found PostgreSQL's JSONB type better
-suited our semi-structured data needs while maintaining ACID."
-
-# 3. Update context with decision
-echo "Changed from MongoDB to PostgreSQL..." >> context/decisions/database.md
-git add context/ && git commit -m "docs: document database change rationale"
-
-# 4. Create PR with clear explanation
-gh pr create --title "Switch database to PostgreSQL" \
-  --body "Updates database choice based on prototype findings. See context/decisions/database.md"
-```
-
-### Handling Urgent Changes
-
-**When Time is Critical**
-
-```bash
-# For critical fixes
-git checkout -b hotfix/security-vulnerability
-
-# Make focused fix
-git add . && git commit -m "fix: patch XSS vulnerability in user input"
-
-# Create PR with urgency noted
-gh pr create --title "[URGENT] Security: Fix XSS vulnerability" \
-  --body "Critical security fix. Minimal change to sanitize user input."
-
-# After merge, create follow-up issue
-gh issue create --title "Follow-up: Add comprehensive XSS tests" \
-  --body "The urgent fix addressed the immediate issue. We should add comprehensive tests."
-```
-
-**Key Points for Urgent Changes**:
-- Keep changes minimal and focused
-- Document what was done and why
-- Create follow-up issues for comprehensive fixes
-- Don't skip code review unless absolutely necessary
-
 ## 🛠️ Working with ASDD Commands
 
 ### Suggested Git Integration Patterns
@@ -372,13 +146,13 @@ If using ASDD commands, consider these git workflow patterns:
 **When Starting a New ASDD Level:**
 ```bash
 # Create a descriptive branch
-git checkout -b feature/define-project-vision  # More descriptive than "level-0"
+git checkout -b level-0/vision-review # More descriptive than "level-0"
 
 # Use clear commit messages
-git add . && git commit -m "docs: define initial project vision and goals"
+git add . && git commit -m "docs: review and analysis vision and goals"
 
 # Reference ASDD level in PR if helpful
-gh pr create --title "Define project vision (ASDD Level 0)" \
+gh pr create --title "Refine project vision (ASDD Level 0)" \
   --body "Initial project vision as part of ASDD discovery process"
 ```
 
@@ -475,15 +249,6 @@ python -c "import yaml; yaml.safe_load(open('context/project-context.yml'))"
 # Recover a file from git history if needed
 git log --oneline --follow context/project-context.yml
 git show <commit-hash>:context/project-context.yml > context/project-context.yml
-```
-
-**PR Template Location:**
-```bash
-# GitHub looks for PR templates here:
-.github/PULL_REQUEST_TEMPLATE.md
-# Or in a subdirectory for multiple templates:
-.github/PULL_REQUEST_TEMPLATE/feature.md
-.github/PULL_REQUEST_TEMPLATE/bugfix.md
 ```
 
 ### Team Coordination Tips
@@ -593,6 +358,6 @@ This document provides flexible guidance, not rigid rules. Every team is differe
 
 *This document offers suggestions based on common patterns. Adapt freely to your team's needs.*
 
-**Version**: 1.0.3  
-**Last Updated**: 2025-07-03  
-**Philosophy**: Flexible guidance over rigid enforcement  
+**Version**: 1.0.3
+**Last Updated**: 2025-07-03
+**Philosophy**: Flexible guidance over rigid enforcement

@@ -361,7 +361,6 @@ context_manifest:
 ### Philosophy Evolution
 
 This document must change when reality proves it wrong.
-Version 1.0 incorporates systematic failure analysis and pressure-testing results.
 
 Changes require:
 1. Documentation of what broke and why
@@ -416,5 +415,6 @@ Version 1.0 has been designed to bend without breaking, adapting to pressure whi
 _Philosophy version: 1.0.3_
 _Last pressure-tested: 2025-07-03_
 _Failure analysis integrated: ASDD/revision-rationale/v0.1-analysis.md_
+_Improved collaboration hooks: ASDD/revision-rationale/v1.0-analysis.md_
 _Git workflow integration: v1.0.3 (flexible guidance for thoughtful collaboration)_
 _Next philosophical review: After 10 projects using v1.0.3 methodology_

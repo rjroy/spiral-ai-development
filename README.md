@@ -4,7 +4,7 @@ A meta-template for establishing effective AI-human collaboration patterns in so
 
 ## Core Framework
 
-**AI Spec-Driven Development (ASDD) v1.0.3** - Spiral development approach with progressive detail levels (Vision → Approach → Structure → Specifics → Implementation) that handles changing requirements, timeline pressure, and context preservation, now with integrated git workflow support.
+**AI Spec-Driven Development (ASDD)** - Spiral development approach with progressive detail levels (Vision → Approach → Structure → Specifics → Implementation) that handles changing requirements, timeline pressure, and context preservation, now with integrated git workflow support.
 
 **Philosophy** - A comprehensive collaboration framework that has been forged through pressure and refined by reality. This philosophy addresses the collaboration paradox where AI can offer answers that look complete but may miss critical domain complexities. It establishes clear ownership boundaries: human judgment handles strategy and architecture, AI handles implementation and pattern recognition, with explicit accountability for every significant choice. The framework includes domain-aware collaboration patterns that scale AI involvement inversely with domain complexity, pressure-adaptive protocols that maintain quality under stress, and bounded replaceability principles that design components with stable interfaces enabling informed replacement decisions.
 
@@ -23,7 +23,7 @@ A meta-template for establishing effective AI-human collaboration patterns in so
 - **OVERVIEW.md**: A short description for the project. The elevator pitch.
 - **HIGH-LEVEL-DESIGN.md**: A description of all the key core principles and requirements that are necessary to consider the project successful. This is not a detailed design, but should be defined enough for reasonable repeatability.
 
-### First Steps
+### **First Steps**
 
 1. Create a GitHub repo using `rjroy/claude-code-template` as a template
 2. Clone the repo
@@ -66,11 +66,10 @@ repo-name/
 │       └── ...                  # Remaining ASDD documentation
 ├── context/                     # Context preservation
 │   ├── project-context.yml      # Main context manifest
-│   └── archive/                 # Historical context versions
+│   └── ...                      # Level specific context files
 ├── .claude/                     # Claude Code integration
 |   └── commands/                # ASDD Development commands
 ├── .github/                     # GitHub integration
-│   ├── PULL_REQUEST_TEMPLATE.md # ASDD-aligned PR template
 │   └── workflows/               # Automated validation
 ├── CLAUDE.md                    # Claude base instructions
 └── README.md                    # Project specific overview
@@ -79,7 +78,7 @@ repo-name/
 ## Available Commands
 
 ### Core Phase Commands
-Complete ASDD v1.0.3 command set:
+Complete ASDD command set:
 - `/phase-0-prototype` - Risk validation through proof-of-concept
 - `/level-0-vision` - Problem clarity and core purpose
 - `/level-1-approach` - Technical approach validation
@@ -137,13 +136,13 @@ For flexible git workflow suggestions, see [Git Workflow Integration](docs/ASDD/
 
 ## What Makes This Different
 
-This template has been pressure-tested against systematic failure analysis and incorporates real-world learnings from project breakdowns. Version 1.0.3 addresses timeline pressure, context degradation, domain complexity mismatches, and collaboration boundary drift - the common failure modes that break clean development processes.
+This template has been pressure-tested against systematic failure analysis and incorporates real-world learnings from project breakdowns. Additionally addresses timeline pressure, context degradation, domain complexity mismatches, and collaboration boundary drift - the common failure modes that break clean development processes.
 
-**New in v1.0.3**: Integrated git workflow support with branch protection and phase-aligned branching that reinforces collaboration boundaries and validation gates. See [Git Workflow Integration](docs/ASDD/git-workflow-integration.md) for detailed guidance.
+Recommended git workflow that teams can adapt to support ASDD collaboration patterns. See [Git Workflow Integration](docs/ASDD/git-workflow-integration.md) for flexible guidance that you can modify or ignore based on your team's needs.
 
 **Philosophy**: Trust through verification, not verification through trust. This template provides the structure for AI-human collaboration that bends under pressure rather than breaking.
 
-## Next Steps After Setup
+## Next Steps After **First Steps**
 
 1. **Start with Vision**: Run `/level-0-vision` to establish clear project purpose
 2. **Validate Early**: Use `/phase-0-prototype` for risk validation before deep implementation

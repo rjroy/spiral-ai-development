@@ -14,21 +14,6 @@
 **Transition requirement**: Approach viability validated through mini-spike and risk assessment
 **Output**: Validated technical approach + updated context manifest
 
-### Git Workflow Integration
-
-**Branch Management**:
-- Create dedicated branch: `level-1-approach` from completed level-0-vision
-- All approach validation work committed to this branch
-- Context preservation through structured commits
-- Pull request validation before merging to main
-
-**Workflow Steps**:
-1. Create and switch to level-1-approach branch (from level-0-vision)
-2. Work on approach validation with regular commits
-3. Update context manifest with approach decisions
-4. Create pull request with ASDD validation template
-5. Merge after validation, prepare for level-2-structure branch
-
 ### AI Collaboration Framework Reminder
 
 1. **Question Before Acting** - Always ask clarifying questions before major implementation decisions
@@ -110,7 +95,7 @@ level_1_context:
       - "Database technology"
       - "Key libraries/services"
     architectural_pattern: "Monolith/Microservices/Serverless/etc"
-    
+
   integration_requirements:
     external_systems:
       - system: "External system name"
@@ -118,16 +103,16 @@ level_1_context:
         risk_level: "LOW/MEDIUM/HIGH"
     data_flows:
       - "Key data flow description"
-      
+
   validated_assumptions:
     - assumption: "Technical assumption"
       validation_method: "How we tested this"
       result: "CONFIRMED/REJECTED/PARTIAL"
-      
+
   discovered_risks:
     - risk: "Risk description"
       likelihood: "LOW/MEDIUM/HIGH"
-      impact: "LOW/MEDIUM/HIGH" 
+      impact: "LOW/MEDIUM/HIGH"
       mitigation: "How we'll handle this"
 ```
 
