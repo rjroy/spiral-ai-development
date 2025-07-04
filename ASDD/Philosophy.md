@@ -106,97 +106,101 @@ AI can offer answers that look complete. **That's the structural trap.** This ph
 
 ### Git Workflow Integration with ASDD
 
-**Core Principle**: Version control workflows should reinforce collaboration boundaries and validation gates, not bypass them.
+**Core Principle**: Version control workflows can support collaboration and quality through thoughtful design.
 
-**Branch Protection as Validation Enforcement**:
-- Protected main branch prevents unvalidated code integration
-- Pull requests serve as collaboration checkpoints
-- Code review enforces domain-calibrated expertise requirements
-- Automated checks validate technical standards before human review
+**Consider Using Branch Protection**:
+- Protected main branch encourages review before integration
+- Pull requests create natural collaboration checkpoints
+- Code review allows sharing of domain expertise
+- Automated checks can catch objective issues early
 
-### Branch-Per-Phase Strategy
+### Suggested Branching Patterns
 
-**Phase-Aligned Branching**:
-- Each ASDD level gets its own feature branch
-- Branch naming: `level-{n}-{phase-name}` (e.g., `level-1-approach-validation`)
-- Prototype branches: `prototype-{risk-name}` for Phase 0 validation
-- Context branches: `context-sync-{phase}` for major context updates
+**Consider Descriptive Branch Names**:
+- Feature branches with clear intent: `feature/user-authentication`
+- Prototype branches for experiments: `prototype/test-new-api`
+- Include ASDD phase if helpful: `feature/level-1-technical-approach`
+- Keep names meaningful to your team
 
-**Branch Lifecycle**:
+**Simple GitHub Flow**:
 ```
-main (protected)
-├── level-0-vision
-├── level-1-approach (from level-0-vision)
-├── level-2-structure (from level-1-approach)
-├── level-3-specifics (from level-2-structure)
-└── level-4-implementation (from level-3-specifics)
+main
+├── feature/descriptive-name
+├── fix/bug-description
+├── docs/what-youre-documenting
+└── prototype/experiment-name
 ```
 
-**Spiral Navigation Support**:
-- Backward navigation: Create new branch from earlier level
-- Forward progression: Merge through pull requests with validation
-- Context preservation: Git history maintains decision audit trail
+**Context Preservation Through Git**:
+- Use meaningful commit messages that explain decisions
+- Document major choices in context files
+- PR descriptions can capture important discussions
+- Git history naturally preserves your journey
 
-### Domain-Calibrated Code Review
+### Thoughtful Code Review Practices
 
-**Simple Domains**:
-- AI-generated code can be merged with basic review
-- Focus on integration and style consistency
-- Automated testing provides primary validation
+**For Simple Domains**:
+- Consider lighter review for straightforward changes
+- Focus on integration and consistency
+- Trust automated tests for basic validation
 
-**Complex Domains**:
-- Require human architectural review before merge
-- AI changes limited to implementation details
-- Domain expert approval required for design decisions
+**For Complex Domains**:
+- Involve team members with relevant expertise
+- Take time to review architectural implications
+- Discuss design decisions as a team
 
-**Extreme Domains**:
-- All AI-generated code requires expert review
-- Human must approve every significant change
-- Pair programming/review for critical components
+**For Extreme Domains**:
+- Multiple reviewers may be valuable
+- Consider compliance and safety requirements
+- Document review decisions and rationale
 
-### Integration with Bounded Replaceability
+### Supporting Component Replaceability
 
-**Branch Design Principles**:
-- Each branch should contain one replaceable component
-- Clear interfaces defined before implementation begins
-- Dependencies documented in branch description
-- Replacement cost assessed in pull request template
+**Consider These Practices**:
+- Keep changes focused and cohesive
+- Document interfaces clearly in PRs
+- Note dependencies that might affect others
+- Think about future maintainability
 
-**Merge Strategies**:
-- Squash merge for clean history on bounded components
-- Merge commit for cross-component integration
-- Rebase for maintaining linear history within components
+**Merge Strategy Options**:
+- Squash merge: Clean history for feature branches
+- Merge commit: Preserve development context
+- Rebase: Linear history (if team prefers)
+- Choose what works for your team
 
-### Collaboration Workflow Enforcement
+### Encouraging Good Collaboration
 
-**Pull Request Templates**:
-- ASDD level validation checklist
-- Domain complexity assessment
-- Bounded replaceability confirmation
-- Context preservation verification
+**Pull Request Templates Can Include**:
+- Helpful checklists (not rigid requirements)
+- Prompts for important context
+- Reminders about documentation
+- Space for explaining decisions
 
-**Review Assignment**:
-- Auto-assign based on domain complexity
-- Require domain expert approval for complex/extreme domains
-- AI-readable PR descriptions for automated analysis
+**Review Assignment Suggestions**:
+- Consider who has relevant expertise
+- Rotate reviews to share knowledge
+- Use CODEOWNERS as suggestions, not rules
+- Trust teams to find the right reviewers
 
-**Merge Gates**:
-- All tests pass
-- Context integrity validated
-- Domain-appropriate review completed
-- Documentation updated for interface changes
+**Quality Checkpoints to Consider**:
+- Are tests passing?
+- Is the change well-explained?
+- Have the right people reviewed?
+- Is documentation current?
 
-### Pressure-Adaptive Git Workflows
+### Handling Timeline Pressure
 
-**Timeline Pressure Response**:
-- Moderate: Allow hotfix branches with post-merge cleanup
-- High: Emergency merge with required cleanup tracking
-- Extreme: Direct commits with immediate review requirement
+**When Deadlines Are Tight**:
+- Focus on essential quality checks
+- Document what's being deferred
+- Create follow-up issues for cleanup
+- Communicate with the team
 
-**Quality Maintenance Under Pressure**:
-- Never bypass: Security reviews, integration tests
-- Defer if needed: Documentation updates, comprehensive testing
-- Fast-track: Use proven patterns, implement cleanup tracking
+**Suggested Priorities Under Pressure**:
+- Keep: Security review, critical tests
+- Consider deferring: Perfect documentation, nice-to-have features
+- Always: Communicate trade-offs clearly
+- Plan: Schedule time for technical debt
 
 ---
 
@@ -412,5 +416,5 @@ Version 1.0 has been designed to bend without breaking, adapting to pressure whi
 _Philosophy version: 1.0.3_
 _Last pressure-tested: 2025-07-03_
 _Failure analysis integrated: ASDD/revision-rationale/v0.1-analysis.md_
-_Git workflow integration: v1.0.3 (branch protection + phase-aligned branching)_
+_Git workflow integration: v1.0.3 (flexible guidance for thoughtful collaboration)_
 _Next philosophical review: After 10 projects using v1.0.3 methodology_

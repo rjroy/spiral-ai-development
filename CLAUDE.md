@@ -95,12 +95,7 @@ The template includes complete ASDD v1.0.3 commands:
 /generate-phase-report - Generate comprehensive reports
 ```
 
-#### Git Workflow Commands
-```
-/asdd-git-setup      - Configure repository with ASDD-aligned git workflows
-/asdd-branch-transition - Manage branch creation/merging for phase transitions
-/asdd-pr-template    - Generate PR templates aligned with ASDD validation
-```
+See [Git Workflow Integration](ASDD/git-workflow-integration.md) for flexible guidance on git workflows that support ASDD methodology without being prescriptive.
 
 Each command includes domain calibration, context preservation, and pressure adaptation.
 
@@ -288,11 +283,6 @@ For each level, apply enhanced validation:
 - `.claude/commands/asdd-context-sync.md` - Context preservation across phases
 - `.claude/commands/generate-next-steps.md` - Transition planning utility
 - `.claude/commands/generate-phase-report.md` - Comprehensive reporting utility
-
-### Git Workflow Commands
-- `.claude/commands/asdd-git-setup.md` - Repository configuration with ASDD workflows
-- `.claude/commands/asdd-branch-transition.md` - Branch management for phase transitions
-- `.claude/commands/asdd-pr-template.md` - PR template generation aligned with ASDD validation
 
 ### Configuration
 - `.claude/settings.local.json` - Claude Code permissions configuration (not shared)

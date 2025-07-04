@@ -1,627 +1,598 @@
 # Git Workflow Integration with ASDD v1.0.3
 
-_Practical guidance for implementing branch protection and phase-aligned branching strategies_
+_Flexible guidance and suggestions for integrating git workflows with AI collaboration patterns_
 
 ---
 
 ## 🎯 Overview
 
-This document provides comprehensive guidance for integrating git workflows with the AI Spec-Driven Development (ASDD) methodology. The approach combines branch protection with phase-aligned branching to reinforce collaboration boundaries and validation gates.
+This document provides flexible guidance for integrating git workflows with the AI Spec-Driven Development (ASDD) methodology. These are suggestions and best practices that teams can adapt to their specific needs, not rigid requirements. The focus is on supporting collaboration and quality through thoughtful workflow design.
 
-## 🔧 Repository Setup
+## 🔧 Repository Setup Suggestions
 
 ### Initial Repository Configuration
 
-**1. Branch Protection Setup**
+**1. Branch Protection Considerations**
+
+Teams may want to consider branch protection to support collaborative review:
 
 ```bash
-# Configure main branch protection via GitHub CLI
+# Example: Configure main branch protection via GitHub CLI
+# Note: Adjust these settings based on your team's needs
 gh api repos/:owner/:repo/branches/main/protection \
   --method PUT \
   --field required_status_checks='{"strict":true,"contexts":[]}' \
-  --field enforce_admins=true \
+  --field enforce_admins=false \  # Consider your team's workflow needs
   --field required_pull_request_reviews='{"required_approving_reviews":1,"dismiss_stale_reviews":true}' \
   --field restrictions=null
 ```
 
-**2. Branch Naming Convention**
+**Key Considerations**:
+- `enforce_admins`: Set to `false` if admins need flexibility for urgent fixes
+- `required_approving_reviews`: Adjust based on team size and domain complexity
+- Status checks: Configure based on your CI/CD pipeline
+
+**2. Suggested Branch Naming Conventions**
+
+Consistent naming helps team coordination. Here's a suggested pattern aligned with ASDD phases:
 
 ```
-main (protected)
-├── level-0-vision
-├── level-1-approach
-├── level-2-structure
-├── level-3-specifics
-├── level-4-implementation
-├── prototype-{risk-name}
-└── context-sync-{phase}
+main
+├── feature/{descriptive-name}     # Standard GitHub Flow
+├── level-{n}-{description}        # ASDD phase-aligned (optional)
+├── prototype-{risk-name}          # For throwaway experiments
+└── hotfix-{issue-description}     # For urgent fixes
 ```
 
-**3. Repository Structure Integration**
+**Naming Guidelines**:
+- Use descriptive names that convey intent
+- Include ticket/issue numbers when applicable
+- Keep names concise but meaningful
+- Consider prefixes that help with sorting and filtering
+
+**3. Suggested Repository Structure**
 
 ```
 project/
 ├── .github/
-│   ├── PULL_REQUEST_TEMPLATE.md    # ASDD-aligned PR template
-│   └── workflows/
-│       └── asdd-validation.yml     # Automated ASDD validation
-├── context/                        # Context management
-├── docs/                          # Documentation
-└── .claude/                       # Claude commands
+│   ├── PULL_REQUEST_TEMPLATE.md    # Optional: PR checklist template
+│   └── workflows/                  # Optional: CI/CD workflows
+├── context/                        # ASDD context preservation
+├── docs/                          # Project documentation
+└── .claude/                       # Claude command customizations
 ```
 
-## 🌊 Phase-Aligned Branching Strategy
+**Note**: Adapt this structure to your project's needs. Not all elements are necessary for every project.
 
-### Branch Lifecycle Management
+## 🌊 Suggested Git Workflow Patterns
 
-**Phase 0: Prototype Validation**
+### GitHub Flow with ASDD Naming Suggestions
+
+We recommend using GitHub Flow - a simple, flexible branching model where you:
+1. Create a branch from main
+2. Make changes and commit
+3. Open a pull request
+4. Review and discuss
+5. Merge to main
+
+**Example: Working on Different ASDD Phases**
+
 ```bash
-# Create prototype branch for high-risk validation
+# For prototyping high-risk features
 git checkout -b prototype-auth-integration
-# Work on throwaway prototype
-git add . && git commit -m "prototype: validate OAuth integration approach"
-# Create PR for validation discussion
-gh pr create --title "Prototype: OAuth Integration Validation" --body "Risk validation for authentication approach"
+# Experiment freely - this branch may be throwaway
+git add . && git commit -m "prototype: test OAuth integration approach"
+gh pr create --draft --title "[Prototype] OAuth Integration Test"
+
+# For feature development
+git checkout -b feature/user-authentication
+# Clear commits with good messages
+git add . && git commit -m "feat: add JWT token validation"
+gh pr create --title "Add user authentication system"
+
+# For documenting project vision (if using ASDD levels)
+git checkout -b docs/level-0-vision
+git add . && git commit -m "docs: define project vision and success metrics"
+gh pr create --title "Document project vision and goals"
 ```
 
-**Level 0: Vision Clarity**
-```bash
-# Create vision branch from main
-git checkout main && git pull
-git checkout -b level-0-vision
-# Work on vision documentation
-git add . && git commit -m "level-0: define core project vision and success metrics"
-# Create PR for vision validation
-gh pr create --title "Level 0: Vision Clarity" --body "$(cat .github/PULL_REQUEST_TEMPLATE.md)"
+**Commit Message Suggestions**:
+- Use conventional commits (feat:, fix:, docs:, etc.)
+- Reference issue numbers when applicable
+- Keep messages clear and descriptive
+- Focus on the "why" not just the "what"
+
+### Context Preservation Best Practices
+
+Preserve important decisions and context through:
+
+**1. Context Files in Repository**
+```yaml
+# context/project-context.yml
+context_manifest:
+  key_decisions:
+    - decision: "Chose PostgreSQL over MongoDB"
+      rationale: "Need ACID compliance for financial data"
+      date: "2025-07-01"
+      alternatives_considered: ["MongoDB", "DynamoDB"]
 ```
 
-**Level 1: Approach Viability**
+**2. Meaningful Commit Messages**
 ```bash
-# Create approach branch from completed vision
-git checkout level-0-vision && git pull
-git checkout -b level-1-approach
-# Work on approach validation
-git add . && git commit -m "level-1: validate technical approach and feasibility"
-# Create PR for approach review
-gh pr create --title "Level 1: Approach Viability" --body "Technical approach validation"
+# Include context in commits
+git commit -m "feat: add user auth - JWT chosen for stateless architecture"
+
+# Reference decisions in PR descriptions
+gh pr create --body "Implements auth system as decided in context/decisions/auth.md"
 ```
 
-**Spiral Navigation (Backward)**
+**3. Git History for Audit Trail**
 ```bash
-# When level-2 discoveries invalidate level-1 approach
-git checkout level-1-approach
-git checkout -b level-1-approach-revision
-# Address discovered issues
-git add . && git commit -m "level-1: revise approach based on level-2 discoveries"
-```
-
-### Context Preservation Through Git
-
-**Context Sync Branches**
-```bash
-# Create dedicated branch for major context updates
-git checkout -b context-sync-level-1
-# Update context files
-git add context/ && git commit -m "context: sync level-1 approach decisions and constraints"
-# Merge context changes back to main
-gh pr create --title "Context Sync: Level 1 Approach" --body "Context preservation for level-1 completion"
-```
-
-**Git History as Audit Trail**
-```bash
-# View decision history for a specific level
-git log --oneline --grep="level-1"
-# View context evolution
+# Find when decisions were made
 git log --oneline -- context/
-# View spiral navigation decisions
-git log --oneline --grep="revision"
+# Search for specific topics
+git log --grep="authentication" --oneline
+# View file history
+git log --follow context/project-context.yml
 ```
 
-## 🤝 Domain-Calibrated Code Review
+## 🤝 Thoughtful Code Review Practices
 
-### Review Assignment Strategy
+### Domain Complexity Considerations
 
-**Simple Domains:**
+Consider matching review requirements to code complexity:
+
+**Simple Domains** (utilities, UI components):
+- Any team member can review
+- Focus on code style and basic functionality
+- Quick turnaround expected
+
+**Complex Domains** (auth, data processing):
+- Consider involving domain experts
+- Review architecture and security implications
+- Allow time for thorough review
+
+**Extreme Domains** (payments, healthcare, trading):
+- Multiple expert reviews recommended
+- Consider compliance requirements
+- Document review decisions
+
+**Optional: Using CODEOWNERS**
+If your team finds it helpful, GitHub's CODEOWNERS file can suggest reviewers:
+
 ```yaml
-# .github/CODEOWNERS
-# Simple domain code can be reviewed by team members
-src/utils/          @team-members
-src/components/ui/  @team-members
-```
+# .github/CODEOWNERS (example)
+# This is optional - adapt to your team's structure
+*.js        @frontend-team
+*.py        @backend-team
+/docs/      @documentation-team
 
-**Complex Domains:**
-```yaml
-# .github/CODEOWNERS
-# Complex domains require domain expert review
-src/auth/           @auth-expert @team-lead
-src/payment/        @payment-expert @security-team
-src/database/       @db-expert @backend-team
-```
-
-**Extreme Domains:**
-```yaml
-# .github/CODEOWNERS
-# Extreme domains require multiple expert reviews
-src/trading/        @trading-expert @compliance-team @security-team
-src/medical/        @medical-expert @compliance-team @qa-team
+# Sensitive areas might need specific reviewers
+/src/auth/  @security-team
+/src/payment/ @payment-team @security-team
 ```
 
 ### Pull Request Templates
 
-**ASDD-Aligned PR Template** (`.github/PULL_REQUEST_TEMPLATE.md`):
+**Suggested PR Checklist Template**
+
+Consider using a PR template to encourage thoughtful review. Here's an example that teams can adapt:
+
+`.github/PULL_REQUEST_TEMPLATE.md`:
 
 ```markdown
-# ASDD Level Validation
+## Description
+Brief description of changes and why they're needed.
 
-## Level Information
-- [ ] Level: [0-4] - [Vision/Approach/Structure/Specifics/Implementation]
-- [ ] Phase: [Prototype/Level/Context-Sync]
-- [ ] Domain Complexity: [Simple/Complex/Extreme]
+## Type of Change
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Documentation update
+- [ ] Refactoring
+- [ ] Other: [specify]
 
-## Validation Checklist
+## Review Checklist
 
-### Context Preservation
-- [ ] Context manifest updated with key decisions
-- [ ] Rationale documented for major choices
-- [ ] Alternatives considered and documented
-- [ ] Dependencies and constraints identified
+**Consider these review points:**
+- [ ] Tests added/updated as needed
+- [ ] Documentation updated if interfaces changed
+- [ ] Major decisions documented (consider adding to context/)
+- [ ] Security implications considered
+- [ ] Performance impact assessed for large-scale changes
 
-### Domain-Calibrated Review
-- [ ] **Simple Domain**: Basic integration and style review completed
-- [ ] **Complex Domain**: Architectural review by domain expert completed
-- [ ] **Extreme Domain**: Multiple expert reviews completed
+## Domain Complexity
+Is this change in a complex domain that needs special review?
+- [ ] No - standard review is fine
+- [ ] Yes - please suggest appropriate reviewers
 
-### Bounded Replaceability
-- [ ] Clear interfaces defined and documented
-- [ ] Dependencies explicitly documented
-- [ ] Replacement cost assessed and documented
-- [ ] Behavioral contracts defined through tests
+## Additional Notes
+Any context that would help reviewers?
 
-### ASDD Progression
-- [ ] Level prerequisites satisfied
-- [ ] Validation gates passed
-- [ ] Next level preparation documented
-- [ ] Spiral navigation decisions justified (if applicable)
-
-## Testing Strategy
-- [ ] Unit tests for new functionality
-- [ ] Integration tests for interface changes
-- [ ] End-to-end tests for critical paths
-- [ ] Performance tests for scalability concerns
-
-## Documentation Updates
-- [ ] API documentation updated
-- [ ] Architecture documentation updated
-- [ ] Context files updated
-- [ ] Troubleshooting guide updated
-
-## Risk Assessment
-- [ ] Technical risks identified and mitigated
-- [ ] Integration risks assessed
-- [ ] Performance impact evaluated
-- [ ] Security implications reviewed
-
-## Post-Merge Actions
-- [ ] Monitoring and alerts configured
-- [ ] Rollback plan documented
-- [ ] Team notification completed
-- [ ] Next phase preparation initiated
+---
+*Tip: Adapt this template to your team's needs. Remove items that don't apply.*
 ```
 
-## 🔄 Automated Validation
+**Why Use Checklists?**
+- Encourage thoughtful review without being prescriptive
+- Remind developers of important considerations
+- Can be adapted per project needs
+- Not meant to be blindly checked - each item should prompt thinking
 
-### GitHub Actions Integration
+## 🔄 Quality Assurance Approaches
 
-**ASDD Validation Workflow** (`.github/workflows/asdd-validation.yml`):
+### Manual Review Checklists Over Automation
+
+We recommend thoughtful manual review over rigid automated enforcement. Here's why:
+
+1. **Flexibility**: Every project has unique needs
+2. **Thoughtfulness**: Checklists prompt thinking, not blind compliance
+3. **Adaptability**: Teams can adjust practices as they learn
+4. **Trust**: Developers are trusted to make good decisions
+
+### Suggested Review Checklist for PRs
+
+**Before Merging, Consider:**
+
+```markdown
+## Pre-Merge Checklist
+
+### Code Quality
+- [ ] Code follows team style guidelines
+- [ ] No obvious bugs or security issues
+- [ ] Performance implications considered
+- [ ] Error handling is appropriate
+
+### Testing
+- [ ] New functionality has tests
+- [ ] Existing tests still pass
+- [ ] Edge cases considered
+- [ ] Manual testing completed where needed
+
+### Documentation
+- [ ] Code is self-documenting or has comments where needed
+- [ ] API changes are documented
+- [ ] Complex decisions are explained
+- [ ] README updated if needed
+
+### Context Preservation (for significant changes)
+- [ ] Major decisions added to context files
+- [ ] Trade-offs documented
+- [ ] Future maintainers will understand why
+```
+
+### Optional: Automated Checks
+
+If your team wants some automation, focus on objective checks:
 
 ```yaml
-name: ASDD Validation
-on:
-  pull_request:
-    types: [opened, synchronize, reopened]
+# .github/workflows/ci.yml (example)
+name: CI
+on: [pull_request]
 
 jobs:
-  asdd-validation:
+  test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    
-    - name: Validate Context Integrity
-      run: |
-        # Check context files are properly maintained
-        if [ -f "context/project-context.yml" ]; then
-          echo "✓ Context manifest found"
-        else
-          echo "✗ Context manifest missing"
-          exit 1
-        fi
-    
-    - name: Validate Branch Naming
-      run: |
-        BRANCH_NAME="${{ github.head_ref }}"
-        if [[ "$BRANCH_NAME" =~ ^(level-[0-4]|prototype-|context-sync-) ]]; then
-          echo "✓ Branch naming follows ASDD convention"
-        else
-          echo "✗ Branch naming does not follow ASDD convention"
-          echo "Expected: level-{0-4}-{name}, prototype-{name}, or context-sync-{name}"
-          exit 1
-        fi
-    
-    - name: Validate PR Template Usage
-      run: |
-        # Check if PR description contains ASDD validation checklist
-        if grep -q "Level Information" <<< "${{ github.event.pull_request.body }}"; then
-          echo "✓ PR template used"
-        else
-          echo "✗ PR template not used"
-          exit 1
-        fi
-    
-    - name: Check Documentation Updates
-      run: |
-        # Verify documentation is updated for significant changes
-        if git diff --name-only origin/main | grep -E '\.(md|yml|yaml)$' > /dev/null; then
-          echo "✓ Documentation changes detected"
-        else
-          echo "⚠ No documentation changes detected"
-        fi
+    - name: Run tests
+      run: npm test
+    - name: Check lint
+      run: npm run lint
 ```
+
+**Note**: Keep automation focused on objective quality (tests, lint) not process compliance.
 
 ## 📊 Workflow Examples
 
-### Complete Level Implementation
+### Standard Feature Development
 
-**Example: Level 1 Approach Validation**
+**Example: Implementing User Authentication**
 
 ```bash
-# 1. Create level branch
+# 1. Create feature branch
 git checkout main && git pull
-git checkout -b level-1-approach
+git checkout -b feature/user-authentication
 
-# 2. Implement level requirements
-# ... work on approach validation ...
+# 2. Develop feature with clear commits
+git add src/auth
+git commit -m "feat: add JWT token generation"
 
-# 3. Update context
+git add tests/
+git commit -m "test: add auth service unit tests"
+
+# 3. Document important decisions
+echo "Chose JWT for stateless auth..." >> context/decisions/auth.md
 git add context/
-git commit -m "level-1: document approach decisions and technical constraints"
+git commit -m "docs: document authentication approach decision"
 
-# 4. Create PR with validation
-gh pr create --title "Level 1: Technical Approach Validation" \
-  --body "Validates technical approach feasibility and documents key architectural decisions"
+# 4. Create PR for review
+gh pr create --title "Add user authentication" \
+  --body "Implements JWT-based authentication as discussed in #42"
 
-# 5. Address review feedback
-git add . && git commit -m "level-1: address review feedback on database approach"
-
-# 6. Merge after validation
-gh pr merge --squash --delete-branch
-
-# 7. Prepare next level
-git checkout main && git pull
-git checkout -b level-2-structure
+# 5. Address feedback and merge
+git add . && git commit -m "fix: address PR feedback on token expiry"
+gh pr merge --squash
 ```
 
-### Spiral Navigation Example
+### Handling Design Changes
 
-**Example: Level 2 Discovery Invalidates Level 1**
+**Example: Updating Approach Based on New Information**
 
 ```bash
-# 1. Discover issue during level-2 work
-git checkout level-1-approach
-git checkout -b level-1-approach-revision-db
+# 1. Create branch for updates
+git checkout -b refactor/update-database-approach
 
-# 2. Address discovered issues
-git add . && git commit -m "level-1: revise database approach based on level-2 integration constraints"
+# 2. Make changes and document why
+git add . && git commit -m "refactor: switch to PostgreSQL for better JSON support
 
-# 3. Create revision PR
-gh pr create --title "Level 1 Revision: Database Approach" \
-  --body "Revises database approach based on integration discoveries from level-2 work"
+After testing MongoDB, we found PostgreSQL's JSONB type better
+suited our semi-structured data needs while maintaining ACID."
 
-# 4. Merge revision
-gh pr merge --squash --delete-branch
+# 3. Update context with decision
+echo "Changed from MongoDB to PostgreSQL..." >> context/decisions/database.md
+git add context/ && git commit -m "docs: document database change rationale"
 
-# 5. Rebase level-2 on updated level-1
-git checkout level-2-structure
-git rebase level-1-approach
+# 4. Create PR with clear explanation
+gh pr create --title "Switch database to PostgreSQL" \
+  --body "Updates database choice based on prototype findings. See context/decisions/database.md"
 ```
 
-### Emergency Procedures
+### Handling Urgent Changes
 
-**High-Pressure Situations**
+**When Time is Critical**
 
 ```bash
-# Emergency hotfix with tracking
-git checkout main
-git checkout -b emergency-security-patch
-# Fix critical issue
-git add . && git commit -m "emergency: patch security vulnerability"
-# Create PR with emergency tag
-gh pr create --title "EMERGENCY: Security Patch" \
-  --body "Critical security fix - requires immediate review and cleanup tracking"
-# Merge after minimal review
-gh pr merge --squash --delete-branch
-# Create cleanup tracking issue
-gh issue create --title "Cleanup: Security Patch Documentation" \
-  --body "Add comprehensive documentation and testing for emergency security patch"
+# For critical fixes
+git checkout -b hotfix/security-vulnerability
+
+# Make focused fix
+git add . && git commit -m "fix: patch XSS vulnerability in user input"
+
+# Create PR with urgency noted
+gh pr create --title "[URGENT] Security: Fix XSS vulnerability" \
+  --body "Critical security fix. Minimal change to sanitize user input."
+
+# After merge, create follow-up issue
+gh issue create --title "Follow-up: Add comprehensive XSS tests" \
+  --body "The urgent fix addressed the immediate issue. We should add comprehensive tests."
 ```
 
-## 🛠️ Integration with ASDD Commands
+**Key Points for Urgent Changes**:
+- Keep changes minimal and focused
+- Document what was done and why
+- Create follow-up issues for comprehensive fixes
+- Don't skip code review unless absolutely necessary
 
-### Command Enhancement Examples
+## 🛠️ Working with ASDD Commands
 
-**Enhanced /level-1-approach Command**
+### Suggested Git Integration Patterns
+
+If using ASDD commands, consider these git workflow patterns:
+
+**When Starting a New ASDD Level:**
 ```bash
-# Auto-create branch for level
-git checkout -b level-1-approach-$(date +%Y%m%d)
+# Create a descriptive branch
+git checkout -b feature/define-project-vision  # More descriptive than "level-0"
 
-# Auto-update context after completion
-git add context/ && git commit -m "level-1: sync context after approach validation"
+# Use clear commit messages
+git add . && git commit -m "docs: define initial project vision and goals"
 
-# Auto-create PR
-gh pr create --title "Level 1: Approach Validation" --body "$(cat .github/PULL_REQUEST_TEMPLATE.md)"
+# Reference ASDD level in PR if helpful
+gh pr create --title "Define project vision (ASDD Level 0)" \
+  --body "Initial project vision as part of ASDD discovery process"
 ```
 
-## 🔍 Troubleshooting
+**Key Suggestions:**
+- Use branch names that describe the work, not just the process
+- Keep commits focused and well-described
+- Reference ASDD phases in PRs only when it adds clarity
+- Preserve important decisions in context files
 
-### Common Issues and Solutions
+## 🔍 Common Git Workflow Tips
 
-**Branch Protection Conflicts**
+### Working with Protected Branches
+
+If your team uses branch protection:
+
 ```bash
-# Issue: Cannot push directly to main
-# Error: "Updates were rejected because the remote contains work that you do not have locally"
-# Solution: Always use feature branches and PRs
-git checkout -b feature-branch
-git push -u origin feature-branch
+# Can't push to main? That's by design! Create a feature branch:
+git checkout -b feature/my-new-feature
+git push -u origin feature/my-new-feature
 gh pr create
 
-# Issue: Force push blocked by branch protection
-# Error: "Cannot force-push to protected branch"
-# Solution: Use regular commits and address issues through PR review
-git add . && git commit -m "fix: address review feedback"
-git push
+# Need to update your PR? Just push normally:
+git add . && git commit -m "address review feedback"
+git push  # No force push needed
 ```
 
-**Context Sync Conflicts**
+### Handling Merge Conflicts
+
+**For Context Files:**
 ```bash
-# Issue: Context files have merge conflicts
-# Error: "Automatic merge failed; fix conflicts and then commit the result"
-# Solution: Use context-sync branch for resolution
-git checkout -b context-sync-resolution
-# Edit files to resolve conflicts manually
-# Remove conflict markers (<<<<<<<, =======, >>>>>>>)
-git add context/ && git commit -m "context: resolve merge conflicts between level-1 and level-2"
-gh pr create --title "Context Sync: Merge Conflict Resolution"
+# Pull latest changes
+git pull origin main
+
+# If conflicts occur in context files:
+# 1. Open the conflicted file
+# 2. Look for conflict markers: <<<<<<<, =======, >>>>>>>
+# 3. Decide which changes to keep (often you want both)
+# 4. Remove the conflict markers
+# 5. Stage and commit
+git add context/
+git commit -m "merge: resolve context file conflicts"
 ```
 
-**Failed Validation Gates**
+**Tip**: For YAML files, ensure the result is still valid YAML after merging.
+
+### PR Best Practices
+
 ```bash
-# Issue: PR validation fails
-# Error: "Required status check failed"
-# Solution: Fix validation issues before merge
-gh pr checks --watch
-# Common fixes:
-# 1. Branch naming violation
-git branch -m level-1-approach-validation
-git push origin :old-branch-name
-git push -u origin level-1-approach-validation
+# Check your PR status
+gh pr checks  # See CI status
+gh pr view    # See PR details and comments
 
-# 2. Missing PR template usage
-# Edit PR description to include ASDD validation checklist
+# Update PR description if needed
+gh pr edit
 
-# 3. Context integrity failure
-# Update context manifest with required fields
-git add context/ && git commit -m "context: fix integrity validation"
+# Common PR improvements:
+# - Add more context to the description
+# - Reference related issues
+# - Add screenshots for UI changes
+# - Summarize the "why" not just the "what"
 ```
 
-**Authentication and Permissions Issues**
-```bash
-# Issue: GitHub CLI not authenticated
-# Error: "This command requires you to be logged into github.com"
-# Solution: Authenticate with GitHub CLI
-gh auth login --web
+### GitHub CLI Setup
 
-# Issue: Insufficient permissions to configure branch protection
-# Error: "Resource not accessible by integration"
-# Solution: Use appropriate permissions or admin access
-# Verify repository permissions:
+**First Time Setup:**
+```bash
+# Authenticate with GitHub
+gh auth login
+
+# Check your auth status
+gh auth status
+
+# Set your preferred editor
+gh config set editor "code --wait"  # or vim, nano, etc.
+```
+
+**Permissions Tips:**
+```bash
+# Check your permissions on a repo
 gh api repos/:owner/:repo | jq '.permissions'
+
+# Can't configure branch protection? You might need admin access
+# Ask your repository admin to set it up
 ```
 
-**Branch Naming and Organization Issues**
-```bash
-# Issue: Existing branch doesn't follow ASDD convention
-# Solution: Rename branch to follow convention
-git branch -m old-feature-name level-2-structure-validation
-git push origin :old-feature-name
-git push -u origin level-2-structure-validation
+### Working with Context Files
 
-# Issue: Multiple branches for same level
-# Solution: Consolidate or use revision naming
-git checkout level-1-approach-v2
-git checkout -b level-1-approach-revision-database
-# Merge or cherry-pick relevant changes
-git cherry-pick level-1-approach-v2
-```
-
-**Context File Management Issues**
+**YAML Validation Tips:**
 ```bash
-# Issue: Context file corrupted or malformed YAML
-# Error: "yaml: line X: found unexpected end of stream"
-# Solution: Validate and fix YAML syntax
-# Use online YAML validator or:
+# Check if your YAML is valid
 python -c "import yaml; yaml.safe_load(open('context/project-context.yml'))"
+# Or use an online YAML validator
 
-# Issue: Missing context during transition
-# Solution: Recover from git history
+# Recover a file from git history if needed
 git log --oneline --follow context/project-context.yml
-git show commit-hash:context/project-context.yml > context/project-context.yml
-git add context/ && git commit -m "context: restore from git history"
+git show <commit-hash>:context/project-context.yml > context/project-context.yml
 ```
 
-**Pull Request Template Issues**
+**PR Template Location:**
 ```bash
-# Issue: PR template not automatically loaded
-# Solution: Ensure correct file location and name
-mkdir -p .github
-# Create or update template file
-cat > .github/PULL_REQUEST_TEMPLATE.md << 'EOF'
-# ASDD Level Validation
-[template content]
-EOF
-
-# Issue: Multiple PR templates causing confusion
-# Solution: Use specific templates in subdirectory
-mkdir -p .github/PULL_REQUEST_TEMPLATE/
-mv .github/PULL_REQUEST_TEMPLATE.md .github/PULL_REQUEST_TEMPLATE/asdd-level.md
+# GitHub looks for PR templates here:
+.github/PULL_REQUEST_TEMPLATE.md
+# Or in a subdirectory for multiple templates:
+.github/PULL_REQUEST_TEMPLATE/feature.md
+.github/PULL_REQUEST_TEMPLATE/bugfix.md
 ```
 
-**Workflow Automation Issues**
+### Team Coordination Tips
+
+**Working in Parallel:**
 ```bash
-# Issue: GitHub Actions workflow fails
-# Error: Workflow validation errors
-# Solution: Check workflow syntax and permissions
-# Validate workflow YAML:
-gh api repos/:owner/:repo/actions/workflows
+# Communicate about who's working on what
+gh issue create --title "Working on auth feature" \
+  --body "I'll be implementing the authentication system this week"
 
-# Issue: ASDD validation script not found
-# Solution: Ensure validation scripts are in repository
-# Add validation script to repository:
-mkdir -p .github/scripts/
-cat > .github/scripts/validate-asdd.sh << 'EOF'
-#!/bin/bash
-# ASDD validation logic
-EOF
-chmod +x .github/scripts/validate-asdd.sh
+# Use draft PRs for work in progress
+gh pr create --draft --title "WIP: Authentication system"
+
+# Keep branches small and focused to reduce conflicts
 ```
 
-**Team Coordination Issues**
+**Branch Cleanup:**
 ```bash
-# Issue: Multiple team members working on same level
-# Solution: Use branch protection and coordination
-# Create coordination issue:
-gh issue create --title "Level 2 Coordination" --body "Track parallel work on level-2-structure"
+# See what branches have been merged
+git branch --merged main
 
-# Issue: Lost context during handoffs
-# Solution: Use structured handoff process
-# Create handoff documentation:
-echo "## Handoff Notes" >> docs/handoff-level-1.md
-echo "- Current state: approach validated" >> docs/handoff-level-1.md
-echo "- Next steps: begin structure definition" >> docs/handoff-level-1.md
-git add docs/ && git commit -m "docs: level-1 handoff documentation"
+# Clean up old branches (locally)
+git branch -d old-feature-branch
+
+# Clean up on remote
+git push origin --delete old-feature-branch
 ```
 
-**Performance and Scale Issues**
+### Recovery Tips
+
+**If Something Goes Wrong:**
+
 ```bash
-# Issue: Large context files causing merge conflicts
-# Solution: Split context into smaller, focused files
-mkdir -p context/levels/
-mv context/level-specific-context.yml context/levels/
-# Update context sync scripts to handle multiple files
+# Lost a file? Check git history
+git log --oneline --follow path/to/file
+git show <commit>:path/to/file > recovered-file
 
-# Issue: Too many branches cluttering repository
-# Solution: Regular cleanup of merged branches
-# List merged branches:
-git branch --merged main | grep -v main
-# Delete merged branches:
-git branch --merged main | grep -v main | xargs -n 1 git branch -d
+# Messed up a merge? Start over
+git merge --abort  # If still in merge
+git reset --hard origin/main  # Nuclear option - loses local changes!
+
+# Need to find when something changed?
+git log -S "search term" --oneline  # Search file contents
+git blame path/to/file  # See who changed each line
 ```
 
-### Emergency Recovery Procedures
-
-**Complete Context Loss**
+**Backup Before Big Changes:**
 ```bash
-# 1. Stop all work immediately
-# 2. Assess scope of loss
-git log --oneline --all | grep -E "(level-|context)"
+# Create a backup branch
+git branch backup-before-refactor
 
-# 3. Recover from last known good state
-git log --follow context/
-# Find last good commit
-git checkout last-good-commit -- context/
-
-# 4. Reconstruct missing context from git history
-git log --oneline --grep="level-" | head -20
-# Review commit messages for key decisions
-
-# 5. Create recovery tracking
-gh issue create --title "EMERGENCY: Context Recovery" --label "emergency"
+# Or tag the current state
+git tag -a "before-major-change" -m "Backup before refactoring auth"
 ```
 
-**Repository Corruption**
-```bash
-# 1. Create backup of current state
-cp -r .git .git.backup
-cp -r context context.backup
+## 🎯 Signs of Healthy Git Workflows
 
-# 2. Re-clone from remote
-cd ..
-git clone repository-url repository-recovery
-cd repository-recovery
+### What Good Looks Like
 
-# 3. Apply local changes carefully
-# Compare with backup and apply selectively
+**Clear Communication:**
+- PRs have descriptive titles and context
+- Commit messages explain the "why"
+- Important decisions are documented
+- Team members can understand changes months later
 
-# 4. Rebuild context from commits and documentation
-git log --oneline --all | grep -E "(context|level-)"
-```
+**Smooth Collaboration:**
+- Reviews happen promptly
+- Feedback is constructive
+- Conflicts are rare and easily resolved
+- Everyone knows how to contribute
 
-**Branch Protection Misconfiguration**
-```bash
-# Issue: Cannot merge PRs due to misconfigured protection
-# Solution: Fix protection rules via API
-gh api repos/:owner/:repo/branches/main/protection \
-  --method PUT \
-  --field required_status_checks='{"strict":true,"contexts":["ASDD Validation"]}' \
-  --field required_pull_request_reviews='{"required_approving_reviews":1}'
+**Maintained Quality:**
+- Tests pass consistently
+- Code follows team standards
+- Documentation stays updated
+- Technical debt is tracked
 
-# Verify configuration:
-gh api repos/:owner/:repo/branches/main/protection | jq '.'
-```
+### Continuous Improvement
 
-### Monitoring and Metrics
+Consider periodically asking:
+- What's working well with our workflow?
+- What friction points do we encounter?
+- Are our branch names helping or confusing?
+- Do our PR templates add value or feel like busywork?
 
-**Git Workflow Health Metrics**
-- Percentage of PRs using ASDD template
-- Average time from branch creation to merge
-- Frequency of spiral navigation (backward branches)
-- Context integrity validation success rate
-
-**Branch Management Metrics**
-- Number of active branches per level
-- Merge success rate by domain complexity
-- Review completion time by domain type
-- Emergency procedure usage frequency
-
-## 🎯 Success Indicators
-
-### Level 1 (Initial Implementation)
-- [ ] All team members can create ASDD-aligned branches
-- [ ] PR template usage >90%
-- [ ] Context integrity maintained across merges
-- [ ] Domain-calibrated reviews implemented
-
-### Level 2 (Optimization)
-- [ ] Automated validation catches 80% of issues
-- [ ] Emergency procedures documented and tested
-- [ ] Spiral navigation seamlessly handled
-- [ ] Integration with existing tools completed
-
-### Level 3 (Mastery)
-- [ ] Workflow becomes natural team behavior
-- [ ] Context degradation incidents <5%
-- [ ] Review assignment automated based on domain
-- [ ] Continuous improvement based on metrics
+Adjust practices based on what you learn. No workflow is perfect for every team.
 
 ---
 
-## 🔄 Evolution and Feedback
+## 🔄 Adapting These Suggestions
 
-This git workflow integration will evolve based on:
-- Team feedback and adoption challenges
-- Integration successes and failures
-- Pressure-testing under real project constraints
-- Continuous improvement based on usage metrics
+This document provides flexible guidance, not rigid rules. Every team is different, and what works for one may not work for another.
+
+**Key Principles:**
+- Start simple and add complexity only as needed
+- Focus on practices that reduce friction, not add it
+- Trust developers to make good decisions
+- Adapt based on your team's experience
+
+**Remember:** The best workflow is one that:
+- Your team actually uses
+- Helps rather than hinders
+- Evolves with your needs
+- Supports quality without bureaucracy
+
+---
+
+*This document offers suggestions based on common patterns. Adapt freely to your team's needs.*
 
 **Version**: 1.0.3  
-**Integration Date**: 2025-07-03  
-**Next Review**: After 5 projects using integrated workflow  
-**Feedback Channel**: GitHub Issues on template repository  
+**Last Updated**: 2025-07-03  
+**Philosophy**: Flexible guidance over rigid enforcement  

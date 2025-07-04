@@ -43,9 +43,9 @@ The instantiation can be identifed by README.md and docs/design/
 Update CLAUDE.md to reflect this fact.
 ```
 12. Setup initial context: `/asdd-context-sync init context/project-context.yml`
-13. Configure git workflow: `/asdd-git-setup`
-14. Setup branch protection (requires GitHub CLI):
+13. (Optional) Consider setting up branch protection for code review:
 ```bash
+# Example: Require PR reviews before merging to main
 gh api repos/:owner/:repo/branches/main/protection \
   --method PUT \
   --field required_pull_request_reviews='{"required_approving_reviews":1,"dismiss_stale_reviews":true}'
@@ -93,11 +93,12 @@ Context management and workflow support:
 - `/generate-next-steps` - Create detailed transition plans with resource estimates
 - `/generate-phase-report` - Generate comprehensive reports from phase artifacts
 
-### Git Workflow Commands
-Branch management and collaboration support:
-- `/asdd-git-setup` - Configure repository with ASDD-aligned git workflows
-- `/asdd-branch-transition` - Manage branch creation/merging for phase transitions
-- `/asdd-pr-template` - Generate PR templates aligned with ASDD validation
+### Git Workflow Guidance
+For flexible git workflow suggestions, see [Git Workflow Integration](docs/ASDD/git-workflow-integration.md):
+- GitHub Flow with descriptive branch naming
+- Helpful PR templates and checklists
+- Context preservation through meaningful commits
+- Domain-aware code review practices
 
 ### Common Workflow Patterns
 
