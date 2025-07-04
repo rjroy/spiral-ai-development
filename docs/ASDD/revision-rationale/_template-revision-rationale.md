@@ -126,7 +126,7 @@ Summary of what was accomplished and why it matters for the methodology's effect
 ---
 
 **Date**: {DATE}
-**Version Analyzed**: {VERSION}
+**Version Analyzed**: {PREVIOUS_VERSION}
 **Analysis Focus**: {FOCUS_AREA}
 **Key Improvement**: {ONE_LINE_SUMMARY}
 
