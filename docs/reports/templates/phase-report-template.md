@@ -126,7 +126,7 @@
 
 ## Next Steps
 
-### Immediate Actions ([Timeframe])
+### Action Items
 
 1. **[Action Item]** ([Duration estimate], [Owner])
    - [Specific deliverable or outcome]
@@ -143,11 +143,10 @@
    - [Prerequisites if any]
    - [Success criteria]
 
-### Future Considerations
+### Deferred Items
 
 - [Deferred item with rationale and target phase]
 - [Long-term consideration with dependencies]
-- [Strategic direction to explore]
 
 ---
 
@@ -187,52 +186,21 @@ metric_3: value
 
 ---
 
-## [Optional: Lessons Learned]
-
-### What Worked Well
-- [Successful approach or decision]
-- [Effective methodology or tool]
-- [Valuable discovery process]
-
-### What Could Be Improved
-- [Challenge encountered with improvement suggestion]
-- [Process bottleneck with optimization idea]
-- [Knowledge gap with learning plan]
-
-### Methodology Insights
-- [ASDD process observation]
-- [Collaboration effectiveness]
-- [Domain complexity learning]
-
----
-
-## Approval and Sign-off
+## Phase Summary
 
 **Phase Status**: [COMPLETE | PARTIALLY_COMPLETE | BLOCKED]  
 **Validation**: [Summary of what was validated]  
 **Recommendation**: [PROCEED | PIVOT | ABORT] to [Next Phase]  
-**Confidence Level**: [0.0-1.0]  
-
-**Prepared by**: [Name/Role]  
-**Date**: [YYYY-MM-DD]  
-**Version**: [v.major.minor]
+**Confidence Level**: [0.0-1.0]
 
 ---
 
-## Appendices
+## [Optional: Supporting Data]
 
-### A. Artifact Cross-Reference
-- **[Category]**: [List of relevant files/documents]
-- **[Category]**: [List of relevant files/documents]
-- **[Category]**: [List of relevant files/documents]
-
-### B. [Data/Metrics Appendix]
 ```yaml
-[Detailed data that supports findings]
+# Include any detailed metrics, data, or references that support findings
+# Remove this section if not needed
 ```
-
-### C. [Additional Supporting Information]
-[Any additional context, data, or references]
 
 ---
 
@@ -241,5 +209,3 @@ metric_3: value
 - Adjust categories and sections based on phase type
 - Ensure all bracketed placeholders are replaced
 - Maintain consistent impact/confidence scoring
-- Cross-reference all artifacts mentioned
-- Version control for report iterations
