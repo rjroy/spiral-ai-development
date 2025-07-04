@@ -101,11 +101,14 @@ Each command includes domain calibration, context preservation, and pressure ada
 
 ## Context Management and Utility Workflows
 
+**Context File**: A structured document that preserves critical project information across development phases in the ASDD methodology. Context files maintain project coherence by documenting key decisions with rationale, discovered constraints, requirements evolution, and semantic checksums.  They serve as living artifacts that prevent information degradation during phase transitions and enable rapid context restoration when project assumptions change or team members rotate. Context files follow a YAML manifest structure and include project identity, phase progression, key decisions, technical constraints, validation results, and risk assessments.
+
 ### Context File Management
 
 **Context Manifest Storage**:
 - Primary: `context/project-context.yml` - Main context manifest
-- Phase-specific: `context/phase-{phase-name}-context.yml` - Phase artifacts
+- Phase/Level-specific: `context/[phase|level]-{id}-{phase/level-name}.yml` - Phase/Level artifacts
+- Decomposition-specific: `context/[phase|level]-{id}-{phase/level-name}-{decomposition}.yml` - Decomposition artifacts
 
 ### Git Workflow Recommended Integration
 
