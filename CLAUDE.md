@@ -8,7 +8,7 @@ This is a **meta-template repository** for establishing AI-human collaboration p
 
 ## Core Philosophy
 
-The development philosophy is documented in [ASDD/Philosophy.md](ASDD/Philosophy.md). Key principles include:
+The development philosophy is documented in [docs/ASDD/Philosophy.md](docs/ASDD/Philosophy.md). Key principles include:
 
 ### Enhanced Collaboration Framework
 1. **Question Before Acting** - Always ask clarifying questions before major implementation decisions
@@ -65,7 +65,7 @@ When starting a new project with this template:
 
 3. **Customize ASDD Commands**:
    - Use existing level commands (`/level-0-vision`, `/level-1-approach`, etc.)
-   - Create domain-specific commands using `ASDD/claude-command-template/phase-template.md`
+   - Create domain-specific commands using `docs/ASDD/claude-command-template/phase-template.md`
    - Adapt validation requirements to project needs
 
 4. **Establish Project-Specific Standards**:
@@ -95,17 +95,20 @@ The template includes complete ASDD commands:
 /generate-phase-report - Generate comprehensive reports
 ```
 
-See [Git Workflow Integration](ASDD/git-workflow-integration.md) for flexible guidance on git workflows that support ASDD methodology without being prescriptive.
+See [Git Workflow Integration](docs/ASDD/git-workflow-integration.md) for flexible guidance on git workflows that support ASDD methodology without being prescriptive.
 
 Each command includes domain calibration, context preservation, and pressure adaptation.
 
 ## Context Management and Utility Workflows
 
+**Context File**: A structured document that preserves critical project information across development phases in the ASDD methodology. Context files maintain project coherence by documenting key decisions with rationale, discovered constraints, requirements evolution, and semantic checksums.  They serve as living artifacts that prevent information degradation during phase transitions and enable rapid context restoration when project assumptions change or team members rotate. Context files follow a YAML manifest structure and include project identity, phase progression, key decisions, technical constraints, validation results, and risk assessments.
+
 ### Context File Management
 
 **Context Manifest Storage**:
 - Primary: `context/project-context.yml` - Main context manifest
-- Phase-specific: `context/phase-{phase-name}-context.yml` - Phase artifacts
+- Phase/Level-specific: `context/[phase|level]-{id}-{phase/level-name}.yml` - Phase/Level artifacts
+- Decomposition-specific: `context/[phase|level]-{id}-{phase/level-name}-{decomposition}.yml` - Decomposition artifacts
 
 ### Git Workflow Recommended Integration
 
@@ -121,7 +124,7 @@ Each command includes domain calibration, context preservation, and pressure ada
 - Context preservation is more important than any specific git workflow
 - Choose tools that support your thinking, not the other way around
 
-For more detail see [git-workflow-integration.md](ASDD/git-workflow-integration.md)
+For more detail see [git-workflow-integration.md](docs/ASDD/git-workflow-integration.md)
 
 **Context File Naming Convention**:
 ```
@@ -263,11 +266,11 @@ For each level, apply enhanced validation:
 ## Key Files
 
 ### Core Framework Files
-- `ASDD/Philosophy.md` - Complete development philosophy with integrated patches
-- `ASDD/git-workflow-integration.md` - Git workflow integration with ASDD phases
-- `ASDD/claude-command-template/phase-template.md` - Comprehensive template for creating ASDD commands
-- `ASDD/claude-command-template/utility-template.md` - Template for creating utility commands
-- `ASDD/revision-rationale/` - Systematic failure analysis for historic versions. Provides deeper insight into revisions.
+- `docs/ASDD/Philosophy.md` - Complete development philosophy with integrated patches
+- `docs/ASDD/git-workflow-integration.md` - Git workflow integration with ASDD phases
+- `docs/ASDD/claude-command-template/phase-template.md` - Comprehensive template for creating ASDD commands
+- `docs/ASDD/claude-command-template/utility-template.md` - Template for creating utility commands
+- `docs/ASDD/revision-rationale/` - Systematic failure analysis for historic versions. Provides deeper insight into revisions.
 
 ### Phase Commands
 - `.claude/commands/phase-0-prototype.md` - Prototype validation command
