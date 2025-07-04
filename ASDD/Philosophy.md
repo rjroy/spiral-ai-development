@@ -102,6 +102,108 @@ AI can offer answers that look complete. **That's the structural trap.** This ph
 
 ---
 
+## 🔄 Version Control Collaboration
+
+### Git Workflow Integration with ASDD
+
+**Core Principle**: Version control workflows can support collaboration and quality through thoughtful design.
+
+**Consider Using Branch Protection**:
+- Protected main branch encourages review before integration
+- Pull requests create natural collaboration checkpoints
+- Code review allows sharing of domain expertise
+- Automated checks can catch objective issues early
+
+### Suggested Branching Patterns
+
+**Consider Descriptive Branch Names**:
+- Feature branches with clear intent: `feature/user-authentication`
+- Prototype branches for experiments: `prototype/test-new-api`
+- Include ASDD phase if helpful: `feature/level-1-technical-approach`
+- Keep names meaningful to your team
+
+**Simple GitHub Flow**:
+```
+main
+├── feature/descriptive-name
+├── fix/bug-description
+├── docs/what-youre-documenting
+└── prototype/experiment-name
+```
+
+**Context Preservation Through Git**:
+- Use meaningful commit messages that explain decisions
+- Document major choices in context files
+- PR descriptions can capture important discussions
+- Git history naturally preserves your journey
+
+### Thoughtful Code Review Practices
+
+**For Simple Domains**:
+- Consider lighter review for straightforward changes
+- Focus on integration and consistency
+- Trust automated tests for basic validation
+
+**For Complex Domains**:
+- Involve team members with relevant expertise
+- Take time to review architectural implications
+- Discuss design decisions as a team
+
+**For Extreme Domains**:
+- Multiple reviewers may be valuable
+- Consider compliance and safety requirements
+- Document review decisions and rationale
+
+### Supporting Component Replaceability
+
+**Consider These Practices**:
+- Keep changes focused and cohesive
+- Document interfaces clearly in PRs
+- Note dependencies that might affect others
+- Think about future maintainability
+
+**Merge Strategy Options**:
+- Squash merge: Clean history for feature branches
+- Merge commit: Preserve development context
+- Rebase: Linear history (if team prefers)
+- Choose what works for your team
+
+### Encouraging Good Collaboration
+
+**Pull Request Templates Can Include**:
+- Helpful checklists (not rigid requirements)
+- Prompts for important context
+- Reminders about documentation
+- Space for explaining decisions
+
+**Review Assignment Suggestions**:
+- Consider who has relevant expertise
+- Rotate reviews to share knowledge
+- Use CODEOWNERS as suggestions, not rules
+- Trust teams to find the right reviewers
+
+**Quality Checkpoints to Consider**:
+- Are tests passing?
+- Is the change well-explained?
+- Have the right people reviewed?
+- Is documentation current?
+
+### Handling Timeline Pressure
+
+**When Deadlines Are Tight**:
+- Focus on essential quality checks
+- Document what's being deferred
+- Create follow-up issues for cleanup
+- Communicate with the team
+
+**Suggested Priorities Under Pressure**:
+- Keep: Security review, critical tests
+- Consider deferring: Perfect documentation, nice-to-have features
+- Always: Communicate trade-offs clearly
+- Plan: Schedule time for technical debt
+
+---
+
 ## 💻 Code Philosophy
 
 ### Technical Principles
@@ -259,7 +361,6 @@ context_manifest:
 ### Philosophy Evolution
 
 This document must change when reality proves it wrong.
-Version 1.0 incorporates systematic failure analysis and pressure-testing results.
 
 Changes require:
 1. Documentation of what broke and why
@@ -311,7 +412,9 @@ Version 1.0 has been designed to bend without breaking, adapting to pressure whi
 
 ---
 
-_Philosophy version: 1.0_
+_Philosophy version: 1.0.3_
 _Last pressure-tested: 2025-07-03_
 _Failure analysis integrated: ASDD/revision-rationale/v0.1-analysis.md_
-_Next philosophical review: After 10 projects using v1.0 methodology_
+_Improved collaboration hooks: ASDD/revision-rationale/v1.0-analysis.md_
+_Git workflow integration: v1.0.3 (flexible guidance for thoughtful collaboration)_
+_Next philosophical review: After 10 projects using v1.0.3 methodology_

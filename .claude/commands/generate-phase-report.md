@@ -51,7 +51,7 @@ phase_summary:
   status: "COMPLETE" | "PARTIALLY_COMPLETE" | "BLOCKED"
   recommendation: "PROCEED" | "PIVOT" | "ABORT"
   confidence: 0.1 to 1.0
-  
+
 key_findings:
   - finding: "Brief description"
     impact: "HIGH" | "MEDIUM" | "LOW"
@@ -78,11 +78,6 @@ docs/reports/
 │   ├── phase-0-prototype-report.md
 │   ├── level-0-vision-report.md
 │   └── executive-summary.md
-├── archive/
-│   ├── v1.0/
-│   │   ├── phase-0-prototype-report-v1.0.md
-│   │   └── level-0-vision-report-v1.0.md
-│   └── v1.1/
 └── templates/
     ├── phase-report-template.md
     └── executive-summary-template.md
@@ -94,12 +89,7 @@ report_versioning:
   version_format: "v{major}.{minor}"
   major_increment: "Phase completion or major findings change"
   minor_increment: "Updates to existing findings or format improvements"
-  
-  archive_triggers:
-    - major_milestone_completion
-    - significant_findings_change
-    - stakeholder_review_cycles
-    
+
   report_metadata:
     version: "v1.0"
     generated_date: "2024-01-15"

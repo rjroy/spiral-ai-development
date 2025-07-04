@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a **meta-template repository** for establishing AI-human collaboration patterns in software development. It contains no implementation code but provides philosophical and procedural frameworks for future projects that have been pressure-tested against systematic failure analysis.
 
-## Core Philosophy v1.0.2
+## Core Philosophy
 
 The development philosophy is documented in [ASDD/Philosophy.md](ASDD/Philosophy.md). Key principles include:
 
@@ -30,7 +30,7 @@ Design components with stable interfaces and documented behavioral contracts tha
 - **Complex Domains**: AI assists implementation, human leads architecture
 - **Extreme Domains**: AI provides boilerplate only, human owns all decisions
 
-## AI Spec-Driven Development (ASDD) v1.0.2 - Spiral Model
+## AI Spec-Driven Development (ASDD) - Spiral Model
 
 This template establishes a spiral development approach with progressive detail levels:
 
@@ -76,7 +76,7 @@ When starting a new project with this template:
 
 ### Available Commands
 
-The template includes complete ASDD v1.0.2 commands:
+The template includes complete ASDD commands:
 
 #### Core Phase Commands
 ```
@@ -95,26 +95,40 @@ The template includes complete ASDD v1.0.2 commands:
 /generate-phase-report - Generate comprehensive reports
 ```
 
+See [Git Workflow Integration](ASDD/git-workflow-integration.md) for flexible guidance on git workflows that support ASDD methodology without being prescriptive.
+
 Each command includes domain calibration, context preservation, and pressure adaptation.
 
-## Context Management and Utility Workflows v1.0.2
+## Context Management and Utility Workflows
 
 ### Context File Management
 
 **Context Manifest Storage**:
 - Primary: `context/project-context.yml` - Main context manifest
 - Phase-specific: `context/phase-{phase-name}-context.yml` - Phase artifacts
-- Archive: `context/archive/` - Historical context versions
+
+### Git Workflow Recommended Integration
+
+**Suggested Approaches**:
+- Consider descriptive branch naming that reflects your work
+- Use git commits to preserve your decision-making process
+- Collaborate through whatever review process works for your team
+- Adapt any suggestions to fit your project's constraints
+
+**Team Choice**:
+- Some teams find branch naming conventions helpful
+- Others prefer simple GitHub Flow with good commit messages
+- Context preservation is more important than any specific git workflow
+- Choose tools that support your thinking, not the other way around
+
+For more detail see [git-workflow-integration.md](ASDD/git-workflow-integration.md)
 
 **Context File Naming Convention**:
 ```
 context/
 ├── project-context.yml           # Main context manifest
 ├── phase-0-prototype-context.yml # Phase-specific context
-├── level-{n}-{name}-context.yml  # Level-specific context
-└── archive/                      # Historical versions
-    ├── project-context-v1.yml
-    └── phase-0-prototype-v1.yml
+└── level-{n}-{name}-context.yml  # Level-specific context
 ```
 
 ### Utility Command Workflows
@@ -146,7 +160,7 @@ context/
 ```yaml
 # Project Context Manifest Template
 context_manifest:
-  version: "1.0.2"
+  version: "1.0.3"
   project_identity:
     name: "Project Name"
     purpose: "Core project purpose"
@@ -192,7 +206,7 @@ context_manifest:
       status: "ACTIVE | MITIGATED | ACCEPTED"
 ```
 
-## Collaboration Patterns v1.0.2
+## Collaboration Patterns
 
 ### Context Preservation Requirements
 
@@ -201,6 +215,20 @@ For each level, maintain context manifest with:
 - Key decisions with rationale and alternatives
 - Discovered constraints and their impact
 - Semantic checksum (purpose + users + metrics + constraints)
+
+### Git Workflow Integration
+
+**Branch-per-Phase Collaboration**:
+- Each ASDD level uses dedicated feature branch
+- Context preservation through structured commit messages
+- Pull requests enforce domain-calibrated review requirements
+- Git history serves as decision audit trail
+
+**Validation Gates**:
+- Branch protection prevents unvalidated code integration
+- PR templates ensure ASDD validation checklists completion
+- Automated workflows verify context integrity
+- Domain experts assigned based on complexity assessment
 
 ### Domain-Calibrated Workflow
 
@@ -232,13 +260,14 @@ For each level, apply enhanced validation:
 - High Pressure: Skip to Level 3 with templates, plan cleanup
 - Extreme Pressure: Emergency mode with damage control
 
-## Key Files v1.0.2
+## Key Files
 
 ### Core Framework Files
-- `ASDD/Philosophy.md` - Complete v1.0.2 development philosophy with integrated patches
+- `ASDD/Philosophy.md` - Complete development philosophy with integrated patches
+- `ASDD/git-workflow-integration.md` - Git workflow integration with ASDD phases
 - `ASDD/claude-command-template/phase-template.md` - Comprehensive template for creating ASDD commands
 - `ASDD/claude-command-template/utility-template.md` - Template for creating utility commands
-- `ASDD/revision-rationale/v0-failure.md` - Systematic failure analysis that drove v0.1 improvements
+- `ASDD/revision-rationale/` - Systematic failure analysis for historic versions. Provides deeper insight into revisions.
 
 ### Phase Commands
 - `.claude/commands/phase-0-prototype.md` - Prototype validation command
@@ -256,21 +285,16 @@ For each level, apply enhanced validation:
 ### Configuration
 - `.claude/settings.local.json` - Claude Code permissions configuration (not shared)
 
-## Important Notes v1.0.2
+## Important Notes
 
 - This template contains no implementation code but provides pressure-tested methodology
-- **Version 1.0.2** addresses systematic failure modes through integrated patches
+- Addresses systematic failure modes through integrated patches and adds git workflow integration
 - All principles designed to bend under pressure rather than break
 - Methodology includes explicit escape valves and recovery mechanisms
 - Focus on reality-tested collaboration patterns that work under constraints
-
-### Philosophy Evolution
-
-This methodology evolves when reality proves it wrong. Version 1.0.2 incorporates:
-- Systematic failure analysis and pressure-testing results
-- Integration testing across all patches
-- Real-world constraint handling
-- Graceful degradation under timeline pressure
+   - Real-world constraint handling
+   - Graceful degradation under timeline pressure
+- Git workflow integration with branch protection and phase-aligned branching
 
 ### Utility Command Quality Assurance
 
