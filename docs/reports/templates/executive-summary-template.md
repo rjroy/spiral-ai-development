@@ -1,114 +1,179 @@
-# Executive Summary - [Project Name]
-## [Current Phase/Level] - [Phase Title]
+# [Project Name] Executive Summary - ACTION REQUIRED
 
+## 🎯 Actions Required (Review First)
+
+| Priority | Action | Owner | Due Date | Status |
+|----------|--------|-------|----------|--------|
+| 🔴 HIGH | [Critical action with clear deliverable] | [Name] | [Date] | ⏳ Pending |
+| 🟡 MED | [Important action with success criteria] | [Name] | [Date] | ⏳ Pending |
+| 🟢 LOW | [Nice-to-have with context] | [Name] | [Date] | ⏳ Pending |
+
+## 📊 Status at a Glance
+
+**Phase**: [Current Phase] → [Next Phase]  
+**Health**: 🟢 Green | 🟡 Yellow | 🔴 Red  
+**Confidence**: [X]% (was [Y]% last phase)  
+**Next Milestone**: [What] by [When]  
+
+### What Changed Since Last Report
+- ✅ **[Completed Action]**: [Impact/Result]
+- ⚠️ **[New Risk/Issue]**: [Why it matters]
+- 💡 **[Key Learning]**: [How it affects us]
+
+---
+
+## For Different Stakeholders
+
+<details>
+<summary><b>🎩 For Executives (1 min read)</b></summary>
+
+**Bottom Line**: [One sentence on project viability/progress]
+
+**Decision Needed**: [Yes/No question with recommendation]
+
+**Budget Impact**: [Current vs projected with variance]
+
+**Risk Level**: [Low/Medium/High] because [one key reason]
+
+</details>
+
+<details>
+<summary><b>🔧 For Technical Leads (3 min read)</b></summary>
+
+**Architecture Impact**: 
+- [Key technical decision and its implications]
+- [Technology choice with rationale]
+- [Performance/scalability consideration]
+
+**Technical Debt**: 
+- [What we're accumulating and why]
+- [Plan to address or accept]
+
+**Integration Points**:
+- [System/API dependencies discovered]
+- [Data flow implications]
+
+</details>
+
+<details>
+<summary><b>📋 For Project Managers (2 min read)</b></summary>
+
+**Timeline Impact**: [On track | X days behind | X days ahead]
+
+**Resource Needs**: 
+- [Skill/person needed] for [specific task]
+- [Tool/service needed] by [date]
+
+**Blockers**:
+- 🚫 [Blocker]: [Who can unblock] by [when]
+
+**Dependencies**:
+- ⏳ Waiting on: [External dependency]
+- 🤝 Providing to: [Who needs what from us]
+
+</details>
+
+---
+
+## The Story So Far
+
+### Where We Started
+[2-3 sentences on original problem/opportunity]
+
+### What We've Learned
+1. **[Key Discovery]**: [Why it matters and what it changes]
+2. **[Validation/Invalidation]**: [Impact on approach]
+3. **[Unexpected Finding]**: [How we're adapting]
+
+### Where We're Going
+[Current trajectory with confidence level and key assumptions]
+
+---
+
+## Metrics That Drive Decisions
+
+| What We Measure | Why It Matters | Current → Target | Action if Off Track |
+|----------------|----------------|------------------|-------------------|
+| [Metric 1] | [Business impact] | [X] → [Y] | [Specific action] |
+| [Metric 2] | [User impact] | [X] → [Y] | [Specific action] |
+| [Metric 3] | [Technical impact] | [X] → [Y] | [Specific action] |
+
+---
+
+## 🚨 Top 3 Risks (What Keeps Us Up at Night)
+
+### 1. [Risk Name] - Probability: [H/M/L] | Impact: [H/M/L]
+**The Risk**: [What could go wrong in plain English]  
+**Our Plan**: [Specific mitigation with owner]  
+**Early Warning**: [What to watch for]
+
+### 2. [Risk Name] - Probability: [H/M/L] | Impact: [H/M/L]
+**The Risk**: [What could go wrong in plain English]  
+**Our Plan**: [Specific mitigation with owner]  
+**Early Warning**: [What to watch for]
+
+### 3. [Risk Name] - Probability: [H/M/L] | Impact: [H/M/L]
+**The Risk**: [What could go wrong in plain English]  
+**Our Plan**: [Specific mitigation with owner]  
+**Early Warning**: [What to watch for]
+
+---
+
+## 📍 Recommendation: [PROCEED ✅ | PIVOT 🔄 | PAUSE ⏸️]
+
+**Because**: [One clear sentence on why this recommendation]
+
+**This Means**:
+- [Concrete next step 1]
+- [Concrete next step 2]
+- [Resource/decision needed]
+
+**Success Looks Like**: [Measurable outcome by specific date]
+
+---
+
+## Report Effectiveness Check
+
+**From Last Report**:
+- Actions Completed: [X/Y] ([Z]%)
+- Decisions Made: [List with outcomes]
+- Predictions Accurate: [What we got right/wrong]
+
+**Make This Report Better**: [2-question feedback link]
+
+---
+
+### Quick Reference
 **Report Date**: [YYYY-MM-DD]  
-**Project Status**: [Phase] [Complete ✅ | In Progress 🔄 | Blocked 🚫] → [Next Action]  
-**Timeline**: [On Track | Ahead | Behind] [with details if needed]  
+**Next Review**: [Date]  
+**Questions?**: [Contact person/channel]
 
 ---
 
-## Project Overview
+## Template Usage Notes
 
-**[Project Name]** is [brief description of what the project does and its primary value proposition]. [Additional sentence about the core problem it solves or opportunity it addresses].
+### Minimum Viable Summary (Time Crunch Mode)
+Only complete these sections:
+- 🎯 Actions Required
+- 📊 Status at a Glance  
+- 📍 Recommendation
+- Skip everything else
 
-**Target User**: [Primary user profile and key characteristics]  
-**Core Value**: [Primary value proposition in one clear sentence]
+### When to Use Expandable Sections
+- Use stakeholder views when you have 3+ distinct audiences
+- Collapse by default to avoid overwhelming readers
+- Each view should stand alone without reading others
 
----
+### Making It Yours
+- Delete sections that don't apply
+- Add sections that keep coming up in discussions
+- Track which sections get read (ask your stakeholders)
+- Evolve the template based on what drives action
 
-## [Current Phase] Achievements
-
-### ✅ [Achievement Category 1]
-- **[Key Result]**: [Specific measurable outcome with evidence]
-- **[Key Result]**: [Specific measurable outcome with evidence]
-- **[Key Result]**: [Specific measurable outcome with evidence]
-- **[Key Result]**: [Specific measurable outcome with evidence]
-
-### ✅ [Achievement Category 2]
-- **[Key Result]**: [Specific measurable outcome with evidence]
-- **[Key Result]**: [Specific measurable outcome with evidence]
-- **[Key Result]**: [Specific measurable outcome with evidence]
-- **[Key Result]**: [Specific measurable outcome with evidence]
-
-### ✅ [Achievement Category 3]
-- **[Key Result]**: [Specific measurable outcome with evidence]
-- **[Key Result]**: [Specific measurable outcome with evidence]
-- **[Key Result]**: [Specific measurable outcome with evidence]
-
----
-
-## Key Business Metrics
-
-| Metric | Target | Achieved | Status |
-|--------|--------|----------|--------|
-| **[Metric 1]** | [Target value] | [Actual value] | [✅ Status message] |
-| **[Metric 2]** | [Target value] | [Actual value] | [✅ Status message] |
-| **[Metric 3]** | [Target value] | [Actual value] | [✅ Status message] |
-| **[Metric 4]** | [Target value] | [Actual value] | [✅ Status message] |
-
----
-
-## [Next Phase] Priorities
-
-### 🚨 Critical Path Items
-1. **[Priority Item 1]** ([Time estimate])
-   - [Why this is critical]
-   - [Key deliverable or outcome]
-   - [Success criteria]
-
-2. **[Priority Item 2]** ([Time estimate])  
-   - [Why this is critical]
-   - [Key deliverable or outcome]
-   - [Success criteria]
-
-3. **[Priority Item 3]** ([Time estimate])
-   - [Why this is critical]
-   - [Key deliverable or outcome]
-   - [Success criteria]
-
-### 🏗️ [Secondary Priority Category]
-- **[Item 1]**: [Description and importance]
-- **[Item 2]**: [Description and importance]
-- **[Item 3]**: [Description and importance]
-
----
-
-## Strategic Recommendations
-
-### Immediate Actions ([Timeframe])
-1. **[Action 1]**: [Specific action with rationale]
-2. **[Action 2]**: [Specific action with rationale]
-3. **[Action 3]**: [Specific action with rationale]
-
-### [Next Phase] Success Criteria
-- [ ] [Specific measurable criterion]
-- [ ] [Specific measurable criterion]  
-- [ ] [Specific measurable criterion]
-- [ ] [Specific measurable criterion]
-- [ ] [Specific measurable criterion]
-
----
-
-## Conclusion
-
-**[Current Phase/Level] has been [successfully completed | partially completed | encountered blockers]** with [confidence level] confidence in [key outcome or decision]. [Evidence statement supporting the conclusion].
-
-**[Key achievement or validation]** through [specific accomplishments or validations]. The project is [well-positioned | ready | prepared] for [next phase] with [clear priorities | defined path | specific focus areas].
-
-**Recommendation: [PROCEED | PIVOT | PAUSE] to [Next Phase]** with focus on [primary focus areas].
-
----
-
-**Next Milestone**: [Milestone description] ([estimated timeframe])  
-**Project Confidence**: [HIGH | MEDIUM | LOW] [with brief rationale if needed]  
-**Risk Level**: [MANAGED | MODERATE | HIGH] [with brief description]
-
----
-
-**Template Usage Notes**:
-- Executive summaries should be 2-3 pages maximum
-- Focus on business impact and strategic decisions
-- Use clear, non-technical language where possible
-- Include specific metrics and evidence
-- Ensure recommendations are actionable
-- Replace all bracketed placeholders with actual content
+### Quality Checklist
+- [ ] Every action has an owner and date
+- [ ] Recommendation is crystal clear
+- [ ] Risks have specific mitigations
+- [ ] Metrics connect to decisions
+- [ ] No jargon in executive section
+- [ ] Report tells a story, not just lists facts

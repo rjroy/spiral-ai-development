@@ -1,211 +1,234 @@
-# [Phase/Level Name] Phase Report - [Project Name]
+# [Phase/Level Name] Report - [Project Name]
 
-**Phase**: [Phase identifier - e.g., Level 0 Vision Clarity, Phase 0 Prototype]  
-**Status**: [COMPLETE | PARTIALLY_COMPLETE | BLOCKED]  
-**Date**: [YYYY-MM-DD]  
-**Version**: v[major].[minor]  
-**Recommendation**: [PROCEED | PIVOT | ABORT | DEFER]  
-**Confidence**: [0.0-1.0]  
+**Quick Status**: [Phase] is [COMPLETE ✅ | PARTIAL 🔄 | BLOCKED 🚫] → [PROCEED | PIVOT | PAUSE]  
+**Confidence**: [X]% | **Date**: [YYYY-MM-DD] | **Version**: v[X.Y]
 
 ---
 
-## Executive Summary
+## 🎯 What You Need to Know First
 
-### Key Findings
+### The Decision We Need
+**[Clear yes/no question or specific choice needed]**
 
-1. **[Primary Finding Title]** (Impact: [HIGH | MEDIUM | LOW])
-   - [Brief description of the finding]
-   - [Why this matters to the project]
-   - [Quantifiable evidence if available]
+**Our Recommendation**: [Specific recommendation with one-sentence rationale]
 
-2. **[Secondary Finding Title]** (Impact: [HIGH | MEDIUM | LOW])
-   - [Brief description of the finding]
-   - [Why this matters to the project]
-   - [Quantifiable evidence if available]
+### What Must Happen Next
+1. **[Action]** - Owner: [Name] - Due: [Date]
+2. **[Action]** - Owner: [Name] - Due: [Date]  
+3. **[Action]** - Owner: [Name] - Due: [Date]
 
-3. **[Additional Finding Title]** (Impact: [HIGH | MEDIUM | LOW])
-   - [Brief description of the finding]
-   - [Why this matters to the project]
-   - [Quantifiable evidence if available]
-
-### Recommendation Summary
-
-**[PROCEED | PIVOT | ABORT] to [Next Phase]** with focus on:
-- [Primary focus area with rationale]
-- [Secondary focus area with rationale]
-- [Any critical blockers that must be resolved]
-- [Key risks to monitor during next phase]
+### Critical Risks
+- 🔴 **[Risk]**: [Impact] → [Mitigation with owner]
+- 🟡 **[Risk]**: [Impact] → [Mitigation with owner]
 
 ---
 
-## Detailed Findings
+## 📋 What We Set Out to Do vs What We Did
 
-### [Finding Category 1 - e.g., Vision Clarity, Technical Validation]
+### Original Goals for This Phase
+- [ ] [Goal 1] - **[Status: Achieved/Partial/Blocked]**
+- [ ] [Goal 2] - **[Status: Achieved/Partial/Blocked]**
+- [ ] [Goal 3] - **[Status: Achieved/Partial/Blocked]**
 
-**[Specific Finding or Outcome]**:
-- [Detailed explanation of what was discovered]
-- [Supporting evidence or data]
-- [Impact on project direction]
-- [Confidence level in finding]
-
-### [Finding Category 2 - e.g., User Profile, Architecture]
-
-**[Specific Finding or Outcome]**:
-- [Detailed explanation of what was discovered]
-- [Supporting evidence or data]
-- [Impact on project direction]
-- [Confidence level in finding]
-
-### [Finding Category 3 - e.g., Constraints, Performance]
-
-| [Metric/Constraint] | [Target/Expected] | [Actual/Discovered] | [Impact] |
-|-------------------|------------------|-------------------|---------|
-| [Item 1] | [Value] | [Value] | [Description] |
-| [Item 2] | [Value] | [Value] | [Description] |
-| [Item 3] | [Value] | [Value] | [Description] |
+### What Actually Happened
+<!-- Tell the story - what surprised us, what was harder/easier than expected -->
+[2-3 paragraphs narrating the journey, discoveries, and pivots]
 
 ---
 
-## Key Decisions
+## 🔍 Key Findings (The "So What")
 
-### D[XXX]: [Decision Title]
-- **Decision**: [What was decided]
-- **Rationale**: [Why this decision was made]
-- **Alternatives Considered**: [Other options that were evaluated]
-- **Impact**: [How this affects the project]
-- **Confidence**: [0.0-1.0]
+### Finding 1: [Title That Captures the Insight]
+**What We Discovered**: [Plain English explanation]  
+**Why It Matters**: [Business/technical impact]  
+**Evidence**: [Data, test results, or artifacts]  
+**Confidence**: [High/Medium/Low] because [reason]
 
-### D[XXX]: [Decision Title]
-- **Decision**: [What was decided]
-- **Rationale**: [Why this decision was made]
-- **Alternatives Considered**: [Other options that were evaluated]
-- **Impact**: [How this affects the project]
-- **Confidence**: [0.0-1.0]
+### Finding 2: [Title That Captures the Insight]
+**What We Discovered**: [Plain English explanation]  
+**Why It Matters**: [Business/technical impact]  
+**Evidence**: [Data, test results, or artifacts]  
+**Confidence**: [High/Medium/Low] because [reason]
 
----
-
-## Risks and Mitigation
-
-### Active Risks
-
-1. **R[XXX]: [Risk Description]** (Probability: [HIGH | MEDIUM | LOW], Impact: [HIGH | MEDIUM | LOW])
-   - **Description**: [Detailed explanation of the risk]
-   - **Mitigation**: [Current or planned mitigation strategy]
-   - **Owner**: [Who/what phase will address this]
-   - **Status**: [ACTIVE | MONITORING | MITIGATED]
-
-2. **R[XXX]: [Risk Description]** (Probability: [HIGH | MEDIUM | LOW], Impact: [HIGH | MEDIUM | LOW])
-   - **Description**: [Detailed explanation of the risk]
-   - **Mitigation**: [Current or planned mitigation strategy]
-   - **Owner**: [Who/what phase will address this]
-   - **Status**: [ACTIVE | MONITORING | MITIGATED]
-
-### Mitigated Risks
-
-- **[Risk Name]**: [How it was mitigated and current status]
+### Finding 3: [Title That Captures the Insight]
+**What We Discovered**: [Plain English explanation]  
+**Why It Matters**: [Business/technical impact]  
+**Evidence**: [Data, test results, or artifacts]  
+**Confidence**: [High/Medium/Low] because [reason]
 
 ---
 
-## Validation Results
+## 💡 Decisions Made (And Why)
 
-### [Validation Area 1]
-- **Target**: [What was being validated]
-- **Method**: [How it was validated]
-- **Result**: [VALIDATED | INVALIDATED | PARTIAL]
-- **Evidence**: [Supporting data/artifacts]
-- **Confidence**: [0.0-1.0]
+### D[XXX]: [Decision in Plain English]
+**We Chose**: [Option A]  
+**Over**: [Option B]  
+**Because**: [1-2 sentence rationale]  
+**This Means**: [Concrete impact on project]  
+**If Wrong**: [What we'd see and how we'd recover]
 
-### [Validation Area 2]
-- **Target**: [What was being validated]
-- **Method**: [How it was validated]
-- **Result**: [VALIDATED | INVALIDATED | PARTIAL]
-- **Evidence**: [Supporting data/artifacts]
-- **Confidence**: [0.0-1.0]
-
----
-
-## Next Steps
-
-### Action Items
-
-1. **[Action Item]** ([Duration estimate], [Owner])
-   - [Specific deliverable or outcome]
-   - [Prerequisites if any]
-   - [Success criteria]
-
-2. **[Action Item]** ([Duration estimate], [Owner])
-   - [Specific deliverable or outcome]
-   - [Prerequisites if any]
-   - [Success criteria]
-
-3. **[Action Item]** ([Duration estimate], [Owner])
-   - [Specific deliverable or outcome]
-   - [Prerequisites if any]
-   - [Success criteria]
-
-### Deferred Items
-
-- [Deferred item with rationale and target phase]
-- [Long-term consideration with dependencies]
+### D[XXX]: [Decision in Plain English]
+**We Chose**: [Option A]  
+**Over**: [Option B]  
+**Because**: [1-2 sentence rationale]  
+**This Means**: [Concrete impact on project]  
+**If Wrong**: [What we'd see and how we'd recover]
 
 ---
 
-## Context Preservation
+## ✅ What We Validated (Or Didn't)
+
+| What We Tested | How We Tested | Result | So What? |
+|----------------|---------------|---------|----------|
+| [Hypothesis/Risk] | [Method] | ✅ Validated | [Impact on project] |
+| [Hypothesis/Risk] | [Method] | ❌ Invalidated | [How we're pivoting] |
+| [Hypothesis/Risk] | [Method] | ⚠️ Partial | [What more we need] |
+
+### Validation Details
+<!-- Only include if validation was complex or surprising -->
+<details>
+<summary>Click for detailed validation methodology and results</summary>
+
+[Include test code, performance data, user feedback, etc.]
+
+</details>
+
+---
+
+## 🚧 What's Still Unknown (And When We'll Know)
+
+| Unknown | Why It Matters | When We'll Know | How We'll Find Out |
+|---------|----------------|-----------------|-------------------|
+| [Question] | [Impact if X vs Y] | [Phase/Date] | [Specific action] |
+| [Question] | [Impact if X vs Y] | [Phase/Date] | [Specific action] |
+
+---
+
+## 📊 Metrics Snapshot
+
+| Metric | Target | Actual | Trend | Action |
+|--------|--------|--------|-------|--------|
+| [What we measure] | [Goal] | [Current] | 📈📉➡️ | [If off track] |
+| [What we measure] | [Goal] | [Current] | 📈📉➡️ | [If off track] |
+| [What we measure] | [Goal] | [Current] | 📈📉➡️ | [If off track] |
+
+---
+
+## 🔮 Looking Ahead
+
+### If We PROCEED (Recommended)
+**Next Phase**: [Phase name and 1-line description]  
+**Duration**: [Estimate]  
+**Key Milestones**:
+1. [Milestone 1] by [Date]
+2. [Milestone 2] by [Date]
+3. [Milestone 3] by [Date]
+
+**Success Criteria**:
+- [ ] [Specific measurable outcome]
+- [ ] [Specific measurable outcome]
+- [ ] [Specific measurable outcome]
+
+### If We PIVOT
+**Alternative**: [Brief description]  
+**Why Consider**: [Key reason]  
+**Impact**: [Time/cost/scope changes]
+
+### If We PAUSE
+**Trigger**: [What would make us stop]  
+**Duration**: [How long to resolve]  
+**Resolution**: [What needs to happen to continue]
+
+---
+
+## 🧭 Context for Next Phase
+
+### Remember These Decisions
+1. **[Decision]** - Because [compressed rationale]
+2. **[Decision]** - Because [compressed rationale]
+3. **[Decision]** - Because [compressed rationale]
+
+### Watch Out For
+- ⚠️ [Gotcha or complexity] 
+- ⚠️ [Integration challenge]
+- ⚠️ [Assumption to validate]
 
 ### Semantic Checksum
-`[key]-[words]-[capturing]-[project]-[essence]`
-
-### Critical Assumptions
-1. [Assumption that underpins decisions]
-2. [Assumption that affects architecture]
-3. [Assumption about users/market]
-4. [Assumption about constraints]
-
-### Deferred Unknowns
-- [Unknown 1] → [Target phase for resolution]
-- [Unknown 2] → [Target phase for resolution]
-- [Unknown 3] → [Target phase for resolution]
+`[project-purpose]-[target-users]-[core-constraint]-[key-metric]`
 
 ---
 
-## [Optional: Technical Details]
+## 📎 Artifacts and Evidence
 
-### [Technical Area 1 - e.g., Performance Metrics, Architecture Decisions]
-```yaml
-metric_1: value
-metric_2: value
-metric_3: value
-```
+### Code/Prototypes
+- [`path/to/artifact`](link) - [What it demonstrates]
+- [`path/to/artifact`](link) - [What it demonstrates]
 
-### [Technical Area 2 - e.g., Implementation Artifacts]
+### Documentation
+- [`path/to/doc`](link) - [What it covers]
+- [`path/to/doc`](link) - [What it covers]
 
-| Artifact | Path/Location | Status | Description |
-|----------|--------------|--------|-------------|
-| [Name] | [Path] | [Status] | [Description] |
-| [Name] | [Path] | [Status] | [Description] |
-
----
-
-## Phase Summary
-
-**Phase Status**: [COMPLETE | PARTIALLY_COMPLETE | BLOCKED]  
-**Validation**: [Summary of what was validated]  
-**Recommendation**: [PROCEED | PIVOT | ABORT] to [Next Phase]  
-**Confidence Level**: [0.0-1.0]
-
----
-
-## [Optional: Supporting Data]
+### Data/Metrics
+<details>
+<summary>Click for supporting data</summary>
 
 ```yaml
-# Include any detailed metrics, data, or references that support findings
-# Remove this section if not needed
+# Include relevant metrics, test results, performance data
+# Keep it focused on what supports the findings
 ```
+
+</details>
 
 ---
 
-**Template Usage Notes**:
-- Remove [Optional] sections if not applicable
-- Adjust categories and sections based on phase type
-- Ensure all bracketed placeholders are replaced
-- Maintain consistent impact/confidence scoring
+## Report Card
+
+**How This Phase Went**:
+- **Velocity**: [Faster/Slower than expected] because [reason]
+- **Surprises**: [Biggest unexpected discovery]
+- **Team Health**: [High/Medium/Low] - [1 sentence context]
+
+**From Last Report**:
+- Predictions Accurate: [X/Y] 
+- Actions Completed: [X/Y]
+- Risks Materialized: [Which ones and impact]
+
+**Make Reports Better**: [feedback-link]
+
+---
+
+## Template Usage Guide
+
+### Minimum Viable Report (Time Pressure)
+Complete only:
+- 🎯 What You Need to Know First
+- 💡 Key Decision
+- ✅ Primary Validation Result
+- Next step recommendation
+
+### Standard Report
+Use all sections but keep concise - aim for 3-4 pages total
+
+### Comprehensive Report (Major Phases)
+Add detailed validation methodology, extensive metrics, append technical specifications
+
+### Writing Tips
+1. **Lead with action** - What needs to happen dominates what happened
+2. **Plain English** - If your mom wouldn't understand it, rewrite it
+3. **Evidence-based** - Every finding needs data or artifacts
+4. **Story flow** - Reports should read like a narrative, not a form
+5. **Scannable** - Use headers, bullets, and tables for quick scanning
+
+### Quality Checklist
+- [ ] Decision maker could act based only on first section
+- [ ] All findings have evidence
+- [ ] Every risk has a mitigation
+- [ ] Metrics connect to decisions
+- [ ] Next steps have owners and dates
+- [ ] Report tells a coherent story
+
+### Evolving This Template
+- Track which sections get skipped - remove them
+- Note what questions come up repeatedly - add sections
+- Time how long reports take to write - streamline
+- Ask readers what they actually use - emphasize that
