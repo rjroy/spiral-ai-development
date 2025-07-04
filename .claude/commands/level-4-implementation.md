@@ -79,7 +79,7 @@ Level 4 processes ONE feature at a time, breaking it down into specific implemen
 For each feature, create a structured implementation task YAML artifact:
 
 ```yaml
-# Use template: docs/context/templates/level-4-implementation-artifact.yml
+# Use template: context/templates/level-4-implementation-artifact.yml
 # Generate one artifact per feature: level-4-{component-name}-{feature-name}-implementation.yml
 
 artifact_requirements:

@@ -78,7 +78,7 @@ Level 3 processes ONE component at a time, decomposing it into implementable fea
 For each identified feature, create a structured YAML artifact using the template:
 
 ```yaml
-# Use template: docs/context/templates/level-3-feature-artifact.yml
+# Use template: context/templates/level-3-feature-artifact.yml
 # Generate one artifact per feature: level-3-{component-name}-{feature-name}.yml
 
 artifact_requirements:
