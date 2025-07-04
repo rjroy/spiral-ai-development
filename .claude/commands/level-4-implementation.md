@@ -1,8 +1,11 @@
 ## Usage
 
 ```
-/level-4-implementation <in-file>
+/level-4-implementation <feature-artifact-file>
 ```
+
+**Input**: Level 3 feature YAML artifact (e.g., `level-3-similarity-authentication.yml`)
+**Output**: Implementation task YAML artifact for the feature (e.g., `level-4-similarity-authentication-implementation.yml`)
 
 ## Command Guidelines
 
@@ -12,7 +15,7 @@
 **Success criteria**: Complete working system that meets Level 0 vision, passes all tests, ready for production
 **Failure mode alert**: Cutting corners on testing/security or optimizing prematurely instead of delivering working system
 **Transition requirement**: Full system working end-to-end with comprehensive test coverage
-**Output**: Production-ready code + deployment documentation
+**Output**: Production-ready code + implementation task YAML artifact + deployment documentation
 
 ### AI Collaboration Framework Reminder
 
@@ -61,28 +64,69 @@
 - Rollback and recovery procedures
 - **COLLABORATION CHECKPOINT**: Present deployment strategy, discuss operational concerns with user
 
-### Implementation Task Breakdown
+### Feature-to-Implementation Decomposition and Task Artifact Generation
 
-**Task Sizing Guidelines**:
+**Feature-to-Implementation Decomposition**:
+Level 4 processes ONE feature at a time, breaking it down into specific implementation tasks.
+
+**Input Processing**:
+1. **Feature Artifact Analysis**: Parse Level 3 feature YAML artifact
+2. **Feature Understanding**: Extract feature specifications, requirements, and constraints
+3. **Task Identification**: Break feature into implementable tasks (1-2 day chunks)
+4. **Task Validation**: Ensure tasks are realistic and achievable by team
+
+**Implementation Task YAML Artifact (Required)**:
+For each feature, create a structured implementation task YAML artifact:
+
 ```yaml
-task_sizing:
-  small_task: 
-    duration: "2-4 hours"
-    scope: "Single function or component method"
-    examples: ["API endpoint implementation", "Database query function", "Validation logic"]
-    
-  medium_task:
-    duration: "1 day"
-    scope: "Complete feature or component integration"
-    examples: ["User authentication flow", "Data processing pipeline", "Component API layer"]
-    
-  large_task:
-    duration: "2 days maximum"
-    scope: "Major component or complex integration"
-    examples: ["Payment processing system", "Notification service", "Complex business workflow"]
+# Use template: templates/level-4-implementation-artifact.yml
+# Generate one artifact per feature: level-4-{component-name}-{feature-name}-implementation.yml
+
+artifact_requirements:
+  - One YAML file per feature implementation
+  - Use consistent naming: level-4-{component-name}-{feature-name}-implementation.yml
+  - Contain all implementation tasks, timelines, and resource requirements
+  - Include traceability to parent feature and component
+  - Document risk management and quality assurance plans
+  - Specify final deliverables and post-implementation requirements
 ```
 
-**Implementation Order Priority**:
+**Implementation Decomposition Process**:
+1. **Feature Artifact Analysis**: Parse and analyze Level 3 feature YAML artifact
+2. **Implementation Planning**: Break feature into implementable tasks
+3. **TASK BREAKDOWN VALIDATION**: Present implementation tasks and discuss priorities with user
+4. **Task Specification**: Create detailed task specifications with effort estimates
+5. **ARTIFACT GENERATION**: Generate implementation task YAML artifact
+6. **ARTIFACT REVIEW**: Review generated artifact with user for completeness
+7. **Implementation Execution**: Execute tasks according to plan
+8. **Progress Tracking**: Update artifact with progress and lessons learned
+
+**Task Categories**:
+- **Development Tasks**: Core implementation, business logic, APIs
+- **Testing Tasks**: Unit tests, integration tests, E2E tests, performance tests
+- **Infrastructure Tasks**: Deployment, monitoring, security, configuration
+- **Documentation Tasks**: API docs, user guides, technical documentation
+
+**Task Sizing Guidelines**:
+- **Small Tasks**: 2-4 hours (single function, component method)
+- **Medium Tasks**: 1 day (complete feature, component integration)
+- **Large Tasks**: 2 days maximum (major component, complex integration)
+
+**Implementation Tracking**:
+- Progress tracking with completion percentages
+- Issue tracking with severity and resolution approaches
+- Change tracking with impact assessment
+- Lessons learned for future improvements
+
+**Quality Assurance Integration**:
+- Code quality standards and review requirements
+- Testing requirements and coverage goals
+- Quality gates and acceptance criteria
+- Security and operational requirements
+
+### Implementation Order Priority
+
+**Priority Guidelines**:
 1. Core business logic (validates Level 0 vision)
 2. Critical integration points (proves Level 2 structure)
 3. User-facing features (demonstrates user value)
@@ -251,6 +295,7 @@ level_4_context:
 **System is complete when:**
 - All Level 0 success metrics can be measured
 - Core user workflows work end-to-end
+- Implementation task YAML artifact completed with all tasks finished
 - Test coverage meets quality standards
 - Security requirements are implemented
 - System is deployable to production
@@ -287,24 +332,30 @@ You are collaborating on ASDD - Level 4 - Working Implementation with role Worki
 Your mission: Transform Level 3 specifications into production-ready code that delivers on the Level 0 vision. Focus on working software over perfect code, but maintain essential quality standards.
 
 **Process:**
-1. Break Level 3 specifications into implementable tasks
-2. **TASK BREAKDOWN VALIDATION**: Present implementation tasks and discuss priorities with user
-3. **IMPLEMENTATION STRATEGY**: Present coding approaches and patterns, get user input
-4. **TESTING APPROACH CONFIRMATION**: Present testing strategy, confirm coverage expectations with user
-5. **SECURITY IMPLEMENTATION**: Present security approach, validate requirements with user
-6. **DEPLOYMENT PLANNING**: Present deployment strategy, discuss operational concerns with user
-7. Prioritize implementation order (critical path first, based on user input)
-8. Implement components with comprehensive testing (based on user input)
-9. Integrate components and validate end-to-end workflows
-10. Ensure security and operational requirements are met (based on user input)
-11. Document deployment and maintenance procedures (based on user input)
-12. Validate system meets Level 0 success metrics
-13. Complete context manifest with implementation results
+1. **FEATURE ARTIFACT ANALYSIS**: Parse and analyze Level 3 feature YAML artifact
+2. **FEATURE UNDERSTANDING**: Extract feature specifications, requirements, and constraints
+3. Break feature into implementable tasks (1-2 day chunks)
+4. **TASK BREAKDOWN VALIDATION**: Present implementation tasks and discuss priorities with user
+5. **IMPLEMENTATION STRATEGY**: Present coding approaches and patterns, get user input
+6. **TESTING APPROACH CONFIRMATION**: Present testing strategy, confirm coverage expectations with user
+7. **SECURITY IMPLEMENTATION**: Present security approach, validate requirements with user
+8. **DEPLOYMENT PLANNING**: Present deployment strategy, discuss operational concerns with user
+9. **ARTIFACT GENERATION**: Generate implementation task YAML artifact for feature
+10. **ARTIFACT REVIEW**: Review generated artifact with user for completeness
+11. Prioritize implementation order (critical path first, based on user input)
+12. Implement feature with comprehensive testing (based on user input)
+13. Integrate feature and validate workflows
+14. Ensure security and operational requirements are met (based on user input)
+15. Document deployment and maintenance procedures (based on user input)
+16. **PROGRESS TRACKING**: Update implementation artifact with progress and lessons learned
+17. Validate feature meets acceptance criteria
+18. Complete context manifest with implementation results
 
 **Constraints:**
+- Must process one feature at a time from Level 3 artifact
 - Working software is the primary measure of progress
 - Must maintain security and data integrity standards
 - Test coverage required for production deployment
 - Document shortcuts and technical debt clearly
 
-Use your expertise and the above guidelines to implement: {in-file}
+Use your expertise and the above guidelines to implement feature: {feature-artifact-file}

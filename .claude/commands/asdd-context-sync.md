@@ -28,6 +28,8 @@
 - Identify new constraints and requirements discovered
 - Extract validation results and evidence
 - Collect important insights and trade-offs
+- Review YAML artifacts for decomposition decisions and feedback
+- Identify backwards feedback that affects previous levels
 
 **2. Context Organization**
 - Classify context by importance (Critical, Important, Useful)
@@ -69,6 +71,47 @@ merge_strategy:
     - rule: "source_authority"
       condition: "regulatory_vs_business"
 ```
+
+### YAML Artifact Integration and Backwards Feedback
+
+**Artifact Context Integration**:
+- **Level 2 Component Artifacts**: Extract component boundary decisions and interface validations
+- **Level 3 Feature Artifacts**: Extract feature decomposition decisions and specification insights
+- **Level 4 Implementation Artifacts**: Extract implementation lessons learned and constraint discoveries
+
+**Backwards Feedback Handling**:
+Level 4 and Level 3 implementation often reveals issues that affect previous levels. Handle backwards feedback by:
+
+1. **Constraint Discovery**: Implementation may reveal new technical constraints
+2. **Interface Issues**: Feature development may identify interface problems
+3. **Component Boundary Problems**: Implementation may show component boundaries are wrong
+4. **Approach Limitations**: Implementation may invalidate Level 1 approach assumptions
+
+**Backwards Feedback Process**:
+```yaml
+backwards_feedback_process:
+  - step: "Identify feedback source"
+    description: "What level provided the feedback"
+    action: "Document the specific discovery or issue"
+    
+  - step: "Assess impact scope"
+    description: "Which previous levels are affected"
+    action: "Determine what needs to be reconsidered"
+    
+  - step: "Update affected artifacts"
+    description: "Update previous level artifacts with new information"
+    action: "Maintain traceability of why changes were made"
+    
+  - step: "Validate consistency"
+    description: "Ensure all artifacts remain consistent"
+    action: "Check for cascade effects and resolve conflicts"
+```
+
+**Artifact Synchronization**:
+- Component artifacts updated with interface validation results
+- Feature artifacts updated with implementation feasibility feedback
+- Implementation artifacts updated with actual progress and lessons learned
+- Context manifest updated with cross-level insights and constraints
 
 ### Context Structure Templates
 
@@ -124,9 +167,11 @@ Your mission: Update the context manifest with current phase findings to prevent
 
 **Process:**
 1. Discover and classify new context from current phase
-2. Integrate new context with existing manifest
-3. Resolve conflicts and ensure consistency
-4. Organize context for accessibility and searchability
+2. Review YAML artifacts for decomposition decisions and backwards feedback
+3. Integrate new context with existing manifest
+4. Handle backwards feedback to update previous level artifacts
+5. Resolve conflicts and ensure consistency across all artifacts
+6. Organize context for accessibility and searchability
 
 **Constraints:**
 - All critical decisions must include rationale and alternatives
