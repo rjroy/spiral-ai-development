@@ -79,7 +79,7 @@ Level 4 processes ONE feature at a time, breaking it down into specific implemen
 For each feature, create a structured implementation task YAML artifact:
 
 ```yaml
-# Use template: templates/level-4-implementation-artifact.yml
+# Use template: docs/context/templates/level-4-implementation-artifact.yml
 # Generate one artifact per feature: level-4-{component-name}-{feature-name}-implementation.yml
 
 artifact_requirements:
@@ -142,17 +142,17 @@ quality_standards:
     functions: "Single responsibility, max 20 lines"
     classes: "Clear purpose, minimal dependencies"
     modules: "Cohesive functionality, stable interfaces"
-    
+
   error_handling:
     validation: "All inputs validated"
     exceptions: "Proper exception types and messages"
     recovery: "Graceful degradation where possible"
-    
+
   testing:
     unit_coverage: "80% for business logic"
     integration_coverage: "100% for critical paths"
     e2e_coverage: "All major user workflows"
-    
+
   documentation:
     api_docs: "Complete with examples"
     readme: "Setup and deployment instructions"
@@ -170,11 +170,11 @@ describe('ComponentName', () => {
     it('should handle normal case correctly', () => {
       // Test normal operation
     });
-    
+
     it('should handle edge cases gracefully', () => {
       // Test boundary conditions
     });
-    
+
     it('should throw appropriate errors for invalid input', () => {
       // Test error conditions
     });
@@ -186,7 +186,7 @@ describe('Component Integration', () => {
   it('should handle end-to-end workflow', async () => {
     // Test complete workflow across components
   });
-  
+
   it('should handle external service failures', async () => {
     // Test resilience to external failures
   });
@@ -200,7 +200,7 @@ performance_tests:
     target: "Expected concurrent users"
     duration: "Sustained load test duration"
     acceptance_criteria: "Response time and error rate thresholds"
-    
+
   stress_testing:
     target: "2x expected load"
     purpose: "Find breaking point"
@@ -221,24 +221,24 @@ level_4_context:
         test_coverage: "Percentage coverage"
         performance_results: "Actual vs. target performance"
         known_issues: ["List of known limitations"]
-        
+
     integration_results:
       - integration: "Integration description"
         status: "WORKING/ISSUES/FAILED"
         test_results: "Integration test outcomes"
         performance_impact: "Effect on system performance"
-        
+
     quality_metrics:
       code_coverage: "Overall test coverage percentage"
       performance_benchmarks: "Key performance measurements"
       security_scan_results: "Security assessment outcomes"
-      
+
   deployment_readiness:
     environment_setup: "READY/NEEDS_WORK/BLOCKED"
     configuration_management: "How configs are managed"
     monitoring_setup: "What monitoring is in place"
     backup_recovery: "Backup and recovery procedures"
-    
+
   post_delivery_plan:
     known_technical_debt: ["List of shortcuts taken"]
     optimization_opportunities: ["Performance improvements identified"]

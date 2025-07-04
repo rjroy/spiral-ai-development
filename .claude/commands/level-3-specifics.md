@@ -78,7 +78,7 @@ Level 3 processes ONE component at a time, decomposing it into implementable fea
 For each identified feature, create a structured YAML artifact using the template:
 
 ```yaml
-# Use template: templates/level-3-feature-artifact.yml
+# Use template: docs/context/templates/level-3-feature-artifact.yml
 # Generate one artifact per feature: level-3-{component-name}-{feature-name}.yml
 
 artifact_requirements:
@@ -150,12 +150,12 @@ For each component:
 ```yaml
 component_specification:
   component_name: "ComponentName"
-  
+
   overview:
     purpose: "Single sentence describing component purpose"
     responsibilities: ["List of specific responsibilities"]
     boundaries: "What this component does NOT do"
-    
+
   api_specification:
     endpoints:
       - path: "/api/endpoint"
@@ -165,7 +165,7 @@ component_specification:
         response_schema: "JSON schema or TypeScript interface"
         error_responses: ["400: Bad Request details", "500: Server Error details"]
         performance_target: "Response time requirement"
-        
+
   data_model:
     entities:
       - name: "EntityName"
@@ -173,12 +173,12 @@ component_specification:
         attributes: ["List of key attributes"]
         relationships: ["Relationships to other entities"]
         constraints: ["Business rules and validations"]
-        
+
     persistence:
       storage_type: "Database/File/Cache/etc"
       schema_design: "Key design decisions"
       indexing_strategy: "Performance optimizations"
-      
+
   business_logic:
     core_algorithms:
       - algorithm: "Algorithm name"
@@ -186,40 +186,40 @@ component_specification:
         inputs: ["Required inputs"]
         outputs: ["Expected outputs"]
         edge_cases: ["How edge cases are handled"]
-        
+
     workflows:
       - workflow: "Workflow name"
         trigger: "What starts this workflow"
         steps: ["Step by step process"]
         failure_handling: "What happens when steps fail"
-        
+
   implementation_details:
     technology_choices:
       - choice: "Specific technology/library"
         rationale: "Why this choice was made"
         alternatives: "What else was considered"
-        
+
     error_handling:
       strategy: "Overall error handling approach"
       retry_logic: "When and how to retry"
       fallback_behavior: "What happens when everything fails"
-      
+
     testing_approach:
       unit_tests: "What will be unit tested"
       integration_tests: "What integration scenarios to test"
       coverage_target: "Percentage and critical paths"
-      
+
   operational_requirements:
     monitoring:
       metrics: ["Key metrics to track"]
       alerts: ["What conditions trigger alerts"]
       logs: ["What events to log"]
-      
+
     performance:
       response_time: "Target response times"
       throughput: "Expected request volume"
       resource_usage: "Memory/CPU expectations"
-      
+
     security:
       authentication: "How users are authenticated"
       authorization: "How permissions are checked"
@@ -239,19 +239,19 @@ level_3_context:
       data_entities: ["Key data entities"]
       business_rules: ["Core business logic"]
       dependencies: ["Internal and external dependencies"]
-      
+
   implementation_decisions:
     - decision: "Specific implementation choice"
       component: "Which component this affects"
       rationale: "Why this choice was made"
       alternatives: "What else was considered"
-      
+
   validation_results:
     spike_component: "Which component was implemented"
     lessons_learned: ["Key insights from implementation"]
     design_adjustments: ["Changes made based on spike"]
     confidence_level: "HIGH/MEDIUM/LOW confidence in specifications"
-    
+
   deferred_decisions:
     - decision: "What's being deferred"
       reason: "Why it's being deferred"
