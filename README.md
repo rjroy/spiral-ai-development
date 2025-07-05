@@ -1,4 +1,4 @@
-# AI-Human Collaboration Template
+# Spiral AI Development Template
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GitHub Template](https://img.shields.io/badge/GitHub-Template-6e5494.svg)](https://github.com/rjroy/claude-code-template/generate)
