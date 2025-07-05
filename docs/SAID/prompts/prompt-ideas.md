@@ -73,8 +73,8 @@
 
 ## Troubleshooting & Recovery
 
-20. Process Recovery - When ASDD workflow breaks down
-    > "Diagnose why [ASDD-PROCESS] broke down and recommend recovery steps. Identify what can be salvaged and what needs restart."
+20. Process Recovery - When SAID workflow breaks down
+    > "Diagnose why [SAID-PROCESS] broke down and recommend recovery steps. Identify what can be salvaged and what needs restart."
 
 21. Context Reconstruction - When starting mid-project
     > "Reconstruct project context from [EXISTING-ARTIFACTS]. Build understanding of decisions, constraints, and current state without prior context."

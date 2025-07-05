@@ -8,7 +8,7 @@ This is a **meta-template repository** for establishing AI-human collaboration p
 
 ## Core Philosophy
 
-The development philosophy is documented in [docs/ASDD/Philosophy.md](docs/ASDD/Philosophy.md). Key principles include:
+The development philosophy is documented in [docs/SAID/Philosophy.md](docs/SAID/Philosophy.md). Key principles include:
 
 ### Enhanced Collaboration Framework
 1. **Question Before Acting** - Always ask clarifying questions before major implementation decisions
@@ -30,7 +30,7 @@ Design components with stable interfaces and documented behavioral contracts tha
 - **Complex Domains**: AI assists implementation, human leads architecture
 - **Extreme Domains**: AI provides boilerplate only, human owns all decisions
 
-## AI Spec-Driven Development (ASDD) - Spiral Model
+## Spiral AI Development (SAID) - Spiral Model
 
 This template establishes a spiral development approach with progressive detail levels:
 
@@ -63,9 +63,9 @@ When starting a new project with this template:
    - Determine required human expertise level
    - Set appropriate AI involvement boundaries
 
-3. **Customize ASDD Commands**:
+3. **Customize SAID Commands**:
    - Use existing level commands (`/level-0-vision`, `/level-1-approach`, etc.)
-   - Create domain-specific commands using `docs/ASDD/claude-command-template/phase-template.md`
+   - Create domain-specific commands using `docs/SAID/claude-command-template/phase-template.md`
    - Adapt validation requirements to project needs
 
 4. **Establish Project-Specific Standards**:
@@ -76,7 +76,7 @@ When starting a new project with this template:
 
 ### Available Commands
 
-The template includes complete ASDD commands:
+The template includes complete SAID commands:
 
 #### Core Phase Commands
 ```
@@ -90,18 +90,18 @@ The template includes complete ASDD commands:
 
 #### Utility Commands
 ```
-/asdd-context-sync   - Maintain context across phases
+/said-context-sync   - Maintain context across phases
 /generate-next-steps - Create transition plans
 /generate-phase-report - Generate comprehensive reports
 ```
 
-See [Git Workflow Integration](docs/ASDD/git-workflow-integration.md) for flexible guidance on git workflows that support ASDD methodology without being prescriptive.
+See [Git Workflow Integration](docs/SAID/git-workflow-integration.md) for flexible guidance on git workflows that support SAID methodology without being prescriptive.
 
 Each command includes domain calibration, context preservation, and pressure adaptation.
 
 ## Context Management and Utility Workflows
 
-**Context File**: A structured document that preserves critical project information across development phases in the ASDD methodology. Context files maintain project coherence by documenting key decisions with rationale, discovered constraints, requirements evolution, and semantic checksums.  They serve as living artifacts that prevent information degradation during phase transitions and enable rapid context restoration when project assumptions change or team members rotate. Context files follow a YAML manifest structure and include project identity, phase progression, key decisions, technical constraints, validation results, and risk assessments.
+**Context File**: A structured document that preserves critical project information across development phases in the SAID methodology. Context files maintain project coherence by documenting key decisions with rationale, discovered constraints, requirements evolution, and semantic checksums.  They serve as living artifacts that prevent information degradation during phase transitions and enable rapid context restoration when project assumptions change or team members rotate. Context files follow a YAML manifest structure and include project identity, phase progression, key decisions, technical constraints, validation results, and risk assessments.
 
 ### Context File Management
 
@@ -124,7 +124,7 @@ Each command includes domain calibration, context preservation, and pressure ada
 - Context preservation is more important than any specific git workflow
 - Choose tools that support your thinking, not the other way around
 
-For more detail see [git-workflow-integration.md](docs/ASDD/git-workflow-integration.md)
+For more detail see [git-workflow-integration.md](docs/SAID/git-workflow-integration.md)
 
 **Context File Naming Convention**:
 ```
@@ -140,7 +140,7 @@ context/
 
 1. **Phase Completion Workflow**:
    ```
-   /asdd-context-sync {current-phase}
+   /said-context-sync {current-phase}
    /generate-next-steps {current-phase}
    /generate-phase-report {current-phase}
    ```
@@ -149,12 +149,12 @@ context/
    ```
    /generate-phase-report {completed-phase}
    /generate-next-steps {completed-phase}
-   /asdd-context-sync {next-phase}
+   /said-context-sync {next-phase}
    ```
 
 3. **Context Recovery Workflow**:
    ```
-   /asdd-context-sync {current-phase} context/project-context.yml
+   /said-context-sync {current-phase} context/project-context.yml
    /generate-next-steps {current-phase} context/project-context.yml
    ```
 
@@ -163,7 +163,7 @@ context/
 ```yaml
 # Project Context Manifest Template
 context_manifest:
-  version: "1.0.3"
+  version: "1.0.6
   project_identity:
     name: "Project Name"
     purpose: "Core project purpose"
@@ -222,14 +222,14 @@ For each level, maintain context manifest with:
 ### Git Workflow Integration
 
 **Branch-per-Phase Collaboration**:
-- Each ASDD level uses dedicated feature branch
+- Each SAID level uses dedicated feature branch
 - Context preservation through structured commit messages
 - Pull requests enforce domain-calibrated review requirements
 - Git history serves as decision audit trail
 
 **Validation Gates**:
 - Branch protection prevents unvalidated code integration
-- PR templates ensure ASDD validation checklists completion
+- PR templates ensure SAID validation checklists completion
 - Automated workflows verify context integrity
 - Domain experts assigned based on complexity assessment
 
@@ -266,11 +266,11 @@ For each level, apply enhanced validation:
 ## Key Files
 
 ### Core Framework Files
-- `docs/ASDD/Philosophy.md` - Complete development philosophy with integrated patches
-- `docs/ASDD/git-workflow-integration.md` - Git workflow integration with ASDD phases
-- `docs/ASDD/claude-command-template/phase-template.md` - Comprehensive template for creating ASDD commands
-- `docs/ASDD/claude-command-template/utility-template.md` - Template for creating utility commands
-- `docs/ASDD/revision-rationale/` - Systematic failure analysis for historic versions. Provides deeper insight into revisions.
+- `docs/SAID/Philosophy.md` - Complete development philosophy with integrated patches
+- `docs/SAID/git-workflow-integration.md` - Git workflow integration with SAID phases
+- `docs/SAID/claude-command-template/phase-template.md` - Comprehensive template for creating SAID commands
+- `docs/SAID/claude-command-template/utility-template.md` - Template for creating utility commands
+- `docs/SAID/revision-rationale/` - Systematic failure analysis for historic versions. Provides deeper insight into revisions.
 
 ### Phase Commands
 - `.claude/commands/phase-0-prototype.md` - Prototype validation command
@@ -281,7 +281,7 @@ For each level, apply enhanced validation:
 - `.claude/commands/level-4-implementation.md` - Working implementation command
 
 ### Utility Commands
-- `.claude/commands/asdd-context-sync.md` - Context preservation across phases
+- `.claude/commands/said-context-sync.md` - Context preservation across phases
 - `.claude/commands/generate-next-steps.md` - Transition planning utility
 - `.claude/commands/generate-phase-report.md` - Comprehensive reporting utility
 

@@ -8,14 +8,14 @@
 
 ### Generate TODO Context Assistant
 
-**Purpose**: Create structured TODO context for newly discovered work not covered by existing ASDD artifacts
+**Purpose**: Create structured TODO context for newly discovered work not covered by existing SAID artifacts
 **Focus**: Generate comprehensive context for standalone TODOs that emerge during development
-**Output**: Structured TODO context file ready for processing or direct integration into ASDD contexts
+**Output**: Structured TODO context file ready for processing or direct integration into SAID contexts
 
 ### Collaboration Framework
 
 1. **Question Before Acting** - Clarify TODO scope, urgency, and relationship to current project phase
-2. **Present Options** - Offer different context granularity levels and processing approaches  
+2. **Present Options** - Offer different context granularity levels and processing approaches
 3. **Explain Reasoning** - Share rationale for scope boundaries and integration recommendations
 4. **Pause for Input** - Confirm TODO processing approach before context generation
 
@@ -25,7 +25,7 @@
 
 **1. TODO Scope Discovery**
 - Analyze TODO description for implicit requirements and scope
-- Identify relationship to existing ASDD work and project goals
+- Identify relationship to existing SAID work and project goals
 - Assess complexity and determine if immediate processing is needed
 - Clarify deliverable expectations and success criteria
 - Determine urgency and priority relative to current work
@@ -33,12 +33,12 @@
 **2. Context Structuring**
 - Generate comprehensive TODO context with clear boundaries
 - Assess decomposition readiness and collaboration needs
-- Map potential impact to ASDD levels and project context
+- Map potential impact to SAID levels and project context
 - Structure for potential immediate sync or future processing
 - Include sufficient context for independent work planning
 
 **3. Processing Route Recommendation**
-- Evaluate if TODO should be immediately synced to ASDD contexts
+- Evaluate if TODO should be immediately synced to SAID contexts
 - Assess if TODO requires decomposition before execution
 - Determine if TODO is ready for immediate work execution
 - Recommend next steps based on complexity and current priorities
@@ -58,7 +58,7 @@ generated_todo_context:
     priority: "Relative to current work"
 
   project_relationship:
-    related_phases: ["Which ASDD phases this affects"]
+    related_phases: ["Which SAID phases this affects"]
     integration_target: "Where this should eventually integrate"
     dependency_type: "BLOCKING | ENABLING | INDEPENDENT"
     current_phase_impact: "How this affects ongoing work"
@@ -78,16 +78,16 @@ generated_todo_context:
     collaboration_intensity: "LOW | MEDIUM | HIGH"
 
   processing_options:
-    immediate_sync: 
+    immediate_sync:
       viable: true/false
-      target_context: "Which ASDD context would receive this"
+      target_context: "Which SAID context would receive this"
       rationale: "Why immediate sync is/isn't appropriate"
-      
+
     decomposition_path:
       recommended: true/false
       decomposition_strategy: "How this might be broken down"
       rationale: "Why decomposition is/isn't needed"
-      
+
     direct_execution:
       viable: true/false
       readiness_factors: ["What makes this ready/not ready"]

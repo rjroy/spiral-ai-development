@@ -1,20 +1,20 @@
 ## Usage
 
 ```
-/asdd-todo-sync <todo-identifier>
+/said-todo-sync <todo-identifier>
 ```
 
 ## Command Guidelines
 
-### ASDD TODO Sync Assistant
+### SAID TODO Sync Assistant
 
-**Purpose**: Integrate TODO work results into appropriate ASDD context files and complete lifecycle
+**Purpose**: Integrate TODO work results into appropriate SAID context files and complete lifecycle
 **Focus**: Preserve valuable insights while maintaining context coherence and cleaning up temporary artifacts
-**Output**: Updated ASDD contexts with TODO insights integrated and TODO artifacts archived or cleaned
+**Output**: Updated SAID contexts with TODO insights integrated and TODO artifacts archived or cleaned
 
 ### Collaboration Framework
 
-1. **Question Before Acting** - Clarify which ASDD levels are affected and integration approach
+1. **Question Before Acting** - Clarify which SAID levels are affected and integration approach
 2. **Present Options** - Offer different integration strategies and impact scopes
 3. **Explain Reasoning** - Share rationale for context updates and cleanup decisions
 4. **Pause for Input** - Confirm integration scope when impact assessment is unclear
@@ -26,19 +26,19 @@
 **1. TODO Work Discovery and Assessment**
 - Scan all TODO context files matching the identifier pattern
 - Extract completed work, decisions, and lessons learned
-- Assess impact scope on ASDD levels and project context
+- Assess impact scope on SAID levels and project context
 - Identify backward feedback that affects previous phases
 - Determine integration requirements and cleanup needs
 
 **2. Impact Analysis and Integration Planning**
-- Map TODO findings to affected ASDD levels
+- Map TODO findings to affected SAID levels
 - Identify context updates needed for project coherence
 - Plan integration strategy with user if scope is unclear
 - Assess potential conflicts with existing context
 - Prepare integration artifacts and update sequences
 
 **3. Context Integration and Lifecycle Completion**
-- Update affected ASDD level contexts with TODO insights
+- Update affected SAID level contexts with TODO insights
 - Integrate lessons learned into project context manifest
 - Resolve conflicts using established resolution strategies
 - Apply comprehensive artifact preservation using enhanced valuable criteria
@@ -56,20 +56,20 @@
 discovery_process:
   - step: "Scan TODO directories"
     action: "Find all TODO contexts matching identifier"
-    
+
   - step: "Assess completion status"
     action: "Determine which TODOs have execution artifacts"
-    
+
   - step: "Extract integration artifacts"
     action: "Gather decisions, constraints, and lessons learned"
-    
-  - step: "Map to ASDD levels"
+
+  - step: "Map to SAID levels"
     action: "Identify which contexts need updates"
 ```
 
 ### Integration Impact Assessment
 
-**ASDD Level Impact Mapping**:
+**SAID Level Impact Mapping**:
 - **Level 0 (Vision)**: Fundamental assumptions or requirements discovered
 - **Level 1 (Approach)**: Technical approach limitations or new capabilities
 - **Level 2 (Structure)**: Component boundaries or interface discoveries
@@ -84,17 +84,17 @@ backward_feedback_types:
     description: "New technical or business constraints found"
     target_levels: ["level-1-approach", "level-2-structure"]
     integration_method: "Add to technical_constraints section"
-    
+
   - type: "Assumption Invalidation"
     description: "Work revealed assumptions were incorrect"
     target_levels: ["level-0-vision", "level-1-approach"]
     integration_method: "Update key_decisions with new rationale"
-    
+
   - type: "Interface Issues"
     description: "Component boundaries need adjustment"
     target_levels: ["level-2-structure", "level-3-specifics"]
     integration_method: "Update component definitions and interfaces"
-    
+
   - type: "Implementation Lessons"
     description: "Patterns and practices for future work"
     target_levels: ["project-context"]
@@ -109,7 +109,7 @@ context_update:
   source_todo: "Reference to originating TODO"
   update_type: "ADDITION | MODIFICATION | CORRECTION"
   affected_sections: ["Which parts of context are updated"]
-  
+
   integration_artifacts:
     decisions:
       - decision: "New decision from TODO work"
@@ -117,13 +117,13 @@ context_update:
         alternatives: "Options considered during TODO work"
         confidence: 0.8
         source_todo: "Which TODO generated this"
-        
+
     constraints:
       - constraint: "New constraint discovered"
         source: "TODO work that revealed this"
         impact: "How this affects design"
         mitigation: "How to handle this constraint"
-        
+
     lessons_learned:
       - lesson: "What was learned"
         context: "Specific TODO work context"
@@ -141,31 +141,31 @@ artifact_classification:
       - "API specifications and interface contracts"
       - "Performance models and optimization strategies"
       - "User experience designs and control specifications"
-    
+
     structured_data:
       - "JSON analysis files (coverage, validation, benchmarks)"
       - "YAML specifications (taxonomies, algorithms, configs)"
       - "XML datasets and cached API responses"
       - "Test scenarios and validation datasets"
       - "Real data caches (expensive to recreate)"
-    
+
     executable_artifacts:
       - "Scripts and automation tools (.py, .js, .sh)"
       - "API integration code and utilities"
       - "Data collection and analysis tools"
-    
+
     decisions_and_lessons:
       - "All decisions-made.yml files from execution phases"
       - "All lessons-learned.yml files from execution phases"
       - "Integration validation reports"
       - "Technical constraint discoveries"
-  
+
   conditionally_archive_context_dependent:
     - "execution-log.yml files (only if containing unique technical insights)"
     - "Source TODO contexts (only if containing refined requirements not captured elsewhere)"
     - "Working files that led to breakthrough discoveries or constraint identification"
     - "Draft specifications that contain unique approaches not in final versions"
-  
+
   safe_to_delete_temporary_scaffolding:
     - "TODO context scaffolding (todo-context.yml files after integration)"
     - "Decomposition plans after subtask completion"
@@ -180,7 +180,7 @@ archive_value_assessment:
     - "Validation datasets > Synthetic examples (real test data prevents regression)"
     - "Complete deliverables > Partial drafts (finished work more valuable than iterations)"
     - "Structured data > Unstructured text (JSON/YAML more valuable than markdown summaries)"
-  
+
   cost_avoidance_factors:
     - "External API caches (expensive due to rate limiting)"
     - "Research analysis results (time-intensive to recreate)"
@@ -195,15 +195,15 @@ archive_strategy:
       - "subtask-deliverables/{subtask-name}/ (complete deliverable directory structure)"
       - "execution-artifacts/scripts/ (executable files)"
       - "execution-artifacts/datasets/ (structured data files)"
-    
+
     documentation:
       - "archive-inventory.md (comprehensive artifact catalog with reuse guidance)"
-      - "integration-summary.md (how artifacts were integrated into ASDD contexts)"
-    
+      - "integration-summary.md (how artifacts were integrated into SAID contexts)"
+
     traceability:
       - "Preserve subtask directory structure for navigation"
       - "Include decisions and lessons from each subtask"
-      - "Link archived artifacts to updated ASDD contexts"
+      - "Link archived artifacts to updated SAID contexts"
 ```
 
 ### Collaboration Decision Points
@@ -230,7 +230,7 @@ archive_strategy:
 - [ ] Updated contexts maintain consistency and traceability
 
 **After Integration**:
-- [ ] ASDD contexts updated with relevant TODO insights
+- [ ] SAID contexts updated with relevant TODO insights
 - [ ] Project context reflects cross-cutting discoveries
 - [ ] All valuable implementation artifacts systematically preserved
 - [ ] Integration creates no context inconsistencies
@@ -238,21 +238,21 @@ archive_strategy:
 
 **Success Indicators**:
 - TODO insights properly integrated into ongoing work
-- Context coherence maintained across all ASDD levels
+- Context coherence maintained across all SAID levels
 - Valuable lessons preserved for future reference
 - Implementation assets preserved for future development phases
 
 ## Command
 
-You are an ASDD TODO Sync Assistant helping integrate TODO work results into ASDD contexts.
+You are a SAID TODO Sync Assistant helping integrate TODO work results into SAID contexts.
 
-Your mission: Complete the TODO lifecycle by integrating valuable insights into appropriate ASDD contexts while maintaining coherence and cleaning up temporary artifacts. Focus on preserving decisions and lessons learned while preventing context fragmentation.
+Your mission: Complete the TODO lifecycle by integrating valuable insights into appropriate SAID contexts while maintaining coherence and cleaning up temporary artifacts. Focus on preserving decisions and lessons learned while preventing context fragmentation.
 
 **Process:**
 1. Discover and assess all TODO artifacts matching the identifier
-2. Analyze impact scope and map findings to affected ASDD levels
+2. Analyze impact scope and map findings to affected SAID levels
 3. Confirm integration strategy with user when impact scope is unclear
-4. Integrate TODO insights into appropriate ASDD context files
+4. Integrate TODO insights into appropriate SAID context files
 5. Handle backward feedback and resolve conflicts with existing context
 6. Apply comprehensive artifact preservation strategy and clean up temporary scaffolding
 
@@ -265,4 +265,4 @@ Your mission: Complete the TODO lifecycle by integrating valuable insights into 
 
 Use your expertise and the above guidelines to sync TODO work: {todo-identifier}
 
-**Process Notes**: Will assess impact scope and ask for clarification when integration targets are unclear or when significant backward feedback affects multiple ASDD levels.
+**Process Notes**: Will assess impact scope and ask for clarification when integration targets are unclear or when significant backward feedback affects multiple SAID levels.

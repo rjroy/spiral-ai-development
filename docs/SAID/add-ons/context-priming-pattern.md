@@ -1,12 +1,12 @@
-# Context Priming Pattern for ASDD
+# Context Priming Pattern for SAID
 
 ## Overview
 
-The Context Priming Pattern establishes a structured approach for providing context to AI before executing ASDD commands, ensuring state continuity and collaboration effectiveness across sessions. This pattern addresses the common issue of context loss between interactions and improves the quality of AI-human collaboration by establishing shared understanding before proceeding with complex tasks.
+The Context Priming Pattern establishes a structured approach for providing context to AI before executing SAID commands, ensuring state continuity and collaboration effectiveness across sessions. This pattern addresses the common issue of context loss between interactions and improves the quality of AI-human collaboration by establishing shared understanding before proceeding with complex tasks.
 
 ## Problem Statement
 
-ASDD methodology relies on continuous context preservation and collaborative decision-making across multiple phases and sessions. However, several challenges emerge:
+SAID methodology relies on continuous context preservation and collaborative decision-making across multiple phases and sessions. However, several challenges emerge:
 
 1. **Session Discontinuity**: AI lacks memory of previous work, decisions, and insights
 2. **Context Assumptions**: AI may make incorrect assumptions about current project state
@@ -22,19 +22,19 @@ Without structured context priming, interactions can suffer from:
 
 ## Solution Approach
 
-The Context Priming Pattern provides a lightweight, flexible framework for establishing shared context before executing ASDD commands. The pattern consists of three simple steps:
+The Context Priming Pattern provides a lightweight, flexible framework for establishing shared context before executing SAID commands. The pattern consists of three simple steps:
 
 ### Core Pattern
 
 1. **Context Priming**: Human provides brief orientation about current state
 2. **AI Acknowledgment**: AI confirms understanding and readiness
-3. **Command Execution**: Proceed with intended ASDD command
+3. **Command Execution**: Proceed with intended SAID command
 
 ### Design Principles
 
 **Lightweight**: Minimal overhead while maximizing context clarity
 **Flexible**: Adaptable to different types of context and command needs
-**Collaborative**: Maintains ASDD's collaborative spirit across session boundaries
+**Collaborative**: Maintains SAID's collaborative spirit across session boundaries
 **Traceable**: Preserves decision context and rationale continuity
 
 ## When to Use Context Priming
@@ -44,7 +44,7 @@ The Context Priming Pattern provides a lightweight, flexible framework for estab
 Use Context Priming when:
 - **Resuming after time gap**: Days or weeks since last interaction
 - **Post-discovery work**: After completing research, analysis, or TODO items
-- **Phase transitions**: Moving between ASDD levels with new insights
+- **Phase transitions**: Moving between SAID levels with new insights
 - **Stakeholder input integration**: After incorporating feedback or decisions
 - **Scope changes**: When requirements or constraints have evolved
 - **Team handoffs**: When different team members have contributed
@@ -67,7 +67,7 @@ Skip Context Priming for:
 
 AI: [Acknowledgment of context and readiness confirmation]
 
-> [Execute ASDD command]
+> [Execute SAID command]
 ```
 
 ### Detailed Context Priming Template
@@ -82,7 +82,7 @@ AI: [Acknowledgment of context and readiness confirmation]
 
 AI: [Comprehensive acknowledgment with any clarifying questions]
 
-> [Execute ASDD command]
+> [Execute SAID command]
 ```
 
 ### Examples
@@ -114,11 +114,11 @@ AI: Got it - stakeholder approval for Level 1 approach with additional audit log
 > /level-2-structure context/level-1-approach-context.yml
 ```
 
-## Integration with ASDD Commands
+## Integration with SAID Commands
 
 ### Command-Specific Context Priming
 
-Different ASDD commands benefit from different types of context:
+Different SAID commands benefit from different types of context:
 
 **Phase Commands**:
 - Current understanding of requirements
@@ -134,7 +134,7 @@ Different ASDD commands benefit from different types of context:
 
 ### Context Preservation Enhancement
 
-Context Priming complements ASDD's existing context preservation mechanisms:
+Context Priming complements SAID's existing context preservation mechanisms:
 
 - **Context Files**: Priming explains what's changed since last context file update
 - **Decision Logs**: Priming highlights recent decisions affecting current work
@@ -210,11 +210,11 @@ Context Priming complements ASDD's existing context preservation mechanisms:
 **Remote Work**: Distributed teams especially benefit from clear context establishment
 **Domain Complexity**: Complex domains require more detailed context priming
 
-## Relationship to ASDD Methodology
+## Relationship to SAID Methodology
 
 ### Philosophical Alignment
 
-Context Priming reinforces ASDD's core collaboration principles:
+Context Priming reinforces SAID's core collaboration principles:
 
 - **Question Before Acting**: Priming enables AI to ask better questions
 - **Present Options**: Context helps AI present more relevant options
@@ -224,7 +224,7 @@ Context Priming reinforces ASDD's core collaboration principles:
 
 ### Methodology Enhancement
 
-Context Priming extends ASDD without changing its fundamental structure:
+Context Priming extends SAID without changing its fundamental structure:
 
 - **Spiral Navigation**: Priming explains why backward/forward navigation is needed
 - **Context Preservation**: Priming bridges gaps in formal context preservation
@@ -249,8 +249,8 @@ Context Priming extends ASDD without changing its fundamental structure:
 
 ## Conclusion
 
-The Context Priming Pattern provides a simple but powerful enhancement to ASDD methodology, addressing the common challenge of context loss in AI-human collaboration. By establishing shared understanding before executing commands, the pattern maintains collaboration quality across session boundaries while preserving the flexibility and collaborative spirit of ASDD.
+The Context Priming Pattern provides a simple but powerful enhancement to SAID methodology, addressing the common challenge of context loss in AI-human collaboration. By establishing shared understanding before executing commands, the pattern maintains collaboration quality across session boundaries while preserving the flexibility and collaborative spirit of SAID.
 
 This lightweight approach transforms potentially disjointed interactions into coherent, continuous collaboration, ensuring that accumulated project knowledge and insights remain accessible and actionable throughout the development process.
 
-The pattern's simplicity makes it easy to adopt while its effectiveness scales with project complexity, making it a valuable addition to any team using ASDD methodology for AI-human collaboration.
+The pattern's simplicity makes it easy to adopt while its effectiveness scales with project complexity, making it a valuable addition to any team using SAID methodology for AI-human collaboration.
