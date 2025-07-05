@@ -90,6 +90,16 @@ Context management and workflow support:
 - `/generate-next-steps` - Create detailed transition plans with resource estimates
 - `/generate-phase-report` - Generate comprehensive reports from phase artifacts
 
+### TODO Workflow Integration
+Systematic handling of granular work items that emerge during development:
+- `/extract-todo-context` - Extract TODOs from ASDD artifacts with source traceability
+- `/generate-todo-context` - Create contexts for newly discovered TODOs
+- `/decompose-todo` - Break complex TODOs into manageable atomic tasks
+- `/work-on-todo` - Execute atomic TODOs with collaboration checkpoints
+- `/asdd-todo-sync` - Integrate TODO results back into ASDD contexts
+
+For detailed guidance, see [TODO Workflow Integration](docs/ASDD/add-ons/todo-workflow-integration.md).
+
 ### Git Workflow Guidance
 For flexible git workflow suggestions, see [Git Workflow Integration](docs/ASDD/git-workflow-integration.md):
 - GitHub Flow with descriptive branch naming

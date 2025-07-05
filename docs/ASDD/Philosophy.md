@@ -73,6 +73,16 @@ AI can offer answers that look complete. **That's the structural trap.** This ph
 
 For detailed implementation guidance, see [Context Priming Pattern](add-ons/context-priming-pattern.md).
 
+### TODO Workflow Integration
+
+**Pattern**: Systematic handling of granular work items that emerge during ASDD phases through structured decomposition, execution, and integration.
+
+**When to Use**: Multi-step work items requiring 3+ activities, cross-cutting concerns affecting multiple levels, research tasks with approach uncertainty, or work items needing stakeholder input at multiple decision points.
+
+**Benefits**: Prevents TODO loss in informal systems, maintains context preservation and collaborative checkpoints for granular work, ensures systematic integration back into ASDD contexts.
+
+For detailed implementation guidance, see [TODO Workflow Integration](add-ons/todo-workflow-integration.md).
+
 ### Domain-Aware Collaboration Patterns
 
 **Simple Domains** (CRUD, Basic Workflows):
