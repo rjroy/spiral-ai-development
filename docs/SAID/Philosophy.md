@@ -75,11 +75,11 @@ For detailed implementation guidance, see [Context Priming Pattern](add-ons/cont
 
 ### TODO Workflow Integration
 
-**Pattern**: Systematic handling of granular work items that emerge during ASDD phases through structured decomposition, execution, and integration.
+**Pattern**: Systematic handling of granular work items that emerge during SAID phases through structured decomposition, execution, and integration.
 
 **When to Use**: Multi-step work items requiring 3+ activities, cross-cutting concerns affecting multiple levels, research tasks with approach uncertainty, or work items needing stakeholder input at multiple decision points.
 
-**Benefits**: Prevents TODO loss in informal systems, maintains context preservation and collaborative checkpoints for granular work, ensures systematic integration back into ASDD contexts.
+**Benefits**: Prevents TODO loss in informal systems, maintains context preservation and collaborative checkpoints for granular work, ensures systematic integration back into SAID contexts.
 
 For detailed implementation guidance, see [TODO Workflow Integration](add-ons/todo-workflow-integration.md).
 
@@ -124,7 +124,7 @@ For detailed implementation guidance, see [TODO Workflow Integration](add-ons/to
 
 ## 🔄 Version Control Collaboration
 
-### Git Workflow Integration with ASDD
+### Git Workflow Integration with SAID
 
 **Core Principle**: Version control workflows can support collaboration and quality through thoughtful design.
 
@@ -139,7 +139,7 @@ For detailed implementation guidance, see [TODO Workflow Integration](add-ons/to
 **Consider Descriptive Branch Names**:
 - Feature branches with clear intent: `feature/user-authentication`
 - Prototype branches for experiments: `prototype/test-new-api`
-- Include ASDD phase if helpful: `feature/level-1-technical-approach`
+- Include SAID phase if helpful: `feature/level-1-technical-approach`
 - Keep names meaningful to your team
 
 **Simple GitHub Flow**:

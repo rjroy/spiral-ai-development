@@ -100,7 +100,7 @@ Context management and workflow support:
 
 ### TODO Workflow Integration
 Systematic handling of granular work items that emerge during development:
-- `/extract-todo-context` - Extract TODOs from ASDD artifacts with source traceability
+- `/extract-todo-context` - Extract TODOs from SAID artifacts with source traceability
 - `/generate-todo-context` - Create contexts for newly discovered TODOs
 - `/decompose-todo` - Break complex TODOs into manageable atomic tasks
 - `/work-on-todo` - Execute atomic TODOs with collaboration checkpoints
@@ -132,7 +132,7 @@ For flexible git workflow suggestions, see [Git Workflow Integration](docs/SAID/
 
 **Context Priming Pattern** (for session continuity):
 ```bash
-# Before executing ASDD commands, provide brief context:
+# Before executing SAID commands, provide brief context:
 > Be aware, I've [completed work]. [Current state]. I'm about to [intended action].
 AI: [Acknowledgment and readiness confirmation]
 > /level-2-structure context/level-1-approach-context.yml

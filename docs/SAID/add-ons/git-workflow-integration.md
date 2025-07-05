@@ -67,7 +67,7 @@ project/
 
 ## 🌊 Suggested Git Workflow Patterns
 
-### GitHub Flow with ASDD Naming Suggestions
+### GitHub Flow with SAID Naming Suggestions
 
 We recommend using GitHub Flow - a simple, flexible branching model where you:
 1. Create a branch from main
@@ -137,7 +137,7 @@ git log --grep="authentication" --oneline
 git log --follow context/project-context.yml
 ```
 
-## 🛠️ Working with ASDD Commands
+## 🛠️ Working with SAID Commands
 
 ### Suggested Git Integration Patterns
 

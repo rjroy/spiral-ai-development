@@ -72,8 +72,8 @@ todo_context:
     urgency: "HIGH | MEDIUM | LOW"
     complexity: "SIMPLE | COMPLEX | EXTREME"
 
-  asdd_relationship:
-    originating_phase: "Which ASDD phase/level generated this"
+  said_relationship:
+    originating_phase: "Which SAID phase/level generated this"
     affected_phases: ["List of phases this may impact"]
     backward_dependencies: ["Previous decisions this affects"]
     forward_dependencies: ["Future work this enables"]

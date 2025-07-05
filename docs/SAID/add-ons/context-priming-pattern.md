@@ -28,7 +28,7 @@ The Context Priming Pattern provides a lightweight, flexible framework for estab
 
 1. **Context Priming**: Human provides brief orientation about current state
 2. **AI Acknowledgment**: AI confirms understanding and readiness
-3. **Command Execution**: Proceed with intended ASDD command
+3. **Command Execution**: Proceed with intended SAID command
 
 ### Design Principles
 
@@ -114,7 +114,7 @@ AI: Got it - stakeholder approval for Level 1 approach with additional audit log
 > /level-2-structure context/level-1-approach-context.yml
 ```
 
-## Integration with ASDD Commands
+## Integration with SAID Commands
 
 ### Command-Specific Context Priming
 
@@ -210,7 +210,7 @@ Context Priming complements SAID's existing context preservation mechanisms:
 **Remote Work**: Distributed teams especially benefit from clear context establishment
 **Domain Complexity**: Complex domains require more detailed context priming
 
-## Relationship to ASDD Methodology
+## Relationship to SAID Methodology
 
 ### Philosophical Alignment
 
@@ -249,7 +249,7 @@ Context Priming extends SAID without changing its fundamental structure:
 
 ## Conclusion
 
-The Context Priming Pattern provides a simple but powerful enhancement to SAID methodology, addressing the common challenge of context loss in AI-human collaboration. By establishing shared understanding before executing commands, the pattern maintains collaboration quality across session boundaries while preserving the flexibility and collaborative spirit of ASDD.
+The Context Priming Pattern provides a simple but powerful enhancement to SAID methodology, addressing the common challenge of context loss in AI-human collaboration. By establishing shared understanding before executing commands, the pattern maintains collaboration quality across session boundaries while preserving the flexibility and collaborative spirit of SAID.
 
 This lightweight approach transforms potentially disjointed interactions into coherent, continuous collaboration, ensuring that accumulated project knowledge and insights remain accessible and actionable throughout the development process.
 
