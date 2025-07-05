@@ -63,6 +63,16 @@ AI can offer answers that look complete. **That's the structural trap.** This ph
 4. **Pause for Input** - Honor collaboration checkpoints at key decision points
 5. **Calibrate Confidence** - AI involvement scales inversely with domain complexity
 
+### Context Priming Enhancement
+
+**Pattern**: Brief context orientation before ASDD command execution ensures state continuity and collaboration effectiveness across sessions.
+
+**When to Use**: Resuming after time gaps, post-discovery work, phase transitions, or when significant context has changed since last interaction.
+
+**Benefits**: Maintains decision quality across session boundaries, reduces context reconstruction time, prevents misaligned assumptions.
+
+For detailed implementation guidance, see [Context Priming Pattern](add-ons/context-priming-pattern.md).
+
 ### Domain-Aware Collaboration Patterns
 
 **Simple Domains** (CRUD, Basic Workflows):

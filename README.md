@@ -112,6 +112,14 @@ For flexible git workflow suggestions, see [Git Workflow Integration](docs/ASDD/
 /generate-next-steps current-phase context/project-context.yml
 ```
 
+**Context Priming Pattern** (for session continuity):
+```bash
+# Before executing ASDD commands, provide brief context:
+> Be aware, I've [completed work]. [Current state]. I'm about to [intended action].
+AI: [Acknowledgment and readiness confirmation]
+> /level-2-structure context/level-1-approach-context.yml
+```
+
 ## What You Get
 
 ### **Structured Collaboration Framework**
