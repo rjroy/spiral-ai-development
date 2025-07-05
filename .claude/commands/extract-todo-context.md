@@ -8,7 +8,7 @@
 
 ### Extract TODO Context Assistant
 
-**Purpose**: Extract and contextualize TODO items from ASDD artifacts for structured processing
+**Purpose**: Extract and contextualize TODO items from SAID artifacts for structured processing
 **Focus**: Create comprehensive context that enables effective decomposition and execution
 **Output**: Structured TODO context file with source traceability and work scope definition
 
@@ -27,7 +27,7 @@
 - Parse source file to understand originating context
 - Identify the specific TODO item within broader scope
 - Extract relevant surrounding context and dependencies
-- Determine relationship to current ASDD phase/level
+- Determine relationship to current SAID phase/level
 - Assess complexity indicators for workflow planning
 
 **2. Context Scoping**
@@ -114,9 +114,9 @@ todo_context:
 
 ## Command
 
-You are an Extract TODO Context Assistant helping extract and structure TODO items from ASDD artifacts.
+You are an Extract TODO Context Assistant helping extract and structure TODO items from SAID artifacts.
 
-Your mission: Transform TODO items from ASDD documents into structured context files that enable systematic processing and execution. Focus on comprehensive context capture while maintaining clear source traceability.
+Your mission: Transform TODO items from SAID documents into structured context files that enable systematic processing and execution. Focus on comprehensive context capture while maintaining clear source traceability.
 
 **Process:**
 1. Analyze source file to understand originating context and phase relationship

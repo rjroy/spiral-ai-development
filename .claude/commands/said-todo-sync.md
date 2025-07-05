@@ -56,13 +56,13 @@
 discovery_process:
   - step: "Scan TODO directories"
     action: "Find all TODO contexts matching identifier"
-    
+
   - step: "Assess completion status"
     action: "Determine which TODOs have execution artifacts"
-    
+
   - step: "Extract integration artifacts"
     action: "Gather decisions, constraints, and lessons learned"
-    
+
   - step: "Map to SAID levels"
     action: "Identify which contexts need updates"
 ```
@@ -84,17 +84,17 @@ backward_feedback_types:
     description: "New technical or business constraints found"
     target_levels: ["level-1-approach", "level-2-structure"]
     integration_method: "Add to technical_constraints section"
-    
+
   - type: "Assumption Invalidation"
     description: "Work revealed assumptions were incorrect"
     target_levels: ["level-0-vision", "level-1-approach"]
     integration_method: "Update key_decisions with new rationale"
-    
+
   - type: "Interface Issues"
     description: "Component boundaries need adjustment"
     target_levels: ["level-2-structure", "level-3-specifics"]
     integration_method: "Update component definitions and interfaces"
-    
+
   - type: "Implementation Lessons"
     description: "Patterns and practices for future work"
     target_levels: ["project-context"]
@@ -109,7 +109,7 @@ context_update:
   source_todo: "Reference to originating TODO"
   update_type: "ADDITION | MODIFICATION | CORRECTION"
   affected_sections: ["Which parts of context are updated"]
-  
+
   integration_artifacts:
     decisions:
       - decision: "New decision from TODO work"
@@ -117,13 +117,13 @@ context_update:
         alternatives: "Options considered during TODO work"
         confidence: 0.8
         source_todo: "Which TODO generated this"
-        
+
     constraints:
       - constraint: "New constraint discovered"
         source: "TODO work that revealed this"
         impact: "How this affects design"
         mitigation: "How to handle this constraint"
-        
+
     lessons_learned:
       - lesson: "What was learned"
         context: "Specific TODO work context"
@@ -141,31 +141,31 @@ artifact_classification:
       - "API specifications and interface contracts"
       - "Performance models and optimization strategies"
       - "User experience designs and control specifications"
-    
+
     structured_data:
       - "JSON analysis files (coverage, validation, benchmarks)"
       - "YAML specifications (taxonomies, algorithms, configs)"
       - "XML datasets and cached API responses"
       - "Test scenarios and validation datasets"
       - "Real data caches (expensive to recreate)"
-    
+
     executable_artifacts:
       - "Scripts and automation tools (.py, .js, .sh)"
       - "API integration code and utilities"
       - "Data collection and analysis tools"
-    
+
     decisions_and_lessons:
       - "All decisions-made.yml files from execution phases"
       - "All lessons-learned.yml files from execution phases"
       - "Integration validation reports"
       - "Technical constraint discoveries"
-  
+
   conditionally_archive_context_dependent:
     - "execution-log.yml files (only if containing unique technical insights)"
     - "Source TODO contexts (only if containing refined requirements not captured elsewhere)"
     - "Working files that led to breakthrough discoveries or constraint identification"
     - "Draft specifications that contain unique approaches not in final versions"
-  
+
   safe_to_delete_temporary_scaffolding:
     - "TODO context scaffolding (todo-context.yml files after integration)"
     - "Decomposition plans after subtask completion"
@@ -180,7 +180,7 @@ archive_value_assessment:
     - "Validation datasets > Synthetic examples (real test data prevents regression)"
     - "Complete deliverables > Partial drafts (finished work more valuable than iterations)"
     - "Structured data > Unstructured text (JSON/YAML more valuable than markdown summaries)"
-  
+
   cost_avoidance_factors:
     - "External API caches (expensive due to rate limiting)"
     - "Research analysis results (time-intensive to recreate)"
@@ -195,15 +195,15 @@ archive_strategy:
       - "subtask-deliverables/{subtask-name}/ (complete deliverable directory structure)"
       - "execution-artifacts/scripts/ (executable files)"
       - "execution-artifacts/datasets/ (structured data files)"
-    
+
     documentation:
       - "archive-inventory.md (comprehensive artifact catalog with reuse guidance)"
-      - "integration-summary.md (how artifacts were integrated into ASDD contexts)"
-    
+      - "integration-summary.md (how artifacts were integrated into SAID contexts)"
+
     traceability:
       - "Preserve subtask directory structure for navigation"
       - "Include decisions and lessons from each subtask"
-      - "Link archived artifacts to updated ASDD contexts"
+      - "Link archived artifacts to updated SAID contexts"
 ```
 
 ### Collaboration Decision Points
