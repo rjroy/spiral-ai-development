@@ -8,13 +8,13 @@
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)](https://github.com/rjroy/claude-code-template/commits/main)
 [![SAID](https://img.shields.io/badge/Methodology-SAID-red.svg)](docs/SAID/)
 
-A meta-template for establishing effective AI-human collaboration patterns in software development, featuring pressure-tested methodologies for managing complex projects with Claude Code.
+A meta-template for establishing AI-human collaboration patterns in software development, designed for managing complex projects with Claude Code.
 
 ## Core Framework
 
 **Spiral AI Development (SAID)** - Spiral development approach with progressive detail levels (Vision → Approach → Structure → Specifics → Implementation) that handles changing requirements, timeline pressure, and context preservation, now with integrated git workflow support.
 
-**Philosophy** - A comprehensive collaboration framework that has been forged through pressure and refined by reality. This philosophy addresses the collaboration paradox where AI can offer answers that look complete but may miss critical domain complexities. It establishes clear ownership boundaries: human judgment handles strategy and architecture, AI handles implementation and pattern recognition, with explicit accountability for every significant choice. The framework includes domain-aware collaboration patterns that scale AI involvement inversely with domain complexity, pressure-adaptive protocols that maintain quality under stress, and bounded replaceability principles that design components with stable interfaces enabling informed replacement decisions.
+**Philosophy** - A comprehensive collaboration framework designed to address the collaboration paradox where AI can offer answers that look complete but may miss critical domain complexities. It establishes clear ownership boundaries: human judgment handles strategy and architecture, AI handles implementation and pattern recognition, with explicit accountability for every significant choice. The framework includes domain-aware collaboration patterns that scale AI involvement inversely with domain complexity, pressure-adaptive protocols designed to maintain quality under stress, and bounded replaceability principles that design components with stable interfaces enabling informed replacement decisions.
 
 ## Key Components
 
@@ -160,11 +160,11 @@ AI: [Acknowledgment and readiness confirmation]
 
 ## What Makes This Different
 
-This template has been pressure-tested against systematic failure analysis and incorporates real-world learnings from project breakdowns. Additionally addresses timeline pressure, context degradation, domain complexity mismatches, and collaboration boundary drift - the common failure modes that break clean development processes.
+This template is designed to address timeline pressure, context degradation, domain complexity mismatches, and collaboration boundary drift - common failure modes that can break clean development processes.
 
 Recommended git workflow that teams can adapt to support SAID collaboration patterns. See [Git Workflow Integration](docs/SAID/git-workflow-integration.md) for flexible guidance that you can modify or ignore based on your team's needs.
 
-**Philosophy**: Trust through verification, not verification through trust. This template provides the structure for AI-human collaboration that bends under pressure rather than breaking.
+**Philosophy**: Trust through verification, not verification through trust. This template provides structure designed for AI-human collaboration that aims to bend under pressure rather than breaking.
 
 ## Next Steps After **First Steps**
 
