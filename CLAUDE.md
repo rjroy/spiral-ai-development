@@ -163,7 +163,7 @@ context/
 ```yaml
 # Project Context Manifest Template
 context_manifest:
-  version: "1.0.3"
+  version: "1.0.6
   project_identity:
     name: "Project Name"
     purpose: "Core project purpose"

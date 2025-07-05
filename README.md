@@ -4,7 +4,7 @@
 [![GitHub Template](https://img.shields.io/badge/GitHub-Template-6e5494.svg)](https://github.com/rjroy/claude-code-template/generate)
 [![Claude Code](https://img.shields.io/badge/AI_Partner-Claude_Code-D97757.svg)](https://claude.ai/code)
 
-[![Template Version](https://img.shields.io/badge/Version-v1.0.5-blue.svg)](https://github.com/rjroy/claude-code-template)
+[![Template Version](https://img.shields.io/badge/Version-v1.0.6-blue.svg)](https://github.com/rjroy/claude-code-template)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)](https://github.com/rjroy/claude-code-template/commits/main)
 [![SAID](https://img.shields.io/badge/Methodology-SAID-red.svg)](docs/SAID/)
 
