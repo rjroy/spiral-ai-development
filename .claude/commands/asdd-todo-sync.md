@@ -41,8 +41,8 @@
 - Update affected ASDD level contexts with TODO insights
 - Integrate lessons learned into project context manifest
 - Resolve conflicts using established resolution strategies
-- Archive valuable TODO artifacts for reference
-- Clean up temporary TODO context files and directories
+- Apply comprehensive artifact preservation using enhanced valuable criteria
+- Clean up temporary TODO scaffolding while preserving all implementation assets
 
 ### TODO Identifier Patterns
 
@@ -131,24 +131,79 @@ context_update:
         confidence: "How certain we are about this"
 ```
 
-**Cleanup Strategy**:
+**Valuable Artifact Classification**:
 ```yaml
-cleanup_strategy:
-  archive_criteria:
-    - "Execution logs with significant decisions"
-    - "Lessons learned with broad applicability"
-    - "Deliverables referenced by integrated contexts"
+artifact_classification:
+  always_archive_critical_assets:
+    deliverables:
+      - "All deliverables/ directories from every subtask"
+      - "Complete specifications and algorithm definitions"
+      - "API specifications and interface contracts"
+      - "Performance models and optimization strategies"
+      - "User experience designs and control specifications"
     
-  deletion_criteria:
-    - "Temporary working files and drafts"
-    - "TODO contexts fully integrated elsewhere"
-    - "Decomposition plans with completed subtasks"
+    structured_data:
+      - "JSON analysis files (coverage, validation, benchmarks)"
+      - "YAML specifications (taxonomies, algorithms, configs)"
+      - "XML datasets and cached API responses"
+      - "Test scenarios and validation datasets"
+      - "Real data caches (expensive to recreate)"
     
-  archive_location: "context/archive/todo-work/{timestamp}/"
+    executable_artifacts:
+      - "Scripts and automation tools (.py, .js, .sh)"
+      - "API integration code and utilities"
+      - "Data collection and analysis tools"
+    
+    decisions_and_lessons:
+      - "All decisions-made.yml files from execution phases"
+      - "All lessons-learned.yml files from execution phases"
+      - "Integration validation reports"
+      - "Technical constraint discoveries"
+  
+  conditionally_archive_context_dependent:
+    - "execution-log.yml files (only if containing unique technical insights)"
+    - "Source TODO contexts (only if containing refined requirements not captured elsewhere)"
+    - "Working files that led to breakthrough discoveries or constraint identification"
+    - "Draft specifications that contain unique approaches not in final versions"
+  
+  safe_to_delete_temporary_scaffolding:
+    - "TODO context scaffolding (todo-context.yml files after integration)"
+    - "Decomposition plans after subtask completion"
+    - "Empty directories and structural scaffolding"
+    - "Duplicate files where final versions supersede drafts"
+    - "Process logs without technical content"
+
+archive_value_assessment:
+  priority_principles:
+    - "Data artifacts > Process artifacts (cached data more valuable than execution logs)"
+    - "Executable specs > Narrative descriptions (algorithms more valuable than summaries)"
+    - "Validation datasets > Synthetic examples (real test data prevents regression)"
+    - "Complete deliverables > Partial drafts (finished work more valuable than iterations)"
+    - "Structured data > Unstructured text (JSON/YAML more valuable than markdown summaries)"
+  
+  cost_avoidance_factors:
+    - "External API caches (expensive due to rate limiting)"
+    - "Research analysis results (time-intensive to recreate)"
+    - "Validated algorithms (prevent re-implementation)"
+    - "Test datasets (enable regression testing)"
+    - "Performance benchmarks (prevent optimization regression)"
+
+archive_strategy:
+  archive_location: "context/archive/todo-work/{timestamp}-{todo-name}/"
   archive_structure:
-    - "Preserve directory structure for traceability"
-    - "Include integration summary for reference"
-    - "Maintain links to updated ASDD contexts"
+    systematic_preservation:
+      - "subtask-deliverables/{subtask-name}/ (complete deliverable directory structure)"
+      - "execution-artifacts/scripts/ (executable files)"
+      - "execution-artifacts/datasets/ (structured data files)"
+    
+    documentation:
+      - "archive-inventory.md (comprehensive artifact catalog with reuse guidance)"
+      - "integration-summary.md (how artifacts were integrated into ASDD contexts)"
+    
+    traceability:
+      - "Preserve subtask directory structure for navigation"
+      - "Include decisions and lessons from each subtask"
+      - "Link archived artifacts to updated ASDD contexts"
 ```
 
 ### Collaboration Decision Points
@@ -171,13 +226,13 @@ cleanup_strategy:
 - [ ] All TODO artifacts discovered and assessed
 - [ ] Impact scope clearly defined and validated
 - [ ] Integration conflicts identified and resolved
-- [ ] Cleanup strategy preserves valuable artifacts
+- [ ] Artifact preservation strategy identifies all critical implementation assets
 - [ ] Updated contexts maintain consistency and traceability
 
 **After Integration**:
 - [ ] ASDD contexts updated with relevant TODO insights
 - [ ] Project context reflects cross-cutting discoveries
-- [ ] TODO artifacts properly archived or cleaned
+- [ ] All valuable implementation artifacts systematically preserved
 - [ ] Integration creates no context inconsistencies
 - [ ] References and traceability maintained
 
@@ -185,7 +240,7 @@ cleanup_strategy:
 - TODO insights properly integrated into ongoing work
 - Context coherence maintained across all ASDD levels
 - Valuable lessons preserved for future reference
-- Temporary artifacts cleaned without information loss
+- Implementation assets preserved for future development phases
 
 ## Command
 
@@ -199,13 +254,14 @@ Your mission: Complete the TODO lifecycle by integrating valuable insights into 
 3. Confirm integration strategy with user when impact scope is unclear
 4. Integrate TODO insights into appropriate ASDD context files
 5. Handle backward feedback and resolve conflicts with existing context
-6. Archive valuable artifacts and clean up temporary TODO contexts
+6. Apply comprehensive artifact preservation strategy and clean up temporary scaffolding
 
 **Constraints:**
-- Must preserve all valuable decisions and lessons learned
+- Must preserve ALL valuable implementation assets using enhanced classification criteria
 - Context consistency must be maintained across all levels
-- Cleanup must not lose important reference information
+- Artifact preservation must follow systematic comprehensive approach
 - Integration must be traceable and auditable
+- No loss of executable specifications, data caches, or validation datasets
 
 Use your expertise and the above guidelines to sync TODO work: {todo-identifier}
 
