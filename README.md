@@ -1,5 +1,13 @@
 # AI-Human Collaboration Template
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Template Version](https://img.shields.io/badge/template-v1.0.5+-blue.svg)](https://github.com/rjroy/claude-code-template)
+[![GitHub Template](https://img.shields.io/badge/GitHub-Template-green.svg)](https://github.com/rjroy/claude-code-template/generate)
+[![Claude Code](https://img.shields.io/badge/Claude-Code-purple.svg)](https://claude.ai/code)
+[![AI-Human Collaboration](https://img.shields.io/badge/AI--Human-Collaboration-orange.svg)](docs/ASDD/Philosophy.md)
+[![ASDD](https://img.shields.io/badge/ASDD-Methodology-red.svg)](docs/ASDD/)
+[![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)](https://github.com/rjroy/claude-code-template/commits/main)
+
 A meta-template for establishing effective AI-human collaboration patterns in software development, featuring pressure-tested methodologies for managing complex projects with Claude Code.
 
 ## Core Framework
