@@ -90,6 +90,16 @@ Context management and workflow support:
 - `/generate-next-steps` - Create detailed transition plans with resource estimates
 - `/generate-phase-report` - Generate comprehensive reports from phase artifacts
 
+### TODO Workflow Integration
+Systematic handling of granular work items that emerge during development:
+- `/extract-todo-context` - Extract TODOs from ASDD artifacts with source traceability
+- `/generate-todo-context` - Create contexts for newly discovered TODOs
+- `/decompose-todo` - Break complex TODOs into manageable atomic tasks
+- `/work-on-todo` - Execute atomic TODOs with collaboration checkpoints
+- `/asdd-todo-sync` - Integrate TODO results back into ASDD contexts
+
+For detailed guidance, see [TODO Workflow Integration](docs/ASDD/add-ons/todo-workflow-integration.md).
+
 ### Git Workflow Guidance
 For flexible git workflow suggestions, see [Git Workflow Integration](docs/ASDD/git-workflow-integration.md):
 - GitHub Flow with descriptive branch naming
@@ -110,6 +120,14 @@ For flexible git workflow suggestions, see [Git Workflow Integration](docs/ASDD/
 ```bash
 /asdd-context-sync current-phase context/project-context.yml
 /generate-next-steps current-phase context/project-context.yml
+```
+
+**Context Priming Pattern** (for session continuity):
+```bash
+# Before executing ASDD commands, provide brief context:
+> Be aware, I've [completed work]. [Current state]. I'm about to [intended action].
+AI: [Acknowledgment and readiness confirmation]
+> /level-2-structure context/level-1-approach-context.yml
 ```
 
 ## What You Get
