@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Purpose
 
-This is a **meta-template repository** for establishing AI-human collaboration patterns in software development. It contains no implementation code but provides philosophical and procedural frameworks for future projects that have been pressure-tested against systematic failure analysis.
+This is a **meta-template repository** for establishing AI-human collaboration patterns in software development. It contains no implementation code but provides philosophical and procedural frameworks designed for sustained AI collaboration on complex projects.
 
 ## Core Philosophy
 
@@ -290,14 +290,27 @@ For each level, apply enhanced validation:
 
 ## Important Notes
 
-- This template contains no implementation code but provides pressure-tested methodology
-- Addresses systematic failure modes through integrated patches and adds git workflow integration
-- All principles designed to bend under pressure rather than break
+- This template contains no implementation code but provides collaborative methodology framework
 - Methodology includes explicit escape valves and recovery mechanisms
-- Focus on reality-tested collaboration patterns that work under constraints
-   - Real-world constraint handling
-   - Graceful degradation under timeline pressure
+- All principles designed to bend under pressure rather than break
 - Git workflow integration with branch protection and phase-aligned branching
+
+## Reality Check & Development Status
+
+**Current State (July 2025)**:
+- **Age**: 7 days old as "SAID" methodology (rebranded from ASDD)
+- **Usage**: 1 project currently using methodology during development
+- **Track Record**: No established track record yet - this is experimental methodology
+- **Team Feedback**: Limited to single developer experience so far
+
+**Language Guidelines for AI**:
+- **AVOID** claims about "pressure-tested", "teams report", "proven effectiveness", "widespread adoption"
+- **USE** language like "designed to", "intended for", "framework provides", "methodology includes"
+- **BE HONEST** about experimental nature and limited real-world validation
+- **ACKNOWLEDGE** when making recommendations based on design intent vs. proven outcomes
+
+**Revision Rationale Context**:
+The revision rationale documents represent design evolution during development, not analysis of real-world failures. They document design decisions and improvements made during the 4-day development process, not systematic analysis of methodology failures in production use.
 
 ### Utility Command Quality Assurance
 
