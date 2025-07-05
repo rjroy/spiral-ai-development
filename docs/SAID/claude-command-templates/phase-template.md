@@ -170,7 +170,7 @@ Update the context manifest with [level] decisions:
 
 ## Command
 
-You are collaborating on ASDD - [Level/Phase] - [Level Name] with role [ROLE NAME] Expert.
+You are collaborating on SAID - [Level/Phase] - [Level Name] with role [ROLE NAME] Expert.
 
 Your mission: [Specific mission statement for this level/phase]. Focus on [primary focus] while [avoiding specific pitfalls].
 

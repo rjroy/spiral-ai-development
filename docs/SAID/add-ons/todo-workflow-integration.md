@@ -1,12 +1,12 @@
-# TODO Workflow Integration for ASDD
+# TODO Workflow Integration for SAID
 
 ## Overview
 
-The TODO Workflow Integration extends ASDD methodology to systematically handle granular work items that emerge during development phases. While ASDD focuses on progressive elaboration at the phase/level scale, real development work generates many smaller TODO items that require structured handling to prevent information loss and maintain project coherence.
+The TODO Workflow Integration extends SAID methodology to systematically handle granular work items that emerge during development phases. While SAID focuses on progressive elaboration at the phase/level scale, real development work generates many smaller TODO items that require structured handling to prevent information loss and maintain project coherence.
 
 ## Problem Statement
 
-During ASDD development, several types of TODO items emerge:
+During SAID development, several types of TODO items emerge:
 
 1. **Artifact TODOs**: Next-steps reports and transition documents contain work items requiring further elaboration
 2. **Implementation TODOs**: Code and design work reveals additional tasks not captured in original planning
@@ -16,37 +16,37 @@ During ASDD development, several types of TODO items emerge:
 Without structured handling, these TODOs either:
 - Get lost in informal tracking systems
 - Remain buried in documents where they're forgotten
-- Create ad-hoc work that bypasses ASDD's collaborative and context-preservation benefits
+- Create ad-hoc work that bypasses SAID's collaborative and context-preservation benefits
 - Lead to scope creep and uncontrolled complexity growth
 
 ## Solution Approach
 
-The TODO Workflow Integration provides five structured commands that extend ASDD's collaborative principles to granular work management:
+The TODO Workflow Integration provides five structured commands that extend SAID's collaborative principles to granular work management:
 
 ### Core Commands
 
-1. **`/extract-todo-context`** - Extract TODOs from ASDD artifacts with full source traceability
+1. **`/extract-todo-context`** - Extract TODOs from SAID artifacts with full source traceability
 2. **`/generate-todo-context`** - Create contexts for newly discovered TODOs
 3. **`/decompose-todo`** - Break complex TODOs into manageable atomic tasks
 4. **`/work-on-todo`** - Execute atomic TODOs with appropriate collaboration checkpoints
-5. **`/asdd-todo-sync`** - Integrate TODO results back into ASDD contexts and complete lifecycle
+5. **`/said-todo-sync`** - Integrate TODO results back into SAID contexts and complete lifecycle
 
 ### Design Principles
 
-**Context Preservation**: Every TODO maintains traceability to its source and relationship to ASDD phases, preventing information fragmentation.
+**Context Preservation**: Every TODO maintains traceability to its source and relationship to SAID phases, preventing information fragmentation.
 
-**Collaborative Execution**: TODOs inherit ASDD's collaboration framework, with checkpoints for user input at key decision points.
+**Collaborative Execution**: TODOs inherit SAID's collaboration framework, with checkpoints for user input at key decision points.
 
 **Scope Management**: Clear boundaries prevent TODO work from expanding uncontrollably and affecting broader project scope.
 
-**Integration Lifecycle**: All TODO work eventually integrates back into ASDD contexts, maintaining coherent project knowledge.
+**Integration Lifecycle**: All TODO work eventually integrates back into SAID contexts, maintaining coherent project knowledge.
 
 ## When to Use TODO Workflow vs. Simple Task Tracking
 
 ### Use TODO Workflow for:
 
 - **Multi-step work items** requiring 3+ distinct activities or decisions
-- **Cross-cutting concerns** that affect multiple ASDD levels or components  
+- **Cross-cutting concerns** that affect multiple SAID levels or components  
 - **Research tasks** where approach uncertainty requires investigation
 - **Architectural decisions** embedded within implementation work
 - **Integration challenges** requiring coordination across system boundaries
@@ -108,8 +108,8 @@ The TODO Workflow Integration provides five structured commands that extend ASDD
 **Execution with Checkpoints**: AI pauses for user input when facing undefined constraints, algorithm choices, or architectural decisions.
 
 ```bash
-# Integrate results back into ASDD contexts
-/asdd-todo-sync context/todo/thematic-evaluation-criteria
+# Integrate results back into SAID contexts
+/said-todo-sync context/todo/thematic-evaluation-criteria
 ```
 
 **Integration**: AI updates affected ASDD level contexts with insights from TODO work, archives valuable artifacts, and cleans up temporary files.
@@ -131,7 +131,7 @@ The TODO Workflow Integration provides five structured commands that extend ASDD
 
 ```bash
 # If deferring, sync to appropriate context immediately
-/asdd-todo-sync context/todo/coding-standards-discussion
+/said-todo-sync context/todo/coding-standards-discussion
 ```
 
 **Integration**: AI identifies that this affects Level 3 (Implementation Specifics) and updates the context with this missing requirement, then cleans up the TODO context.
@@ -171,7 +171,7 @@ TODO contexts follow YAML structure similar to ASDD contexts, including:
 
 ### Phase Relationship Mapping
 
-TODO work maintains explicit relationships to ASDD phases:
+TODO work maintains explicit relationships to SAID phases:
 
 - **Level 0 Impact**: TODOs affecting fundamental assumptions or user needs
 - **Level 1 Impact**: TODOs affecting technical approach or solution strategy
@@ -182,21 +182,21 @@ TODO work maintains explicit relationships to ASDD phases:
 
 ### Backward Feedback Handling
 
-TODO work often reveals issues affecting previous ASDD phases:
+TODO work often reveals issues affecting previous SAID phases:
 
 - **Constraint Discovery**: Implementation reveals new technical or business constraints
 - **Assumption Invalidation**: Work shows previous assumptions were incorrect
 - **Interface Issues**: Component integration reveals boundary problems
 - **Approach Limitations**: Implementation invalidates Level 1 approach decisions
 
-The `/asdd-todo-sync` command handles backward feedback by updating affected ASDD contexts with discovered constraints, revised decisions, and lessons learned.
+The `/said-todo-sync` command handles backward feedback by updating affected ASDD contexts with discovered constraints, revised decisions, and lessons learned.
 
 ### Context Preservation
 
 TODO workflow maintains ASDD's context preservation principles:
 
 - **Decision Traceability**: All TODO decisions include rationale and alternatives considered
-- **Source Relationships**: TODOs maintain links to originating ASDD artifacts
+- **Source Relationships**: TODOs maintain links to originating SAID artifacts
 - **Impact Documentation**: Changes to ASDD contexts document their TODO work origins
 - **Lesson Integration**: Insights from TODO work integrate into project knowledge base
 
@@ -262,7 +262,7 @@ TODO deliverables must meet quality criteria before integration:
 ### Success Metrics
 
 - **Context Completeness**: Percentage of TODOs with complete source traceability
-- **Integration Success**: Percentage of TODO work successfully integrated into ASDD contexts
+- **Integration Success**: Percentage of TODO work successfully integrated into SAID contexts
 - **Scope Control**: Reduction in unplanned work and scope creep incidents
 - **Knowledge Retention**: Team ability to understand and build on previous TODO work
 
@@ -270,4 +270,4 @@ TODO deliverables must meet quality criteria before integration:
 
 The TODO Workflow Integration extends ASDD's systematic approach to granular work management, providing structured handling for the many small tasks that emerge during development. By maintaining context preservation, collaborative decision-making, and systematic integration, the workflow prevents information loss while enabling effective decomposition and execution of complex work items.
 
-This approach transforms ad-hoc TODO handling into a coherent extension of ASDD methodology, ensuring that all project work—from high-level architectural decisions to detailed implementation tasks—maintains the same standards of documentation, collaboration, and quality assurance.
+This approach transforms ad-hoc TODO handling into a coherent extension of SAID methodology, ensuring that all project work—from high-level architectural decisions to detailed implementation tasks—maintains the same standards of documentation, collaboration, and quality assurance.

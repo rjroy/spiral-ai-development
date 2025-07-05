@@ -1,20 +1,20 @@
 ## Usage
 
 ```
-/asdd-todo-sync <todo-identifier>
+/said-todo-sync <todo-identifier>
 ```
 
 ## Command Guidelines
 
-### ASDD TODO Sync Assistant
+### SAID TODO Sync Assistant
 
-**Purpose**: Integrate TODO work results into appropriate ASDD context files and complete lifecycle
+**Purpose**: Integrate TODO work results into appropriate SAID context files and complete lifecycle
 **Focus**: Preserve valuable insights while maintaining context coherence and cleaning up temporary artifacts
-**Output**: Updated ASDD contexts with TODO insights integrated and TODO artifacts archived or cleaned
+**Output**: Updated SAID contexts with TODO insights integrated and TODO artifacts archived or cleaned
 
 ### Collaboration Framework
 
-1. **Question Before Acting** - Clarify which ASDD levels are affected and integration approach
+1. **Question Before Acting** - Clarify which SAID levels are affected and integration approach
 2. **Present Options** - Offer different integration strategies and impact scopes
 3. **Explain Reasoning** - Share rationale for context updates and cleanup decisions
 4. **Pause for Input** - Confirm integration scope when impact assessment is unclear
@@ -26,19 +26,19 @@
 **1. TODO Work Discovery and Assessment**
 - Scan all TODO context files matching the identifier pattern
 - Extract completed work, decisions, and lessons learned
-- Assess impact scope on ASDD levels and project context
+- Assess impact scope on SAID levels and project context
 - Identify backward feedback that affects previous phases
 - Determine integration requirements and cleanup needs
 
 **2. Impact Analysis and Integration Planning**
-- Map TODO findings to affected ASDD levels
+- Map TODO findings to affected SAID levels
 - Identify context updates needed for project coherence
 - Plan integration strategy with user if scope is unclear
 - Assess potential conflicts with existing context
 - Prepare integration artifacts and update sequences
 
 **3. Context Integration and Lifecycle Completion**
-- Update affected ASDD level contexts with TODO insights
+- Update affected SAID level contexts with TODO insights
 - Integrate lessons learned into project context manifest
 - Resolve conflicts using established resolution strategies
 - Apply comprehensive artifact preservation using enhanced valuable criteria
@@ -63,13 +63,13 @@ discovery_process:
   - step: "Extract integration artifacts"
     action: "Gather decisions, constraints, and lessons learned"
     
-  - step: "Map to ASDD levels"
+  - step: "Map to SAID levels"
     action: "Identify which contexts need updates"
 ```
 
 ### Integration Impact Assessment
 
-**ASDD Level Impact Mapping**:
+**SAID Level Impact Mapping**:
 - **Level 0 (Vision)**: Fundamental assumptions or requirements discovered
 - **Level 1 (Approach)**: Technical approach limitations or new capabilities
 - **Level 2 (Structure)**: Component boundaries or interface discoveries
@@ -230,7 +230,7 @@ archive_strategy:
 - [ ] Updated contexts maintain consistency and traceability
 
 **After Integration**:
-- [ ] ASDD contexts updated with relevant TODO insights
+- [ ] SAID contexts updated with relevant TODO insights
 - [ ] Project context reflects cross-cutting discoveries
 - [ ] All valuable implementation artifacts systematically preserved
 - [ ] Integration creates no context inconsistencies
@@ -238,21 +238,21 @@ archive_strategy:
 
 **Success Indicators**:
 - TODO insights properly integrated into ongoing work
-- Context coherence maintained across all ASDD levels
+- Context coherence maintained across all SAID levels
 - Valuable lessons preserved for future reference
 - Implementation assets preserved for future development phases
 
 ## Command
 
-You are an ASDD TODO Sync Assistant helping integrate TODO work results into ASDD contexts.
+You are a SAID TODO Sync Assistant helping integrate TODO work results into SAID contexts.
 
-Your mission: Complete the TODO lifecycle by integrating valuable insights into appropriate ASDD contexts while maintaining coherence and cleaning up temporary artifacts. Focus on preserving decisions and lessons learned while preventing context fragmentation.
+Your mission: Complete the TODO lifecycle by integrating valuable insights into appropriate SAID contexts while maintaining coherence and cleaning up temporary artifacts. Focus on preserving decisions and lessons learned while preventing context fragmentation.
 
 **Process:**
 1. Discover and assess all TODO artifacts matching the identifier
-2. Analyze impact scope and map findings to affected ASDD levels
+2. Analyze impact scope and map findings to affected SAID levels
 3. Confirm integration strategy with user when impact scope is unclear
-4. Integrate TODO insights into appropriate ASDD context files
+4. Integrate TODO insights into appropriate SAID context files
 5. Handle backward feedback and resolve conflicts with existing context
 6. Apply comprehensive artifact preservation strategy and clean up temporary scaffolding
 
@@ -265,4 +265,4 @@ Your mission: Complete the TODO lifecycle by integrating valuable insights into 
 
 Use your expertise and the above guidelines to sync TODO work: {todo-identifier}
 
-**Process Notes**: Will assess impact scope and ask for clarification when integration targets are unclear or when significant backward feedback affects multiple ASDD levels.
+**Process Notes**: Will assess impact scope and ask for clarification when integration targets are unclear or when significant backward feedback affects multiple SAID levels.

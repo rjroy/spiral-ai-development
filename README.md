@@ -6,13 +6,13 @@
 
 [![Template Version](https://img.shields.io/badge/Version-v1.0.5-blue.svg)](https://github.com/rjroy/claude-code-template)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)](https://github.com/rjroy/claude-code-template/commits/main)
-[![ASDD](https://img.shields.io/badge/Methodology-ASDD-red.svg)](docs/ASDD/)
+[![SAID](https://img.shields.io/badge/Methodology-SAID-red.svg)](docs/SAID/)
 
 A meta-template for establishing effective AI-human collaboration patterns in software development, featuring pressure-tested methodologies for managing complex projects with Claude Code.
 
 ## Core Framework
 
-**AI Spec-Driven Development (ASDD)** - Spiral development approach with progressive detail levels (Vision → Approach → Structure → Specifics → Implementation) that handles changing requirements, timeline pressure, and context preservation, now with integrated git workflow support.
+**Spiral AI Development (SAID)** - Spiral development approach with progressive detail levels (Vision → Approach → Structure → Specifics → Implementation) that handles changing requirements, timeline pressure, and context preservation, now with integrated git workflow support.
 
 **Philosophy** - A comprehensive collaboration framework that has been forged through pressure and refined by reality. This philosophy addresses the collaboration paradox where AI can offer answers that look complete but may miss critical domain complexities. It establishes clear ownership boundaries: human judgment handles strategy and architecture, AI handles implementation and pattern recognition, with explicit accountability for every significant choice. The framework includes domain-aware collaboration patterns that scale AI involvement inversely with domain complexity, pressure-adaptive protocols that maintain quality under stress, and bounded replaceability principles that design components with stable interfaces enabling informed replacement decisions.
 
@@ -37,7 +37,7 @@ A meta-template for establishing effective AI-human collaboration patterns in so
 2. Clone the repo
 3. Create project directories: `mkdir -p docs/design context docs/reports`
 4. Add `OVERVIEW.md` and `HIGH-LEVEL-DESIGN.md` to `docs/design`
-5. Move this `README.md` to the `docs/ASDD` directory
+5. Move this `README.md` to the `docs/SAID` directory
 7. Copy `docs/design/OVERVIEW.md` to `README.md`
 8. Make any changes to the `README.md` to center it as git project README and not just a design overview.
 9. Open `claude`
@@ -45,11 +45,11 @@ A meta-template for establishing effective AI-human collaboration patterns in so
 11. You may need to run the following prompt:
 ```
 This is no longer a template project.
-The template has moved to docs/ASDD/
+The template has moved to docs/SAID/
 The instantiation can be identified by README.md and docs/design/
 Update CLAUDE.md to reflect this fact.
 ```
-12. Setup initial context: `/asdd-context-sync init context/project-context.yml`
+12. Setup initial context: `/said-context-sync init context/project-context.yml`
 13. (Optional) Consider setting up branch protection for code review:
 ```bash
 # Example: Require PR reviews before merging to main
@@ -67,14 +67,14 @@ repo-name/
 │   |   ├── OVERVIEW.md          # Project specific overview
 │   |   └── HIGH-LEVEL-DESIGN.md # Project specific design
 │   ├── reports/                 # Phase reports and analysis
-│   └── ASDD/                    # ASDD philosophy documentation
+│   └── SAID/                    # SAID philosophy documentation
 │       ├── README.md            # This document
-│       └── ...                  # Remaining ASDD documentation
+│       └── ...                  # Remaining SAID documentation
 ├── context/                     # Context preservation
 │   ├── project-context.yml      # Main context manifest
 │   └── ...                      # Level specific context files
 ├── .claude/                     # Claude Code integration
-|   └── commands/                # ASDD Development commands
+|   └── commands/                # SAID Development commands
 ├── .github/                     # GitHub integration
 │   └── workflows/               # Automated validation
 ├── CLAUDE.md                    # Claude base instructions
@@ -84,7 +84,7 @@ repo-name/
 ## Available Commands
 
 ### Core Phase Commands
-Complete ASDD command set:
+Complete SAID command set:
 - `/phase-0-prototype` - Risk validation through proof-of-concept
 - `/level-0-vision` - Problem clarity and core purpose
 - `/level-1-approach` - Technical approach validation
@@ -94,7 +94,7 @@ Complete ASDD command set:
 
 ### Utility Commands
 Context management and workflow support:
-- `/asdd-context-sync` - Maintain context across phases and prevent information loss
+- `/said-context-sync` - Maintain context across phases and prevent information loss
 - `/generate-next-steps` - Create detailed transition plans with resource estimates
 - `/generate-phase-report` - Generate comprehensive reports from phase artifacts
 
@@ -104,12 +104,12 @@ Systematic handling of granular work items that emerge during development:
 - `/generate-todo-context` - Create contexts for newly discovered TODOs
 - `/decompose-todo` - Break complex TODOs into manageable atomic tasks
 - `/work-on-todo` - Execute atomic TODOs with collaboration checkpoints
-- `/asdd-todo-sync` - Integrate TODO results back into ASDD contexts
+- `/said-todo-sync` - Integrate TODO results back into SAID contexts
 
-For detailed guidance, see [TODO Workflow Integration](docs/ASDD/add-ons/todo-workflow-integration.md).
+For detailed guidance, see [TODO Workflow Integration](docs/SAID/add-ons/todo-workflow-integration.md).
 
 ### Git Workflow Guidance
-For flexible git workflow suggestions, see [Git Workflow Integration](docs/ASDD/git-workflow-integration.md):
+For flexible git workflow suggestions, see [Git Workflow Integration](docs/SAID/git-workflow-integration.md):
 - GitHub Flow with descriptive branch naming
 - Helpful PR templates and checklists
 - Context preservation through meaningful commits
@@ -119,14 +119,14 @@ For flexible git workflow suggestions, see [Git Workflow Integration](docs/ASDD/
 
 **Phase Completion Workflow**:
 ```bash
-/asdd-context-sync level-0-vision
+/said-context-sync level-0-vision
 /generate-next-steps level-0-vision
 /generate-phase-report level-0-vision
 ```
 
 **Context Recovery** (when context is lost):
 ```bash
-/asdd-context-sync current-phase context/project-context.yml
+/said-context-sync current-phase context/project-context.yml
 /generate-next-steps current-phase context/project-context.yml
 ```
 
@@ -162,7 +162,7 @@ AI: [Acknowledgment and readiness confirmation]
 
 This template has been pressure-tested against systematic failure analysis and incorporates real-world learnings from project breakdowns. Additionally addresses timeline pressure, context degradation, domain complexity mismatches, and collaboration boundary drift - the common failure modes that break clean development processes.
 
-Recommended git workflow that teams can adapt to support ASDD collaboration patterns. See [Git Workflow Integration](docs/ASDD/git-workflow-integration.md) for flexible guidance that you can modify or ignore based on your team's needs.
+Recommended git workflow that teams can adapt to support SAID collaboration patterns. See [Git Workflow Integration](docs/SAID/git-workflow-integration.md) for flexible guidance that you can modify or ignore based on your team's needs.
 
 **Philosophy**: Trust through verification, not verification through trust. This template provides the structure for AI-human collaboration that bends under pressure rather than breaking.
 
@@ -170,7 +170,7 @@ Recommended git workflow that teams can adapt to support ASDD collaboration patt
 
 1. **Start with Vision**: Run `/level-0-vision` to establish clear project purpose
 2. **Validate Early**: Use `/phase-0-prototype` for risk validation before deep implementation
-3. **Maintain Context**: Run `/asdd-context-sync` after each significant phase
+3. **Maintain Context**: Run `/said-context-sync` after each significant phase
 4. **Plan Transitions**: Use `/generate-next-steps` before moving to next phase
 5. **Document Progress**: Generate reports with `/generate-phase-report` for stakeholders
 

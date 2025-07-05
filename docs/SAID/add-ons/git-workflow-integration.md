@@ -1,4 +1,4 @@
-# Git Workflow Integration with ASDD
+# Git Workflow Integration with SAID
 
 _Flexible guidance and suggestions for integrating git workflows with AI collaboration patterns_
 
@@ -6,7 +6,7 @@ _Flexible guidance and suggestions for integrating git workflows with AI collabo
 
 ## 🎯 Overview
 
-This document provides flexible guidance for integrating git workflows with the AI Spec-Driven Development (ASDD) methodology. These are suggestions and best practices that teams can adapt, modify, or ignore based on their specific context and constraints. The goal is to support ASDD thinking, not enforce particular tools or processes.
+This document provides flexible guidance for integrating git workflows with the Spiral AI Development (SAID) methodology. These are suggestions and best practices that teams can adapt, modify, or ignore based on their specific context and constraints. The goal is to support SAID thinking, not enforce particular tools or processes.
 
 ## 🔧 Repository Setup Suggestions
 
@@ -34,12 +34,12 @@ gh api repos/:owner/:repo/branches/main/protection \
 
 **2. Suggested Branch Naming Conventions**
 
-Consistent naming helps team coordination. Here's a suggested pattern aligned with ASDD phases:
+Consistent naming helps team coordination. Here's a suggested pattern aligned with SAID phases:
 
 ```
 main
 ├── feature/{descriptive-name}     # Standard GitHub Flow (recommended)
-├── level-{n}/{description}        # ASDD phase-aligned (recommended)
+├── level-{n}/{description}        # SAID phase-aligned (recommended)
 ├── prototype/{experiment}         # For throwaway experiments
 ├── hotfix/{issue-description}     # For urgent fixes
 ```
@@ -52,11 +52,11 @@ main
 
 **3. Suggested Repository Structure**
 
-Focus on the essentials that support ASDD thinking:
+Focus on the essentials that support SAID thinking:
 
 ```
 project/
-├── context/                       # ASDD context management (core requirement)
+├── context/                       # SAID context management (core requirement)
 ├── docs/                          # Project documentation
 ├── .claude/                       # Claude commands (if using Claude Code)
 ├── .github/workflows              # GitHub CI/CD integration (if using GitHub)
@@ -76,7 +76,7 @@ We recommend using GitHub Flow - a simple, flexible branching model where you:
 4. Review and discuss
 5. Merge to main
 
-**Example: Working on Different ASDD Phases**
+**Example: Working on Different SAID Phases**
 
 ```bash
 # For prototyping high-risk features
@@ -91,7 +91,7 @@ git checkout -b feature/user-authentication
 git add . && git commit -m "feat: add JWT token validation"
 gh pr create --title "Add user authentication system"
 
-# For documenting project vision (if using ASDD levels)
+# For documenting project vision (if using SAID levels)
 git checkout -b level-0/user-analysis
 git add . && git commit -m "Level 0: record results of user analysis"
 gh pr create --title "Follow on level 0 task to analysis user edge cases"
@@ -141,9 +141,9 @@ git log --follow context/project-context.yml
 
 ### Suggested Git Integration Patterns
 
-If using ASDD commands, consider these git workflow patterns:
+If using SAID commands, consider these git workflow patterns:
 
-**When Starting a New ASDD Level:**
+**When Starting a New SAID Level:**
 ```bash
 # Create a descriptive branch
 git checkout -b level-0/vision-review # More descriptive than "level-0"
@@ -151,15 +151,15 @@ git checkout -b level-0/vision-review # More descriptive than "level-0"
 # Use clear commit messages
 git add . && git commit -m "docs: review and analysis vision and goals"
 
-# Reference ASDD level in PR if helpful
-gh pr create --title "Refine project vision (ASDD Level 0)" \
-  --body "Initial project vision as part of ASDD discovery process"
+# Reference SAID level in PR if helpful
+gh pr create --title "Refine project vision (SAID Level 0)" \
+  --body "Initial project vision as part of SAID discovery process"
 ```
 
 **Key Suggestions:**
 - Use branch names that describe the work, not just the process
 - Keep commits focused and well-described
-- Reference ASDD phases in PRs only when it adds clarity
+- Reference SAID phases in PRs only when it adds clarity
 - Preserve important decisions in context files
 
 ## 🔍 Common Git Workflow Tips

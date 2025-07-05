@@ -65,7 +65,7 @@ AI can offer answers that look complete. **That's the structural trap.** This ph
 
 ### Context Priming Enhancement
 
-**Pattern**: Brief context orientation before ASDD command execution ensures state continuity and collaboration effectiveness across sessions.
+**Pattern**: Brief context orientation before SAID command execution ensures state continuity and collaboration effectiveness across sessions.
 
 **When to Use**: Resuming after time gaps, post-discovery work, phase transitions, or when significant context has changed since last interaction.
 
@@ -260,7 +260,7 @@ main
 
 ---
 
-## 🔄 AI Spec-Driven Development (ASDD) - Reality-Tested
+## 🔄 Spiral AI Development (SAID) - Reality-Tested
 
 ### The Theory
 
@@ -434,8 +434,8 @@ Version 1.0 has been designed to bend without breaking, adapting to pressure whi
 
 _Philosophy version: 1.0.5_
 _Last pressure-tested: 2025-07-03_
-_Failure analysis integrated: docs/ASDD/revision-rationale/v0.1-analysis.md_
-_Improved collaboration hooks: docs/ASDD/revision-rationale/v1.0-analysis.md_
+_Failure analysis integrated: docs/SAID/revision-rationale/v0.1-analysis.md_
+_Improved collaboration hooks: docs/SAID/revision-rationale/v1.0-analysis.md_
 _Git workflow integration: v1.0.3 (flexible guidance for thoughtful collaboration)_
 _Report templates: v1.0.4_
 _Next philosophical review: After 10 projects using v1.0.5 methodology_
