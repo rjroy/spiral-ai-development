@@ -8,9 +8,12 @@
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)](https://github.com/rjroy/claude-code-template/commits/main)
 [![SAID](https://img.shields.io/badge/Methodology-SAID-red.svg)](docs/SAID/)
 
+
 A meta-template for establishing AI-human collaboration patterns in software development, designed for managing complex projects with Claude Code.
 
 ## Core Framework
+
+<img src="docs/SAID/logos/said-64.png" align="right" style="margin-left: 10px">
 
 **Spiral AI Development (SAID)** - Spiral development approach with progressive detail levels (Vision → Approach → Structure → Specifics → Implementation) that handles changing requirements, timeline pressure, and context preservation, now with integrated git workflow support.
 
