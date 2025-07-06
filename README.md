@@ -6,7 +6,7 @@
 
 [![Template Version](https://img.shields.io/badge/Version-v1.0.6-blue.svg)](https://github.com/rjroy/claude-code-template)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)](https://github.com/rjroy/claude-code-template/commits/main)
-[![SAID](https://img.shields.io/badge/Methodology-SAID-red.svg)](docs/SAID/)
+[![SAID](https://img.shields.io/badge/Methodology-SAID-16A34A.svg)](docs/SAID/)
 
 
 A meta-template for establishing AI-human collaboration patterns in software development, designed for managing complex projects with Claude Code.
