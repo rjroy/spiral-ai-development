@@ -112,26 +112,6 @@ AI: [Acknowledgment and readiness confirmation]
 > /level-2-structure context/level-1-approach-context.yml
 ```
 
-## What You Get
-
-### **Structured Collaboration Framework**
-- **Domain-Aware Boundaries**: AI involvement scales from full implementation (simple domains) to boilerplate-only (extreme domains)
-- **Pressure-Adaptive Protocols**: Methodology bends under timeline pressure without breaking
-- **Context Preservation**: Prevent information loss across phase transitions with structured context management
-- **Spiral Navigation**: Move backward when discoveries invalidate assumptions, forward when ready to proceed
-
-### **Practical Tools**
-- **11 Ready-to-Use Commands**: Complete workflow from prototype validation to production implementation
-- **Context Management**: Automated context sync with conflict resolution and versioning
-- **Transition Planning**: Resource estimation, risk assessment, and clear next steps
-- **Comprehensive Reporting**: Executive and technical reports with artifact discovery
-
-### **Quality Assurance Built-In**
-- **Validation Criteria**: Critical decisions remain traceable with clear rationale, action items have clear ownership and realistic timelines
-- **Conflict Resolution**: Systematic approaches for handling conflicting requirements or constraints
-- **Success Indicators**: Clear qualitative measures for each phase and utility command
-- **Troubleshooting Guide**: Common issues and resolution strategies
-
 ## Next Steps After **First Steps**
 
 1. **Start with Vision**: Run `/level-0-vision` to establish clear project purpose

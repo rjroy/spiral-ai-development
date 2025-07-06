@@ -27,14 +27,6 @@ A meta-template for establishing AI-human collaboration patterns in software dev
 - **Human in the Loop** - This methodology isn't a push button solution. It is designed to take advantage of the greatest domain expert the AI has access to, the user. This is your project, it needs to ask you questions.
 - **Command Driven** - This is all great in theory, but in practice you need more than just words to maintain consistency. Spiral AI Development isn't just a philosophy, it is a toolkit template. It provides a baseline set of commands to support all the core concepts (and some optional ones) to allow for consistency in the development for multiple projects.
 
-## What Makes This Different
-
-This template is designed to address timeline pressure, context degradation, domain complexity mismatches, and collaboration boundary drift - common failure modes that can break clean development processes.
-
-Recommended git workflow that teams can adapt to support SAID collaboration patterns. See [Git Workflow Integration](docs/SAID/git-workflow-integration.md) for flexible guidance that you can modify or ignore based on your team's needs.
-
-**Philosophy**: Trust through verification, not verification through trust. This template provides structure designed for AI-human collaboration that aims to bend under pressure rather than breaking.
-
 ## Getting Started
 
 This is a GitHub template repository.  Getting started is as simple as creating a repository using this as a template.
