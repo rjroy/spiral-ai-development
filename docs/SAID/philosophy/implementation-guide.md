@@ -113,9 +113,11 @@ AI: [Acknowledgment and readiness confirmation]
 
 ---
 
-## Pressure Adaptation Protocols
+## Pressure Adaptation Guidelines
 
-### Timeline Pressure Response
+### Timeline Pressure
+
+The concepts of _Moderate_, _High_, and _Extreme_ are subjective. They are provided here to illustrate common adaptions.
 
 **Moderate Pressure**:
 - Combine levels where safe
@@ -123,72 +125,47 @@ AI: [Acknowledgment and readiness confirmation]
 - Maintain context preservation
 
 **High Pressure**:
-- Skip to Level 3 with templates
-- Plan cleanup work explicitly
-- Never abandon context preservation
+- Skip to Level 3 using context priming instead of context files
+- Follow the remaining processes
+- Maintain context preservation of what you can
 
 **Extreme Pressure**:
 - Emergency mode with damage control
 - Focus only on critical functionality
-- Document all shortcuts taken
 
-### Quality Gates Under Pressure
-
-**Never Compromise**:
-- Security review
-- Data integrity
-- Basic functionality
-- Context preservation
-
-**Defer If Needed**:
-- Performance optimization
-- UI polish
-- Comprehensive documentation
+**Recovery**:
+- When the pressure is over
+- Recover context using `/said-context-sync` when pressure subsides
+- Use `/generate-todo-context` to find cleanup tasks that need to occur
 
 ---
 
-## Git Workflow Integration
+## Git Workflow with SAID
 
-### Branching Strategy
+Use descriptive branch names that help your team understand what's happening:
 
-**Descriptive Branch Names**:
-- `feature/user-authentication`
-- `prototype/test-new-api`
-- `feature/level-1-technical-approach`
-- `fix/bug-description`
-
-**Simple GitHub Flow**:
 ```
-main
-├── feature/descriptive-name
-├── fix/bug-description
-├── docs/what-youre-documenting
-└── prototype/experiment-name
+feature/user-authentication
+prototype/test-oauth-approach
+level-1/technical-feasibility
+fix/broken-login-redirect
 ```
 
-### Context Preservation Through Git
+**Protect your main branch** - require PRs for integration. Here's the GitHub Flow guide if you need a refresher.
+
+**Consider matching code review depth to domain complexity** - simple domains need basic review, complex domains need domain experts, extreme domains need multiple expert reviewers. Teams might want a lightweight PR checklist to prompt thinking about tests, documentation, and context preservation.
+
+**Preserve context in git**:
+
 - Use meaningful commit messages that explain decisions
-- Document major choices in context files
-- PR descriptions capture important discussions
-- Git history preserves your development journey
+- Keep your SAID context files in the repository
+- Reference important discussions in PR descriptions
 
-### Code Review Practices
-
-**For Simple Domains**:
-- Lighter review for straightforward changes
-- Focus on integration and consistency
-
-**For Complex Domains**:
-- Involve team members with relevant expertise
-- Take time to review architectural implications
-
-**For Extreme Domains**:
-- Multiple reviewers may be valuable
-- Document review decisions and rationale
+That's it. Your existing git knowledge + descriptive naming + context preservation.
 
 ---
 
-## TODO Workflow Integration
+## [TODO Workflow Integration](/docs/SAID/add-ons/todo-workflow-integration.md)
 
 ### When to Use TODO Workflow
 - Multi-step work items requiring 3+ activities
