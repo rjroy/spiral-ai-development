@@ -83,11 +83,13 @@ Systematic handling of granular work items that emerge during development:
 For detailed guidance, see [TODO Workflow Integration](/docs/SAID/add-ons/todo-workflow-integration.md).
 
 ### Git Workflow Guidance
-For flexible git workflow suggestions, see [Git Workflow Integration](/docs/SAID/git-workflow-integration.md):
+For flexible git workflow suggestions:
 - GitHub Flow with descriptive branch naming
 - Helpful PR templates and checklists
 - Context preservation through meaningful commits
 - Domain-aware code review practices
+
+For better examples, see [Git Workflow with SAID](/docs/SAID/philosophy/implementation-guide.md#git-workflow-with-said)
 
 ### Common Workflow Patterns
 
