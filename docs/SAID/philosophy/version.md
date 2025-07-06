@@ -15,3 +15,4 @@ Note: These revisions represent design evolution during 4-day development proces
 - **v1.0.4**: Report template design approach - [`v1.0.4-rationale-report-templates.md`](revision-rationale/v1.0.4-rationale-report-templates.md)
 - **v1.0.5**: TODO workflow integration design - [`v1.0.5-rationale-todo-workflow.md`](revision-rationale/v1.0.5-rationale-todo-workflow.md)
 - **v1.0.6**: Methodology rebrand from ASDD to SAID - [`v1.0.6-rationale-rebrand.md`](revision-rationale/v1.0.6-rationale-rebrand.md)
+- **v1.0.7**: Document cleanup and organization - [`v1.0.7-rationale-document-cleanup.md`](revision-rationale/v1.0.7-rationale-document-cleanup.md)
