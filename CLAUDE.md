@@ -34,7 +34,7 @@ Design components with stable interfaces and documented behavioral contracts tha
 
 This template establishes a spiral development approach with progressive detail levels:
 
-**Phase 0: Prototype Validation** - Risk validation through minimal proof-of-concept
+**Prototype Phase: Validation** - Risk validation through minimal proof-of-concept
 1. **Level 0: Vision Clarity** - Core purpose understood
 2. **Level 1: Approach Viability** - Solution approach validated
 3. **Level 2: Structure Definition** - System boundaries defined
@@ -80,7 +80,7 @@ The template includes complete SAID commands:
 
 #### Core Phase Commands
 ```
-/phase-0-prototype   - Risk validation through proof-of-concept
+/said-prototype      - Risk validation through proof-of-concept
 /level-0-vision      - Problem clarity and core purpose
 /level-1-approach    - Technical approach validation
 /level-2-structure   - System boundaries and components
@@ -130,7 +130,7 @@ For more detail see [git-workflow-integration.md](docs/SAID/git-workflow-integra
 ```
 context/
 ├── project-context.yml           # Main context manifest
-├── phase-0-prototype-context.yml # Phase-specific context
+├── said-prototype-context.yml # Prototype-specific context
 └── level-{n}-{name}-context.yml  # Level-specific context
 ```
 
@@ -172,7 +172,7 @@ context_manifest:
     fundamental_constraints: "Non-negotiable limitations"
 
   phase_progression:
-    current_phase: "phase-0-prototype"
+    current_phase: "said-prototype"
     completed_phases: ["level-0-vision"]
     next_phase: "level-1-approach"
 
@@ -273,7 +273,7 @@ For each level, apply enhanced validation:
 - `docs/SAID/revision-rationale/` - Systematic failure analysis for historic versions. Provides deeper insight into revisions.
 
 ### Phase Commands
-- `.claude/commands/phase-0-prototype.md` - Prototype validation command
+- `.claude/commands/said-prototype.md` - Prototype validation command
 - `.claude/commands/level-0-vision.md` - Vision clarity command
 - `.claude/commands/level-1-approach.md` - Approach viability command
 - `.claude/commands/level-2-structure.md` - Structure definition command

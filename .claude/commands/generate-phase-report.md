@@ -88,7 +88,7 @@ risk_validation:
 ```
 docs/reports/
 ├── current/
-│   ├── phase-0-prototype-report.md
+│   ├── said-prototype-report.md
 │   ├── level-0-vision-report.md
 │   └── executive-summary.md
 └── templates/
@@ -106,7 +106,7 @@ report_versioning:
   report_metadata:
     version: "v1.0"
     generated_date: "2024-01-15"
-    phase_completed: "phase-0-prototype"
+    phase_completed: "said-prototype"
     stakeholder_review: "pending"
     approval_status: "draft | reviewed | approved"
 ```

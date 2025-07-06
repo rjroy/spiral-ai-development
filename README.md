@@ -15,7 +15,7 @@ A meta-template for establishing AI-human collaboration patterns in software dev
 
 <img src="docs/SAID/logos/said-64.png" align="right" style="margin-left: 10px">
 
-**Spiral AI Development (SAID)** - Spiral development approach with progressive detail levels (Vision → Approach → Structure → Specifics → Implementation) that handles changing requirements, timeline pressure, and context preservation, now with integrated git workflow support.
+**Spiral AI Development (SAID)** - Spiral development approach with progressive detail levels (Prototype → Vision → Approach → Structure → Specifics → Implementation) that handles changing requirements, timeline pressure, and context preservation, now with integrated git workflow support.
 
 **Philosophy** - A comprehensive collaboration framework designed to address the collaboration paradox where AI can offer answers that look complete but may miss critical domain complexities. It establishes clear ownership boundaries: human judgment handles strategy and architecture, AI handles implementation and pattern recognition, with explicit accountability for every significant choice. The framework includes domain-aware collaboration patterns that scale AI involvement inversely with domain complexity, pressure-adaptive protocols designed to maintain quality under stress, and bounded replaceability principles that design components with stable interfaces enabling informed replacement decisions.
 
@@ -88,7 +88,7 @@ repo-name/
 
 ### Core Phase Commands
 Complete SAID command set:
-- `/phase-0-prototype` - Risk validation through proof-of-concept
+- `/said-prototype` - Risk validation through proof-of-concept
 - `/level-0-vision` - Problem clarity and core purpose
 - `/level-1-approach` - Technical approach validation
 - `/level-2-structure` - System boundaries and components
@@ -150,7 +150,7 @@ AI: [Acknowledgment and readiness confirmation]
 - **Spiral Navigation**: Move backward when discoveries invalidate assumptions, forward when ready to proceed
 
 ### **Practical Tools**
-- **9 Ready-to-Use Commands**: Complete workflow from prototype validation to production implementation
+- **11 Ready-to-Use Commands**: Complete workflow from prototype validation to production implementation
 - **Context Management**: Automated context sync with conflict resolution and versioning
 - **Transition Planning**: Resource estimation, risk assessment, and clear next steps
 - **Comprehensive Reporting**: Executive and technical reports with artifact discovery
@@ -172,7 +172,7 @@ Recommended git workflow that teams can adapt to support SAID collaboration patt
 ## Next Steps After **First Steps**
 
 1. **Start with Vision**: Run `/level-0-vision` to establish clear project purpose
-2. **Validate Early**: Use `/phase-0-prototype` for risk validation before deep implementation
+2. **Validate Early**: Use `/said-prototype` for risk validation before deep implementation
 3. **Maintain Context**: Run `/said-context-sync` after each significant phase
 4. **Plan Transitions**: Use `/generate-next-steps` before moving to next phase
 5. **Document Progress**: Generate reports with `/generate-phase-report` for stakeholders

@@ -1,7 +1,7 @@
 ## Usage
 
 ```
-/phase-0-prototype <in-file>
+/said-prototype <in-file>
 ```
 
 ## Command Guidelines
@@ -34,7 +34,7 @@
 3. **Explain Reasoning** - Share the "why" behind technical recommendations
 4. **Pause for Input** - Honor collaboration checkpoints at key decision points
 
-### Phase 0 Specific Guidelines
+### SAID Prototype Specific Guidelines
 
 **Risk-First Prototyping Protocol**
 
@@ -79,7 +79,7 @@ prototype_assessment:
   confidence_level: 0.1 to 1.0
 ```
 
-### Standard Pressure-Testing Protocol for Phase 0
+### Standard Pressure-Testing Protocol for Prototype Phase
 
 **1. Risk Reality Check**
 - "Are we testing the scariest assumption first?"
@@ -122,17 +122,17 @@ prototype_assessment:
 - Proves things we already knew
 - Raises more questions than it answers
 
-### Integration with SAID Patches
+### Integration with SAID Methodology
 
-**Spiral Model Integration**: Phase 0 becomes the first loop of the spiral
+**Spiral Model Integration**: Prototype becomes the first loop of the spiral
 **Domain Calibration**: Prototype complexity adjusted based on domain assessment
 **Context Preservation**: Risk validation results preserved in context manifest
 **Progressive Elaboration**: Prototype establishes Level 0 understanding
-**Reality Checkpoints**: Pressure detection starts in Phase 0
+**Reality Checkpoints**: Pressure detection starts in prototype phase
 
 ## Command
 
-You are collaborating on SAID - Phase 0 - Prototype Validation with role Prototype Validation Expert.
+You are collaborating on SAID - Prototype Validation with role Prototype Validation Expert.
 
 Your mission: Build the minimal prototype needed to validate the highest-risk technical assumptions in the provided specification. Focus on proving or disproving feasibility, not building production-ready features.
 
