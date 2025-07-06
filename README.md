@@ -88,7 +88,7 @@ repo-name/
 
 ### Core Phase Commands
 Complete SAID command set:
-- `/phase-0-prototype` - Risk validation through proof-of-concept
+- `/said-prototype` - Risk validation through proof-of-concept
 - `/level-0-vision` - Problem clarity and core purpose
 - `/level-1-approach` - Technical approach validation
 - `/level-2-structure` - System boundaries and components
@@ -172,7 +172,7 @@ Recommended git workflow that teams can adapt to support SAID collaboration patt
 ## Next Steps After **First Steps**
 
 1. **Start with Vision**: Run `/level-0-vision` to establish clear project purpose
-2. **Validate Early**: Use `/phase-0-prototype` for risk validation before deep implementation
+2. **Validate Early**: Use `/said-prototype` for risk validation before deep implementation
 3. **Maintain Context**: Run `/said-context-sync` after each significant phase
 4. **Plan Transitions**: Use `/generate-next-steps` before moving to next phase
 5. **Document Progress**: Generate reports with `/generate-phase-report` for stakeholders
