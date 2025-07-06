@@ -107,8 +107,10 @@ Each command includes domain calibration, context preservation, and pressure ada
 
 **Context Manifest Storage**:
 - Primary: `context/project-context.yml` - Main context manifest
-- Phase/Level-specific: `context/[phase|level]-{id}-{phase/level-name}.yml` - Phase/Level artifacts
-- Decomposition-specific: `context/[phase|level]-{id}-{phase/level-name}-{decomposition}.yml` - Decomposition artifacts
+- Phase-specific: `context/prototype/said-prototype-context.yml` - Prototype phase context
+- Level-specific: `context/level-{n}/level-{n}-{name}-context.yml` - Level context files
+- Component artifacts: `context/level-2/components/level-2-{component-name}.yml` - Component specifications
+- Feature artifacts: `context/level-3/{component-name}/level-3-{component-name}-{feature-name}.yml` - Feature specifications
 
 ### Git Workflow Recommended Integration
 
@@ -130,8 +132,30 @@ For more detail see [git-workflow-integration.md](docs/SAID/git-workflow-integra
 ```
 context/
 ├── project-context.yml           # Main context manifest
-├── said-prototype-context.yml # Prototype-specific context
-└── level-{n}-{name}-context.yml  # Level-specific context
+├── prototype/                    # Prototype phase
+│   └── said-prototype-context.yml
+├── level-0/                      # Vision level
+│   └── level-0-vision-context.yml
+├── level-1/                      # Approach level
+│   └── level-1-approach-context.yml
+├── level-2/                      # Structure level
+│   ├── level-2-structure-context.yml
+│   └── components/               # Component artifacts
+│       ├── level-2-auth.yml
+│       ├── level-2-similarity.yml
+│       └── level-2-pipeline.yml
+└── level-3/                      # Implementation level
+    ├── level-3-specifics-context.yml
+    ├── auth/                     # Per-component subdirectories
+    │   ├── level-3-auth-login.yml
+    │   ├── level-3-auth-session.yml
+    │   └── level-3-auth-roles.yml
+    ├── similarity/
+    │   ├── level-3-similarity-search.yml
+    │   └── level-3-similarity-index.yml
+    └── pipeline/
+        ├── level-3-pipeline-ingest.yml
+        └── level-3-pipeline-transform.yml
 ```
 
 ### Utility Command Workflows
@@ -163,7 +187,7 @@ context/
 ```yaml
 # Project Context Manifest Template
 context_manifest:
-  version: "1.0.6
+  version: "1.0.6"
   project_identity:
     name: "Project Name"
     purpose: "Core project purpose"
