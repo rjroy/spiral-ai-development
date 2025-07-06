@@ -4,8 +4,8 @@
 /level-4-implementation <feature-artifact-file>
 ```
 
-**Input**: Level 3 feature YAML artifact (e.g., `level-3-similarity-authentication.yml`)
-**Output**: Implementation task YAML artifact for the feature (e.g., `level-4-similarity-authentication-implementation.yml`)
+**Input**: Level 3 feature YAML artifact (e.g., `context/level-3/similarity/level-3-similarity-authentication.yml`)
+**Output**: Implementation task YAML artifact for the feature (e.g., `context/level-4/similarity/level-4-similarity-authentication-implementation.yml`)
 
 ## Command Guidelines
 
@@ -93,11 +93,12 @@ For each feature, create a structured implementation task YAML artifact:
 
 ```yaml
 # Use template: context/templates/level-4-implementation-artifact.yml
-# Generate one artifact per feature: level-4-{component-name}-{feature-name}-implementation.yml
+# Generate one artifact per feature: context/level-4/{component-name}/level-4-{component-name}-{feature-name}-implementation.yml
 
 artifact_requirements:
   - One YAML file per feature implementation
   - Use consistent naming: level-4-{component-name}-{feature-name}-implementation.yml
+  - Store in: context/level-4/{component-name}/
   - Contain all implementation tasks, timelines, and resource requirements
   - Include traceability to parent feature and component
   - Document risk management and quality assurance plans
