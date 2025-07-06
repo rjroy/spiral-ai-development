@@ -80,10 +80,10 @@ Systematic handling of granular work items that emerge during development:
 - `/work-on-todo` - Execute atomic TODOs with collaboration checkpoints
 - `/said-todo-sync` - Integrate TODO results back into SAID contexts
 
-For detailed guidance, see [TODO Workflow Integration](docs/SAID/add-ons/todo-workflow-integration.md).
+For detailed guidance, see [TODO Workflow Integration](/docs/SAID/add-ons/todo-workflow-integration.md).
 
 ### Git Workflow Guidance
-For flexible git workflow suggestions, see [Git Workflow Integration](docs/SAID/git-workflow-integration.md):
+For flexible git workflow suggestions, see [Git Workflow Integration](/docs/SAID/git-workflow-integration.md):
 - GitHub Flow with descriptive branch naming
 - Helpful PR templates and checklists
 - Context preservation through meaningful commits

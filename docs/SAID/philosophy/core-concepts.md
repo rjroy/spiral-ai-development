@@ -102,11 +102,9 @@ Design components and processes so that any piece can be understood and replaced
 ### Why This Matters for AI Collaboration
 - AI excels at implementing well-bounded components with clear specs
 - AI struggles with archaeological investigation of tightly coupled legacy code
+- **Clear boundaries let you regenerate components when AI gets them wrong**
 - Clear interfaces make AI-human handoffs much cleaner
 - Realistically bounded components can be safely delegated based on complexity
-
-### The Honest Test
-If this component disappeared tomorrow, what would someone need to rebuild it compatibly without archaeological investigation? Document that need realistically.
 
 **The principle**: Every component should be designed as if it might need to be rebuilt by someone with no institutional knowledge.
 
@@ -122,4 +120,4 @@ If this component disappeared tomorrow, what would someone need to rebuild it co
 
 These aren't independent techniques—they're interconnected principles that reinforce each other. When one breaks down, the others provide backup structure to prevent total collaboration failure.
 
-The SAID methodology and commands implement these concepts in a practical workflow, but the concepts themselves are the foundation that makes the methodology work.
+The SAID methodology and commands [implement](/docs/SAID/philosophy/implementation-guide.md) these concepts in a practical workflow, but the concepts themselves are the foundation that makes the methodology work.
