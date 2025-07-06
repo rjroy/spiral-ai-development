@@ -24,8 +24,12 @@
 **TODO Sync Process**
 
 **1. TODO Work Discovery and Assessment**
-- Scan all TODO context files matching the identifier pattern
-- Extract completed work, decisions, and lessons learned
+- Recursively scan TODO directory structure matching the identifier pattern
+- For parent TODO: check execution/deliverables/ directory
+- For each subtask in decomposition/: 
+  - Navigate to decomposition/{subtask-name}/execution/deliverables/
+  - Collect all deliverable files and subdirectories
+- Extract completed work, decisions, and lessons learned from all levels
 - Assess impact scope on SAID levels and project context
 - Identify backward feedback that affects previous phases
 - Determine integration requirements and cleanup needs
@@ -54,14 +58,29 @@
 **Discovery Process**:
 ```yaml
 discovery_process:
-  - step: "Scan TODO directories"
-    action: "Find all TODO contexts matching identifier"
+  - step: "Scan TODO root directory"
+    action: "Find parent TODO context and check for decomposition/"
+    
+  - step: "Discover all subtasks recursively"
+    action: |
+      For each directory in decomposition/:
+        - Read subtask todo-context.yml
+        - Navigate to execution/deliverables/
+        - Collect all files and subdirectories
+        - Recurse if subtask has its own decomposition/
 
   - step: "Assess completion status"
-    action: "Determine which TODOs have execution artifacts"
+    action: "Determine which TODOs/subtasks have execution artifacts"
+
+  - step: "Extract all deliverables"
+    action: |
+      Collect from all levels:
+        - Parent TODO: execution/deliverables/*
+        - Each subtask: decomposition/{name}/execution/deliverables/*
+        - Nested subtasks: Follow same pattern recursively
 
   - step: "Extract integration artifacts"
-    action: "Gather decisions, constraints, and lessons learned"
+    action: "Gather decisions, constraints, and lessons learned from all levels"
 
   - step: "Map to SAID levels"
     action: "Identify which contexts need updates"
@@ -192,9 +211,13 @@ archive_strategy:
   archive_location: "context/archive/todo-work/{timestamp}-{todo-name}/"
   archive_structure:
     systematic_preservation:
-      - "subtask-deliverables/{subtask-name}/ (complete deliverable directory structure)"
-      - "execution-artifacts/scripts/ (executable files)"
-      - "execution-artifacts/datasets/ (structured data files)"
+      - "parent-deliverables/ (main TODO execution/deliverables/* content)"
+      - "subtask-deliverables/{subtask-name}/ (complete subtask deliverable directory structure)"
+      - "nested-subtask-deliverables/{parent}/{child}/ (preserve full decomposition hierarchy)"
+      - "execution-artifacts/scripts/ (all executable files from all levels)"
+      - "execution-artifacts/datasets/ (all structured data files from all levels)"
+      - "execution-artifacts/decisions/ (decisions-made.yml from all subtasks)"
+      - "execution-artifacts/lessons/ (lessons-learned.yml from all subtasks)"
 
     documentation:
       - "archive-inventory.md (comprehensive artifact catalog with reuse guidance)"
@@ -249,12 +272,17 @@ You are a SAID TODO Sync Assistant helping integrate TODO work results into SAID
 Your mission: Complete the TODO lifecycle by integrating valuable insights into appropriate SAID contexts while maintaining coherence and cleaning up temporary artifacts. Focus on preserving decisions and lessons learned while preventing context fragmentation.
 
 **Process:**
-1. Discover and assess all TODO artifacts matching the identifier
+1. **Recursively discover** all TODO artifacts:
+   - Scan parent TODO execution/deliverables/ directory
+   - Traverse decomposition/ directory for all subtasks
+   - Follow nested decomposition hierarchies completely
+   - Collect execution artifacts from every level
 2. Analyze impact scope and map findings to affected SAID levels
 3. Confirm integration strategy with user when impact scope is unclear
 4. Integrate TODO insights into appropriate SAID context files
 5. Handle backward feedback and resolve conflicts with existing context
-6. Apply comprehensive artifact preservation strategy and clean up temporary scaffolding
+6. Apply comprehensive artifact preservation strategy preserving complete subtask hierarchy
+7. Clean up temporary scaffolding while maintaining deliverable traceability
 
 **Constraints:**
 - Must preserve ALL valuable implementation assets using enhanced classification criteria
