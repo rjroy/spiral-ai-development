@@ -79,11 +79,12 @@ For each identified component, create a structured YAML artifact using the templ
 
 ```yaml
 # Use template: templates/level-2-component-artifact.yml
-# Generate one artifact per component: level-2-{component-name}.yml
+# Generate one artifact per component: context/level-2/components/level-2-{component-name}.yml
 
 artifact_requirements:
   - One YAML file per component
   - Use consistent naming: level-2-{component-name}.yml
+  - Store in: context/level-2/components/
   - Reference external API specs, data models, interface definitions
   - Include traceability to Level 1 approach and Level 0 vision
   - Document realistic replaceability assessment

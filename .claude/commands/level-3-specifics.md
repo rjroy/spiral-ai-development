@@ -4,8 +4,8 @@
 /level-3-specifics <component-artifact-file>
 ```
 
-**Input**: Level 2 component YAML artifact (e.g., `level-2-similarity.yml`)
-**Output**: Feature YAML artifacts for the component (e.g., `level-3-similarity-feature1.yml`)
+**Input**: Level 2 component YAML artifact (e.g., `context/level-2/components/level-2-similarity.yml`)
+**Output**: Feature YAML artifacts for the component (e.g., `context/level-3/similarity/level-3-similarity-feature1.yml`)
 
 ## Command Guidelines
 
@@ -92,11 +92,12 @@ For each identified feature, create a structured YAML artifact using the templat
 
 ```yaml
 # Use template: context/templates/level-3-feature-artifact.yml
-# Generate one artifact per feature: level-3-{component-name}-{feature-name}.yml
+# Generate one artifact per feature: context/level-3/{component-name}/level-3-{component-name}-{feature-name}.yml
 
 artifact_requirements:
   - One YAML file per feature
   - Use consistent naming: level-3-{component-name}-{feature-name}.yml
+  - Store in: context/level-3/{component-name}/
   - Reference external API specs, data models, business logic specs
   - Include traceability to parent component and Level 0 vision
   - Document feature dependencies and integration points
