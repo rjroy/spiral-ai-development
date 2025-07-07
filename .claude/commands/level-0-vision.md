@@ -67,7 +67,7 @@ Create the initial context manifest:
 ```yaml
 level_0_context:
   core_purpose: "Single sentence describing user value"
-  primary_users: 
+  primary_users:
     - "User type 1 with key constraints"
     - "User type 2 with key constraints"
     - "User type 3 with key constraints"
@@ -95,7 +95,7 @@ domain_assessment:
   technical_constraints: "NONE" | "LOW" | "MEDIUM" | "HIGH" | "EXTREME"
   domain_knowledge_depth: "SIMPLE" | "MODERATE" | "COMPLEX" | "EXPERT"
   integration_complexity: "NONE" | "LOW" | "MEDIUM" | "HIGH" | "EXTREME"
-  
+
   overall_complexity: "SIMPLE" | "MODERATE" | "COMPLEX" | "EXTREME"
   ai_suitability: "HIGH" | "MEDIUM" | "LOW" | "MINIMAL"
   required_human_expertise: "Any Developer" | "Senior Dev" | "Domain Expert + Senior" | "Domain Expert + Architect"
@@ -170,6 +170,7 @@ Your mission: Establish crystal-clear problem understanding and core purpose. Av
 8. Document critical constraints and unknowns
 9. Assess domain complexity for AI calibration
 10. Create initial context manifest
+11. **OPTIONAL**: Commit your work using whatever git workflow your team prefers
 
 **Constraints:**
 - No technical decisions allowed at this level

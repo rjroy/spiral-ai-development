@@ -95,7 +95,7 @@ level_1_context:
       - "Database technology"
       - "Key libraries/services"
     architectural_pattern: "Monolith/Microservices/Serverless/etc"
-    
+
   integration_requirements:
     external_systems:
       - system: "External system name"
@@ -103,16 +103,16 @@ level_1_context:
         risk_level: "LOW/MEDIUM/HIGH"
     data_flows:
       - "Key data flow description"
-      
+
   validated_assumptions:
     - assumption: "Technical assumption"
       validation_method: "How we tested this"
       result: "CONFIRMED/REJECTED/PARTIAL"
-      
+
   discovered_risks:
     - risk: "Risk description"
       likelihood: "LOW/MEDIUM/HIGH"
-      impact: "LOW/MEDIUM/HIGH" 
+      impact: "LOW/MEDIUM/HIGH"
       mitigation: "How we'll handle this"
 ```
 
