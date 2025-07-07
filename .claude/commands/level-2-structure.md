@@ -1,0 +1,247 @@
+## Usage
+
+```
+/level-2-structure <in-file>
+```
+
+## Command Guidelines
+
+### Structure Definition Expert
+
+**Focus**: Define clear system boundaries and component interfaces based on validated approach
+**Success criteria**: System boundaries defined, component interfaces specified, integration points designed
+**Failure mode alert**: Creating components that assume perfect integration or designing overly complex boundaries
+**Transition requirement**: Integration spike validates component boundaries work together
+**Output**: System structure design + component interface specifications
+
+### AI Collaboration Framework Reminder
+
+1. **Question Before Acting** - Always ask clarifying questions before major implementation decisions
+2. **Present Options** - Provide pros/cons rather than choosing for the user
+3. **Explain Reasoning** - Share the "why" behind technical recommendations
+4. **Pause for Input** - Honor collaboration checkpoints at key decision points
+5. **Calibrate Confidence** - AI involvement scales inversely with domain complexity
+
+### Level 2 Specific Guidelines
+
+**Structure Definition Protocol**
+
+**1. System Boundary Definition**
+- "What are the major functional boundaries in this system?"
+- "Which capabilities belong together vs. separate?"
+- "Where do we draw service/module boundaries?"
+- "What's inside our system vs. external dependencies?"
+
+**2. Component Identification**
+- Identify 3-7 major components (avoid both monolith and micro-everything)
+- Each component should have single, clear responsibility
+- Components should have minimal knowledge of each other's internals
+- Consider team ownership boundaries
+- **COLLABORATION CHECKPOINT**: Present component boundaries and responsibilities, get user feedback
+
+**3. Interface Design**
+- Define how components communicate
+- Specify data contracts between components
+- Design for bounded replaceability (realistic assessment)
+- Plan for component evolution over time
+- **COLLABORATION CHECKPOINT**: Present interface design options with trade-offs, discuss with user
+
+**4. Integration Pattern Selection**
+- Synchronous vs. asynchronous communication
+- Data consistency requirements
+- Error handling and retry patterns
+- Monitoring and observability hooks
+- **COLLABORATION CHECKPOINT**: Present integration patterns and discuss alternatives with user
+
+**5. Data Flow Architecture**
+- Where does data originate and how does it flow?
+- What transformations happen at component boundaries?
+- How is data consistency maintained?
+- What are the performance implications?
+
+### Integration Spike Requirement
+
+**Level 2 Integration Spike (Required)**:
+```yaml
+integration_spike:
+  purpose: "Validate component boundaries work together"
+  duration: "2-6 hours maximum"
+  scope: "Prove components can integrate"
+  deliverables:
+    - "End-to-end data flow working"
+    - "Component interface validation"
+    - "Error handling verification"
+    - "Performance measurement"
+```
+
+**Spike Focus Areas**:
+- Data flow between components
+- Interface contract validation
+- Error propagation and handling
+- Performance of integration points
+- **COLLABORATION CHECKPOINT**: Discuss integration spike scope and focus areas before implementation
+
+### Bounded Replaceability Assessment
+
+For each major component, assess realistic replaceability:
+
+```yaml
+component_assessment:
+  component_name: "ComponentName"
+  
+  replaceability_factors:
+    interface_stability: "HIGH/MEDIUM/LOW"
+    behavioral_complexity: "LOW/MEDIUM/HIGH"
+    domain_knowledge_required: "General/Specialized/Expert"
+    external_dependencies: ["List of dependencies"]
+    
+  replacement_estimate:
+    effort_hours: "Realistic estimate"
+    required_expertise: "What level of developer needed"
+    risk_level: "LOW/MEDIUM/HIGH"
+    
+  interface_design:
+    minimize_surface_area: true
+    explicit_dependencies: ["Documented dependencies"]
+    behavioral_contracts: "Key behaviors documented"
+```
+
+### Context Manifest Updates
+
+Update context manifest with structural decisions:
+
+```yaml
+level_2_context:
+  # Inherit from Level 1
+  system_structure:
+    components:
+      - name: "Component name"
+        responsibility: "Single clear purpose"
+        interfaces: ["Key interfaces"]
+        dependencies: ["What it depends on"]
+        replaceability: "LOW/MEDIUM/HIGH"
+        
+    integration_patterns:
+      - pattern: "REST API/Message Queue/Database/etc"
+        used_for: "What type of communication"
+        components: ["Which components use this"]
+        
+    data_flows:
+      - flow: "Description of data movement"
+        path: "Component A -> Component B -> Component C"
+        trigger: "What initiates this flow"
+        
+  architectural_constraints:
+    - constraint: "Important design constraint"
+      rationale: "Why this constraint exists"
+      affected_components: ["Components impacted"]
+      
+  integration_validations:
+    - validation: "What we tested in integration spike"
+      result: "PASSED/FAILED/PARTIAL"
+      evidence: "Specific test results"
+```
+
+### Domain-Calibrated AI Involvement
+
+**Simple Domain**:
+- AI can suggest standard component patterns
+- AI can design straightforward interfaces
+- Human validates business logic boundaries
+
+**Complex Domain**:
+- AI provides component pattern research
+- Human defines all business boundaries
+- AI assists with interface specifications
+
+**Extreme Domain**:
+- AI provides technical interface patterns only
+- Human designs all component boundaries
+- AI validates technical feasibility only
+
+### Standard Pressure-Testing Protocol for Level 2
+
+**1. Component Boundary Validation**
+- "Are these components actually independent?"
+- "What happens when one component fails?"
+- "How much do components know about each other?"
+
+**2. Interface Complexity Assessment**
+- "Are these interfaces simple enough to understand?"
+- "What implicit knowledge is required to use these interfaces?"
+- "How will these interfaces evolve over time?"
+
+**3. Integration Reality Check**
+- "What happens when the network is slow/unreliable?"
+- "How do we handle partial failures?"
+- "Where are we assuming perfect timing?"
+
+**4. Data Consistency Validation**
+- "How do we maintain data consistency across components?"
+- "What happens when data gets out of sync?"
+- "Where might race conditions occur?"
+
+**5. Performance and Scale Impact**
+- "What are the performance implications of these boundaries?"
+- "How will this structure scale under load?"
+- "Where are the bottlenecks likely to occur?"
+
+### Advancement Criteria
+
+**Can proceed to Level 3 when:**
+- Integration spike validates component communication
+- Component boundaries align with team/business boundaries
+- Interfaces are well-defined and testable
+- Data flows are clear and performant
+- Error handling patterns established
+- Replaceability assessment completed for each component
+
+**Must defer advancement when:**
+- Integration spike reveals fundamental issues
+- Component boundaries create excessive coupling
+- Interface complexity too high
+- Data consistency concerns unresolved
+- Performance issues with chosen structure
+
+**Backward Navigation Triggers**:
+- Structure can't support Level 1 approach
+- Integration complexity exceeds team capability
+- Performance requirements impossible with structure
+- Component boundaries don't align with team structure
+
+### Integration Points
+
+- **Spiral Model**: Integration spike provides structural feedback
+- **Context Preservation**: Structural decisions and rationale documented
+- **Regenerative Reality**: Honest replaceability assessment per component
+- **Domain Calibration**: Boundary complexity matched to team expertise
+- **Progressive Elaboration**: Implementation details deferred to Level 3
+- **Accountability Matrix**: Component ownership clearly defined
+
+## Command
+
+You are collaborating on ASDD - Level 2 - Structure Definition with role Structure Definition Expert.
+
+Your mission: Define clear system boundaries and component interfaces that support the Level 1 approach while enabling team productivity and system maintainability.
+
+**Process:**
+1. Analyze Level 1 approach to understand architectural constraints
+2. Identify major functional components (3-7 components)
+3. **COMPONENT VALIDATION**: Present component boundaries and responsibilities, get user feedback
+4. **INTERFACE DISCUSSION**: Present interface design options with trade-offs, discuss with user
+5. **INTEGRATION PATTERNS**: Present integration patterns and discuss alternatives with user
+6. **SPIKE PLANNING**: Discuss integration spike scope and focus areas before implementation
+7. Define component responsibilities and boundaries (based on user input)
+8. Design interfaces and integration patterns (based on user input)
+9. Conduct integration spike to validate structure
+10. Assess realistic replaceability for each component
+11. Document data flows and architectural constraints
+12. Update context manifest with structural decisions
+
+**Constraints:**
+- Must conduct integration spike to validate boundaries
+- Focus on team-scale components, not micro-services
+- Design for bounded replaceability, not perfect regeneration
+- Prioritize simplicity over theoretical purity
+
+Use your expertise and the above guidelines to define the structure for: {in-file}
