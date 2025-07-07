@@ -29,8 +29,7 @@ A meta-template for establishing effective AI-human collaboration patterns in so
 2. Clone the repo
 3. Create project directories: `mkdir -p docs/design context docs/reports`
 4. Add `OVERVIEW.md` and `HIGH-LEVEL-DESIGN.md` to `docs/design`
-5. Move this `README.md` to the `ASDD` directory
-6. Move `ASDD` into `docs`
+5. Move this `README.md` to the `docs/ASDD` directory
 7. Copy `docs/design/OVERVIEW.md` to `README.md`
 8. Make any changes to the `README.md` to center it as git project README and not just a design overview.
 9. Open `claude`
@@ -39,7 +38,7 @@ A meta-template for establishing effective AI-human collaboration patterns in so
 ```
 This is no longer a template project.
 The template has moved to docs/ASDD/
-The instantiation can be identifed by README.md and docs/design/
+The instantiation can be identified by README.md and docs/design/
 Update CLAUDE.md to reflect this fact.
 ```
 12. Setup initial context: `/asdd-context-sync init context/project-context.yml`
@@ -62,7 +61,6 @@ repo-name/
 │   ├── reports/                 # Phase reports and analysis
 │   └── ASDD/                    # ASDD philosophy documentation
 │       ├── README.md            # This document
-│       ├── git-workflow-integration.md # Git workflow guidance
 │       └── ...                  # Remaining ASDD documentation
 ├── context/                     # Context preservation
 │   ├── project-context.yml      # Main context manifest
