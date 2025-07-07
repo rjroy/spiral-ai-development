@@ -63,6 +63,26 @@ AI can offer answers that look complete. **That's the structural trap.** This ph
 4. **Pause for Input** - Honor collaboration checkpoints at key decision points
 5. **Calibrate Confidence** - AI involvement scales inversely with domain complexity
 
+### Context Priming Enhancement
+
+**Pattern**: Brief context orientation before SAID command execution ensures state continuity and collaboration effectiveness across sessions.
+
+**When to Use**: Resuming after time gaps, post-discovery work, phase transitions, or when significant context has changed since last interaction.
+
+**Benefits**: Maintains decision quality across session boundaries, reduces context reconstruction time, prevents misaligned assumptions.
+
+For detailed implementation guidance, see [Context Priming Pattern](add-ons/context-priming-pattern.md).
+
+### TODO Workflow Integration
+
+**Pattern**: Systematic handling of granular work items that emerge during SAID phases through structured decomposition, execution, and integration.
+
+**When to Use**: Multi-step work items requiring 3+ activities, cross-cutting concerns affecting multiple levels, research tasks with approach uncertainty, or work items needing stakeholder input at multiple decision points.
+
+**Benefits**: Prevents TODO loss in informal systems, maintains context preservation and collaborative checkpoints for granular work, ensures systematic integration back into SAID contexts.
+
+For detailed implementation guidance, see [TODO Workflow Integration](add-ons/todo-workflow-integration.md).
+
 ### Domain-Aware Collaboration Patterns
 
 **Simple Domains** (CRUD, Basic Workflows):
@@ -104,7 +124,7 @@ AI can offer answers that look complete. **That's the structural trap.** This ph
 
 ## 🔄 Version Control Collaboration
 
-### Git Workflow Integration with ASDD
+### Git Workflow Integration with SAID
 
 **Core Principle**: Version control workflows can support collaboration and quality through thoughtful design.
 
@@ -119,7 +139,7 @@ AI can offer answers that look complete. **That's the structural trap.** This ph
 **Consider Descriptive Branch Names**:
 - Feature branches with clear intent: `feature/user-authentication`
 - Prototype branches for experiments: `prototype/test-new-api`
-- Include ASDD phase if helpful: `feature/level-1-technical-approach`
+- Include SAID phase if helpful: `feature/level-1-technical-approach`
 - Keep names meaningful to your team
 
 **Simple GitHub Flow**:
@@ -240,7 +260,7 @@ main
 
 ---
 
-## 🔄 AI Spec-Driven Development (ASDD) - Reality-Tested
+## 🔄 Spiral AI Development (SAID) - Reality-Tested
 
 ### The Theory
 
@@ -412,10 +432,18 @@ Version 1.0 has been designed to bend without breaking, adapting to pressure whi
 
 ---
 
-_Philosophy version: 1.0.4_
-_Last pressure-tested: 2025-07-03_
-_Failure analysis integrated: docs/ASDD/revision-rationale/v0.1-analysis.md_
-_Improved collaboration hooks: docs/ASDD/revision-rationale/v1.0-analysis.md_
-_Git workflow integration: v1.0.3 (flexible guidance for thoughtful collaboration)_
-_Report templates: v1.0.4_
-_Next philosophical review: After 10 projects using v1.0.4 methodology_
+## Philosophy Evolution Log
+
+**Current Version**: 1.1.0
+**Last Pressure-Tested**: 2025-01-05
+**Next Review**: After 10 projects using v1.1.0 methodology
+
+### Revision History
+
+- **v1.0**: Systematic failure analysis and reality-based methodology fixes - [`v1.0-rationale-reality-review.md`](revision-rationale/v1.0-rationale-reality-review.md)
+- **v1.0.2**: Enhanced collaboration framework with systematic workflow orchestration - [`v1.0.2-rationale-collaboration.md`](revision-rationale/v1.0.2-rationale-collaboration.md)
+- **v1.0.3**: Structured decomposition workflow with artifact generation pipeline - [`v1.0.3-rationale-decomposition.md`](revision-rationale/v1.0.3-rationale-decomposition.md)
+- **v1.0.3**: Git workflow integration transformed to flexible guidance - [`v1.0.3-rationale-git-workflow.md`](revision-rationale/v1.0.3-rationale-git-workflow.md)
+- **v1.0.4**: Action-first report templates with stakeholder-specific views - [`v1.0.4-rationale-report-templates.md`](revision-rationale/v1.0.4-rationale-report-templates.md)
+- **v1.0.5**: TODO workflow integration with systematic lifecycle management - [`v1.0.5-rationale-todo-workflow.md`](revision-rationale/v1.0.5-rationale-todo-workflow.md)
+- **v1.1.0**: Methodology rebrand from ASDD to SAID - [`v1.1.0-rationale-rebrand.md`](revision-rationale/v1.1.0-rationale-rebrand.md)

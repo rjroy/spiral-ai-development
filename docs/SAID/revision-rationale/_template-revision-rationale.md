@@ -1,4 +1,4 @@
-# ASDD v{VERSION} Revision Rationale: {BRIEF_TITLE}
+# SAID v{VERSION} Revision Rationale: {BRIEF_TITLE}
 
 ## Overview
 
