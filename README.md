@@ -15,7 +15,7 @@ A meta-template for establishing AI-human collaboration patterns in software dev
 
 <img src="docs/SAID/logos/said-64.png" align="right" style="margin-left: 10px">
 
-**Spiral AI Development (SAID)** - Spiral development approach with progressive detail levels (Prototype → Vision → Approach → Structure → Specifics → Implementation) that handles changing requirements, timeline pressure, and context preservation. Focused on AI-human collaboration.
+**Spiral AI Development (SAID)** - A methodology for AI-human collaboration that breaks complex problems into progressive detail levels, from high-level vision to working implementation.
 
 **Philosophy** - AI excels at generating quick small solutions for well understood domains. The current AI collaboration loop therefore relies on the user breaking the problem down and clearly defining it before starting. If you don't then you get a quick small solution for a complex problem, which doesn't work as you expect. Spiral AI Development addresses this by adapting proven development principles to AI collaboration. The framework provides both a spiral methodology and command tools to navigate it consistently.
 
@@ -36,5 +36,14 @@ Actually, the first step is to have an idea. Be bold. Be vague. Be inspired. Wha
 - **OVERVIEW.md**: A short description for the project. The elevator pitch.
 - **HIGH-LEVEL-DESIGN.md**: A description of all the key core principles and requirements that are necessary to consider the project successful. This is not a detailed design, but does set up the next steps. Don't worry, you can refine it through the process.
 
-Please follow the Getting Started [README.md](/docs/SAID/getting-started/README.md) for a complete guide.
+Please follow the [Getting Started](/docs/SAID/getting-started/README.md) complete guide.
+
+## Further Reading
+
+- Philosophy: [Core Concepts](/docs/SAID/philosophy/core-concepts.md)
+- Philosophy: [Implementation Guide](/docs/SAID/philosophy/implementation-guide.md)
+- Philosophy: [Version](/docs/SAID/philosophy/version.md)
+- Getting Started: [README](/docs/SAID/getting-started/README.md)
+- Add Ons: [Context Priming Pattern](/docs/SAID/add-ons/context-priming-pattern.md)
+- Add Ons: [Todo Workflow Integration](/docs/SAID/add-ons/todo-workflow-integration.md)
 
