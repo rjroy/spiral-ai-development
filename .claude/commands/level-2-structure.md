@@ -66,7 +66,14 @@
 - Monitoring and observability hooks
 - **COLLABORATION CHECKPOINT**: Present integration patterns and discuss alternatives with user
 
-**5. Data Flow Architecture**
+**5. Component Testing Boundaries**
+- Define testing responsibilities between components
+- Identify integration test scope and ownership
+- Plan component isolation for testing
+- Consider testing automation boundaries
+- **COLLABORATION CHECKPOINT**: Present component testing strategy, discuss testing boundaries with user
+
+**6. Data Flow Architecture**
 - Where does data originate and how does it flow?
 - What transformations happen at component boundaries?
 - How is data consistency maintained?
@@ -107,6 +114,7 @@ artifact_requirements:
 - Each component has single, clear responsibility documented
 - Interface specifications are complete and testable
 - Integration patterns are clearly defined
+- Component testing boundaries are well-defined
 - Replaceability assessment is realistic and documented
 - Traceability to previous levels is maintained
 
@@ -130,6 +138,7 @@ integration_spike:
 - Interface contract validation
 - Error propagation and handling
 - Performance of integration points
+- Component testing and isolation validation
 - **COLLABORATION CHECKPOINT**: Discuss integration spike scope and focus areas before implementation
 
 ### Bounded Replaceability Assessment
@@ -282,16 +291,18 @@ Your mission: Define clear system boundaries and component interfaces that suppo
 3. **COMPONENT VALIDATION**: Present component boundaries and responsibilities, get user feedback
 4. **INTERFACE DISCUSSION**: Present interface design options with trade-offs, discuss with user
 5. **INTEGRATION PATTERNS**: Present integration patterns and discuss alternatives with user
-6. **SPIKE PLANNING**: Discuss integration spike scope and focus areas before implementation
-7. Define component responsibilities and boundaries (based on user input)
-8. Design interfaces and integration patterns (based on user input)
-9. **ARTIFACT GENERATION**: Generate component YAML artifacts for each component
-10. **ARTIFACT REVIEW**: Review generated artifacts with user for completeness
-11. Conduct integration spike to validate structure
-12. **ARTIFACT UPDATE**: Update component artifacts with spike validation results
-13. Assess realistic replaceability for each component
-14. Document data flows and architectural constraints
-15. Update context manifest with structural decisions
+6. **COMPONENT TESTING STRATEGY**: Present component testing strategy, discuss testing boundaries with user
+7. **SPIKE PLANNING**: Discuss integration spike scope and focus areas before implementation
+8. Define component responsibilities and boundaries (based on user input)
+9. Design interfaces and integration patterns (based on user input)
+10. Define component testing boundaries (based on user input)
+11. **ARTIFACT GENERATION**: Generate component YAML artifacts for each component
+12. **ARTIFACT REVIEW**: Review generated artifacts with user for completeness
+13. Conduct integration spike to validate structure
+14. **ARTIFACT UPDATE**: Update component artifacts with spike validation results
+15. Assess realistic replaceability for each component
+16. Document data flows and architectural constraints
+17. Update context manifest with structural decisions
 
 **Constraints:**
 - Must conduct integration spike to validate boundaries

@@ -76,6 +76,13 @@
 - Testing approach and coverage goals
 - **COLLABORATION CHECKPOINT**: Present testing/monitoring approach, discuss alternatives with user
 
+**6. Git-Hook Testing Strategy**
+- Pre-commit hook requirements (fast validation)
+- Pre-push hook strategy (moderate validation)
+- CI/CD hook approach (comprehensive validation)
+- Hook management and team onboarding strategy
+- **COLLABORATION CHECKPOINT**: Present git-hook testing approach, discuss automation vs manual gates with user
+
 ### Feature Decomposition and Artifact Generation
 
 **Component-to-Feature Decomposition**:
@@ -317,6 +324,13 @@ level_3_context:
 - "What's the maintenance burden of this design?"
 - "How easy is it to debug when things go wrong?"
 
+**6. Git-Hook Testing Reality Check**
+- "Are these git-hook tests fast enough for developer workflow?"
+- "What happens when hooks fail or become flaky?"
+- "How do new team members learn about and install these hooks?"
+- "Can developers work effectively when hooks are temporarily broken?"
+- "What's the plan when git-hook tests need to be updated or removed?"
+
 ### Advancement Criteria
 
 **Can proceed to Level 4 when:**
@@ -365,15 +379,17 @@ Your mission: Create detailed, buildable specifications that enable the team to 
 6. **DATA MODEL DISCUSSION**: Present data models with rationale, get user feedback
 7. **BUSINESS LOGIC VALIDATION**: Present business logic specifications, confirm accuracy with user
 8. **OPERATIONAL REQUIREMENTS**: Present testing/monitoring approach, discuss alternatives with user
-9. **ARTIFACT GENERATION**: Generate feature YAML artifacts for each feature
-10. **ARTIFACT REVIEW**: Review generated artifacts with user for completeness
-11. **SPIKE COMPONENT SELECTION**: Discuss which component to implement for validation
-12. Define data models and business logic (based on user input)
-13. Specify error handling and edge cases (based on user input)
-14. Plan testing and operational requirements (based on user input)
-15. Implement one complete component as validation spike
-16. Refine specifications based on implementation learnings
-17. Update context manifest with detailed decisions
+9. **GIT-HOOK STRATEGY**: Present git-hook testing approach, discuss automation vs manual gates with user
+10. **ARTIFACT GENERATION**: Generate feature YAML artifacts for each feature
+11. **ARTIFACT REVIEW**: Review generated artifacts with user for completeness
+12. **SPIKE COMPONENT SELECTION**: Discuss which component to implement for validation
+13. Define data models and business logic (based on user input)
+14. Specify error handling and edge cases (based on user input)
+15. Plan testing and operational requirements (based on user input)
+16. Define git-hook testing strategy (based on user input)
+17. Implement one complete component as validation spike
+18. Refine specifications based on implementation learnings
+19. Update context manifest with detailed decisions
 
 **Constraints:**
 - Must process one component at a time from Level 2 artifact
