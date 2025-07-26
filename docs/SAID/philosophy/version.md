@@ -1,6 +1,6 @@
 # SAID Philosophy Version
 
-**Current Version**: 1.1.1
+**Current Version**: 1.1.2
 **Development Status**: Experimental (Started 2025-07-01)
 **Next Review**: After broader validation and feedback
 
@@ -16,3 +16,4 @@ Note: These revisions represent design evolution during 4-day development proces
 - **v1.0.5**: TODO workflow integration design - [`v1.0.5-rationale-todo-workflow.md`](../revision-rationale/v1.0.5-rationale-todo-workflow.md)
 - **v1.1.0**: Methodology rebrand from ASDD to SAID - [`v1.1.0-rationale-rebrand.md`](../revision-rationale/v1.1.0-rationale-rebrand.md)
 - **v1.1.1**: Document cleanup and organization - [`v1.1.1-rationale-document-cleanup.md`](../revision-rationale/v1.1.1-rationale-document-cleanup.md)
+- **v1.1.2**: Git-hook testing integration to prevent retrofitting failures - [`v1.1.2-rationale-git-hooks.md`](../revision-rationale/v1.1.2-rationale-git-hooks.md)

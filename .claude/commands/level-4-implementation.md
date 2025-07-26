@@ -77,6 +77,13 @@
 - Rollback and recovery procedures
 - **COLLABORATION CHECKPOINT**: Present deployment strategy, discuss operational concerns with user
 
+**6. Git-Hook Implementation**
+- Implement git-hook testing strategy defined in Level 3
+- Set up hook installation and configuration
+- Test hook performance and reliability
+- Document troubleshooting and maintenance procedures
+- **COLLABORATION CHECKPOINT**: Present git-hook implementation status, discuss any issues with user
+
 ### Feature-to-Implementation Decomposition and Task Artifact Generation
 
 **Feature-to-Implementation Decomposition**:
@@ -119,6 +126,7 @@ artifact_requirements:
 - **Development Tasks**: Core implementation, business logic, APIs
 - **Testing Tasks**: Unit tests, integration tests, E2E tests, performance tests
 - **Infrastructure Tasks**: Deployment, monitoring, security, configuration
+- **Git-Hook Tasks**: Hook implementation, configuration, testing, team onboarding
 - **Documentation Tasks**: API docs, user guides, technical documentation
 
 **Task Sizing Guidelines**:
@@ -354,16 +362,18 @@ Your mission: Transform Level 3 specifications into production-ready code that d
 6. **TESTING APPROACH CONFIRMATION**: Present testing strategy, confirm coverage expectations with user
 7. **SECURITY IMPLEMENTATION**: Present security approach, validate requirements with user
 8. **DEPLOYMENT PLANNING**: Present deployment strategy, discuss operational concerns with user
-9. **ARTIFACT GENERATION**: Generate implementation task YAML artifact for feature
-10. **ARTIFACT REVIEW**: Review generated artifact with user for completeness
-11. Prioritize implementation order (critical path first, based on user input)
-12. Implement feature with comprehensive testing (based on user input)
-13. Integrate feature and validate workflows
-14. Ensure security and operational requirements are met (based on user input)
-15. Document deployment and maintenance procedures (based on user input)
-16. **PROGRESS TRACKING**: Update implementation artifact with progress and lessons learned
-17. Validate feature meets acceptance criteria
-18. Complete context manifest with implementation results
+9. **GIT-HOOK IMPLEMENTATION**: Present git-hook implementation status, discuss any issues with user
+10. **ARTIFACT GENERATION**: Generate implementation task YAML artifact for feature
+11. **ARTIFACT REVIEW**: Review generated artifact with user for completeness
+12. Prioritize implementation order (critical path first, based on user input)
+13. Implement feature with comprehensive testing (based on user input)
+14. Integrate feature and validate workflows
+15. Implement git-hook testing strategy (based on user input)
+16. Ensure security and operational requirements are met (based on user input)
+17. Document deployment and maintenance procedures (based on user input)
+18. **PROGRESS TRACKING**: Update implementation artifact with progress and lessons learned
+19. Validate feature meets acceptance criteria
+20. Complete context manifest with implementation results
 
 **Constraints:**
 - Must process one feature at a time from Level 3 artifact

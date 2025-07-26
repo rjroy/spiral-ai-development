@@ -58,6 +58,12 @@ This is a **meta-template repository** for establishing AI-human collaboration p
 
 3. **Bounded Replaceability**: Design components with clear interfaces that can be understood and replaced without archaeological investigation
 
+4. **Git-Hook Testing Integration**: Define testing automation strategies early to prevent massive failures
+   - Level 2: Component testing boundaries and responsibilities
+   - Level 3: Comprehensive git-hook testing strategy (primary integration point)
+   - Level 4: Git-hook implementation and team onboarding
+   - See `docs/SAID/add-ons/git-hook-testing-integration.md` for detailed guidance
+
 ## Directory Structure
 
 ```
