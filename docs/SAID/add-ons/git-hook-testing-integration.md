@@ -2,11 +2,11 @@
 
 This add-on provides guidance for integrating git-hook based testing strategies into the SAID methodology, preventing the massive failures that can occur when testing automation is added as an afterthought.
 
-## Integration Point: Level 3 (Implementation Specifics)
+## Integration Point: Component Implementation
 
-**Primary Integration**: Level 3 is where git-hook testing strategies should be defined, as teams have enough detail to make informed decisions about testing automation without premature optimization.
+**Primary Integration**: Component-level workflows are where git-hook testing strategies should be defined, as teams have enough detail to make informed decisions about testing automation without premature optimization.
 
-**Why Level 3?**
+**Why Component Level?**
 - Detailed enough to understand testing scope and complexity
 - Early enough to influence implementation approach
 - Prevents architectural mismatches between code structure and testing strategy
@@ -104,20 +104,20 @@ When git-hooks cause problems:
 3. **Configuration Rollback**: Revert to previous hook configuration
 4. **Team Communication**: Clear communication about hook status and resolution timeline
 
-## Integration with SAID Levels
+## Integration with SAID Workflows
 
-### Level 2 (Structure Definition)
+### Structure Definition Workflow
 - **Component Boundaries**: Define which components are responsible for different types of testing
 - **Integration Testing**: Plan how component integration will be validated
 - **Test Data Management**: Determine how test data flows between components
 
-### Level 3 (Implementation Specifics)
+### Component Implementation Workflow
 - **Primary Integration Point**: Define comprehensive git-hook testing strategy
 - **Feature-Level Testing**: Specify testing approach for each feature
 - **Performance Requirements**: Set testing performance targets
 
-### Level 4 (Implementation)
-- **Hook Implementation**: Implement the git-hook strategy defined in Level 3
+### Feature Implementation Workflow
+- **Hook Implementation**: Implement the git-hook strategy defined in component workflow
 - **Testing Infrastructure**: Build the actual testing automation
 - **Team Training**: Onboard team to new testing processes
 
@@ -145,7 +145,7 @@ When git-hooks cause problems:
 
 ## Implementation Checklist
 
-- [ ] **Level 3 Artifact**: Git-hook testing strategy defined in feature artifacts
+- [ ] **Component Artifact**: Git-hook testing strategy defined in component artifacts
 - [ ] **Time Limits**: Clear duration expectations for each hook type
 - [ ] **Bypass Policy**: Documented when and how developers can bypass hooks
 - [ ] **Installation Guide**: Step-by-step hook setup for new team members
