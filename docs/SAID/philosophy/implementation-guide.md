@@ -10,11 +10,51 @@ Spiral development approach with progressive detail levels that handles changing
 
 ### Progressive Detail Levels
 
-1. **Level 0**: Vision clarity (Core purpose understood)
-2. **Level 1**: Approach viability (Solution approach validated)
-3. **Level 2**: Structure definition (System boundaries defined)
-4. **Level 3**: Implementation specifics (Buildable specifications)
-5. **Level 4**: Working implementation (Production-ready code)
+#### Level 0: Problem + Risk Clarity
+**Deliverables**: Problem validated with evidence, key risks identified with mitigation strategies, stakeholder needs documented
+
+**Workflow Pattern**:
+```bash
+/analyze-problem [input] → problem-validation-[timestamp].md
+/sync-context problem-validation-[timestamp].md
+/analyze-risks [context] → risk-assessment-[timestamp].md
+/sync-context risk-assessment-[timestamp].md
+```
+
+**Complete When**: 
+- Problem statement backed by evidence of user need
+- Top 3 project risks identified with mitigation plans
+- Stakeholder perspectives documented
+- Context integrates problem validation and risk insights
+
+#### Level 1: Approach Decision
+**Deliverables**: 2-3 viable approaches analyzed, decision made with documented rationale, technical feasibility validated
+
+**Workflow Pattern**:
+```bash
+/analyze-options [context] → options-analysis-[timestamp].md
+[human review and decision]
+/sync-decision [context] [options-report] [chosen-option]
+/sync-context [updated-context]
+```
+
+**Complete When**:
+- Multiple viable approaches evaluated with pros/cons
+- Technical feasibility validated for chosen approach
+- Decision rationale documented with alternatives considered
+- Context reflects chosen approach and reasoning
+
+#### Level 2: Structure Definition
+**Deliverables**: System boundaries defined, component interfaces specified
+**Workflow**: `/decompose context/types/project.md [parent-context]`
+
+#### Level 3: Implementation Specifics
+**Deliverables**: Buildable specifications, detailed component designs
+**Workflow**: `/decompose context/types/component.md [parent-context]`
+
+#### Level 4: Working Implementation
+**Deliverables**: Production-ready code, tested features
+**Workflow**: `/decompose context/types/feature.md [parent-context]`
 
 ### Spiral Navigation Rules
 
@@ -62,31 +102,54 @@ Brief context orientation before SAID command execution ensures state continuity
 ```
 > Be aware, I've [completed work]. [Current state]. I'm about to [intended action].
 AI: [Acknowledgment and readiness confirmation]
-> /level-2-structure context/level-1-approach-context.yml
+> /decompose context/types/project.md context/approach-context.md
 ```
 
 ---
 
 ## Common Workflow Patterns
 
-### Phase Completion Workflow
+### Complete Level 0 (Problem + Risk Clarity)
 ```bash
-/said-context-sync level-0-vision
-/generate-next-steps level-0-vision
-/generate-phase-report level-0-vision
+# Problem analysis
+/analyze-problem "[your problem description]"
+/sync-context docs/reports/problem-validation-[topic]-[timestamp].md
+
+# Risk assessment 
+/analyze-risks context/project-context.md
+/sync-context docs/reports/risk-assessment-[topic]-[timestamp].md
+
+# Verify completion
+# Can you explain the core problem in one sentence?
+# Are the top 3 risks identified with mitigation plans?
+```
+
+### Complete Level 1 (Approach Decision)
+```bash
+# Options analysis using integrated context
+/analyze-options context/project-context.md
+# [Human review of options-analysis-[timestamp].md]
+
+# Decision integration
+/sync-decision context/project-context.md docs/reports/options-analysis-[topic]-[timestamp].md "[chosen option]"
+/sync-context context/project-context.md
+
+# Verify completion
+# Do you have a chosen technical approach with documented rationale?
+# Are alternative approaches preserved for future reference?
 ```
 
 ### Context Recovery (when context is lost)
 ```bash
-/said-context-sync current-phase context/project-context.yml
-/generate-next-steps current-phase context/project-context.yml
+/sync-context current-phase context/project-context.md
+/plan-next-steps current-phase context/project-context.md
 ```
 
-### Starting New Level
+### Starting New Layer
 ```bash
 # Context priming first
-> Be aware, I've completed level-1-approach. The technical approach is validated. I'm about to start level-2-structure.
-> /level-2-structure context/level-1-approach-context.yml
+> Be aware, I've completed approach validation. The technical approach is validated. I'm about to start structure definition.
+> /decompose context/types/project.md context/project-context.md
 ```
 
 ---
@@ -94,8 +157,8 @@ AI: [Acknowledgment and readiness confirmation]
 ## Troubleshooting
 
 ### When Context Gets Lost
-1. Run `/said-context-sync` with last known good context
-2. Review phase reports to reconstruct decisions
+1. Run `/sync-context` with last known good context
+2. Review context files to reconstruct decisions
 3. Use git history to trace requirement changes
 4. Regenerate context from artifact discovery
 
@@ -135,8 +198,8 @@ The concepts of _Moderate_, _High_, and _Extreme_ are subjective. They are provi
 
 **Recovery**:
 - When the pressure is over
-- Recover context using `/said-context-sync` when pressure subsides
-- Use `/generate-todo-context` to find cleanup tasks that need to occur
+- Recover context using `/sync-context` when pressure subsides
+- Use `/create-todo` to find cleanup tasks that need to occur
 
 ---
 
@@ -165,18 +228,33 @@ That's it. Your existing git knowledge + descriptive naming + context preservati
 
 ---
 
-## [TODO Workflow Integration](/docs/SAID/add-ons/todo-workflow-integration.md)
+## TODO Workflow Integration
 
-### When to Use TODO Workflow
-- Multi-step work items requiring 3+ activities
-- Cross-cutting concerns affecting multiple levels
-- Research tasks with approach uncertainty
-- Work items needing stakeholder input at decision points
+**Core Principle**: Use structured TODO commands for complex work while allowing direct execution for simple tasks.
+
+### When to Use Full TODO Workflow
+
+**Use structured commands for complex TODOs**:
+- Multiple steps or decisions required
+- Research with unclear approach
+- Cross-cutting concerns affecting multiple SAID workflows
+- Stakeholder input needed at decision points
+
+**Execute directly for simple TODOs**:
+- Single actions (fix typo, add comment)
+- Well-defined implementation with clear approach
+- Routine maintenance following established patterns
 
 ### TODO Commands
-- `/extract-todo-context` - Extract TODOs from SAID artifacts
-- `/generate-todo-context` - Create contexts for new TODOs
-- `/decompose-todo` - Break complex TODOs into atomic tasks
-- `/work-on-todo` - Execute atomic TODOs with checkpoints
-- `/said-todo-sync` - Integrate results back into SAID contexts
+
+```bash
+/create-todo                         # Create context for newly discovered TODOs
+/decompose context/types/todo.md     # Break complex TODOs into atomic tasks
+/work-on-todo                        # Execute TODO with collaboration checkpoints
+/sync-context                        # Integrate results back into SAID contexts
+```
+
+### Flexible Application
+
+**You don't need strict step-by-step adherence**. The workflow provides structure when complexity warrants it, but simple TODOs can bypass formal commands entirely. The goal is maintaining SAID's collaborative benefits and context integrity for work that benefits from structure, while avoiding overhead for straightforward tasks.
 

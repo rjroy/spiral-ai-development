@@ -14,35 +14,36 @@ This is a **meta-template repository** for establishing AI-human collaboration p
 
 ## Core Framework
 
-**Spiral AI Development (SAID)** uses progressive detail levels:
-- **Prototype Phase**: Risk validation through proof-of-concept
-- **Level 0**: Vision clarity (Core purpose understood)
-- **Level 1**: Approach viability (Solution approach validated)
-- **Level 2**: Structure definition (System boundaries defined)
-- **Level 3**: Implementation specifics (Buildable specifications)
-- **Level 4**: Working implementation (Production-ready code)
+**Spiral AI Development (SAID)** uses task-focused workflows achieving progressive detail levels:
+- **Level 0**: Vision clarity through `/analyze-problem` and `/analyze-risks`
+- **Level 1**: Approach viability through `/analyze-options` and `/sync-decision`
+- **Level 2+**: Progressive decomposition using `/decompose` with type definitions:
+  - Project-level: `/decompose context/types/project.md`
+  - Component-level: `/decompose context/types/component.md`
+  - Feature-level: `/decompose context/types/feature.md`
+  - TODO execution: `/decompose context/types/todo.md` → `/work-on-todo`
 
 ## Available Commands
 
-### Core SAID Commands
-- `/said-prototype` - Risk validation through proof-of-concept
-- `/level-0-vision` - Problem clarity and core purpose
-- `/level-1-approach` - Technical approach validation
-- `/level-2-structure` - System boundaries and components
-- `/level-3-specifics` - Detailed implementation specifications
-- `/level-4-implementation` - Production-ready code delivery
+### Analysis Commands
+- `/analyze-problem` - Validate and clarify problem understanding
+- `/analyze-options` - Present solution options with trade-offs
+- `/analyze-risks` - Identify and analyze project risks
 
 ### Context Management Commands
-- `/said-context-sync` - Maintain context across phases and prevent information loss
-- `/generate-next-steps` - Create detailed transition plans with resource estimates
-- `/generate-phase-report` - Generate comprehensive reports from phase artifacts
+- `/sync-decision` - Integrate decisions into context with rationale
+- `/sync-context` - Maintain context across phases and prevent information loss
+
+### Decomposition Commands
+- `/decompose` - Universal decomposition using type definitions (project/component/feature/todo)
+
+### Planning Commands
+- `/plan-next-steps` - Create detailed transition plans with resource estimates
 
 ### TODO Workflow Commands
-- `/extract-todo-context` - Extract TODOs from SAID artifacts with source traceability
-- `/generate-todo-context` - Create contexts for newly discovered TODOs
-- `/decompose-todo` - Break complex TODOs into manageable atomic tasks
+- `/create-todo` - Create contexts for newly discovered TODOs
+- `/create-todo-from-report` - Extract TODOs from analysis reports
 - `/work-on-todo` - Execute atomic TODOs with collaboration checkpoints
-- `/said-todo-sync` - Integrate TODO results back into SAID contexts
 
 ## Key Collaboration Principles
 
@@ -51,10 +52,13 @@ This is a **meta-template repository** for establishing AI-human collaboration p
    - Complex domains: AI assists, human leads architecture
    - Extreme domains: AI provides boilerplate only
 
-2. **Context Preservation**: Maintain structured context in `context/` directory
-   - Context files use YAML format (`.yml` extension)
-   - Report files use Markdown format in `docs/reports/`
-   - Always preserve key decisions, constraints, and rationale
+2. **Context Preservation**: Maintain structured context using three-file system
+   - `context/project-context.md` - Main context manifest with current state
+   - `context/project/decisions-made.md` - Key decisions with rationale and traceability
+   - `context/project/open-questions.md` - Unresolved questions requiring multi-phased analysis
+   - `context/project/lessons-learned.md` - Insights and patterns discovered
+   - Context templates in `context/templates/` for initialization
+   - Type definitions in `context/types/` for decomposition guidance
 
 3. **Bounded Replaceability**: Design components with clear interfaces that can be understood and replaced without archaeological investigation
 
@@ -68,9 +72,18 @@ This is a **meta-template repository** for establishing AI-human collaboration p
 
 ```
 /
-├── context/                     # Context preservation files (YAML)
-│   ├── project-context.yml      # Main context manifest
-│   └── level-*-context.yml      # Level-specific context
+├── context/                     # Context preservation files (Markdown)
+│   ├── project-context.md       # Main context manifest
+│   ├── templates/               # Context initialization templates
+│   ├── types/                   # Decomposition type definitions
+│   │   ├── project.md           # Project decomposition type
+│   │   ├── component.md         # Component decomposition type
+│   │   ├── feature.md           # Feature decomposition type
+│   │   └── todo.md              # TODO decomposition type
+│   └── project/                 # Project-specific context files
+│       ├── decisions-made.md    # Key decisions with rationale
+│       ├── open-questions.md    # Unresolved questions
+│       └── lessons-learned.md   # Insights and patterns
 ├── docs/
 │   ├── design/                  # Project-specific design documents
 │   │   ├── OVERVIEW.md          # Project elevator pitch
@@ -84,23 +97,37 @@ This is a **meta-template repository** for establishing AI-human collaboration p
 
 ## Common Workflow Patterns
 
-**Phase Completion**:
+**Level 0 (Vision Clarity)**:
 ```bash
-/said-context-sync level-0-vision
-/generate-next-steps level-0-vision
-/generate-phase-report level-0-vision
+/analyze-problem
+/analyze-risks
+/sync-context
+```
+
+**Level 1 (Approach Viability)**:
+```bash
+/analyze-options
+/sync-decision
+/sync-context
+```
+
+**Level 2+ (Progressive Decomposition)**:
+```bash
+/decompose context/types/project.md [parent-context]
+/decompose context/types/component.md [parent-context]
+/decompose context/types/feature.md [parent-context]
 ```
 
 **Context Recovery** (when context is lost):
 ```bash
-/said-context-sync current-phase context/project-context.yml
-/generate-next-steps current-phase context/project-context.yml
+/sync-context [source-file]
+/plan-next-steps
 ```
 
 **Starting New Project**:
 1. Create `docs/design/OVERVIEW.md` and `docs/design/HIGH-LEVEL-DESIGN.md`
-2. Run `/said-context-sync init context/project-context.yml`
-3. Begin with `/level-0-vision` to establish clear project purpose
+2. Run `/sync-context init`
+3. Begin with `/analyze-problem` to establish clear problem understanding
 
 ## Important Notes
 

@@ -17,7 +17,7 @@ AI: [acknowledgment]
 **Always use when**:
 - Resuming after time gaps (days/weeks)
 - Major discoveries or requirement changes
-- Moving between SAID phases
+- Moving between SAID workflows
 - After stakeholder input or external decisions
 
 **Skip when**:
@@ -29,29 +29,29 @@ AI: [acknowledgment]
 
 **After research**:
 ```
-> Be aware, I've completed authentication research. OAuth2 with PKCE is recommended but has integration complexities with our existing session management. I'm about to run /level-2-structure.
+> Be aware, I've completed authentication research. OAuth2 with PKCE is recommended but has integration complexities with our existing session management. I'm about to decompose the project structure.
 
 AI: Got it - OAuth2 validated but integration challenges discovered. Ready to help define system boundaries with those constraints in mind.
 
-> /level-2-structure context/level-1-approach-context.yml
+> /decompose context/types/project.md context/approach-validation-context.md
 ```
 
 **After stakeholder feedback**:
 ```
-> Be aware, stakeholders approved our Level 1 approach but added a requirement for audit logging throughout the system. I'm about to incorporate this into our component design.
+> Be aware, stakeholders approved our approach validation but added a requirement for audit logging throughout the system. I'm about to incorporate this into our component design.
 
 AI: Understood - technical approach approved with new audit logging requirement. This will affect component boundaries and data flow. Ready to help integrate this.
 
-> /level-2-structure context/level-1-approach-context.yml
+> /decompose context/types/project.md context/approach-validation-context.md
 ```
 
 **After TODO work**:
 ```
-> Be aware, I've processed the data model validation TODOs. We need both relational and document storage, plus there's a performance requirement we missed. I'm about to reprocess Level 3 specifics.
+> Be aware, I've processed the data model validation TODOs. We need both relational and document storage, plus there's a performance requirement we missed. I'm about to reprocess component specifics.
 
 AI: Thanks for the update - hybrid storage patterns needed plus new performance constraints. These could significantly impact implementation specifics. Ready to help reprocess.
 
-> /level-3-specifics context/level-2-structure-context.yml
+> /decompose context/types/component.md context/structure-definition-context.md
 ```
 
 ## Why This Works
