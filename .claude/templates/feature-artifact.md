@@ -220,7 +220,6 @@ ci_cd_hooks:
 ```yaml
 testing_philosophy:
   automation_level: "FULL/SELECTIVE/MINIMAL automation"
-  domain_complexity: "SIMPLE/COMPLEX/EXTREME domain assessment"
   team_capability: "Team's testing automation experience level"
   risk_tolerance: "How much risk acceptable vs testing overhead"
   feedback_speed: "Prioritization of fast feedback vs comprehensive testing"

@@ -21,7 +21,7 @@ Spiral development approach with progressive detail levels that handles changing
 /sync-context risk-assessment-[timestamp].md
 ```
 
-**Complete When**: 
+**Complete When**:
 - Problem statement backed by evidence of user need
 - Top 3 project risks identified with mitigation plans
 - Stakeholder perspectives documented
@@ -46,15 +46,15 @@ Spiral development approach with progressive detail levels that handles changing
 
 #### Level 2: Structure Definition
 **Deliverables**: System boundaries defined, component interfaces specified
-**Workflow**: `/decompose context/types/project.md [parent-context]`
+**Workflow**: `/decompose .claude/decompose-types/project.md [parent-context]`
 
 #### Level 3: Implementation Specifics
 **Deliverables**: Buildable specifications, detailed component designs
-**Workflow**: `/decompose context/types/component.md [parent-context]`
+**Workflow**: `/decompose .claude/decompose-types/component.md [parent-context]`
 
 #### Level 4: Working Implementation
 **Deliverables**: Production-ready code, tested features
-**Workflow**: `/decompose context/types/feature.md [parent-context]`
+**Workflow**: `/decompose .claude/decompose-types/feature.md [parent-context]`
 
 ### Spiral Navigation Rules
 
@@ -102,7 +102,7 @@ Brief context orientation before SAID command execution ensures state continuity
 ```
 > Be aware, I've [completed work]. [Current state]. I'm about to [intended action].
 AI: [Acknowledgment and readiness confirmation]
-> /decompose context/types/project.md context/approach-context.md
+> /decompose .claude/decompose-types/project.md context/approach-context.md
 ```
 
 ---
@@ -115,7 +115,7 @@ AI: [Acknowledgment and readiness confirmation]
 /analyze-problem "[your problem description]"
 /sync-context docs/reports/problem-validation-[topic]-[timestamp].md
 
-# Risk assessment 
+# Risk assessment
 /analyze-risks context/project-context.md
 /sync-context docs/reports/risk-assessment-[topic]-[timestamp].md
 
@@ -149,7 +149,7 @@ AI: [Acknowledgment and readiness confirmation]
 ```bash
 # Context priming first
 > Be aware, I've completed approach validation. The technical approach is validated. I'm about to start structure definition.
-> /decompose context/types/project.md context/project-context.md
+> /decompose .claude/decompose-types/project.md context/project-context.md
 ```
 
 ---
@@ -163,10 +163,9 @@ AI: [Acknowledgment and readiness confirmation]
 4. Regenerate context from artifact discovery
 
 ### When AI Suggestions Don't Fit
-1. Check domain calibration - may need to reduce AI involvement
-2. Verify context includes relevant constraints
-3. Ask AI to explain assumptions behind suggestions
-4. Consider if you're in wrong spiral level for the decision
+1. Verify context includes relevant constraints
+2. Ask AI to explain assumptions behind suggestions
+3. Consider if you're in wrong spiral level for the decision
 
 ### When Timeline Pressure Mounts
 1. Activate appropriate pressure protocol
@@ -216,7 +215,7 @@ fix/broken-login-redirect
 
 **Protect your main branch** - require PRs for integration. Here's the GitHub Flow guide if you need a refresher.
 
-**Consider matching code review depth to domain complexity** - simple domains need basic review, complex domains need domain experts, extreme domains need multiple expert reviewers. Teams might want a lightweight PR checklist to prompt thinking about tests, documentation, and context preservation.
+**Consider matching code review depth to system complexity** - simple systems need basic review, complex systems need domain experts, critical systems need multiple expert reviewers. Teams might want a lightweight PR checklist to prompt thinking about tests, documentation, and context preservation.
 
 **Preserve context in git**:
 
@@ -249,7 +248,7 @@ That's it. Your existing git knowledge + descriptive naming + context preservati
 
 ```bash
 /create-todo                         # Create context for newly discovered TODOs
-/decompose context/types/todo.md     # Break complex TODOs into atomic tasks
+/decompose .claude/decompose-types/todo.md     # Break complex TODOs into atomic tasks
 /work-on-todo                        # Execute TODO with collaboration checkpoints
 /sync-context                        # Integrate results back into SAID contexts
 ```

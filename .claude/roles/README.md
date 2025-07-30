@@ -1,6 +1,6 @@
-# Risk Assessment Roles
+# Stakeholder Roles
 
-This directory contains role definitions used by the `/assess-risks` command to provide domain-specific risk assessment perspectives.
+This directory contains role definitions used by SAID commands (like `/analyze-options` and `/analyze-risks`) to provide domain-specific perspectives and expertise.
 
 ## Adding New Roles
 
@@ -42,18 +42,27 @@ Each role file must contain two main sections:
 - Domain-specific indicators of emerging issues
 ```
 
+## Available Roles
+
+- **business-analyst** - Business perspective, market analysis, stakeholder needs
+- **client-architect** - Web, mobile, desktop application architecture
+- **mobile-native-client-architect** - Native mobile development expertise
+- **operations-engineer** - Infrastructure, deployment, monitoring
+- **service-architect** - Backend services, APIs, distributed systems
+- **solution-architect** - Alternative implementations (MCPs, spreadsheets, automation, prompts)
+
 ## Role Discovery
 
-The `/assess-risks` command automatically discovers all `.md` files in this directory. No registration or configuration is needed - simply add a new role file and it becomes available.
+SAID commands automatically discover all `.md` files in this directory. No registration or configuration is needed - simply add a new role file and it becomes available.
 
 ## Using Roles
 
 Roles can be used in two ways:
 
-1. **Automatic detection**: The command analyzes input for keywords matching role expertise
+1. **Automatic detection**: Commands analyze input for keywords matching role expertise
 2. **Explicit selection**: Use `--roles=role-name1,role-name2` to specify roles
 
 Example:
 ```
-/assess-risks "Mobile app with TypeScript backend" --roles=mobile-native-client-architect,typescript-service-architect
+/analyze-options "Mobile app with Node.js backend" --roles=mobile-native-client-architect,service-architect
 ```

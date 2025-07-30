@@ -3,7 +3,7 @@
 ## Type Identity
 - **Type Name**: TODO
 - **Input Format**: TODO context Markdown file
-- **Output Format**: Subtask context Markdown files  
+- **Output Format**: Subtask context Markdown files
 - **Decomposition Focus**: Break complex work into atomic, executable tasks
 
 ## Input Requirements
@@ -16,7 +16,6 @@ Description of what needs to be accomplished.
 
 ---
 todo_type: "complex_work"
-complexity: "SIMPLE | COMPLEX | EXTREME"
 urgency: "HIGH | MEDIUM | LOW"
 ---
 
@@ -44,7 +43,6 @@ urgency: "HIGH | MEDIUM | LOW"
 ### Input Validation Rules
 - Must have TODO name and clear description
 - Must have primary deliverable and success criteria defined
-- If complexity is "COMPLEX" or "EXTREME", decomposition is recommended
 - Must have valid Markdown structure with YAML frontmatter
 
 ## Decomposition Strategy
@@ -58,17 +56,12 @@ urgency: "HIGH | MEDIUM | LOW"
 ## Collaboration Checkpoints
 
 ### Required User Input Points
-1. **Decomposition Strategy Validation**
-   - **Trigger**: After complexity assessment
-   - **Question**: "I've identified these approaches for breaking down the work: [options]. Which strategy works best for you?"
-   - **Required**: User must confirm approach before proceeding
-
-2. **Priority Ordering**
+1. **Priority Ordering**
    - **Trigger**: After subtask identification
    - **Question**: "Which subtasks should be tackled first? Are there any dependencies or priorities?"
    - **Required**: User must confirm execution sequence
 
-3. **Deliverable Expectations**
+2. **Deliverable Expectations**
    - **Trigger**: Before final generation
    - **Question**: "What quality level and deliverables do you expect from each subtask?"
    - **Required**: User must specify expectations

@@ -13,8 +13,6 @@
 
 ## Philosophy Application
 
-4. Domain Complexity Assessment - When unsure about AI/human boundaries
-    > "Assess the domain complexity of [SYSTEM/COMPONENT] and recommend appropriate AI collaboration boundaries. Consider regulatory requirements, technical constraints, and expertise needed."
 
 5. Bounded Replaceability Analysis - When evaluating component design
     > "Analyze [COMPONENT] for bounded replaceability. Document interface contracts, hidden behaviors, replacement cost, and what someone would need to rebuild it compatibly."
@@ -35,11 +33,11 @@
 
 ## Collaboration Edge Cases
 
-10. Confidence Calibration - When AI confidence doesn't match domain complexity
-    > "Calibrate confidence levels for [DECISIONS/RECOMMENDATIONS] against domain complexity. Identify where AI confidence exceeds appropriate boundaries."
+10. Confidence Calibration - When AI confidence doesn't match system complexity
+    > "Calibrate confidence levels for [DECISIONS/RECOMMENDATIONS] against system complexity. Identify where AI confidence exceeds appropriate boundaries."
 
 11. Decision Authority Clarification - When ownership is ambiguous
-    > "Clarify decision authority for [SPECIFIC-DECISION] based on domain complexity and collaboration boundaries. Recommend who should own this decision and why."
+    > "Clarify decision authority for [SPECIFIC-DECISION] based on system complexity and collaboration boundaries. Recommend who should own this decision and why."
 
 12. Collaboration Drift Recovery - When collaboration patterns break down
     > "Diagnose collaboration drift in [SITUATION] and recommend boundary reset. Identify what caused the drift and how to prevent recurrence."

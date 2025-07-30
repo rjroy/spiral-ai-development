@@ -42,29 +42,6 @@ When AI starts making architectural decisions or humans start micromanaging synt
 
 ---
 
-## Domain Calibration
-
-AI involvement should scale inversely with domain complexity. The more complex and specialized your domain, the less architectural responsibility AI should take.
-
-### Simple Domains (CRUD, Basic Workflows)
-- **AI Role**: Full implementation, architecture suggestions
-- **Human Role**: Validation, requirement clarification
-- **Trust Level**: High (verify output)
-
-### Complex Domains (Distributed Systems, ML Pipelines)
-- **AI Role**: Implementation, standard pattern application
-- **Human Role**: All architecture, algorithm selection
-- **Trust Level**: Low (assume gaps in understanding)
-
-### Extreme Domains (Trading, Medical, Aerospace)
-- **AI Role**: Boilerplate only, syntax assistance
-- **Human Role**: All design decisions, careful review
-- **Trust Level**: Minimal (assume no domain knowledge)
-
-**Why this matters**: AI will confidently suggest solutions regardless of domain complexity. You need to calibrate your trust level based on how much implicit knowledge your domain requires.
-
----
-
 ## Context Building
 
 The greatest power and enemy of AI is its context. Working on a complex problem can be difficult if it loses context. You need to build it up, and preserve it.
@@ -114,9 +91,8 @@ Design components and processes so that any piece can be understood and replaced
 
 1. **The Collaboration Paradox** explains why you need systematic approaches to AI collaboration
 2. **Ownership Architecture** defines who makes what decisions
-3. **Domain Calibration** determines how much to trust AI in your specific context
-4. **Context Building** ensures AI has the information it needs to be useful
-5. **Bounded Replaceability** creates clean handoff points for AI implementation
+3. **Context Building** ensures AI has the information it needs to be useful
+4. **Bounded Replaceability** creates clean handoff points for AI implementation
 
 These aren't independent techniques—they're interconnected principles that reinforce each other. When one breaks down, the others provide backup structure to prevent total collaboration failure.
 
