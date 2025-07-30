@@ -129,7 +129,6 @@ Specific implementation work to be accomplished as part of the larger feature.
 
 ---
 todo_type: "implementation_task"
-complexity: "SIMPLE | COMPLEX | EXTREME"
 source_feature: "Reference to parent Level 3 feature"
 estimated_effort: "Realistic time estimate"
 ---

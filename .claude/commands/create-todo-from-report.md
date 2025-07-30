@@ -1,98 +1,85 @@
 ## Usage
-
 ```
 /create-todo-from-report <report-file>
 ```
 
-**Parameters:**
-- `<report-file>`: Path to report file containing multiple options or alternatives
+## Required Patterns
+Load: `.claude/patterns/general/core.md` (core command memory)
+Load: `.claude/patterns/todo/options-workflow.md` (Complete options process: detection, presentation, selection)
+Load: `.claude/patterns/todo/todo-structuring.md` (TODO context template for selected option)
+Load: `.claude/patterns/general/checkpoints.md` (Consequential decisions - always get user selection)
 
-## Command Guidelines
+## Purpose
+Extract options from reports, help users choose through collaborative selection, and generate focused TODO contexts for implementation.
 
-### TODO from Report Generator
+## Process
 
-**Purpose**: Extract specific options from reports and generate focused TODO contexts for implementation
-**Focus**: Interactive option selection with collaborative decision-making
-**Output**: Single focused TODO context for user-selected option
+### 1. Expert Analysis
+- Apply document reviewer expertise to identify options regardless of format
+- Extract descriptions, pros/cons, requirements from any presentation style
+- Identify implicit alternatives and trade-offs
 
-### Option Detection System
+### 2. Present Options
+- Show numbered list with clear pros/cons for each option
+- Include effort estimates and key differentiators
+- Provide recommendation with rationale
 
-**Expert Document Reviewer Approach** - Intelligently identify options and alternatives regardless of formatting:
+### 3. Interactive Selection
+- Ask user which option to implement
+- Respect user choice even if different from recommendation
+- Clarify if selection is unclear
 
-**Detection Philosophy:**
-- Act as an expert technical document reviewer capable of identifying options presented in any format
-- Recognize choices, alternatives, approaches, and recommendations even when inconsistently structured
-- Extract core option content (description, advantages, limitations, implementation requirements) regardless of presentation style
-- Identify implicit options and trade-offs that may not be explicitly labeled
-- Understand context clues that indicate decision points or alternative approaches
+### 4. Generate TODO Context
+- Create focused context using standard template
+- Include specific details from selected option
+- Provide integration guidance for next steps
 
-### Interactive Selection Process
-
-**Option Presentation Template:**
-
-```markdown
-# Options Found in Report: [Report Name]
-
-## Available Options:
-1. **[Option Name]** - [Brief description]
-   - Pros: [Key advantages]
-   - Cons: [Key limitations]
-   - Effort: [Rough estimate]
-
-2. **[Option Name]** - [Brief description]
-   - Pros: [Key advantages]
-   - Cons: [Key limitations]
-   - Effort: [Rough estimate]
-
-3. **[Option Name]** - [Brief description]
-   - Pros: [Key advantages]
-   - Cons: [Key limitations]
-   - Effort: [Rough estimate]
-
-## Recommendation
-**Suggested Option**: [Number] - [Name]
-**Rationale**: [Why this seems like the best choice based on analysis]
-
-**Which option would you like to implement?**
-```
-
-### Collaboration Process
-
-**Interactive Selection Flow**:
-1. **Parse Report**: Extract options and alternatives from report content
-2. **Present Options**: Show numbered list with pros/cons summary
-3. **Provide Recommendation**: Suggest best option with rationale
-4. **Get User Choice**: Confirm which option to implement
-5. **Generate Context**: Create focused TODO context for selected option
-6. **Integration Guidance**: Provide next steps for SAID integration
-
-**Decision Flow**:
-```
-Report → Extract Options → Present + Recommend → User Selects → Generate TODO Context → Integration Planning
-```
-
-## Command
-
-You are a TODO from Report Generator with expert document analysis capabilities that helps users select options from reports and create focused implementation contexts.
-
-Your mission: Apply expert document reviewer skills to identify options in reports of any format or structure, help users choose the best one through collaborative selection, and generate focused TODO contexts for implementation.
-
-**Process:**
-1. **Expert Analysis**: Apply document reviewer expertise to identify all options, alternatives, and approaches regardless of format or structure
-2. **Content Extraction**: Extract core information (descriptions, pros/cons, requirements) from identified options using contextual understanding
-3. **Present Options**: Show numbered list with clear pros/cons for each discovered option
-4. **Provide Recommendation**: Suggest best option based on analysis with rationale
-5. **Interactive Selection**: Get user confirmation of which option to implement
-6. **Generate TODO Context**: Create focused context using standard TODO template
-7. **Integration Guidance**: Provide clear next steps for SAID integration
-
-**Constraints:**
-- Focus on option extraction and selection, not complex workflow orchestration
-- Maintain collaborative approach - always present options and get user input
+## Key Principles
+- Focus on option extraction and selection, not complex orchestration
+- Always collaborative - present options and get user input
 - Generate single focused TODO context per selected option
 - Keep scope boundaries clear to prevent feature creep
-- Use standard TODO context template for consistency
 
-Use your expertise and the above guidelines to process: {report-file}
+## Example Flow
+```
+User: /create-todo-from-report docs/database-options-analysis.md
 
-**Process Notes**: Will extract options, provide collaborative selection interface, and generate focused TODO context for user-chosen option.
+AI: Found 3 database approaches in the report:
+
+## Available Options:
+1. **PostgreSQL with Prisma** - Full-featured relational database
+   - Pros: Strong consistency, rich queries, mature ecosystem
+   - Cons: More complex setup, higher resource usage
+   - Effort: Medium (schema design, ORM setup)
+
+2. **SQLite for MVP** - Lightweight embedded database
+   - Pros: Simple setup, no server needed, perfect for prototyping
+   - Cons: Limited concurrent users, no distributed support
+   - Effort: Low (just install and connect)
+
+3. **MongoDB with Mongoose** - Document-based NoSQL
+   - Pros: Flexible schema, rapid development, JSON-native
+   - Cons: Eventual consistency, less mature tooling
+   - Effort: Medium (learn NoSQL patterns)
+
+## Recommendation
+**Suggested Option**: 2 - SQLite for MVP
+**Rationale**: Project is early stage, team wants to move fast, can migrate later
+
+Which option would you like to implement?
+
+User: Let's go with PostgreSQL, we'll need the features eventually
+
+AI: Great choice! Generated TODO context for PostgreSQL implementation:
+
+# TODO: Implement PostgreSQL Database with Prisma
+
+Set up PostgreSQL database with Prisma ORM for the application
+
+## Scope
+**Deliverable**: Working PostgreSQL database with Prisma integration
+**Boundaries**: Includes: DB setup, schema design, ORM config, basic CRUD. Excludes: migrations, advanced queries, performance tuning
+**Success Criteria**: Can create, read, update, delete core entities
+
+Recommended route: `/work-on-todo` - well-scoped implementation task
+```

@@ -12,25 +12,25 @@ This add-on provides guidance for integrating git-hook based testing strategies 
 - Prevents architectural mismatches between code structure and testing strategy
 - Allows test-driven development from the start
 
-## Domain Calibration for Testing Automation
+## Testing Automation Strategies
 
-### Simple Domains
+### High Automation Environments
 - **Full Automation**: Comprehensive pre-commit, pre-push, and CI/CD hooks
 - **Fast Feedback**: Prioritize speed and developer experience
 - **Minimal Bypass**: Limited ability to skip hooks
 - **Example**: Standard CRUD web applications, API services with well-defined patterns
 
-### Complex Domains
+### Moderate Automation Environments
 - **Selective Automation**: Strategic automation for high-value, stable areas
 - **Quality Gates**: Manual review for critical business logic
 - **Flexible Bypass**: Developers can bypass hooks when necessary with justification
-- **Example**: Financial systems, healthcare applications, domains with complex business rules
+- **Example**: Financial systems, healthcare applications, systems with complex business rules
 
-### Extreme Domains
-- **Minimal Automation**: Basic formatting and security checks only
+### Minimal Automation Environments
+- **Basic Automation**: Formatting and security checks only
 - **Manual Gates**: Human review for most significant changes
 - **Easy Bypass**: Hooks can be easily disabled when they interfere with exploration
-- **Example**: Research systems, AI/ML model development, highly experimental domains
+- **Example**: Research systems, AI/ML model development, highly experimental systems
 
 ## Git-Hook Testing Patterns
 
@@ -159,7 +159,7 @@ This integration maintains SAID's core principles:
 
 - **Apply Pressure**: Challenge assumptions about what needs to be automated
 - **Surface Tensions**: Force explicit choices about testing trade-offs
-- **Domain Calibration**: Match testing automation to team capability
+- **Capability Alignment**: Match testing automation to team capability
 - **Progressive Elaboration**: Define strategy before implementation
 - **Reality Checkpoints**: Regular validation that hooks add value rather than friction
 

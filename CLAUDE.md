@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Collaboration Posture for AI
 
-**Apply pressure, don't just follow process.** When Claude Code suggests solutions, the first question isn't "Is this right?" but "What assumptions is this making?" Push back on confident-sounding answers, especially when domain complexity is high. Fluent responses that skip over constraints or trade-offs should trigger suspicion, not acceptance.
+**Apply pressure, don't just follow process.** When Claude Code suggests solutions, the first question isn't "Is this right?" but "What assumptions is this making?" Push back on confident-sounding answers. Fluent responses that skip over constraints or trade-offs should trigger suspicion, not acceptance.
 
 **Surface tensions rather than resolve them.** When requirements conflict or technical approaches involve trade-offs, don't let AI smooth over the complexity with "it depends" answers. Force explicit choices with documented rationale. The goal is informed human judgment, not AI consensus. If something sounds too clean or complete, it probably is—keep probing until you find where it bends or breaks.
 
@@ -18,10 +18,10 @@ This is a **meta-template repository** for establishing AI-human collaboration p
 - **Level 0**: Vision clarity through `/analyze-problem` and `/analyze-risks`
 - **Level 1**: Approach viability through `/analyze-options` and `/sync-decision`
 - **Level 2+**: Progressive decomposition using `/decompose` with type definitions:
-  - Project-level: `/decompose context/types/project.md`
-  - Component-level: `/decompose context/types/component.md`
-  - Feature-level: `/decompose context/types/feature.md`
-  - TODO execution: `/decompose context/types/todo.md` → `/work-on-todo`
+  - Project-level: `/decompose .claude/decompose-types/project.md`
+  - Component-level: `/decompose .claude/decompose-types/component.md`
+  - Feature-level: `/decompose .claude/decompose-types/feature.md`
+  - TODO execution: `/decompose .claude/decompose-types/todo.md` → `/work-on-todo`
 
 ## Available Commands
 
@@ -47,22 +47,17 @@ This is a **meta-template repository** for establishing AI-human collaboration p
 
 ## Key Collaboration Principles
 
-1. **Domain Calibration**: AI involvement scales inversely with domain complexity
-   - Simple domains: AI can lead implementation
-   - Complex domains: AI assists, human leads architecture
-   - Extreme domains: AI provides boilerplate only
-
-2. **Context Preservation**: Maintain structured context using three-file system
+1. **Context Preservation**: Maintain structured context using three-file system
    - `context/project-context.md` - Main context manifest with current state
    - `context/project/decisions-made.md` - Key decisions with rationale and traceability
    - `context/project/open-questions.md` - Unresolved questions requiring multi-phased analysis
    - `context/project/lessons-learned.md` - Insights and patterns discovered
-   - Context templates in `context/templates/` for initialization
-   - Type definitions in `context/types/` for decomposition guidance
+   - Context templates in `.claude/templates/` for initialization
+   - Type definitions in `.claude/decompose-types/` for decomposition guidance
 
-3. **Bounded Replaceability**: Design components with clear interfaces that can be understood and replaced without archaeological investigation
+2. **Bounded Replaceability**: Design components with clear interfaces that can be understood and replaced without archaeological investigation
 
-4. **Git-Hook Testing Integration**: Define testing automation strategies early to prevent massive failures
+3. **Git-Hook Testing Integration**: Define testing automation strategies early to prevent massive failures
    - Level 2: Component testing boundaries and responsibilities
    - Level 3: Comprehensive git-hook testing strategy (primary integration point)
    - Level 4: Git-hook implementation and team onboarding
@@ -70,16 +65,36 @@ This is a **meta-template repository** for establishing AI-human collaboration p
 
 ## Directory Structure
 
+**Meta-template structure** (this repository):
 ```
 /
-├── context/                     # Context preservation files (Markdown)
-│   ├── project-context.md       # Main context manifest
-│   ├── templates/               # Context initialization templates
-│   ├── types/                   # Decomposition type definitions
+├── .claude/                     # SAID framework files
+│   ├── commands/                # 10 SAID development commands
+│   ├── decompose-types/         # Decomposition type definitions
 │   │   ├── project.md           # Project decomposition type
 │   │   ├── component.md         # Component decomposition type
 │   │   ├── feature.md           # Feature decomposition type
 │   │   └── todo.md              # TODO decomposition type
+│   ├── patterns/                # 20 reusable pattern files
+│   │   ├── analyze/             # Analysis command patterns
+│   │   ├── general/             # Shared patterns (checkpoints, core)
+│   │   ├── plan/                # Planning patterns
+│   │   ├── sync/                # Context synchronization patterns
+│   │   └── todo/                # TODO workflow patterns
+│   ├── roles/                   # Role definitions for stakeholder analysis
+│   └── templates/               # Context initialization templates
+│       └── project-init/        # Project initialization templates
+├── docs/
+│   ├── reports/                 # Phase reports and analysis (Markdown)
+│   └── SAID/                    # SAID methodology documentation
+└── README.md                    # Project overview
+```
+
+**Project structure** (when using SAID):
+```
+/
+├── context/                     # Context preservation files (created by SAID)
+│   ├── project-context.md       # Main context manifest
 │   └── project/                 # Project-specific context files
 │       ├── decisions-made.md    # Key decisions with rationale
 │       ├── open-questions.md    # Unresolved questions
@@ -88,11 +103,9 @@ This is a **meta-template repository** for establishing AI-human collaboration p
 │   ├── design/                  # Project-specific design documents
 │   │   ├── OVERVIEW.md          # Project elevator pitch
 │   │   └── HIGH-LEVEL-DESIGN.md # Core principles and requirements
-│   ├── reports/                 # Phase reports and analysis (Markdown)
-│   └── SAID/                    # SAID methodology documentation
-├── .claude/
-│   └── commands/                # SAID development commands
-└── README.md                    # Project overview
+│   └── reports/                 # Phase reports and analysis
+├── .claude/                     # SAID framework (copied from meta-template)
+└── [project files]              # Actual project implementation
 ```
 
 ## Common Workflow Patterns
@@ -113,9 +126,9 @@ This is a **meta-template repository** for establishing AI-human collaboration p
 
 **Level 2+ (Progressive Decomposition)**:
 ```bash
-/decompose context/types/project.md [parent-context]
-/decompose context/types/component.md [parent-context]
-/decompose context/types/feature.md [parent-context]
+/decompose .claude/decompose-types/project.md [parent-context]
+/decompose .claude/decompose-types/component.md [parent-context]
+/decompose .claude/decompose-types/feature.md [parent-context]
 ```
 
 **Context Recovery** (when context is lost):

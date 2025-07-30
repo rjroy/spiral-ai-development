@@ -41,8 +41,8 @@ estimated_effort: "2-3 days"
 
 ## Work Scope
 
-**Primary Deliverable**: Working authentication system with JWT tokens  
-**Success Criteria**: Users can register, login, and access protected routes  
+**Primary Deliverable**: Working authentication system with JWT tokens
+**Success Criteria**: Users can register, login, and access protected routes
 
 ### Prerequisites
 - [ ] Database schema designed and migrated
@@ -275,7 +275,7 @@ The universal `/decompose` command will:
 - **External References**: Link to separate files for complex technical specs
 
 ### Naming Convention
-- File: `context/types/{type-name}.md`
+- File: `.claude/decompose-types/{type-name}.md`
 - Type Name: Single word, capitalized (TODO, Project, Component)
 - Expert Role: "{Type} Decomposition Assistant" or "{Domain} Expert"
 

@@ -33,7 +33,7 @@ AI: [acknowledgment]
 
 AI: Got it - OAuth2 validated but integration challenges discovered. Ready to help define system boundaries with those constraints in mind.
 
-> /decompose context/types/project.md context/approach-validation-context.md
+> /decompose .claude/decompose-types/project.md context/approach-validation-context.md
 ```
 
 **After stakeholder feedback**:
@@ -42,7 +42,7 @@ AI: Got it - OAuth2 validated but integration challenges discovered. Ready to he
 
 AI: Understood - technical approach approved with new audit logging requirement. This will affect component boundaries and data flow. Ready to help integrate this.
 
-> /decompose context/types/project.md context/approach-validation-context.md
+> /decompose .claude/decompose-types/project.md context/approach-validation-context.md
 ```
 
 **After TODO work**:
@@ -51,7 +51,7 @@ AI: Understood - technical approach approved with new audit logging requirement.
 
 AI: Thanks for the update - hybrid storage patterns needed plus new performance constraints. These could significantly impact implementation specifics. Ready to help reprocess.
 
-> /decompose context/types/component.md context/structure-definition-context.md
+> /decompose .claude/decompose-types/component.md context/structure-definition-context.md
 ```
 
 ## Why This Works

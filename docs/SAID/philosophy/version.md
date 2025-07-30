@@ -1,6 +1,6 @@
 # SAID Philosophy Version
 
-**Current Version**: 2.0.0
+**Current Version**: 2.1.0
 **Development Status**: Experimental (Started 2025-07-01)
 **Next Review**: After broader validation and feedback
 
@@ -18,3 +18,4 @@ Note: These revisions represent design evolution during 4-day development proces
 - **v1.1.1**: Document cleanup and organization - [`v1.1.1-rationale-document-cleanup.md`](../revision-rationale/v1.1.1-rationale-document-cleanup.md)
 - **v1.1.2**: Git-hook testing integration to prevent retrofitting failures - [`v1.1.2-rationale-git-hooks.md`](../revision-rationale/v1.1.2-rationale-git-hooks.md)
 - **v2.0.0**: Universal decomposition command consolidation and format modernization - [`v2.0.0-rationale-command-consolidation.md`](../revision-rationale/v2.0.0-rationale-command-consolidation.md)
+- **v2.1.0**: Pattern library refactoring - commands transformed from bureaucratic processes to adaptive behaviors - [`v2.1.0-pattern-library-refactoring.md`](../revision-rationale/v2.1.0-pattern-library-refactoring.md)
