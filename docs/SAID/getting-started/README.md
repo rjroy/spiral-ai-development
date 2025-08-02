@@ -49,6 +49,7 @@ repo-name/
 │   └── ...                      # Task-specific context files
 ├── .claude/                     # Claude Code integration
 |   └── commands/                # SAID Development commands
+├── .agent/                      # Agent integration
 ├── .github/                     # GitHub integration
 │   └── workflows/               # Automated validation
 ├── CLAUDE.md                    # Claude base instructions
@@ -68,10 +69,10 @@ The SAID methodology is implemented through task-focused commands that replace t
 - `/analyze-options` - Generate and evaluate technical approach alternatives
 - `/sync-decision` - Document chosen approach with rationale
 - `/decompose` - Break down work into manageable components at any level:
-  - `.claude/decompose-types/project.md` - System-level decomposition
-  - `.claude/decompose-types/component.md` - Component-level specifications
-  - `.claude/decompose-types/feature.md` - Feature-level implementation
-  - `.claude/decompose-types/todo.md` - Granular task decomposition
+  - `.agent/layers/project.md` - System-level decomposition
+  - `.agent/layers/component.md` - Component-level specifications
+  - `.agent/layers/feature.md` - Feature-level implementation
+  - `.agent/layers/todo.md` - Granular task decomposition
 
 ### Context Management Commands
 - `/sync-context` - Maintain context across phases and prevent information loss
@@ -106,7 +107,7 @@ For better examples, see [Git Workflow with SAID](/docs/SAID/philosophy/implemen
 ```bash
 /analyze-risks context/project-context.md
 /create-todo docs/reports/risk-assessment.md 'risk 1'
-/decompose .claude/decompose-types/todo.md context/todo/pressure-test/todo-context.md
+/decompose .agent/layers/todo.md context/todo/pressure-test/todo-context.md
 /work-on-todo context/todo/pressure-test/decomposed/phase-1-context.md
 ```
 
@@ -114,7 +115,7 @@ For better examples, see [Git Workflow with SAID](/docs/SAID/philosophy/implemen
 ```bash
 /analyze-options context/project-context.md
 /sync-decision context/project-context.md docs/reports/options-analysis.md 'option 1'
-/decompose .claude/decompose-types/project.md context/project-context.md
+/decompose .agent/layers/project.md context/project-context.md
 ```
 
 **Context Recovery** (when context is lost):
@@ -128,7 +129,7 @@ For better examples, see [Git Workflow with SAID](/docs/SAID/philosophy/implemen
 # Before executing SAID commands, provide brief context:
 > Be aware, I've [completed work]. [Current state]. I'm about to [intended action].
 AI: [Acknowledgment and readiness confirmation]
-> /decompose .claude/decompose-types/project.md context/approach-decision-context.md
+> /decompose .agent/layers/project.md context/approach-decision-context.md
 ```
 
 ## Next Steps After **First Steps**

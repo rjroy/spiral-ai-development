@@ -18,10 +18,10 @@ This is a **meta-template repository** for establishing AI-human collaboration p
 - **Level 0**: Vision clarity through `/analyze-problem` and `/analyze-risks`
 - **Level 1**: Approach viability through `/analyze-options` and `/sync-decision`
 - **Level 2+**: Progressive decomposition using `/decompose` with type definitions:
-  - Project-level: `/decompose .claude/decompose-types/project.md`
-  - Component-level: `/decompose .claude/decompose-types/component.md`
-  - Feature-level: `/decompose .claude/decompose-types/feature.md`
-  - TODO execution: `/decompose .claude/decompose-types/todo.md` → `/work-on-todo`
+  - Project-level: `/decompose .agent/layers/project.md`
+  - Component-level: `/decompose .agent/layers/component.md`
+  - Feature-level: `/decompose .agent/layers/feature.md`
+  - TODO execution: `/decompose .agent/layers/todo.md` → `/work-on-todo`
 
 ## Available Commands
 
@@ -52,8 +52,8 @@ This is a **meta-template repository** for establishing AI-human collaboration p
    - `context/project/decisions-made.md` - Key decisions with rationale and traceability
    - `context/project/open-questions.md` - Unresolved questions requiring multi-phased analysis
    - `context/project/lessons-learned.md` - Insights and patterns discovered
-   - Context templates in `.claude/templates/` for initialization
-   - Type definitions in `.claude/decompose-types/` for decomposition guidance
+   - Context templates in `.agent/templates/` for initialization
+   - Type definitions in `.agent/layers/` for decomposition guidance
 
 2. **Bounded Replaceability**: Design components with clear interfaces that can be understood and replaced without archaeological investigation
 
@@ -68,8 +68,9 @@ This is a **meta-template repository** for establishing AI-human collaboration p
 **Meta-template structure** (this repository):
 ```
 /
-├── .claude/                     # SAID framework files
+├── .claude/                     # SAID framework files for claude
 │   ├── commands/                # 10 SAID development commands
+├── .agent/                     # SAID framework files for agents
 │   ├── decompose-types/         # Decomposition type definitions
 │   │   ├── project.md           # Project decomposition type
 │   │   ├── component.md         # Component decomposition type
@@ -104,7 +105,8 @@ This is a **meta-template repository** for establishing AI-human collaboration p
 │   │   ├── OVERVIEW.md          # Project elevator pitch
 │   │   └── HIGH-LEVEL-DESIGN.md # Core principles and requirements
 │   └── reports/                 # Phase reports and analysis
-├── .claude/                     # SAID framework (copied from meta-template)
+├── .claude/                     # SAID framework for claude (copied from meta-template)
+├── .agent/                     # SAID framework for agents (copied from meta-template)
 └── [project files]              # Actual project implementation
 ```
 
@@ -126,9 +128,9 @@ This is a **meta-template repository** for establishing AI-human collaboration p
 
 **Level 2+ (Progressive Decomposition)**:
 ```bash
-/decompose .claude/decompose-types/project.md [parent-context]
-/decompose .claude/decompose-types/component.md [parent-context]
-/decompose .claude/decompose-types/feature.md [parent-context]
+/decompose .agent/layers/project.md [parent-context]
+/decompose .agent/layers/component.md [parent-context]
+/decompose .agent/layers/feature.md [parent-context]
 ```
 
 **Context Recovery** (when context is lost):

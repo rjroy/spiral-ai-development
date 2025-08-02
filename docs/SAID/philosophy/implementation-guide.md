@@ -46,15 +46,15 @@ Spiral development approach with progressive detail levels that handles changing
 
 #### Level 2: Structure Definition
 **Deliverables**: System boundaries defined, component interfaces specified
-**Workflow**: `/decompose .claude/decompose-types/project.md [parent-context]`
+**Workflow**: `/decompose .agent/layers/project.md [parent-context]`
 
 #### Level 3: Implementation Specifics
 **Deliverables**: Buildable specifications, detailed component designs
-**Workflow**: `/decompose .claude/decompose-types/component.md [parent-context]`
+**Workflow**: `/decompose .agent/layers/component.md [parent-context]`
 
 #### Level 4: Working Implementation
 **Deliverables**: Production-ready code, tested features
-**Workflow**: `/decompose .claude/decompose-types/feature.md [parent-context]`
+**Workflow**: `/decompose .agent/layers/feature.md [parent-context]`
 
 ### Spiral Navigation Rules
 
@@ -102,7 +102,7 @@ Brief context orientation before SAID command execution ensures state continuity
 ```
 > Be aware, I've [completed work]. [Current state]. I'm about to [intended action].
 AI: [Acknowledgment and readiness confirmation]
-> /decompose .claude/decompose-types/project.md context/approach-context.md
+> /decompose .agent/layers/project.md context/approach-context.md
 ```
 
 ---
@@ -149,7 +149,7 @@ AI: [Acknowledgment and readiness confirmation]
 ```bash
 # Context priming first
 > Be aware, I've completed approach validation. The technical approach is validated. I'm about to start structure definition.
-> /decompose .claude/decompose-types/project.md context/project-context.md
+> /decompose .agent/layers/project.md context/project-context.md
 ```
 
 ---
@@ -248,7 +248,7 @@ That's it. Your existing git knowledge + descriptive naming + context preservati
 
 ```bash
 /create-todo                         # Create context for newly discovered TODOs
-/decompose .claude/decompose-types/todo.md     # Break complex TODOs into atomic tasks
+/decompose .agent/layers/todo.md     # Break complex TODOs into atomic tasks
 /work-on-todo                        # Execute TODO with collaboration checkpoints
 /sync-context                        # Integrate results back into SAID contexts
 ```

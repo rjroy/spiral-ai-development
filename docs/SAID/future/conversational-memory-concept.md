@@ -7,7 +7,7 @@ Static instructions miss nuances. Good interns keep notebooks:
 
 ## Structure
 ```
-.claude/memory/
+.agent/memory/
 ├── preferences.md     # Style and approach preferences
 ├── patterns.md       # What works, what doesn't
 └── nuances.md        # Reading between the lines
