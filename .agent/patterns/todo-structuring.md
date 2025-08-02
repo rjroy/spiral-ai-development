@@ -37,7 +37,7 @@ todo_type: "user_generated"
 ### Route 1: Immediate Sync
 **When**: TODO fits into existing SAID context
 **Action**: Add to current project context using `/sync-context`
-**Indicators**: 
+**Indicators**:
 - Related to ongoing work
 - Clear integration point
 - Enhances existing component
@@ -45,7 +45,7 @@ todo_type: "user_generated"
 ### Route 2: Decomposition Required
 **When**: TODO is complex and needs breaking down
 **Action**: Use `/decompose` with appropriate type definition
-**Indicators**: 
+**Indicators**:
 - Multiple components affected
 - Unclear scope that needs clarification
 - Architectural impact
@@ -54,7 +54,7 @@ todo_type: "user_generated"
 ### Route 3: Direct Execution
 **When**: TODO is well-defined but benefits from SAID structure
 **Action**: Ready to implement with `/work-on-todo`
-**Indicators**: 
+**Indicators**:
 - Clear deliverable
 - Defined scope
 - Medium complexity (1-8 hours)

@@ -275,7 +275,7 @@ The universal `/decompose` command will:
 - **External References**: Link to separate files for complex technical specs
 
 ### Naming Convention
-- File: `.claude/decompose-types/{type-name}.md`
+- File: `.agent/layers/{type-name}.md`
 - Type Name: Single word, capitalized (TODO, Project, Component)
 - Expert Role: "{Type} Decomposition Assistant" or "{Domain} Expert"
 

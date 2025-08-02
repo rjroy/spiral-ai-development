@@ -40,6 +40,7 @@ A command should have the following sections:
 - **Usage**: List the parameters of the command. This works as combination instruction and header declaration.
 - **Required Patterns**: List the common pattern files that should be loaded. These allowed for share information between commands.
 - **Purpose**: Brief why this command exists.
+- **Main Role**: Defines the main role of the AI for the command. Some commands use multiple roles.
 - **Process**: Step-by-step guide to complete the command
 - **Key Principles**: A few rules that need to allows be considered while following the command.
 - The last section is for validation and varies depending on the needs of the command. Report generators have a **Output Summary** section to describe what to say after the report. Commands which need some back-and-forth with the user have an **Example Flow** to demonstrate collaboration. There are additional variations, but they are all around the theme of consistency in output.
