@@ -1,259 +1,331 @@
 # SAID Implementation Guide
 
-_How to apply Spiral AI Development in practice_
+_Understanding the philosophy and practice of Spiral AI Development_
 
 ---
 
-## The SAID Methodology
+## The Spiral Method Philosophy
 
-Spiral development approach with progressive detail levels that handles changing requirements, timeline pressure, and context preservation.
+SAID is fundamentally about **progressive certainty through iterative deepening**. It does this by providing AI commands that ask for research, decomposition, and context integration. The user calls these commands to gather information, break the problem into smaller problems, and record decisions.
+
+### Core Principles
+
+1. **Defer Commitment Until Necessary**: Make decisions only when you have enough information to make them well
+2. **Preserve Optionality**: Keep multiple paths open until constraints force choices
+3. **Context Over Process**: Maintain rich context that survives between sessions and even team changes
+4. **Collaborative Intelligence**: Structure human-AI interaction for complementary strengths
 
 ### Progressive Detail Levels
 
+Each level represents a **threshold of understanding**, not a phase to complete:
+
 #### Level 0: Problem + Risk Clarity
-**Deliverables**: Problem validated with evidence, key risks identified with mitigation strategies, stakeholder needs documented
+**Focus**: Validate that you're solving a real problem worth solving
 
-**Workflow Pattern**:
-```bash
-/analyze-problem [input] → problem-validation-[timestamp].md
-/sync-context problem-validation-[timestamp].md
-/analyze-risks [context] → risk-assessment-[timestamp].md
-/sync-context risk-assessment-[timestamp].md
-```
+**Key Questions**:
+- What evidence supports this problem's existence?
+- Who experiences this problem and how severely?
+- What are the consequences of not solving it?
+- What could go catastrophically wrong?
 
-**Complete When**:
-- Problem statement backed by evidence of user need
-- Top 3 project risks identified with mitigation plans
-- Stakeholder perspectives documented
-- Context integrates problem validation and risk insights
+**You're Ready for Level 1 When**:
+- The problem is validated with evidence
+- Key risks are identified with mitigation strategies
+- Stakeholder needs are documented and understood
+- You can explain why this problem matters in one sentence
 
-#### Level 1: Approach Decision
-**Deliverables**: 2-3 viable approaches analyzed, decision made with documented rationale, technical feasibility validated
+#### Level 1: Approach Viability
+**Focus**: Choose a technical direction that balances constraints
 
-**Workflow Pattern**:
-```bash
-/analyze-options [context] → options-analysis-[timestamp].md
-[human review and decision]
-/sync-decision [context] [options-report] [chosen-option]
-/sync-context [updated-context]
-```
+**Key Questions**:
+- What are the fundamental ways to solve this problem?
+- What constraints (technical, resource, timeline) shape our options?
+- Which approach best fits our specific context?
+- What are we explicitly choosing NOT to do?
 
-**Complete When**:
-- Multiple viable approaches evaluated with pros/cons
-- Technical feasibility validated for chosen approach
-- Decision rationale documented with alternatives considered
-- Context reflects chosen approach and reasoning
+**You're Ready for Level 2 When**:
+- Multiple viable approaches have been evaluated
+- A direction is chosen with documented rationale
+- Trade-offs are explicit and accepted
+- Technical feasibility is validated
 
 #### Level 2: Structure Definition
-**Deliverables**: System boundaries defined, component interfaces specified
-**Workflow**: `/decompose .agent/layers/project.md [parent-context]`
+**Focus**: Define system boundaries and component relationships
+
+**Key Questions**:
+- What are the natural boundaries in this system?
+- How do components communicate and depend on each other?
+- What interfaces enable future flexibility?
+- Where are the integration points with existing systems?
+
+**You're Ready for Level 3 When**:
+- System boundaries are clearly defined
+- Component interfaces are specified
+- Dependencies are mapped and manageable
+- Integration strategy is validated
 
 #### Level 3: Implementation Specifics
-**Deliverables**: Buildable specifications, detailed component designs
-**Workflow**: `/decompose .agent/layers/component.md [parent-context]`
+**Focus**: Create buildable specifications with enough detail for execution
+
+**Key Questions**:
+- What are the implementation patterns for each component?
+- How do we handle edge cases and error conditions?
+- What testing strategy validates our assumptions?
+- Where might hidden complexity emerge?
+
+**You're Ready for Level 4 When**:
+- Specifications are detailed enough to build from
+- Testing approach is defined
+- Implementation risks are identified
+- Team has clarity on technical approach
 
 #### Level 4: Working Implementation
-**Deliverables**: Production-ready code, tested features
-**Workflow**: `/decompose .agent/layers/feature.md [parent-context]`
+**Focus**: Transform specifications into production-ready code
 
-### Spiral Navigation Rules
+**Key Activities**:
+- Write code that matches specifications
+- Implement comprehensive testing
+- Handle discovered edge cases
+- Maintain context for future developers
 
-- **Advance when**: Critical unknowns resolved for current level
-- **Defer when**: Decisions can be explicitly documented for later
-- **Navigate backward when**: Discoveries invalidate earlier assumptions
-- **Always**: Maintain context integrity across transitions
+### The Spiral Navigation Philosophy
 
-### Prototype Phase (When Risk Is Discovered)
+The spiral method isn't linear - it's **adaptive navigation through uncertainty**:
 
-**Purpose**: Validate highest-risk technical assumptions when they're identified. May occur before Level 0, during Level 1 investigation, or whenever core risks surface.
+#### Moving Forward
+Advance to the next level when you've **resolved the critical unknowns** of your current level. This isn't about completing all possible work, but about having enough clarity to make the next set of decisions well.
 
-**Activities**:
-- Identify 3 highest technical risks
-- Build throwaway prototypes to test feasibility
-- Validate integration points with real systems
-- Document discovered complexities
+#### Strategic Deferral
+Some decisions can and should be **explicitly deferred**. Document what you're deferring and why. This isn't procrastination - it's preserving flexibility until you have better information.
 
-**Success Gate**: Core technical approach proven viable
-**Failure Response**: Pivot approach or abort before sunk cost
+#### Navigating Backward
+When new discoveries **invalidate earlier assumptions**, loop back. This isn't failure - it's the spiral method working correctly. Each loop adds understanding even when it changes direction.
+
+#### Context as Navigation Aid
+Your context files are your **map through the spiral**. They record not just decisions but the reasoning, alternatives considered, and assumptions made. When you get lost, context shows you where you've been and why.
+
+### The Prototype Spike Pattern
+
+Sometimes you discover a risk that **threatens the entire approach**. The prototype spike is an escape valve - a focused effort to validate or invalidate a critical assumption before investing further.
+
+**When to Spike**:
+- A technical approach seems theoretically sound but practically uncertain
+- Integration with external systems has unknown complexity
+- Performance characteristics could invalidate the design
+- A core assumption feels shaky but is hard to validate without code
+
+**Spike Principles**:
+- Time-boxed exploration (hours to days, not weeks)
+- Throwaway code focused on learning
+   - This is important
+   - The code will rarely be built against all the context
+   - AI makes this an easy decision
+- Document what you learn, not what you build
+- Exit with either confidence or a new direction
+
+**The Spike Decision**:
+After a spike, you face three options:
+1. **Proceed**: Risk validated as manageable
+2. **Pivot**: Change approach based on learning
+3. **Abort**: Problem not solvable within constraints
 
 ---
 
-## Context Preservation
+## Context Preservation Philosophy
 
-### Context Requirements
-```yaml
-context_manifest:
-  critical_requirements: [documented and traced]
-  key_decisions: [with rationale and alternatives]
-  discovered_constraints: [impact assessment included]
-  semantic_checksum: [core purpose + users + metrics + constraints]
-```
+Context is the **persistent memory of your project's journey**. It's not documentation for documentation's sake - it's the difference between repeating mistakes and building on learned wisdom.
+
+### Why Context Matters
+
+**For Humans**: Context provides the "why" behind decisions when you return to code months later. It captures the alternatives you considered and rejected, preventing costly revisiting of dead ends.
+
+**For AI Collaboration**: Rich context enables AI to provide relevant, nuanced assistance instead of generic suggestions. The AI becomes a knowledgeable team member rather than a blank slate.
+
+**For Teams**: Context preservation enables true knowledge transfer. New team members can understand not just what was built, but why it was built that way.
+
+### The Three-File System
+
+SAID uses three primary context files that work together:
+
+1. **project-context.md**: The living manifest of current understanding
+   - Current state and phase
+   - Active constraints and requirements
+   - Integration points for all context
+
+2. **decisions-made.md**: The audit trail of choices
+   - What was decided and when
+   - Alternatives considered
+   - Rationale and trade-offs
+   - Links to supporting analysis
+
+3. **open-questions.md**: The uncertainty tracker
+   - Questions that need answers
+   - Blocked decisions awaiting information
+   - Areas requiring deeper investigation
 
 ### Context Priming Pattern
-Brief context orientation before SAID command execution ensures state continuity across sessions.
 
-**When to Use**:
-- Resuming after time gaps
-- Post-discovery work
-- Phase transitions
-- When significant context has changed
+When working with AI after any time gap, **prime the context** to restore shared understanding:
 
-**How to Use**:
 ```
-> Be aware, I've [completed work]. [Current state]. I'm about to [intended action].
-AI: [Acknowledgment and readiness confirmation]
-> /decompose .agent/layers/project.md context/approach-context.md
+"I've completed the risk analysis phase. We identified three critical risks and chose a microservices approach. I'm about to start the system decomposition."
 ```
+
+This pattern:
+- Orients the AI to current state
+- Highlights recent decisions
+- Sets clear intent for next actions
+- Takes seconds but saves hours of misdirection
+
+Additionally the `/prime-context` allows for repeating this regularly and consistently.
 
 ---
 
-## Common Workflow Patterns
+## Working with SAID: Practical Patterns
 
-### Complete Level 0 (Problem + Risk Clarity)
-```bash
-# Problem analysis
-/analyze-problem "[your problem description]"
-/sync-context docs/reports/problem-validation-[topic]-[timestamp].md
+### The Investigation-Decision-Integration Pattern
 
-# Risk assessment
-/analyze-risks context/project-context.md
-/sync-context docs/reports/risk-assessment-[topic]-[timestamp].md
+SAID workflows follow a natural rhythm:
 
-# Verify completion
-# Can you explain the core problem in one sentence?
-# Are the top 3 risks identified with mitigation plans?
-```
+1. **Investigate** - Gather information and analyze options
+2. **Decide** - Make explicit choices with human judgment
+3. **Integrate** - Preserve decisions and learning in context
 
-### Complete Level 1 (Approach Decision)
-```bash
-# Options analysis using integrated context
-/analyze-options context/project-context.md
-# [Human review of options-analysis-[timestamp].md]
+This pattern repeats at every level, creating a **ratchet effect** where progress is preserved even under pressure.
 
-# Decision integration
-/sync-decision context/project-context.md docs/reports/options-analysis-[topic]-[timestamp].md "[chosen option]"
-/sync-context context/project-context.md
+### Starting a New Project
 
-# Verify completion
-# Do you have a chosen technical approach with documented rationale?
-# Are alternative approaches preserved for future reference?
-```
+When beginning with SAID:
 
-### Context Recovery (when context is lost)
-```bash
-/sync-context current-phase context/project-context.md
-/plan-next-steps current-phase context/project-context.md
-```
+1. **Create Initial Vision** (not commands, human work)
+   - Write a brief problem statement
+   - Identify key stakeholders
+   - Define success criteria
 
-### Starting New Layer
-```bash
-# Context priming first
-> Be aware, I've completed approach validation. The technical approach is validated. I'm about to start structure definition.
-> /decompose .agent/layers/project.md context/project-context.md
-```
+2. **Initialize Context Structure**
+   - Set up the four-file system
+   - Prime with initial vision
+   - Ready for Level 0 investigation
 
----
+3. **Begin the Spiral**
+   - Start with problem validation
+   - Surface risks early
+   - Let discoveries guide the path
 
-## Troubleshooting
+### Recovering from Interruption
 
-### When Context Gets Lost
-1. Run `/sync-context` with last known good context
-2. Review context files to reconstruct decisions
-3. Use git history to trace requirement changes
-4. Regenerate context from artifact discovery
+Projects get interrupted. SAID's context preservation makes recovery straightforward:
 
-### When AI Suggestions Don't Fit
-1. Verify context includes relevant constraints
-2. Ask AI to explain assumptions behind suggestions
-3. Consider if you're in wrong spiral level for the decision
+1. **Read Your Context** - Start with project-context.md
+2. **Review Recent Decisions** - Check decisions-made.md for latest choices
+3. **Check Open Questions** - See what was pending in open-questions.md
+4. **Prime and Continue** - Brief the AI and resume where you left off
 
-### When Timeline Pressure Mounts
-1. Activate appropriate pressure protocol
-2. Document what's being deferred
-3. Maintain context preservation above all else
-4. Communicate trade-offs clearly to stakeholders
+### Handling Discoveries
+
+When you discover something that changes your understanding:
+
+1. **Document the Discovery** - What did you learn?
+2. **Assess Impact** - Does this invalidate previous decisions?
+3. **Navigate Accordingly** - Loop back if needed or adjust path forward
+4. **Update Context** - Ensure learning is preserved
+
+### The Pressure Valve Pattern
+
+When timeline pressure mounts, SAID provides structured degradation:
+
+**Moderate Pressure**: Combine investigation steps but maintain decision documentation
+**High Pressure**: Jump to implementation but preserve critical context
+**Extreme Pressure**: Emergency mode - build minimum viable, document debt for recovery
+
+The key: **Always preserve enough context to recover** when pressure subsides.
 
 ---
 
-## Pressure Adaptation Guidelines
+## Common Challenges and Solutions
 
-### Timeline Pressure
+### "The AI Keeps Suggesting Things We Already Rejected"
 
-The concepts of _Moderate_, _High_, and _Extreme_ are subjective. They are provided here to illustrate common adaptions.
+**Root Cause**: Incomplete context about previous decisions
 
-**Moderate Pressure**:
-- Combine levels where safe
-- Use proven patterns instead of custom solutions
-- Maintain context preservation
+**Solution**:
+- Ensure decisions-made.md captures rejected alternatives
+- Use context priming to remind AI of key decisions
+- Reference specific decision rationale when it matters
 
-**High Pressure**:
-- Skip to Level 3 using context priming instead of context files
-- Follow the remaining processes
-- Maintain context preservation of what you can
+### "We Keep Revisiting the Same Questions"
 
-**Extreme Pressure**:
-- Emergency mode with damage control
-- Focus only on critical functionality
+**Root Cause**: Decisions made without sufficient investigation
 
-**Recovery**:
-- When the pressure is over
-- Recover context using `/sync-context` when pressure subsides
-- Use `/create-todo` to find cleanup tasks that need to occur
+**Solution**:
+- Loop back to appropriate level for deeper investigation
+- Document why the question keeps arising
+- Consider if there's a hidden constraint not yet surfaced
 
----
+### "The Spiral Feels Too Slow"
 
-## Git Workflow with SAID
+**Root Cause**: Trying to achieve perfection at each level
 
-Use descriptive branch names that help your team understand what's happening:
+**Solution**:
+- Focus on resolving critical unknowns, not all unknowns
+- Use strategic deferral for non-critical decisions
+- Remember: the spiral prevents rework, which is slower than investigation
 
-```
-feature/user-authentication
-prototype/test-oauth-approach
-level-1/technical-feasibility
-fix/broken-login-redirect
-```
+### "Context Files Are Getting Unwieldy"
 
-**Protect your main branch** - require PRs for integration. Here's the GitHub Flow guide if you need a refresher.
+**Root Cause**: Accumulating without organizing
 
-**Consider matching code review depth to system complexity** - simple systems need basic review, complex systems need domain experts, critical systems need multiple expert reviewers. Teams might want a lightweight PR checklist to prompt thinking about tests, documentation, and context preservation.
-
-**Preserve context in git**:
-
-- Use meaningful commit messages that explain decisions
-- Keep your SAID context files in the repository
-- Reference important discussions in PR descriptions
-
-That's it. Your existing git knowledge + descriptive naming + context preservation.
+**Solution**:
+- Periodically consolidate related decisions
+- Archive completed phases while keeping references
+- Focus on active context, not historical record
 
 ---
 
-## TODO Workflow Integration
+## Integration with Development Practices
 
-**Core Principle**: Use structured TODO commands for complex work while allowing direct execution for simple tasks.
+### Git and Version Control
 
-### When to Use Full TODO Workflow
+SAID context files are **first-class citizens** in your repository:
 
-**Use structured commands for complex TODOs**:
-- Multiple steps or decisions required
-- Research with unclear approach
-- Cross-cutting concerns affecting multiple SAID workflows
-- Stakeholder input needed at decision points
+- Check in context files alongside code
+- Version control preserves decision history
+- Pull requests can include context updates
+- Branch names can reflect spiral level:
+  - `investigation/payment-options`
+  - `prototype/test-stripe-integration`
+  - `implementation/user-authentication`
 
-**Execute directly for simple TODOs**:
-- Single actions (fix typo, add comment)
-- Well-defined implementation with clear approach
-- Routine maintenance following established patterns
+### Code Review Through SAID Lens
 
-### TODO Commands
+When reviewing code with SAID context:
 
-```bash
-/create-todo                         # Create context for newly discovered TODOs
-/decompose .agent/layers/todo.md     # Break complex TODOs into atomic tasks
-/work-on-todo                        # Execute TODO with collaboration checkpoints
-/sync-context                        # Integrate results back into SAID contexts
-```
+- **Check alignment**: Does implementation match documented decisions?
+- **Question deviations**: If code differs from plan, is there a good reason?
+- **Preserve learning**: Discoveries during implementation should update context
+- **Review depth**: Match review thoroughness to documented risk level
 
-### Flexible Application
+### Testing Strategy Alignment
 
-**You don't need strict step-by-step adherence**. The workflow provides structure when complexity warrants it, but simple TODOs can bypass formal commands entirely. The goal is maintaining SAID's collaborative benefits and context integrity for work that benefits from structure, while avoiding overhead for straightforward tasks.
+SAID's risk identification (Level 0) and approach decisions (Level 1) should **directly inform** your testing strategy:
+
+- High-risk areas need comprehensive testing
+- Deferred decisions need tests that allow flexibility
+- Prototype code might skip tests but document why
+- Integration points identified in Level 2 become integration test targets
+
+---
+
+## Closing Thoughts
+
+SAID isn't a rigid process - it's a **philosophy of thoughtful progress** through uncertainty. The commands and structure support this philosophy, but the core is:
+
+1. **Make uncertainty explicit** rather than hiding it
+2. **Preserve context** for future humans and AI
+3. **Navigate adaptively** based on what you discover
+4. **Collaborate effectively** with both humans and AI
+
+The spiral method acknowledges that software development is a journey of discovery. SAID provides the tools to make that journey more predictable, recoverable, and ultimately successful.
+
+For specific command usage and syntax, refer to the [HOW-TO Guide](../getting-started/HOW-TO.md). For the underlying principles and theory, see the [SAID Philosophy](philosophy.md).
 

@@ -62,11 +62,11 @@ repo-name/
 The SAID methodology is implemented through task-focused commands that replace the traditional level structure:
 
 #### Vision & Problem Validation
-- `/validate-problem` - Establish clear project purpose and validate the problem space
-- `/analyze-risks` - Identify and prioritize technical and project risks
+- `/analyze problems` - Establish clear project purpose and validate the problem space
+- `/analyze risks` - Identify and prioritize technical and project risks
 
 #### Solution Development
-- `/analyze-options` - Generate and evaluate technical approach alternatives
+- `/analyze solutions` - Generate and evaluate technical approach alternatives
 - `/sync-decision` - Document chosen approach with rationale
 - `/decompose` - Break down work into manageable components at any level:
   - `.agent/layers/project.md` - System-level decomposition
@@ -98,14 +98,14 @@ For better examples, see [Git Workflow with SAID](/docs/SAID/philosophy/implemen
 
 **Vision Validation Workflow**:
 ```bash
-/validate-problem context/project-context.md
+/analyze problems context/project-context.md
 /sync-context docs/report/problem-validation.md
 /plan-next-steps context/project-context.md
 ```
 
 **Prototype Workflow**:
 ```bash
-/analyze-risks context/project-context.md
+/analyze risks context/project-context.md
 /create-todo docs/reports/risk-assessment.md 'risk 1'
 /decompose .agent/layers/todo.md context/todo/pressure-test/todo-context.md
 /work-on-todo context/todo/pressure-test/decomposed/phase-1-context.md
@@ -113,8 +113,8 @@ For better examples, see [Git Workflow with SAID](/docs/SAID/philosophy/implemen
 
 **Solution Development Workflow**:
 ```bash
-/analyze-options context/project-context.md
-/sync-decision context/project-context.md docs/reports/options-analysis.md 'option 1'
+/analyze solutions context/project-context.md
+/sync-decision context/project-context.md docs/reports/solutions-analysis.md 'option 1'
 /decompose .agent/layers/project.md context/project-context.md
 ```
 
@@ -134,10 +134,10 @@ AI: [Acknowledgment and readiness confirmation]
 
 ## Next Steps After **First Steps**
 
-1. **Start with Problem Validation**: Run `/validate-problem` to establish clear project purpose
-2. **Test Your Understanding**: Use `/pressure-test` to challenge assumptions
-3. **Identify Risks Early**: Run `/analyze-risks` to surface technical and project risks
-4. **Explore Solutions**: Use `/analyze-options` to evaluate technical approaches
+1. **Start with Problem Validation**: Run `/analyze problems` to establish clear project purpose
+2. **Test Your Understanding**: Use `/analyze risks` to challenge assumptions
+3. **Identify Risks Early**: Run `/analyze risks` to surface technical and project risks
+4. **Explore Solutions**: Use `/analyze solutions` to evaluate technical approaches
 5. **Document Decisions**: Run `/sync-decision` to capture chosen approach with rationale
 6. **Decompose Work**: Use `/decompose` with appropriate context type to break down the work
 7. **Maintain Context**: Run `/sync-context` after each significant workflow

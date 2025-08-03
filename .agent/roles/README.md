@@ -1,6 +1,6 @@
 # Stakeholder Roles
 
-This directory contains role definitions used by SAID commands (like `/analyze-options` and `/analyze-risks`) to provide domain-specific perspectives and expertise.
+This directory contains role definitions used by SAID commands (like `/analyze` ) to provide domain-specific perspectives and expertise.
 
 ## Adding New Roles
 
@@ -17,7 +17,7 @@ Each role file must contain two main sections:
 
 **Identity**: Brief description of the role's professional identity and experience level
 
-**Expertise**: 
+**Expertise**:
 - List of specific technical or domain expertise areas
 - Skills and knowledge domains
 - Areas of specialization
@@ -64,5 +64,5 @@ Roles can be used in two ways:
 
 Example:
 ```
-/analyze-options "Mobile app with Node.js backend" --roles=mobile-native-client-architect,service-architect
+/analyze "Mobile app with Node.js backend" --roles=mobile-native-client-architect,service-architect
 ```
