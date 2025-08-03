@@ -28,17 +28,17 @@ This is the main project context file that provides vision and architecture over
 ```yaml
 technology_decisions:
   - decision_area: "Backend Framework"
-    selected_option: "[To be determined through /analyze-options]"
+    selected_option: "[To be determined through /analyze solutions]"
     rationale: "[Why this was chosen]"
     alternatives_considered: ["[Option 1]", "[Option 2]"]
-    
+
   - decision_area: "Database"
-    selected_option: "[To be determined through /analyze-options]"
+    selected_option: "[To be determined through /analyze solutions]"
     rationale: "[Why this was chosen]"
     alternatives_considered: ["[Option 1]", "[Option 2]"]
-    
+
   - decision_area: "Frontend Framework"
-    selected_option: "[To be determined through /analyze-options]"
+    selected_option: "[To be determined through /analyze solutions]"
     rationale: "[Why this was chosen]"
     alternatives_considered: ["[Option 1]", "[Option 2]"]
 ```

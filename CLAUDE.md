@@ -10,144 +10,68 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Purpose
 
-This is a **meta-template repository** for establishing AI-human collaboration patterns in software development. It provides the **Spiral AI Development (SAID)** methodology - a systematic approach to managing complex projects with AI assistance.
+This is a meta-template repository for the **Spiral AI Development (SAID)** methodology - a systematic approach for managing complex projects through AI-human collaboration. It provides commands and patterns for progressive understanding and implementation.
 
-## Core Framework
+## Existing SAID Commands
 
-**Spiral AI Development (SAID)** uses task-focused workflows achieving progressive detail levels:
-- **Level 0**: Vision clarity through `/analyze-problem` and `/analyze-risks`
-- **Level 1**: Approach viability through `/analyze-options` and `/sync-decision`
-- **Level 2+**: Progressive decomposition using `/decompose` with type definitions:
-  - Project-level: `/decompose .agent/layers/project.md`
-  - Component-level: `/decompose .agent/layers/component.md`
-  - Feature-level: `/decompose .agent/layers/feature.md`
-  - TODO execution: `/decompose .agent/layers/todo.md` → `/work-on-todo`
+All commands are located in `.claude/commands/`:
 
-## Available Commands
+### /analyze `<focus>` `<input-description>` `[--roles=<role1,role2,...>]`
+Universal analysis command that performs focused research and analysis. Available focus types (from `.agent/focus/`):
+- `problems` - Problem identification and clarification
+- `risks` - Risk assessment and mitigation strategies
+- `solutions` - Solution options with trade-offs
 
-### Analysis Commands
-- `/analyze-problem` - Validate and clarify problem understanding
-- `/analyze-options` - Present solution options with trade-offs
-- `/analyze-risks` - Identify and analyze project risks
+### /sync-context `<any-file>` or `init`
+Extracts and integrates critical information from any file into project context files. Use `init` to initialize context structure from templates.
 
-### Context Management Commands
-- `/sync-decision` - Integrate decisions into context with rationale
-- `/sync-context` - Maintain context across phases and prevent information loss
+### /sync-decision `<context-file>` `<decision-report>` `<selected-option>`
+Formally integrates a selected decision from an analysis report into the project's decision history with full traceability.
 
-### Decomposition Commands
-- `/decompose` - Universal decomposition using type definitions (project/component/feature/todo)
+### /prime-context
+Updates the CLAUDE.md file with a concise summary of current project state from context files, enabling quick AI orientation.
 
-### Planning Commands
-- `/plan-next-steps` - Create detailed transition plans with resource estimates
+### /decompose `<type-definition-file>` `<context-file>`
+Executes type-specific decomposition using definitions from `.agent/layers/`:
+- `project.md` - High-level project breakdown
+- `component.md` - System component analysis
+- `feature.md` - Feature-level decomposition
+- `todo.md` - Atomic task decomposition
 
-### TODO Workflow Commands
-- `/create-todo` - Create contexts for newly discovered TODOs
-- `/create-todo-from-report` - Extract TODOs from analysis reports
-- `/work-on-todo` - Execute atomic TODOs with collaboration checkpoints
+### /plan-next-steps `<current-phase>` `[context-file]`
+Generates detailed transition plans with prioritized actions and resource estimates.
 
-## Key Collaboration Principles
+### /create-todo `<todo-description>`
+Transforms a TODO description into structured context suitable for SAID integration.
 
-1. **Context Preservation**: Maintain structured context using three-file system
-   - `context/project-context.md` - Main context manifest with current state
-   - `context/project/decisions-made.md` - Key decisions with rationale and traceability
-   - `context/project/open-questions.md` - Unresolved questions requiring multi-phased analysis
-   - `context/project/lessons-learned.md` - Insights and patterns discovered
-   - Context templates in `.agent/templates/` for initialization
-   - Type definitions in `.agent/layers/` for decomposition guidance
+### /create-todo-from-report `<report-file>`
+Extracts actionable items from analysis reports and creates TODO contexts.
 
-2. **Bounded Replaceability**: Design components with clear interfaces that can be understood and replaced without archaeological investigation
+### /work-on-todo `<todo-context-file>` `[--expert=<expert-name>]`
+Executes atomic TODO items with collaboration checkpoints. Expert systems available in `.agent/experts/`.
 
-3. **Git-Hook Testing Integration**: Define testing automation strategies early to prevent massive failures
-   - Level 2: Component testing boundaries and responsibilities
-   - Level 3: Comprehensive git-hook testing strategy (primary integration point)
-   - Level 4: Git-hook implementation and team onboarding
-   - See `docs/SAID/add-ons/git-hook-testing-integration.md` for detailed guidance
+## Key Directories
 
-## Directory Structure
+- `.claude/commands/` - SAID command definitions
+- `.agent/` - Framework support files:
+  - `focus/` - Analysis focus definitions (problems, risks, solutions)
+  - `layers/` - Decomposition type definitions
+  - `roles/` - Stakeholder role definitions for analysis
+  - `experts/` - Domain expert systems for implementation
+  - `patterns/` - Reusable pattern files
+  - `templates/` - Context initialization templates
+- `docs/reports/` - Generated analysis reports
+- `context/` - Project context files (created by SAID)
 
-**Meta-template structure** (this repository):
-```
-/
-├── .claude/                     # SAID framework files for claude
-│   ├── commands/                # 10 SAID development commands
-├── .agent/                     # SAID framework files for agents
-│   ├── decompose-types/         # Decomposition type definitions
-│   │   ├── project.md           # Project decomposition type
-│   │   ├── component.md         # Component decomposition type
-│   │   ├── feature.md           # Feature decomposition type
-│   │   └── todo.md              # TODO decomposition type
-│   ├── patterns/                # 20 reusable pattern files
-│   │   ├── analyze/             # Analysis command patterns
-│   │   ├── general/             # Shared patterns (checkpoints, core)
-│   │   ├── plan/                # Planning patterns
-│   │   ├── sync/                # Context synchronization patterns
-│   │   └── todo/                # TODO workflow patterns
-│   ├── roles/                   # Role definitions for stakeholder analysis
-│   └── templates/               # Context initialization templates
-│       └── project-init/        # Project initialization templates
-├── docs/
-│   ├── reports/                 # Phase reports and analysis (Markdown)
-│   └── SAID/                    # SAID methodology documentation
-└── README.md                    # Project overview
-```
+## Working with SAID
 
-**Project structure** (when using SAID):
-```
-/
-├── context/                     # Context preservation files (created by SAID)
-│   ├── project-context.md       # Main context manifest
-│   └── project/                 # Project-specific context files
-│       ├── decisions-made.md    # Key decisions with rationale
-│       ├── open-questions.md    # Unresolved questions
-│       └── lessons-learned.md   # Insights and patterns
-├── docs/
-│   ├── design/                  # Project-specific design documents
-│   │   ├── OVERVIEW.md          # Project elevator pitch
-│   │   └── HIGH-LEVEL-DESIGN.md # Core principles and requirements
-│   └── reports/                 # Phase reports and analysis
-├── .claude/                     # SAID framework for claude (copied from meta-template)
-├── .agent/                     # SAID framework for agents (copied from meta-template)
-└── [project files]              # Actual project implementation
-```
+1. **Starting a Project**: Create design documents then run `/sync-context init`
+2. **Analysis Phase**: Use `/analyze` with appropriate focus
+3. **Decision Making**: Use `/sync-decision` to record choices
+4. **Decomposition**: Use `/decompose` progressively from project to TODO level
+5. **Implementation**: Use `/work-on-todo` for atomic task execution
+6. **Context Management**: Use `/prime-context` to restore context between sessions
 
-## Common Workflow Patterns
+## Development Notes
 
-**Level 0 (Vision Clarity)**:
-```bash
-/analyze-problem
-/analyze-risks
-/sync-context
-```
-
-**Level 1 (Approach Viability)**:
-```bash
-/analyze-options
-/sync-decision
-/sync-context
-```
-
-**Level 2+ (Progressive Decomposition)**:
-```bash
-/decompose .agent/layers/project.md [parent-context]
-/decompose .agent/layers/component.md [parent-context]
-/decompose .agent/layers/feature.md [parent-context]
-```
-
-**Context Recovery** (when context is lost):
-```bash
-/sync-context [source-file]
-/plan-next-steps
-```
-
-**Starting New Project**:
-1. Create `docs/design/OVERVIEW.md` and `docs/design/HIGH-LEVEL-DESIGN.md`
-2. Run `/sync-context init`
-3. Begin with `/analyze-problem` to establish clear problem understanding
-
-## Important Notes
-
-- This is a methodology template, not implementation code
-- Always question before acting on major decisions
-- Present options with pros/cons rather than choosing for the user
-- Maintain context integrity across all phase transitions
-- Framework provides escape valves for timeline pressure situations
+This is a methodology template repository - there are no traditional build, test, or lint commands. The focus is on the SAID commands and workflows for managing AI-human collaboration in software projects.

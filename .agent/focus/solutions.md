@@ -1,7 +1,7 @@
 ## Purpose
 Research and present multiple viable approaches with objective pros/cons analysis incorporating stakeholder perspectives.
 
-## Gaol
+## Goal
 - Design solutions
 
 ## Research Area

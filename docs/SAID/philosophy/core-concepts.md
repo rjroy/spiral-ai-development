@@ -6,11 +6,13 @@ _The foundational thinking behind Spiral AI Development_
 
 ## The Collaboration Paradox
 
-AI excels at generating quick small solutions for well understood domains. The current AI collaboration loop therefore relies on the user breaking the problem down and clearly defining it before starting. If you don't then you get a quick small solution for a complex problem, which doesn't work as you expect.
+AI excels at generating quick small solutions for well understood domains. The current AI collaboration loop therefore relies on the user breaking the problem down and clearly defining it before starting.  If you don't then the solution will be quick, but will miss nuances of the complex problem.
 
 **The structural trap**: AI can offer answers that look complete. When working on complex problems, this creates a false confidence—you get something that sounds right but hasn't been tested against the real constraints and complexities of your domain.
 
 **Why this matters**: The more complex your problem, the more likely AI is to miss critical details, make wrong assumptions, or optimize for the wrong constraints. But the output will still sound confident and complete.
+
+Which leaves you with the question: how do you find then fix these mistakes after the fact? SAID asks: how can we identify and resolve these nuances before implementation?
 
 ---
 
@@ -24,10 +26,10 @@ Clear boundaries prevent collaboration breakdown when problems get complex.
 - Domain-specific knowledge and constraints
 - When to trust AI suggestions vs. when to override
 
-### AI Execution
+### AI Assistant
+- Research and analysis using defined roles
 - Implementation and pattern recognition
 - Systematic application of established approaches
-- Option generation and code synthesis
 - Following clear specifications
 
 ### Shared Territory
@@ -36,7 +38,7 @@ Clear boundaries prevent collaboration breakdown when problems get complex.
 - Assumption validation and clarification
 
 ### Failure Mode
-When AI starts making architectural decisions or humans start micromanaging syntax. Both indicate boundary drift that needs correction.
+When AI starts making unqualified architectural decisions or humans start micromanaging syntax. Both indicate boundary drift that needs correction.
 
 **Principle**: Decision ownership must be explicit and documented for every significant choice.
 
@@ -52,9 +54,11 @@ The greatest power and enemy of AI is its context. Working on a complex problem 
 - Rich context enables better suggestions and fewer misunderstandings
 
 ### Why Context Is Enemy
-- Context can degrade or get lost between sessions
-- Wrong context can mislead AI down incorrect paths
-- Context overload can reduce focus on current priorities
+- There are four terms currently used to describe the problems of context: Poisoning, Distraction, Confusion, and Clash.
+- **Poisoning:** if the context contains hallucinations or errors they will get repeated.
+- **Distraction:** if there is too much then the model cannot think of anything else.
+- **Confusion:** if there are too many options/tools/info the AI has a hard time of distinguishing which is currently important.
+- **Clash:** if new information contradicts existing information then the AI doesn't know which to use.
 
 ### Building Context Effectively
 - Document key decisions and their rationale
