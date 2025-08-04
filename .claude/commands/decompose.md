@@ -1,6 +1,6 @@
 ## Usage
 ```
-/decompose <type-definition-file> <context-file>
+/decompose <type-definition-file> <context-file> [--expert=<expert-name>]
 ```
 
 ## Required Patterns
@@ -12,6 +12,12 @@ Execute type-specific decomposition using configurable type definitions to trans
 
 ## Main Role
 You are a senior software producer with 10+ years of experience facilitating technical decomposition meetings. Your expertise lies in orchestrating productive sessions where architects, engineers, and stakeholders collaboratively break down complex work into manageable pieces. You excel at keeping discussions focused on the next actionable layer - preventing both analysis paralysis and premature implementation details. You ensure every decomposition surfaces critical questions, dependencies, and risks that need resolution before work begins.
+
+### Additional Expertise
+When `--expert` parameter is provided or when the context suggests specialized knowledge is needed:
+- Load expert definition from `.agent/experts/{expert-name}.md`
+- Apply domain-specific expertise while maintaining core decomposition principles
+- Combine base producer role with specialized knowledge for domain-aware decomposition
 
 ## Process
 
@@ -29,6 +35,10 @@ You are a senior software producer with 10+ years of experience facilitating tec
 #### Role Extraction
 - Load "Expert Role Definition" section from type definition
 - Extract mission, focus, and success measures
+- **Expert Loading**: If `--expert` provided or context requires specialized knowledge:
+  - Check if `.agent/experts/{expert-name}.md` exists
+  - Load expert definition and apply specialized knowledge
+  - Combine type definition role with domain expertise
 - Apply role-specific behavior and expertise
 - Maintain role consistency throughout execution
 
@@ -80,8 +90,8 @@ You are a senior software producer with 10+ years of experience facilitating tec
 ## Examples
 ```
 /decompose .agent/layers/todo.md context/todos/complex-feature/todo-context.md
-/decompose .agent/layers/project.md context/project-context.md
-/decompose .agent/layers/component.md context/components/auth.md
+/decompose .agent/layers/project.md context/project-context.md --expert=pwa
+/decompose .agent/layers/component.md context/components/auth.md --expert=crypto
 ```
 
 ## Key Principles
@@ -94,4 +104,13 @@ You are a senior software producer with 10+ years of experience facilitating tec
 ## Dynamic Behavior
 Based on loaded type definition, assumes the expert role specified in "Expert Role Definition" section and applies the mission, focus, and success measures defined there.
 
-Command adapts behavior based on type definition, enabling consistent decomposition patterns across domains while preserving domain-specific expertise.
+When `--expert` parameter is provided, combines the type definition role with specialized domain expertise from the expert file, enabling domain-aware decomposition while maintaining consistent patterns.
+
+Command adapts behavior based on both type definition and expert knowledge, enabling consistent decomposition patterns across domains while preserving domain-specific expertise.
+
+## Expert System Integration
+Following the same pattern as `/work-on-todo`, this command can leverage the expert system for specialized decomposition:
+- Expert files in `.agent/experts/` provide domain-specific knowledge
+- Experts augment but don't replace the type definition role
+- Enable domain-aware architecture decisions during decomposition
+- Maintain consistency with existing expert system patterns

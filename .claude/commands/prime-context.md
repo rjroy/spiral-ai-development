@@ -4,7 +4,7 @@
 ```
 
 ## Required Patterns
-Load: `.agent/patterns/sync/context-files.md` (context file management)
+Load: `.agent/patterns/core.md` (core command memory)
 
 ## Purpose
 Update CLAUDE.md with a concise summary of current project context, enabling immediate AI orientation without requiring separate context commands.

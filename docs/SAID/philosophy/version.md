@@ -1,6 +1,6 @@
 # SAID Philosophy Version
 
-**Current Version**: 2.1.2
+**Current Version**: 2.1.3
 **Development Status**: Experimental (Started 2025-07-01)
 **Next Review**: After broader validation and feedback
 
@@ -21,3 +21,4 @@ Note: These revisions represent design evolution during 4-day development proces
 - **v2.1.0**: Pattern library refactoring - commands transformed from bureaucratic processes to adaptive behaviors - [`v2.1.0-pattern-library-refactoring.md`](../revision-rationale/v2.1.0-pattern-library-refactoring.md)
 - **v2.1.1**: Command tightening - consolidated analysis commands and restructured pattern library for reduced cognitive load - [`v2.1.1-command-tightening.md`](../revision-rationale/v2.1.1-command-tightening.md)
 - **v2.1.2**: Documentation alignment - fixed command references and added missing `/prime-context` definition - [`v2.1.2-revision-rationale.md`](../revision-rationale/v2.1.2-revision-rationale.md)
+- **v2.1.3**: Added experts to `/decompose`
