@@ -28,19 +28,30 @@ You are a senior technical writer with 10+ years of experience creating decision
 - **Length limit**: Keep topic under 20 characters, truncate if needed
 - **Fallback**: Use "general" if no meaningful topic can be extracted
 
-### 3. Load Stakeholder Perspectives (if applicable)
+### 3. Load Stakeholder Perspectives
 - Scan `.agent/roles/` for available roles
-- Auto-detect or use --roles parameter
+- Auto-detect appropriate roles or use --roles parameter
 - Load role definitions and criteria based on _focus_ _goal_
+- **Prepare subagent tasks** for role-specific analysis
 
-### 3. Conduct Research
+### 4. Conduct Research
 - **Must use WebSearch** for all industry research - cannot rely only on internal knowledge
+- **Execute research in parallel** using multiple concurrent WebSearch queries
 - Research current industry best practices, standards, and trends from authoritative sources
 - Research based on the _focus_ _research area_
+- **Use research-analyst subagent** for role-specific analysis with auto-detected or specified roles
+
+#### Parallel Research Strategy
+Execute multiple WebSearch queries concurrently to maximize research efficiency:
+- Core research queries (3-4 concurrent searches)
+- Role-specific research (with auto-detected or specified roles)
+- Focus-specific deep dives
+- Competitive analysis and benchmarking
 
 #### Research Query Examples
 - non-exhaustive list
 - use/modify what makes sense for current focus
+- **Execute 3-4 queries in parallel** for comprehensive coverage
 
 ##### General Research
 - "[topic] best practices [current year]"
@@ -56,7 +67,14 @@ You are a senior technical writer with 10+ years of experience creating decision
 - "[topic] industry risk assessment reports"
 - etc.
 
-### 4. Evidence-Based Analysis
+#### Role-Based Analysis Integration
+For auto-detected or specified roles:
+- Launch research-analyst subagent for each role perspective
+- Provide context file and focus definition to subagent
+- Integrate role-specific insights into main analysis
+- Use Task tool with research-analyst subagent_type
+
+### 5. Evidence-Based Analysis
 - **Cite all sources** and include references section in report
 - Include URLs and access dates for references
 - Distinguish between opinion and verified data
@@ -75,11 +93,19 @@ You are a senior technical writer with 10+ years of experience creating decision
 - [Source 3]: [URL] (accessed YYYY-MM-DD)
 ```
 
-### 5. Generate Comprehensive Report
+### 6. Generate Comprehensive Report
+- **Synthesize all research sources**: Combine parallel research results and subagent analyses
 - Include comparative analysis and stakeholder preference matrix
+- **Integrate role-specific insights**: Weave subagent findings throughout report sections
 - Provide selection guidance based on scenarios
 - Write to `docs/reports/[focus]-[topic]-[timestamp].md`
 - Also apply the _focus_ _report template_
+
+#### Subagent Integration Guidelines
+- Reference role-specific analysis in relevant sections
+- Include role perspective summaries in stakeholder matrix
+- Highlight conflicts or consensus between role perspectives
+- Ensure subagent insights support main analysis without duplication
 
 #### File Naming Convention
 - Name: `docs/reports/[type]-[topic]-YYYY-MM-DD-HHmmss.md`
@@ -111,13 +137,15 @@ roles: [list of roles if used]
 - Communication needs across roles
 
 ## Key Principles
-- Must use WebSearch for industry research
+- **Must use WebSearch for industry research** - execute multiple queries in parallel
+- **Leverage research-analyst subagent** for role-specific analysis with auto-detected or specified roles
 - Cite all sources with URLs and access dates
-- Use role-based expertise when roles are specified
+- Use role-based expertise with auto-detected or specified roles
 - Present options objectively without bias
 - Include both conventional and innovative approaches
 - Prioritize decision-enabling information
 - Provide evidence-based recommendations
+- **Maximize research efficiency** through concurrent operations
 
 ## Output Summary
 After report generation, provide:
