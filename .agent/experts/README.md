@@ -29,6 +29,7 @@ Commands may automatically detect when specialized expertise is needed based on:
 | `rust` | Rust Development | Memory safety, performance, systems programming, async patterns |
 | `crypto` | Cryptography | Security protocols, key management, compliance, threat modeling |
 | `typescript` | TypeScript | Type system, build tools, frameworks, testing strategies |
+| `pwa` | Progressive Web Apps | Offline-first architecture, service workers, app shell, performance optimization |
 
 ## Expert File Structure
 
@@ -90,6 +91,7 @@ To add a new expert:
 
 Currently integrated with:
 - `/work-on-todo` - Loads expertise for task execution
+- `/decompose` - Loads expertise for domain-aware architectural decomposition
 
 Future commands may also leverage the expert system for specialized analysis, decision-making, and implementation guidance.
 
