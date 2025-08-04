@@ -35,25 +35,25 @@ You are a senior technical writer with 10+ years of experience creating decision
 - **Prepare subagent tasks** for role-specific analysis
 
 ### 4. Conduct Research
-- **Must use WebSearch** for all industry research - cannot rely only on internal knowledge
-- **Execute research in parallel** using multiple concurrent WebSearch queries
-- Research current industry best practices, standards, and trends from authoritative sources
+- **Use research-analyst subagents** for all industry research - cannot rely only on internal knowledge
+- **Launch multiple research-analyst subagents in parallel** for comprehensive coverage
+- Subagents research current industry best practices, standards, and trends from authoritative sources
 - Research based on the _focus_ _research area_
 - **Use research-analyst subagent** for role-specific analysis with auto-detected or specified roles
 
 #### Parallel Research Strategy
-Execute multiple WebSearch queries concurrently to maximize research efficiency:
-- Core research queries (3-4 concurrent searches)
-- Role-specific research (with auto-detected or specified roles)
-- Focus-specific deep dives
-- Competitive analysis and benchmarking
+Launch multiple research-analyst subagents to maximize research efficiency:
+- Core research subagent (general topic research)
+- Role-specific research subagents (with auto-detected or specified roles)
+- Focus-specific research subagent (deep domain analysis)
+- Competitive analysis subagent (benchmarking and comparisons)
 
-#### Research Query Examples
+#### Research Query Examples for Subagents
 - non-exhaustive list
-- use/modify what makes sense for current focus
-- **Execute 3-4 queries in parallel** for comprehensive coverage
+- provide these as guidance to research-analyst subagents
+- **Launch 3-4 subagents in parallel** for comprehensive coverage
 
-##### General Research
+##### General Research Queries (for core research subagent)
 - "[topic] best practices [current year]"
 - "[topic] common risks failures [current year]"
 - "[topic] user pain points [current year]"
@@ -94,7 +94,7 @@ For auto-detected or specified roles:
 ```
 
 ### 6. Generate Comprehensive Report
-- **Synthesize all research sources**: Combine parallel research results and subagent analyses
+- **Synthesize all subagent research**: Combine parallel research-analyst subagent results
 - Include comparative analysis and stakeholder preference matrix
 - **Integrate role-specific insights**: Weave subagent findings throughout report sections
 - Provide selection guidance based on scenarios
@@ -137,15 +137,15 @@ roles: [list of roles if used]
 - Communication needs across roles
 
 ## Key Principles
-- **Must use WebSearch for industry research** - execute multiple queries in parallel
+- **Must use research-analyst subagents for all industry research** - launch multiple subagents in parallel
 - **Leverage research-analyst subagent** for role-specific analysis with auto-detected or specified roles
-- Cite all sources with URLs and access dates
+- Cite all sources with URLs and access dates (from subagent research)
 - Use role-based expertise with auto-detected or specified roles
 - Present options objectively without bias
 - Include both conventional and innovative approaches
 - Prioritize decision-enabling information
 - Provide evidence-based recommendations
-- **Maximize research efficiency** through concurrent operations
+- **Maximize research efficiency** through concurrent subagent operations
 
 ## Output Summary
 After report generation, provide:
