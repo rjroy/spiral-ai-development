@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Run SAID command files with pattern loading and LLM invocation.
+"""Run SAID commands using front-matter metadata.
 
-This utility reads a command definition file (e.g. ``.claude/commands/analyze.md``),
-loads any referenced pattern files from ``.agent/``, constructs a final prompt and
-sends it to a configured LLM provider. The provider can be configured through
-standard environment variables for Anthropic or OpenAI.
+This utility locates command files in ``.claude/commands/`` via the ``name`` field
+in their YAML front-matter, loads any referenced pattern files from ``.agent/``,
+constructs a final prompt, and sends it to a configured LLM provider. The provider
+can be configured through standard environment variables for Anthropic or OpenAI.
 """
 
 from __future__ import annotations
@@ -17,7 +17,92 @@ import sys
 from typing import Dict, List, Tuple
 
 
+
 Pattern = Tuple[str, str]
+
+
+def parse_command_file(path: str) -> Tuple[Dict, str]:
+    """Load front matter and content from a command file."""
+    with open(path, "r", encoding="utf-8") as f:
+        text = f.read()
+    match = re.match(r"^---\n(.*?)\n---\n(.*)", text, re.DOTALL)
+    if not match:
+        raise RuntimeError(f"Command file {path} missing front matter")
+    front_text = match.group(1)
+    content = match.group(2)
+    front: Dict = {}
+    current_item: Dict | None = None
+    for line in front_text.splitlines():
+        if not line.strip():
+            continue
+        if line.startswith("  - "):
+            current_item = {}
+            front.setdefault("parameters", []).append(current_item)
+            line = line[4:]
+            key, value = line.split(":", 1)
+            current_item[key.strip()] = value.strip()
+        elif line.startswith("    ") and current_item is not None:
+            key, value = line.strip().split(":", 1)
+            current_item[key.strip()] = value.strip()
+        else:
+            key, value = line.split(":", 1)
+            key = key.strip()
+            value = value.strip()
+            if key == "parameters" and value == "":
+                front[key] = []
+            else:
+                front[key] = value
+            current_item = None
+    if isinstance(front.get("parameters"), str):
+        if front["parameters"].strip() == "[]":
+            front["parameters"] = []
+    # convert optional flags to booleans
+    for item in front.get("parameters", []):
+        if "optional" in item:
+            item["optional"] = item["optional"].lower() == "true"
+    return front, content
+
+
+def render_template(content: str, front: Dict) -> str:
+    """Replace placeholders with front matter values."""
+    def format_parameters(params: List[Dict]) -> str:
+        if not params:
+            return "None"
+        lines = []
+        for p in params:
+            line = f"- `{p['name']}`: {p.get('description', '')}"
+            if p.get("optional"):
+                line += " (optional)"
+            lines.append(line)
+        return "\n".join(lines)
+
+    replacements = {
+        "name": front.get("name", ""),
+        "description": front.get("description", ""),
+        "parameters": format_parameters(front.get("parameters", [])),
+    }
+    for key, value in replacements.items():
+        content = content.replace(f"{{{{{key}}}}}", value)
+    return content
+
+
+def load_command_by_name(name: str) -> Tuple[str, Dict, str]:
+    """Find command file by name and return its path, front matter, and content."""
+    base_dir = os.path.join(os.getcwd(), ".claude", "commands")
+    available: List[str] = []
+    for fname in os.listdir(base_dir):
+        if not fname.endswith(".md"):
+            continue
+        path = os.path.join(base_dir, fname)
+        front, content = parse_command_file(path)
+        cmd_name = front.get("name")
+        if cmd_name:
+            if cmd_name == name:
+                return path, front, content
+            available.append(cmd_name)
+    raise RuntimeError(
+        f"Unknown command '{name}'. Available commands: {', '.join(sorted(available))}"
+    )
 
 
 def parse_params(param_list: List[str]) -> Dict[str, str]:
@@ -100,21 +185,21 @@ def send_prompt(prompt: str) -> str:
 
 
 def main(argv: List[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Run a SAID command file")
-    parser.add_argument("command_file", help="Path to command markdown file")
+    parser = argparse.ArgumentParser(description="Run a SAID command")
+    parser.add_argument("command", help="Command name to run")
     parser.add_argument(
         "params",
         nargs=argparse.REMAINDER,
         help="Parameters for the command (e.g. --focus problems)",
     )
     args = parser.parse_args(argv)
-
     try:
-        with open(args.command_file, "r", encoding="utf-8") as f:
-            command_text = f.read()
-    except OSError as exc:
-        print(f"Error reading command file: {exc}", file=sys.stderr)
+        _, front, content = load_command_by_name(args.command)
+    except RuntimeError as exc:
+        print(str(exc), file=sys.stderr)
         return 1
+
+    command_text = render_template(content, front)
 
     try:
         patterns = load_patterns(command_text)
@@ -123,6 +208,16 @@ def main(argv: List[str] | None = None) -> int:
         return 1
 
     params = parse_params(args.params)
+    defined = {p["name"]: p for p in front.get("parameters", [])}
+    missing = [n for n, p in defined.items() if not p.get("optional") and n not in params]
+    unknown = [k for k in params if k not in defined]
+    if missing:
+        print(f"Missing parameters: {', '.join(missing)}", file=sys.stderr)
+        return 1
+    if unknown:
+        print(f"Unknown parameters: {', '.join(unknown)}", file=sys.stderr)
+        return 1
+
     prompt = build_prompt(command_text, patterns, params)
 
     try:

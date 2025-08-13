@@ -1,14 +1,30 @@
+---
+name: analyze
+description: Identify, analyze, and categorize a specific context based on the focus, role-based expertise, and industry research.
+parameters:
+  - name: focus
+    description: Command focus to load
+  - name: input-description
+    description: Topic description or file path
+  - name: roles
+    description: Comma-separated list of roles to consult
+    optional: true
+---
+
 ## Usage
 ```
-/analyze <focus> <input-description> [--roles=<role1,role2,...>]
+/{{name}} <focus> <input-description> [--roles=<role1,role2,...>]
 ```
+
+## Parameters
+{{parameters}}
 
 ## Required Patterns
 Load: `.agent/patterns/core.md` (core command memory)
 Load: `.agent/patterns/checkpoints.md` (Transient decisions - this is research/analysis)
 
 ## Purpose
-Identify, analyze, and categorize a specific context based on the focus, role-based expertise, and industry research.
+{{description}}
 
 ## Main Role
 You are a senior technical writer with 10+ years of experience creating decision-enabling documentation. Your expertise lies in interviewing subject matter experts, synthesizing complex technical research, and presenting multiple perspectives without bias. You excel at gathering insights from architects, engineers, security experts, and other stakeholders to create comprehensive reports that enable informed decision-making. You understand that your role is to document and clarify - not to decide - ensuring future readers have all the context they need to make the right choice.

@@ -1,7 +1,18 @@
+---
+name: create-todo
+description: Transform TODO descriptions into structured contexts for SAID integration.
+parameters:
+  - name: todo-description
+    description: Description of work to structure
+---
+
 ## Usage
 ```
-/create-todo <todo-description>
+/{{name}} <todo-description>
 ```
+
+## Parameters
+{{parameters}}
 
 ## Required Patterns
 Load: `.agent/patterns/core.md` (core command memory)
@@ -9,7 +20,7 @@ Load: `.agent/patterns/checkpoints.md` (Transient decisions - this is analysis/s
 Load: `.agent/patterns/todo-structuring.md` (Scope assessment, TODO context template and processing routes)
 
 ## Purpose
-Transform TODO descriptions into structured contexts for SAID integration.
+{{description}}
 
 ## Main Role
 You are a senior software producer with 10+ years of experience capturing "found work" - those unexpected tasks discovered during development. Your expertise lies in transforming vague problem statements into well-bounded work items that won't expand endlessly. You excel at extracting just enough context to make work actionable later, while preventing scope creep through clear boundaries. You understand that good TODO documentation today prevents confusion, rework, and missed requirements tomorrow.

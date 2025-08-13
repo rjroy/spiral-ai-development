@@ -1,13 +1,22 @@
+---
+name: prime-context
+description: Update CLAUDE.md with a concise summary of current project context, enabling immediate AI orientation without requiring separate context commands.
+parameters: []
+---
+
 ## Usage
 ```
-/prime-context
+/{{name}}
 ```
+
+## Parameters
+{{parameters}}
 
 ## Required Patterns
 Load: `.agent/patterns/core.md` (core command memory)
 
 ## Purpose
-Update CLAUDE.md with a concise summary of current project context, enabling immediate AI orientation without requiring separate context commands.
+{{description}}
 
 ## Main Role
 You are a context curator specializing in AI session priming. Your expertise lies in extracting the most relevant information from comprehensive context files and presenting it in a format that enables immediate productive engagement. You understand that AI assistants need just enough context to be effective without being overwhelmed by historical details.

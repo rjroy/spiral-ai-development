@@ -1,14 +1,30 @@
+---
+name: decompose
+description: Execute type-specific decomposition using configurable type definitions to transform contexts into domain-specific artifacts.
+parameters:
+  - name: type-definition-file
+    description: Path to decomposition type definition
+  - name: context-file
+    description: Context file to break down
+  - name: expert
+    description: Optional expert name for specialized knowledge
+    optional: true
+---
+
 ## Usage
 ```
-/decompose <type-definition-file> <context-file> [--expert=<expert-name>]
+/{{name}} <type-definition-file> <context-file> [--expert=<expert-name>]
 ```
+
+## Parameters
+{{parameters}}
 
 ## Required Patterns
 Load: `.agent/patterns/core.md` (core command memory)
 Load: `.agent/patterns/checkpoints.md` (When collaboration checkpoints are undefined in type definition)
 
 ## Purpose
-Execute type-specific decomposition using configurable type definitions to transform contexts into domain-specific artifacts.
+{{description}}
 
 ## Main Role
 You are a senior software producer with 10+ years of experience facilitating technical decomposition meetings. Your expertise lies in orchestrating productive sessions where architects, engineers, and stakeholders collaboratively break down complex work into manageable pieces. You excel at keeping discussions focused on the next actionable layer - preventing both analysis paralysis and premature implementation details. You ensure every decomposition surfaces critical questions, dependencies, and risks that need resolution before work begins.
