@@ -47,6 +47,41 @@ Actually, the first step is to have an idea. Be bold. Be vague. Be inspired. Wha
 
 Please follow the [Getting Started](/docs/SAID/getting-started/README.md) complete guide.
 
+## Using commands without Claude Code
+
+SAID commands live in `.claude/commands/` and can be executed from a terminal using a CLI runner.
+
+### Setup
+
+1. Install the runner (example with npm):
+   ```bash
+   npm install -g said-cli
+   ```
+2. Provide an API key for your model provider:
+   ```bash
+   export ANTHROPIC_API_KEY="sk-ant-..."
+   # or
+   export OPENAI_API_KEY="sk-openai-..."
+   ```
+   Additional variables such as `OPENROUTER_API_KEY` may be used depending on your provider.
+
+### Example usage
+
+Pass any SAID command string to the runner:
+
+```bash
+# Analyze problems for a project context
+said-cli "/analyze problems context/project-context.md"
+
+# Synchronize a report into context
+said-cli "/sync-context docs/reports/problem-validation.md"
+
+# Record a decision from an analysis report
+said-cli "/sync-decision context/project/decisions.md docs/reports/solutions-analysis.md 1"
+```
+
+These examples mirror the commands documented in [HOW-TO](docs/SAID/getting-started/HOW-TO.md).
+
 ## Further Reading
 
 - Philosophy: [Core Concepts](/docs/SAID/philosophy/core-concepts.md)
